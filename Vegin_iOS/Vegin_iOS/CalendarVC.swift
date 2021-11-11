@@ -28,8 +28,9 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource {
     func setCalendarUI() {
         calendar.appearance.titleDefaultColor = .black
         calendar.appearance.headerTitleColor = .black
-        calendar.appearance.weekdayTextColor = .gray
+        calendar.appearance.headerTitleFont = UIFont.boldSystemFont(ofSize: 16)
         calendar.appearance.headerDateFormat = "YYYY년 M월"
+        calendar.appearance.weekdayTextColor = .gray
         calendar.appearance.headerMinimumDissolvedAlpha = 0
     }
 }
