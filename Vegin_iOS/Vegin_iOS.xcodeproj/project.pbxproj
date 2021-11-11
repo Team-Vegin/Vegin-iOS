@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C146E273B7DAB00BB0127 /* AppDelegate.swift */; };
 		772C1471273B7DAB00BB0127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1470273B7DAB00BB0127 /* SceneDelegate.swift */; };
-		772C1473273B7DAB00BB0127 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1472273B7DAB00BB0127 /* ViewController.swift */; };
 		772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1474273B7DAB00BB0127 /* Main.storyboard */; };
 		772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772C1477273B7DAE00BB0127 /* Assets.xcassets */; };
 		772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */; };
+		772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1482273CF9D500BB0127 /* CalendarVC.swift */; };
 		EECC6F26D6F157BF59080165 /* Pods_Vegin_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24999E6C3C90A75DE12BA65A /* Pods_Vegin_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,11 +22,11 @@
 		772C146B273B7DAB00BB0127 /* Vegin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772C146E273B7DAB00BB0127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772C1470273B7DAB00BB0127 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		772C1472273B7DAB00BB0127 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		772C1475273B7DAB00BB0127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		772C1477273B7DAE00BB0127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		772C147A273B7DAE00BB0127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		772C147C273B7DAE00BB0127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		772C1482273CF9D500BB0127 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		81674B682E3C2F3F4442D9A7 /* Pods-Vegin_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegin_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +48,6 @@
 				81674B682E3C2F3F4442D9A7 /* Pods-Vegin_iOS.debug.xcconfig */,
 				4633DCDA9E2208418F65B04D /* Pods-Vegin_iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,8 +74,8 @@
 			children = (
 				772C146E273B7DAB00BB0127 /* AppDelegate.swift */,
 				772C1470273B7DAB00BB0127 /* SceneDelegate.swift */,
-				772C1472273B7DAB00BB0127 /* ViewController.swift */,
 				772C1474273B7DAB00BB0127 /* Main.storyboard */,
+				772C1482273CF9D500BB0127 /* CalendarVC.swift */,
 				772C1477273B7DAE00BB0127 /* Assets.xcassets */,
 				772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */,
 				772C147C273B7DAE00BB0127 /* Info.plist */,
@@ -207,9 +206,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				772C1473273B7DAB00BB0127 /* ViewController.swift in Sources */,
 				772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */,
 				772C1471273B7DAB00BB0127 /* SceneDelegate.swift in Sources */,
+				772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

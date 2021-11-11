@@ -11,14 +11,31 @@
         <!--캘린더-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarVC" id="BYZ-38-t0r" customClass="CalendarVC" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrb-mK-ecZ" customClass="FSCalendar">
+                                <rect key="frame" x="22" y="72" width="369" height="358"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="358" id="eNa-N8-sJF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yrb-mK-ecZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="PDj-Lm-C5T"/>
+                            <constraint firstItem="yrb-mK-ecZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="q5F-LN-tQc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yrb-mK-ecZ" secondAttribute="trailing" constant="23" id="xHc-g0-CjZ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="캘린더" image="calendar" selectedImage="calendar" id="XAJ-ae-HyW"/>
+                    <connections>
+                        <outlet property="calendar" destination="yrb-mK-ecZ" id="Cmb-XR-Ls9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,6 +95,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QEv-yv-i7M" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k5n-1b-Qq7">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.38817867639999998" green="0.59490376710000004" blue="0.3764356673" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
