@@ -25,14 +25,20 @@ class CalendarVC: UIViewController {
         return Date()
     }()
     
-    private lazy var dateFormatter: DateFormatter = {
+    func getMonthDate(date: Date) -> String{
         let df = DateFormatter()
         df.locale = Locale(identifier: "ko_KR")
         df.dateFormat = "yyyy년 M월"
-        return df
-        
-    }()
+        return df.string(from: date)
+    }
     
+    func getDayDate(date: Date) -> String{
+            let df = DateFormatter()
+            df.locale = Locale(identifier: "ko_KR")
+            df.dateFormat = "yyyy년 M월 dd일"
+            return df.string(from: date)
+        }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUI()
@@ -84,11 +90,23 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
         calendar.appearance.headerMinimumDissolvedAlpha = 0
         calendar.appearance.borderRadius = 0.2
         
-        headerLabel.text = self.dateFormatter.string(from: calendar.currentPage)
+        let monthData = getMonthDate(date: calendar.currentPage)
+        self.headerLabel.text = monthData
+        
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        self.headerLabel.text = self.dateFormatter.string(from: calendar.currentPage)
+        let monthData = getMonthDate(date: calendar.currentPage)
+        self.headerLabel.text = monthData
     }
     
+    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+        let eventDate = getDayDate(date: date)
+
+        if eventDate == "2021년 11월 16일" {
+            return UIImage(named: "level6")
+        } else { return nil }
+        
+     }
+        
 }
