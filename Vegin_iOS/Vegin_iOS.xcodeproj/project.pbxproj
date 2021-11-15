@@ -456,7 +456,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vegin_iOS/Info.plist;
+				INFOPLIST_FILE = Vegin_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -485,7 +485,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vegin_iOS/Info.plist;
+				INFOPLIST_FILE = Vegin_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -25,3 +25,4 @@ extension UIView {
      var className: String {
         NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!
     }
+}

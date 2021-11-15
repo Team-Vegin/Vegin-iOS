@@ -80,28 +80,28 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIj-ra-Jwn">
-                                        <rect key="frame" x="232" y="14" width="77" height="28"/>
+                                        <rect key="frame" x="234" y="14" width="77" height="28"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="77" id="3QS-0M-u5e"/>
-                                            <constraint firstAttribute="height" constant="28" id="XkK-52-pxR"/>
+                                            <constraint firstAttribute="width" constant="77" id="M9w-dp-AoF"/>
+                                            <constraint firstAttribute="height" constant="28" id="fL6-mt-As1"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="cal_button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="writeButton"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93297594790000005" green="0.95416921379999997" blue="0.87450009579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="rvd-eS-gQj" firstAttribute="top" secondItem="N9W-Vf-BjA" secondAttribute="bottom" constant="4" id="0Sc-kk-FOq"/>
-                                    <constraint firstAttribute="trailing" secondItem="rIj-ra-Jwn" secondAttribute="trailing" constant="22" id="2A3-Kc-gVK"/>
+                                    <constraint firstItem="rIj-ra-Jwn" firstAttribute="top" secondItem="Avd-pK-5qZ" secondAttribute="top" constant="14" id="15B-kh-brJ"/>
                                     <constraint firstAttribute="height" constant="56" id="6Zf-Aq-BRw"/>
                                     <constraint firstItem="N9W-Vf-BjA" firstAttribute="leading" secondItem="SIy-3z-wyL" secondAttribute="trailing" constant="27" id="Aut-oR-ynk"/>
+                                    <constraint firstAttribute="bottom" secondItem="rIj-ra-Jwn" secondAttribute="bottom" constant="14" id="OIR-sr-1mu"/>
                                     <constraint firstItem="SIy-3z-wyL" firstAttribute="leading" secondItem="Avd-pK-5qZ" secondAttribute="leading" constant="23" id="c8c-QA-rYT"/>
                                     <constraint firstItem="N9W-Vf-BjA" firstAttribute="top" secondItem="Avd-pK-5qZ" secondAttribute="top" constant="12" id="epn-di-AI9"/>
-                                    <constraint firstItem="rIj-ra-Jwn" firstAttribute="top" secondItem="Avd-pK-5qZ" secondAttribute="top" constant="14" id="l42-La-CK9"/>
+                                    <constraint firstAttribute="trailing" secondItem="rIj-ra-Jwn" secondAttribute="trailing" constant="20" id="lno-8c-ekc"/>
                                     <constraint firstAttribute="bottom" secondItem="SIy-3z-wyL" secondAttribute="bottom" constant="13" id="nUd-sp-X9y"/>
                                     <constraint firstItem="SIy-3z-wyL" firstAttribute="top" secondItem="Avd-pK-5qZ" secondAttribute="top" constant="13" id="qzk-Cu-ByI"/>
                                     <constraint firstItem="rvd-eS-gQj" firstAttribute="leading" secondItem="SIy-3z-wyL" secondAttribute="trailing" constant="27" id="sTj-Cc-68d"/>
-                                    <constraint firstAttribute="bottom" secondItem="rIj-ra-Jwn" secondAttribute="bottom" constant="14" id="vX1-oe-9iJ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csn-ih-gM0">
@@ -132,7 +132,7 @@
                                             <constraint firstAttribute="width" constant="77" id="wlI-Ok-qdn"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="cal_button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="checkButton"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93297594790000005" green="0.95416921379999997" blue="0.87450009579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -178,7 +178,7 @@
                                             <constraint firstAttribute="height" constant="28" id="phc-Ey-QEn"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="cal_button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="checkButton"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93297594790000005" green="0.95416921379999997" blue="0.87450009579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -302,14 +302,15 @@
     </scenes>
     <resources>
         <image name="backButton" width="24" height="24"/>
-        <image name="cal_button" width="77" height="28"/>
         <image name="calendar" width="32" height="32"/>
         <image name="challenge" width="32" height="32"/>
         <image name="challengeIcon" width="30" height="30"/>
+        <image name="checkButton" width="77" height="28"/>
         <image name="farm" width="32" height="32"/>
         <image name="menuIcon" width="30" height="30"/>
         <image name="my" width="32" height="32"/>
         <image name="nextButton" width="24" height="24"/>
+        <image name="writeButton" width="77" height="28"/>
         <image name="writeIcon" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

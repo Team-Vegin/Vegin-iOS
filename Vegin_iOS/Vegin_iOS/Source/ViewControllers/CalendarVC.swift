@@ -11,6 +11,8 @@ import FSCalendar
 
 class CalendarVC: UIViewController {
 
+    // MARK: - UI Component Part
+    
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var calendar: FSCalendar!
     
@@ -18,12 +20,36 @@ class CalendarVC: UIViewController {
     @IBOutlet weak var secondListView: UIView!
     @IBOutlet weak var thirdListView: UIView!
     
-    
+    // MARK: - Vars & Lets Part
     
     private var currentPage: Date?
     private lazy var today: Date = {
         return Date()
     }()
+
+    // MARK: - Life Cycle Part
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUI()
+        setCalendarUI()
+        setCalendarDelegate()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    // MARK: - IBAction Part
+    
+    @IBAction func prevButtonTapped(_ sender: UIButton) {
+        scrollCurrentPage(isPrev: true)
+    }
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        scrollCurrentPage(isPrev: false)
+    }
+    
+    // MARK: - Custom Method Part
     
     func getMonthDate(date: Date) -> String{
         let df = DateFormatter()
@@ -38,24 +64,6 @@ class CalendarVC: UIViewController {
             df.dateFormat = "yyyy년 M월 dd일"
             return df.string(from: date)
         }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setUI()
-        setCalendarUI()
-        setCalendarDelegate()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    @IBAction func prevButtonTapped(_ sender: UIButton) {
-        scrollCurrentPage(isPrev: true)
-    }
-    @IBAction func nextButtonTapped(_ sender: Any) {
-        scrollCurrentPage(isPrev: false)
-    }
     
     private func setUI() {
         firstListView.layer.cornerRadius = 19
@@ -72,6 +80,8 @@ class CalendarVC: UIViewController {
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
     }
 }
+
+// MARK: - Extension Part
 
 extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     func setCalendarDelegate() {
