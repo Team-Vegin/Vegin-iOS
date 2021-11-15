@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C146E273B7DAB00BB0127 /* AppDelegate.swift */; };
 		772C1471273B7DAB00BB0127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1470273B7DAB00BB0127 /* SceneDelegate.swift */; };
-		772C1473273B7DAB00BB0127 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1472273B7DAB00BB0127 /* ViewController.swift */; };
 		772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1474273B7DAB00BB0127 /* Main.storyboard */; };
 		772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772C1477273B7DAE00BB0127 /* Assets.xcassets */; };
 		772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */; };
+		772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1482273CF9D500BB0127 /* CalendarVC.swift */; };
+		7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57B2742C0F000325814 /* UIViewController+.swift */; };
+		7744C57E2742C13600325814 /* ClassName+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57D2742C13600325814 /* ClassName+UIViewController.swift */; };
+		EECC6F26D6F157BF59080165 /* Pods_Vegin_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24999E6C3C90A75DE12BA65A /* Pods_Vegin_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24999E6C3C90A75DE12BA65A /* Pods_Vegin_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegin_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4633DCDA9E2208418F65B04D /* Pods-Vegin_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegin_iOS.release.xcconfig"; path = "Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		772C146B273B7DAB00BB0127 /* Vegin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772C146E273B7DAB00BB0127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772C1470273B7DAB00BB0127 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		772C1472273B7DAB00BB0127 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		772C1475273B7DAB00BB0127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		772C1477273B7DAE00BB0127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		772C147A273B7DAE00BB0127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		772C147C273B7DAE00BB0127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		772C1482273CF9D500BB0127 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		7744C57B2742C0F000325814 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		7744C57D2742C13600325814 /* ClassName+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClassName+UIViewController.swift"; sourceTree = "<group>"; };
+		81674B682E3C2F3F4442D9A7 /* Pods-Vegin_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegin_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECC6F26D6F157BF59080165 /* Pods_Vegin_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06C5EDBFBC5737FF9FF44FD6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81674B682E3C2F3F4442D9A7 /* Pods-Vegin_iOS.debug.xcconfig */,
+				4633DCDA9E2208418F65B04D /* Pods-Vegin_iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		772C1462273B7DAB00BB0127 = {
 			isa = PBXGroup;
 			children = (
 				772C146D273B7DAB00BB0127 /* Vegin_iOS */,
 				772C146C273B7DAB00BB0127 /* Products */,
+				06C5EDBFBC5737FF9FF44FD6 /* Pods */,
+				987A9D7F730175B9FB161044 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +76,113 @@
 		772C146D273B7DAB00BB0127 /* Vegin_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				772C146E273B7DAB00BB0127 /* AppDelegate.swift */,
-				772C1470273B7DAB00BB0127 /* SceneDelegate.swift */,
-				772C1472273B7DAB00BB0127 /* ViewController.swift */,
-				772C1474273B7DAB00BB0127 /* Main.storyboard */,
-				772C1477273B7DAE00BB0127 /* Assets.xcassets */,
-				772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */,
-				772C147C273B7DAE00BB0127 /* Info.plist */,
+				7744C5702742BD3200325814 /* Source */,
+				7744C5762742BDD500325814 /* Resource */,
 			);
 			path = Vegin_iOS;
+			sourceTree = "<group>";
+		};
+		7744C5702742BD3200325814 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7744C57A2742BE6D00325814 /* ViewControllers */,
+				7744C5712742BD5900325814 /* Protocol */,
+				7744C5722742BD7100325814 /* Extensions */,
+				7744C5732742BD7E00325814 /* Models */,
+				7744C5742742BD8E00325814 /* Supporting Files */,
+				7744C5752742BD9900325814 /* Cells */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7744C5712742BD5900325814 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		7744C5722742BD7100325814 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7744C57B2742C0F000325814 /* UIViewController+.swift */,
+				7744C57D2742C13600325814 /* ClassName+UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7744C5732742BD7E00325814 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7744C5742742BD8E00325814 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				772C146E273B7DAB00BB0127 /* AppDelegate.swift */,
+				772C1470273B7DAB00BB0127 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7744C5752742BD9900325814 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7744C5762742BDD500325814 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				772C1477273B7DAE00BB0127 /* Assets.xcassets */,
+				772C147C273B7DAE00BB0127 /* Info.plist */,
+				7744C5772742BDF500325814 /* Views */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		7744C5772742BDF500325814 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7744C5792742BE0700325814 /* Storyboard */,
+				7744C5782742BE0000325814 /* Nibs */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7744C5782742BE0000325814 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		7744C5792742BE0700325814 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				772C1474273B7DAB00BB0127 /* Main.storyboard */,
+				772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		7744C57A2742BE6D00325814 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				772C1482273CF9D500BB0127 /* CalendarVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		987A9D7F730175B9FB161044 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24999E6C3C90A75DE12BA65A /* Pods_Vegin_iOS.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +192,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 772C147F273B7DAE00BB0127 /* Build configuration list for PBXNativeTarget "Vegin_iOS" */;
 			buildPhases = (
+				F490122E51FFF25B457AA0F6 /* [CP] Check Pods Manifest.lock */,
 				772C1467273B7DAB00BB0127 /* Sources */,
 				772C1468273B7DAB00BB0127 /* Frameworks */,
 				772C1469273B7DAB00BB0127 /* Resources */,
+				2E28CFBD5429B0418D776372 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +253,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E28CFBD5429B0418D776372 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F490122E51FFF25B457AA0F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Vegin_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		772C1467273B7DAB00BB0127 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				772C1473273B7DAB00BB0127 /* ViewController.swift in Sources */,
 				772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */,
 				772C1471273B7DAB00BB0127 /* SceneDelegate.swift in Sources */,
+				7744C57E2742C13600325814 /* ClassName+UIViewController.swift in Sources */,
+				7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */,
+				772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +448,7 @@
 		};
 		772C1480273B7DAE00BB0127 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81674B682E3C2F3F4442D9A7 /* Pods-Vegin_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -291,7 +456,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vegin_iOS/Info.plist;
+				INFOPLIST_FILE = Vegin_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -312,6 +477,7 @@
 		};
 		772C1481273B7DAE00BB0127 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4633DCDA9E2208418F65B04D /* Pods-Vegin_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -319,7 +485,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vegin_iOS/Info.plist;
+				INFOPLIST_FILE = Vegin_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
