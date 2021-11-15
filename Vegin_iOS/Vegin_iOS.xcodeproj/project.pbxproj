@@ -72,15 +72,103 @@
 		772C146D273B7DAB00BB0127 /* Vegin_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				772C146E273B7DAB00BB0127 /* AppDelegate.swift */,
-				772C1470273B7DAB00BB0127 /* SceneDelegate.swift */,
-				772C1474273B7DAB00BB0127 /* Main.storyboard */,
-				772C1482273CF9D500BB0127 /* CalendarVC.swift */,
-				772C1477273B7DAE00BB0127 /* Assets.xcassets */,
-				772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */,
-				772C147C273B7DAE00BB0127 /* Info.plist */,
+				7744C5702742BD3200325814 /* Source */,
+				7744C5762742BDD500325814 /* Resource */,
 			);
 			path = Vegin_iOS;
+			sourceTree = "<group>";
+		};
+		7744C5702742BD3200325814 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7744C57A2742BE6D00325814 /* ViewControllers */,
+				7744C5712742BD5900325814 /* Protocol */,
+				7744C5722742BD7100325814 /* Extensions */,
+				7744C5732742BD7E00325814 /* Models */,
+				7744C5742742BD8E00325814 /* Supporting Files */,
+				7744C5752742BD9900325814 /* Cells */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7744C5712742BD5900325814 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		7744C5722742BD7100325814 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7744C5732742BD7E00325814 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7744C5742742BD8E00325814 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				772C146E273B7DAB00BB0127 /* AppDelegate.swift */,
+				772C1470273B7DAB00BB0127 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7744C5752742BD9900325814 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7744C5762742BDD500325814 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				772C1477273B7DAE00BB0127 /* Assets.xcassets */,
+				772C147C273B7DAE00BB0127 /* Info.plist */,
+				7744C5772742BDF500325814 /* Views */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		7744C5772742BDF500325814 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7744C5792742BE0700325814 /* Storyboard */,
+				7744C5782742BE0000325814 /* Nibs */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7744C5782742BE0000325814 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		7744C5792742BE0700325814 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				772C1474273B7DAB00BB0127 /* Main.storyboard */,
+				772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		7744C57A2742BE6D00325814 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				772C1482273CF9D500BB0127 /* CalendarVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		987A9D7F730175B9FB161044 /* Frameworks */ = {

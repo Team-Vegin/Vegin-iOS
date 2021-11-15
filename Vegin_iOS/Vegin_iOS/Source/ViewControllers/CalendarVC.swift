@@ -88,7 +88,7 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
         calendar.appearance.headerTitleColor = .black
         calendar.appearance.weekdayTextColor = .gray
         calendar.appearance.headerMinimumDissolvedAlpha = 0
-        calendar.appearance.borderRadius = 0.2
+        //calendar.appearance.borderRadius = 0.2
         
         let monthData = getMonthDate(date: calendar.currentPage)
         self.headerLabel.text = monthData
@@ -103,7 +103,7 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
         let eventDate = getDayDate(date: date)
 
-        if eventDate == "2021년 11월 16일" {
+        if eventDate == "2021년 11월 15일" {
             return UIImage(named: "level6")
         } else { return nil }
         
