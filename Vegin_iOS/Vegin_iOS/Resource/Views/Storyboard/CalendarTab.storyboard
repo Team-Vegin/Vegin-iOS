@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J7o-8Z-Aoa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -28,6 +28,13 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WGa-QR-0hm">
                                                         <rect key="frame" x="0.0" y="0.0" width="331" height="331"/>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdH-fF-dmK">
+                                                        <rect key="frame" x="102" y="150" width="127" height="31"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="사진 업로드">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                        </buttonConfiguration>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -35,8 +42,12 @@
                                                     <constraint firstAttribute="width" constant="331" id="TTF-Tf-fhH"/>
                                                     <constraint firstItem="WGa-QR-0hm" firstAttribute="top" secondItem="OKy-n2-NKI" secondAttribute="top" id="Z4L-1f-YEk"/>
                                                     <constraint firstAttribute="trailing" secondItem="WGa-QR-0hm" secondAttribute="trailing" id="Zyf-fi-F0A"/>
+                                                    <constraint firstItem="OdH-fF-dmK" firstAttribute="leading" secondItem="OKy-n2-NKI" secondAttribute="leading" constant="102" id="a8J-0m-BtL"/>
                                                     <constraint firstAttribute="bottom" secondItem="WGa-QR-0hm" secondAttribute="bottom" id="j34-vL-y6m"/>
                                                     <constraint firstItem="WGa-QR-0hm" firstAttribute="leading" secondItem="OKy-n2-NKI" secondAttribute="leading" id="mAt-7v-S3E"/>
+                                                    <constraint firstItem="OdH-fF-dmK" firstAttribute="top" secondItem="OKy-n2-NKI" secondAttribute="top" constant="150" id="mbg-Ne-OFs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OdH-fF-dmK" secondAttribute="bottom" constant="150" id="oF0-zW-v1l"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OdH-fF-dmK" secondAttribute="trailing" constant="102" id="r02-rg-GOE"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYN-6y-tYI">
@@ -50,6 +61,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="backButton"/>
+                                                        <connections>
+                                                            <action selector="touchUpToGoBack:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Y0v-YE-6gN"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="식단 기록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ene-2e-TvT">
                                                         <rect key="frame" x="68" y="13" width="74" height="27"/>
@@ -290,8 +304,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="112" id="4jy-Tr-sGT"/>
                                                 </constraints>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CH5-ui-hXz">
@@ -383,23 +397,6 @@
             </objects>
             <point key="canvasLocation" x="951.20000000000005" y="97.536945812807886"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="bBt-ym-gJe">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="J7o-8Z-Aoa" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pIt-I9-Fuq">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="5CW-S3-W2q"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IeV-Bh-f0y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8.8000000000000007" y="97.536945812807886"/>
-        </scene>
     </scenes>
     <resources>
         <image name="backButton" width="24" height="24"/>
@@ -417,9 +414,6 @@
         <image name="medium" width="47" height="36"/>
         <image name="milk" width="42" height="42"/>
         <image name="much" width="47" height="36"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

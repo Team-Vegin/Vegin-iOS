@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--캘린더-->
+        <!--CalendarVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="CalendarVC" id="BYZ-38-t0r" customClass="CalendarVC" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,6 +87,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="writeButton"/>
+                                        <connections>
+                                            <action selector="touchUpToGoWriteVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AWd-Jz-VUX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93297594790000005" green="0.95416921379999997" blue="0.87450009579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -216,7 +219,7 @@
                             <constraint firstItem="Avd-pK-5qZ" firstAttribute="top" secondItem="yrb-mK-ecZ" secondAttribute="bottom" constant="25" id="wFr-85-uLH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="캘린더" image="calendar" selectedImage="calendar" id="XAJ-ae-HyW"/>
+                    <navigationItem key="navigationItem" id="w0C-Xb-EQn"/>
                     <connections>
                         <outlet property="calendar" destination="yrb-mK-ecZ" id="Cmb-XR-Ls9"/>
                         <outlet property="firstListView" destination="Avd-pK-5qZ" id="ov1-wz-qSq"/>
@@ -227,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.79999999999995" y="97.536945812807886"/>
+            <point key="canvasLocation" x="1871.2" y="97.536945812807886"/>
         </scene>
         <!--농장통계-->
         <scene sceneID="IZO-w3-8S2">
@@ -243,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XD7-BR-39W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1581" y="98"/>
+            <point key="canvasLocation" x="2522.4000000000001" y="97.536945812807886"/>
         </scene>
         <!--챌린지-->
         <scene sceneID="B8M-xF-4xa">
@@ -259,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7uO-sT-YQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2233" y="98"/>
+            <point key="canvasLocation" x="3175.1999999999998" y="97.536945812807886"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="yVt-05-Hc8">
@@ -275,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhE-4c-EeD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2870" y="105"/>
+            <point key="canvasLocation" x="3812" y="104.92610837438424"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="EVm-AA-3Z1">
@@ -289,7 +292,7 @@
                         <color key="selectedImageTintColor" red="0.38817867639999998" green="0.59490376710000004" blue="0.3764356673" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="cAq-29-2GQ"/>
+                        <segue destination="28b-C6-kti" kind="relationship" relationship="viewControllers" id="cAq-29-2GQ"/>
                         <segue destination="t7Z-hn-7uu" kind="relationship" relationship="viewControllers" id="tLn-Gl-fa1"/>
                         <segue destination="fbs-vh-AEQ" kind="relationship" relationship="viewControllers" id="rfX-9d-3vC"/>
                         <segue destination="jHg-18-f0J" kind="relationship" relationship="viewControllers" id="kYB-oN-a5m"/>
@@ -298,6 +301,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ImF-9P-Iuf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+        </scene>
+        <!--캘린더-->
+        <scene sceneID="RZb-hG-JsL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="28b-C6-kti" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="캘린더" image="calendar" selectedImage="calendar" id="XAJ-ae-HyW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tfM-mT-XtK">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Kwr-bV-PXK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHS-mb-XPn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.79999999999995" y="97.536945812807886"/>
         </scene>
     </scenes>
     <resources>

@@ -49,6 +49,12 @@ class CalendarVC: UIViewController {
         scrollCurrentPage(isPrev: false)
     }
     
+    @IBAction func touchUpToGoWriteVC(_ sender: Any) {
+        let calendarTabSB = UIStoryboard.init(name: "CalendarTab", bundle: nil)
+        guard let nextVC = calendarTabSB.instantiateViewController(withIdentifier: WriteVC.className) as? WriteVC else { return }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
     // MARK: - Custom Method Part
     
     func getMonthDate(date: Date) -> String{
