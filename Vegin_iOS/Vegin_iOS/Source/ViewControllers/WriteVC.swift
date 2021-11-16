@@ -15,15 +15,20 @@ class WriteVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        hideKeyboardWhenTappedAround()
     }
     
     @IBAction func touchUpToGoBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func touchUpToSaveButton(_ sender: Any) {
+        
+    }
+    
     private func setUI() {
         imageContentView.layer.cornerRadius = 25
         buttonContentView.layer.cornerRadius = 20
     }
-
 }
+

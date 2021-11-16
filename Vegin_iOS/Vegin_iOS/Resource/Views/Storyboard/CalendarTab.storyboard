@@ -281,6 +281,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="저장하기">
                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="touchUpToSaveButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vL4-h2-7Xw"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.32156862745098036" green="0.59999999999999998" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -340,7 +343,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="57"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPw-Y2-Gki">
-                                        <rect key="frame" x="22" y="15" width="24" height="24"/>
+                                        <rect key="frame" x="22" y="16" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="0lD-A7-ydc"/>
                                             <constraint firstAttribute="width" constant="24" id="P6k-QZ-5KP"/>
@@ -352,7 +355,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="식단 기록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ene-2e-TvT">
-                                        <rect key="frame" x="68" y="13" width="74" height="27"/>
+                                        <rect key="frame" x="68" y="15" width="74" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="74" id="BYz-bL-fC3"/>
                                             <constraint firstAttribute="height" constant="27" id="f2f-zg-z26"/>
@@ -365,12 +368,12 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="RPw-Y2-Gki" firstAttribute="leading" secondItem="SYN-6y-tYI" secondAttribute="leading" constant="22" id="5aY-Kq-ecX"/>
-                                    <constraint firstAttribute="bottom" secondItem="RPw-Y2-Gki" secondAttribute="bottom" constant="18" id="J1A-oW-h6w"/>
-                                    <constraint firstItem="Ene-2e-TvT" firstAttribute="top" secondItem="SYN-6y-tYI" secondAttribute="top" constant="13" id="T6S-uq-y47"/>
-                                    <constraint firstItem="RPw-Y2-Gki" firstAttribute="top" secondItem="SYN-6y-tYI" secondAttribute="top" constant="15" id="WGd-BM-s1o"/>
+                                    <constraint firstAttribute="bottom" secondItem="RPw-Y2-Gki" secondAttribute="bottom" constant="17" id="J1A-oW-h6w"/>
+                                    <constraint firstItem="Ene-2e-TvT" firstAttribute="top" secondItem="SYN-6y-tYI" secondAttribute="top" constant="15" id="T6S-uq-y47"/>
+                                    <constraint firstItem="RPw-Y2-Gki" firstAttribute="top" secondItem="SYN-6y-tYI" secondAttribute="top" constant="16" id="WGd-BM-s1o"/>
                                     <constraint firstItem="Ene-2e-TvT" firstAttribute="leading" secondItem="RPw-Y2-Gki" secondAttribute="trailing" constant="22" id="dUr-sq-VjD"/>
                                     <constraint firstAttribute="height" constant="57" id="qIU-dh-vJk"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ene-2e-TvT" secondAttribute="bottom" constant="17" id="zmk-Fd-Vwh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ene-2e-TvT" secondAttribute="bottom" constant="15" id="zmk-Fd-Vwh"/>
                                 </constraints>
                             </view>
                         </subviews>
