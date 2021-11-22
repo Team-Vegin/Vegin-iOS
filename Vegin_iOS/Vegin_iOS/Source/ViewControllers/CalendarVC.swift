@@ -55,6 +55,7 @@ class CalendarVC: UIViewController {
         
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
     // MARK: - Custom Method Part
     
     func getMonthDate(date: Date) -> String{
@@ -108,7 +109,6 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
         
         let monthData = getMonthDate(date: calendar.currentPage)
         self.headerLabel.text = monthData
-        
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {

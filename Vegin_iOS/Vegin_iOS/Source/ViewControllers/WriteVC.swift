@@ -23,7 +23,11 @@ class WriteVC: UIViewController {
     }
     
     @IBAction func touchUpToSaveButton(_ sender: Any) {
-        
+//        self.navigationController?.popViewController(animated: true)
+        let vc = CustomPopUpVC(nibName: CustomPopUpVC.className, bundle: nil)
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
     }
     
     private func setUI() {
