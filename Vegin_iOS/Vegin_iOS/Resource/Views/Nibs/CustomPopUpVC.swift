@@ -26,6 +26,11 @@ class CustomPopUpVC: UIViewController {
     }
     @objc func okButtonClicked(_sender: UIButton) {
         dismiss(animated: true, completion: nil)
+        let tabBarStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let nextVC = tabBarStoryBoard.instantiateViewController(withIdentifier: CalendarVC.className) as? CalendarVC else { return }
+        
+        nextVC.modalPresentationStyle = .fullScreen
+        present(nextVC, animated: true, completion: nil)
     }
 
 }
