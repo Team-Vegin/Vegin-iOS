@@ -53,13 +53,13 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrb-mK-ecZ" customClass="FSCalendar">
-                                <rect key="frame" x="22" y="128" width="330" height="358"/>
+                                <rect key="frame" x="22" y="128" width="330" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="358" id="v2X-pt-ifX"/>
+                                    <constraint firstAttribute="height" constant="400" id="v2X-pt-ifX"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avd-pK-5qZ">
-                                <rect key="frame" x="22" y="511" width="331" height="56"/>
+                                <rect key="frame" x="22" y="558" width="331" height="56"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="writeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="SIy-3z-wyL">
                                         <rect key="frame" x="23" y="13" width="30" height="30"/>
@@ -108,7 +108,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csn-ih-gM0">
-                                <rect key="frame" x="22" y="579" width="331" height="56"/>
+                                <rect key="frame" x="22" y="626" width="331" height="56"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xGV-nW-oVs">
                                         <rect key="frame" x="23" y="13" width="30" height="30"/>
@@ -153,70 +153,21 @@
                                     <constraint firstItem="iwT-pq-8U9" firstAttribute="top" secondItem="6pz-CQ-64J" secondAttribute="bottom" constant="4" id="yC4-vT-qHM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhD-ID-eJT">
-                                <rect key="frame" x="22" y="647" width="331" height="56"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="challengeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mhV-Nr-sqY">
-                                        <rect key="frame" x="23" y="13" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="mhV-Nr-sqY" secondAttribute="height" multiplier="1:1" id="GZc-NK-HL2"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="함께해요! 챌린지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eQ-YH-yQ8">
-                                        <rect key="frame" x="80" y="12" width="80" height="14.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="참여하고 있는 챌린지를 확인해요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9Z-Qu-74Z">
-                                        <rect key="frame" x="79.999999999999986" y="30.333333333333371" width="129.66666666666663" height="12"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                                        <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roP-fn-e2W">
-                                        <rect key="frame" x="232" y="14" width="77" height="28"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="77" id="2ZA-Bo-WA8"/>
-                                            <constraint firstAttribute="height" constant="28" id="phc-Ey-QEn"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="checkButton"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.93297594790000005" green="0.95416921379999997" blue="0.87450009579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstItem="C9Z-Qu-74Z" firstAttribute="top" secondItem="4eQ-YH-yQ8" secondAttribute="bottom" constant="4" id="8dV-gE-m64"/>
-                                    <constraint firstItem="4eQ-YH-yQ8" firstAttribute="leading" secondItem="mhV-Nr-sqY" secondAttribute="trailing" constant="27" id="G14-O9-Itn"/>
-                                    <constraint firstAttribute="bottom" secondItem="mhV-Nr-sqY" secondAttribute="bottom" constant="13" id="IVY-jN-Zm0"/>
-                                    <constraint firstItem="C9Z-Qu-74Z" firstAttribute="leading" secondItem="mhV-Nr-sqY" secondAttribute="trailing" constant="27" id="VZG-qf-gdS"/>
-                                    <constraint firstItem="4eQ-YH-yQ8" firstAttribute="top" secondItem="dhD-ID-eJT" secondAttribute="top" constant="12" id="XB5-c1-18P"/>
-                                    <constraint firstAttribute="height" constant="56" id="dIq-CQ-nLm"/>
-                                    <constraint firstItem="mhV-Nr-sqY" firstAttribute="top" secondItem="dhD-ID-eJT" secondAttribute="top" constant="13" id="enw-RF-NcS"/>
-                                    <constraint firstAttribute="bottom" secondItem="roP-fn-e2W" secondAttribute="bottom" constant="14" id="fjn-Ti-0mo"/>
-                                    <constraint firstItem="roP-fn-e2W" firstAttribute="top" secondItem="dhD-ID-eJT" secondAttribute="top" constant="14" id="jQk-w8-aG3"/>
-                                    <constraint firstItem="mhV-Nr-sqY" firstAttribute="leading" secondItem="dhD-ID-eJT" secondAttribute="leading" constant="23" id="nw0-R1-Iej"/>
-                                    <constraint firstAttribute="trailing" secondItem="roP-fn-e2W" secondAttribute="trailing" constant="22" id="uby-r5-rYf"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dhD-ID-eJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="3hM-IQ-lpK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yrb-mK-ecZ" secondAttribute="trailing" constant="23" id="A2j-sV-dNP"/>
                             <constraint firstItem="yrb-mK-ecZ" firstAttribute="top" secondItem="FWI-N8-GdA" secondAttribute="bottom" constant="16" id="JPd-h9-fya"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dhD-ID-eJT" secondAttribute="trailing" constant="22" id="Let-mw-nDR"/>
                             <constraint firstItem="csn-ih-gM0" firstAttribute="top" secondItem="Avd-pK-5qZ" secondAttribute="bottom" constant="12" id="ZWD-Qp-0gn"/>
                             <constraint firstItem="yrb-mK-ecZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="g7e-5Y-HvL"/>
-                            <constraint firstItem="dhD-ID-eJT" firstAttribute="top" secondItem="csn-ih-gM0" secondAttribute="bottom" constant="12" id="gPh-2h-LkD"/>
                             <constraint firstItem="FWI-N8-GdA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="kaR-k8-PIa"/>
                             <constraint firstItem="FWI-N8-GdA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="lZs-p5-ma2"/>
                             <constraint firstItem="csn-ih-gM0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="mH0-Rg-xnb"/>
                             <constraint firstItem="Avd-pK-5qZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="qBh-nH-RI2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="csn-ih-gM0" secondAttribute="trailing" constant="22" id="tCR-zF-hyx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Avd-pK-5qZ" secondAttribute="trailing" constant="22" id="vuY-1Q-0Yf"/>
-                            <constraint firstItem="Avd-pK-5qZ" firstAttribute="top" secondItem="yrb-mK-ecZ" secondAttribute="bottom" constant="25" id="wFr-85-uLH"/>
+                            <constraint firstItem="Avd-pK-5qZ" firstAttribute="top" secondItem="yrb-mK-ecZ" secondAttribute="bottom" constant="30" id="wFr-85-uLH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w0C-Xb-EQn"/>
@@ -225,7 +176,6 @@
                         <outlet property="firstListView" destination="Avd-pK-5qZ" id="ov1-wz-qSq"/>
                         <outlet property="headerLabel" destination="uq4-oy-1ZP" id="i4c-mp-nY9"/>
                         <outlet property="secondListView" destination="csn-ih-gM0" id="sDX-OL-7Iw"/>
-                        <outlet property="thirdListView" destination="dhD-ID-eJT" id="usg-EV-KHo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -325,7 +275,6 @@
         <image name="backButton" width="24" height="24"/>
         <image name="calendar" width="32" height="32"/>
         <image name="challenge" width="32" height="32"/>
-        <image name="challengeIcon" width="30" height="30"/>
         <image name="checkButton" width="77" height="28"/>
         <image name="farm" width="32" height="32"/>
         <image name="menuIcon" width="30" height="30"/>

@@ -18,7 +18,6 @@ class CalendarVC: UIViewController {
     
     @IBOutlet weak var firstListView: UIView!
     @IBOutlet weak var secondListView: UIView!
-    @IBOutlet weak var thirdListView: UIView!
     
     // MARK: - Vars & Lets Part
     
@@ -75,7 +74,6 @@ class CalendarVC: UIViewController {
     private func setUI() {
         firstListView.layer.cornerRadius = 19
         secondListView.layer.cornerRadius = 19
-        thirdListView.layer.cornerRadius = 19
     }
     
     private func scrollCurrentPage(isPrev: Bool) {
