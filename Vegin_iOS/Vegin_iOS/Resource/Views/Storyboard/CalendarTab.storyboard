@@ -87,6 +87,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="brocoli"/>
+                                                        <connections>
+                                                            <action selector="touchUpLevel1Btn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="deW-6x-SjB"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjA-UH-YXO">
                                                         <rect key="frame" x="52" y="0.0" width="42" height="42"/>
@@ -95,6 +98,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="milk"/>
+                                                        <connections>
+                                                            <action selector="touchUpLevel2Btn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cAI-Ac-HGC"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4D-Yv-eNv">
                                                         <rect key="frame" x="104" y="0.0" width="42" height="42"/>
@@ -103,6 +109,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="egg"/>
+                                                        <connections>
+                                                            <action selector="touchUpLevel3Btn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Zdh-vI-Q7a"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMj-RA-ZoK">
                                                         <rect key="frame" x="156" y="0.0" width="42" height="42"/>
@@ -111,6 +120,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="fish"/>
+                                                        <connections>
+                                                            <action selector="touchUpLevel4Btn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="00q-0s-ieZ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wte-aM-0VH">
                                                         <rect key="frame" x="208" y="0.0" width="42" height="42"/>
@@ -119,6 +131,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="chicken"/>
+                                                        <connections>
+                                                            <action selector="touchUpLevel5Btn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QKR-l2-Jfg"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9G-ja-ueq">
                                                         <rect key="frame" x="260" y="0.0" width="42" height="42"/>
@@ -127,6 +142,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="meat"/>
+                                                        <connections>
+                                                            <action selector="touchUpLevel6Btn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cPd-yv-7aB"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -394,6 +412,12 @@
                     <connections>
                         <outlet property="buttonContentView" destination="CH5-ui-hXz" id="9c2-ss-xCk"/>
                         <outlet property="imageContentView" destination="OKy-n2-NKI" id="cWF-bV-hws"/>
+                        <outlet property="level1Button" destination="gjA-eg-ThB" id="Uzv-TV-w8G"/>
+                        <outlet property="level2Button" destination="kjA-UH-YXO" id="MGf-Mh-XLH"/>
+                        <outlet property="level3Button" destination="d4D-Yv-eNv" id="1lZ-DB-w8n"/>
+                        <outlet property="level4Button" destination="HMj-RA-ZoK" id="oZ1-u4-1ij"/>
+                        <outlet property="level5Button" destination="wte-aM-0VH" id="nfV-Zp-fMw"/>
+                        <outlet property="level6Button" destination="C9G-ja-ueq" id="il1-uH-jxF"/>
                         <outlet property="memoTextView" destination="sGy-Zb-DAM" id="fof-Pr-Zfw"/>
                     </connections>
                 </viewController>
