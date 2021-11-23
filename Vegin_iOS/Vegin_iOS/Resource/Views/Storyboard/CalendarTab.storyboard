@@ -394,6 +394,7 @@
                     <connections>
                         <outlet property="buttonContentView" destination="CH5-ui-hXz" id="9c2-ss-xCk"/>
                         <outlet property="imageContentView" destination="OKy-n2-NKI" id="cWF-bV-hws"/>
+                        <outlet property="memoTextView" destination="sGy-Zb-DAM" id="fof-Pr-Zfw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
