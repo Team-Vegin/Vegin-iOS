@@ -252,11 +252,11 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
         </scene>
-        <!--캘린더-->
+        <!--식단기록-->
         <scene sceneID="RZb-hG-JsL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="28b-C6-kti" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="캘린더" image="calendar" selectedImage="calendar" id="XAJ-ae-HyW"/>
+                    <tabBarItem key="tabBarItem" title="식단기록" image="calendar" selectedImage="calendar" id="XAJ-ae-HyW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tfM-mT-XtK">
                         <autoresizingMask key="autoresizingMask"/>
