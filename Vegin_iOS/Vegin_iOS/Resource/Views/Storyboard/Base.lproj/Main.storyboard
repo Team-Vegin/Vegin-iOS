@@ -182,21 +182,22 @@
             </objects>
             <point key="canvasLocation" x="1871.2" y="97.536945812807886"/>
         </scene>
-        <!--농장통계-->
+        <!--농장-->
         <scene sceneID="IZO-w3-8S2">
             <objects>
-                <viewController id="t7Z-hn-7uu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FarmVC" id="t7Z-hn-7uu" customClass="FarmVC" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bDa-z2-Tfz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="CNb-ym-CMi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="농장통계" image="farm" selectedImage="farm" id="EF7-bh-Gze"/>
+                    <tabBarItem key="tabBarItem" title="농장" image="farm" selectedImage="farm" id="qpL-Un-Agj"/>
+                    <navigationItem key="navigationItem" id="5ci-Q0-wHH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XD7-BR-39W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2522.4000000000001" y="97.536945812807886"/>
+            <point key="canvasLocation" x="769" y="845"/>
         </scene>
         <!--챌린지-->
         <scene sceneID="B8M-xF-4xa">
@@ -243,7 +244,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="28b-C6-kti" kind="relationship" relationship="viewControllers" id="cAq-29-2GQ"/>
-                        <segue destination="t7Z-hn-7uu" kind="relationship" relationship="viewControllers" id="tLn-Gl-fa1"/>
+                        <segue destination="t7Z-hn-7uu" kind="relationship" relationship="viewControllers" id="Rsh-XH-o3Y"/>
                         <segue destination="fbs-vh-AEQ" kind="relationship" relationship="viewControllers" id="rfX-9d-3vC"/>
                         <segue destination="jHg-18-f0J" kind="relationship" relationship="viewControllers" id="kYB-oN-a5m"/>
                     </connections>
