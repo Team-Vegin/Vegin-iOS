@@ -233,7 +233,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="EVm-AA-3Z1">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QEv-yv-i7M" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="QEv-yv-i7M" customClass="TabBarController" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k5n-1b-Qq7">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -255,7 +255,7 @@
         <!--식단기록-->
         <scene sceneID="RZb-hG-JsL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="28b-C6-kti" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CalendarNaviController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="28b-C6-kti" customClass="CalendarNaviController" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="식단기록" image="calendar" selectedImage="calendar" id="XAJ-ae-HyW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tfM-mT-XtK">

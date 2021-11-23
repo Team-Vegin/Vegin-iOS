@@ -20,6 +20,7 @@
 		779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BC2743ACE800F83ACD /* CalendarNaviController.swift */; };
 		77FE1735274B860C00F95F0D /* CustomPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE1733274B860C00F95F0D /* CustomPopUpVC.swift */; };
 		77FE1736274B860C00F95F0D /* CustomPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77FE1734274B860C00F95F0D /* CustomPopUpVC.xib */; };
+		77FE1738274D2EC800F95F0D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE1737274D2EC700F95F0D /* TabBarController.swift */; };
 		EECC6F26D6F157BF59080165 /* Pods_Vegin_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24999E6C3C90A75DE12BA65A /* Pods_Vegin_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		779015BC2743ACE800F83ACD /* CalendarNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarNaviController.swift; path = Vegin_iOS/Source/ViewControllers/CalendarNaviController.swift; sourceTree = SOURCE_ROOT; };
 		77FE1733274B860C00F95F0D /* CustomPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUpVC.swift; sourceTree = "<group>"; };
 		77FE1734274B860C00F95F0D /* CustomPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopUpVC.xib; sourceTree = "<group>"; };
+		77FE1737274D2EC700F95F0D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		81674B682E3C2F3F4442D9A7 /* Pods-Vegin_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegin_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				772C1482273CF9D500BB0127 /* CalendarVC.swift */,
+				77FE1737274D2EC700F95F0D /* TabBarController.swift */,
 				779015BC2743ACE800F83ACD /* CalendarNaviController.swift */,
 				779015BA2742E51A00F83ACD /* WriteVC.swift */,
 			);
@@ -320,6 +323,7 @@
 				772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */,
 				772C1471273B7DAB00BB0127 /* SceneDelegate.swift in Sources */,
 				779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */,
+				77FE1738274D2EC800F95F0D /* TabBarController.swift in Sources */,
 				7744C57E2742C13600325814 /* ClassName+UIViewController.swift in Sources */,
 				7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */,
 				779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */,

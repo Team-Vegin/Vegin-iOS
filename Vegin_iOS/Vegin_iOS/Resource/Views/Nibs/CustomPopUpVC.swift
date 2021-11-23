@@ -25,12 +25,14 @@ class CustomPopUpVC: UIViewController {
         alertView.layer.cornerRadius = 20
     }
     @objc func okButtonClicked(_sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
         let tabBarStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        guard let nextVC = tabBarStoryBoard.instantiateViewController(withIdentifier: CalendarVC.className) as? CalendarVC else { return }
+        guard let nextVC = tabBarStoryBoard.instantiateViewController(withIdentifier: TabBarController.className) as? TabBarController else { return }
         
         nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
         present(nextVC, animated: true, completion: nil)
+        
     }
 
 }
