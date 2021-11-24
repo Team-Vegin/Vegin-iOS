@@ -170,7 +170,6 @@
 		7744C5782742BE0000325814 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				77FE1733274B860C00F95F0D /* CustomPopUpVC.swift */,
 				77FE1734274B860C00F95F0D /* CustomPopUpVC.xib */,
 			);
 			path = Nibs;
@@ -194,6 +193,7 @@
 				779015BC2743ACE800F83ACD /* CalendarNaviController.swift */,
 				779015BA2742E51A00F83ACD /* WriteVC.swift */,
 				77FE173B274D8F7400F95F0D /* FarmVC.swift */,
+				77FE1733274B860C00F95F0D /* CustomPopUpVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
