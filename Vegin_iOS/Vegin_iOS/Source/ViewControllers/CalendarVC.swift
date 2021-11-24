@@ -18,7 +18,6 @@ class CalendarVC: UIViewController {
     
     @IBOutlet weak var firstListView: UIView!
     @IBOutlet weak var secondListView: UIView!
-    @IBOutlet weak var thirdListView: UIView!
     
     // MARK: - Vars & Lets Part
     
@@ -49,6 +48,13 @@ class CalendarVC: UIViewController {
         scrollCurrentPage(isPrev: false)
     }
     
+    @IBAction func touchUpToGoWriteVC(_ sender: Any) {
+        let calendarTabSB = UIStoryboard.init(name: "CalendarTab", bundle: nil)
+        guard let nextVC = calendarTabSB.instantiateViewController(withIdentifier: WriteVC.className) as? WriteVC else { return }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
     // MARK: - Custom Method Part
     
     func getMonthDate(date: Date) -> String{
@@ -68,7 +74,6 @@ class CalendarVC: UIViewController {
     private func setUI() {
         firstListView.layer.cornerRadius = 19
         secondListView.layer.cornerRadius = 19
-        thirdListView.layer.cornerRadius = 19
     }
     
     private func scrollCurrentPage(isPrev: Bool) {
@@ -98,11 +103,11 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
         calendar.appearance.headerTitleColor = .black
         calendar.appearance.weekdayTextColor = .gray
         calendar.appearance.headerMinimumDissolvedAlpha = 0
-        //calendar.appearance.borderRadius = 0.2
+        calendar.appearance.todayColor = UIColor(red: 194/255, green: 225/255, blue: 165/255, alpha: 1)
+        calendar.appearance.titleTodayColor = UIColor(red: 82/255, green: 153/255, blue: 90/255, alpha: 1)
         
         let monthData = getMonthDate(date: calendar.currentPage)
         self.headerLabel.text = monthData
-        
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
@@ -115,7 +120,12 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
 
         if eventDate == "2021년 11월 15일" {
             return UIImage(named: "level6")
+        } else if eventDate == "2021년 11월 21일" {
+            return UIImage(named: "level1")
+        } else if eventDate == "2021년 11월 23일" {
+            return UIImage(named: "level2")
         } else { return nil }
+        
         
      }
         
