@@ -38,7 +38,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY4-ys-aP1">
-                            <rect key="frame" x="64" y="157" width="70" height="28"/>
+                            <rect key="frame" x="64" y="159" width="70" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="1a7-QN-42I"/>
                                 <constraint firstAttribute="width" constant="70" id="sVi-gg-3t0"/>
@@ -47,13 +47,13 @@
                             <buttonConfiguration key="configuration" style="plain" image="farmcheck_btn"/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 농작물도 지급되었네요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3K1-Xq-gNf">
-                            <rect key="frame" x="82" y="116" width="166" height="17"/>
+                            <rect key="frame" x="82" y="118" width="166" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="0.32156862745098036" green="0.59999999999999998" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WF-EF-weH">
-                            <rect key="frame" x="196" y="157" width="70" height="28"/>
+                            <rect key="frame" x="196" y="159" width="70" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="FD8-U7-i5t"/>
                                 <constraint firstAttribute="width" constant="70" id="d9W-dT-t77"/>
@@ -76,7 +76,7 @@
                         <constraint firstAttribute="height" constant="235" id="Z3U-NH-qhu"/>
                         <constraint firstAttribute="trailing" secondItem="J7z-7O-Kpo" secondAttribute="trailing" constant="145" id="ay7-Oo-GHM"/>
                         <constraint firstItem="tY4-ys-aP1" firstAttribute="leading" secondItem="Rg0-Cm-3nZ" secondAttribute="leading" constant="64" id="fc7-EI-hjm"/>
-                        <constraint firstItem="3K1-Xq-gNf" firstAttribute="top" secondItem="WTU-kK-EJz" secondAttribute="bottom" constant="2" id="roS-Zt-wG7"/>
+                        <constraint firstItem="3K1-Xq-gNf" firstAttribute="top" secondItem="WTU-kK-EJz" secondAttribute="bottom" constant="4" id="roS-Zt-wG7"/>
                         <constraint firstItem="3WF-EF-weH" firstAttribute="top" secondItem="3K1-Xq-gNf" secondAttribute="bottom" constant="24" id="zhZ-D8-ETF"/>
                     </constraints>
                 </view>
