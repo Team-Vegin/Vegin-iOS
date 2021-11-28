@@ -172,15 +172,18 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hek-Cs-OOp">
                                                 <rect key="frame" x="36" y="492" width="275" height="36"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udT-HC-pCz">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udT-HC-pCz">
                                                         <rect key="frame" x="0.0" y="0.0" width="47" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="47" id="rUf-xn-Xou"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="breakfast"/>
+                                                        <connections>
+                                                            <action selector="touchUpMealButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="y4L-OM-U2A"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yk-6J-zCB">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yk-6J-zCB">
                                                         <rect key="frame" x="57" y="0.0" width="47" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="47" id="JZs-9f-zLq"/>
@@ -188,6 +191,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="brunch"/>
+                                                        <connections>
+                                                            <action selector="touchUpMealButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2lj-8i-NoE"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnH-20-ruc">
                                                         <rect key="frame" x="114" y="0.0" width="47" height="36"/>
@@ -197,6 +203,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="lunch"/>
+                                                        <connections>
+                                                            <action selector="touchUpMealButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8m7-tz-7Pb"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD9-hC-qFb">
                                                         <rect key="frame" x="171" y="0.0" width="47" height="36"/>
@@ -206,6 +215,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="lundinner"/>
+                                                        <connections>
+                                                            <action selector="touchUpMealButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mJe-tN-tt5"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyF-pX-WGo">
                                                         <rect key="frame" x="228" y="0.0" width="47" height="36"/>
@@ -215,6 +227,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="dinner"/>
+                                                        <connections>
+                                                            <action selector="touchUpMealButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="67h-K5-4uI"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -419,6 +434,11 @@
                         <outlet property="level5Button" destination="wte-aM-0VH" id="nfV-Zp-fMw"/>
                         <outlet property="level6Button" destination="C9G-ja-ueq" id="il1-uH-jxF"/>
                         <outlet property="memoTextView" destination="sGy-Zb-DAM" id="fof-Pr-Zfw"/>
+                        <outletCollection property="mealButtons" destination="udT-HC-pCz" collectionClass="NSMutableArray" id="xHJ-8o-Osv"/>
+                        <outletCollection property="mealButtons" destination="9yk-6J-zCB" collectionClass="NSMutableArray" id="hye-aA-9mn"/>
+                        <outletCollection property="mealButtons" destination="hnH-20-ruc" collectionClass="NSMutableArray" id="5TM-uQ-Dtg"/>
+                        <outletCollection property="mealButtons" destination="wD9-hC-qFb" collectionClass="NSMutableArray" id="lJy-aQ-1KZ"/>
+                        <outletCollection property="mealButtons" destination="uyF-pX-WGo" collectionClass="NSMutableArray" id="re3-w1-k8F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -40,6 +40,8 @@ class WriteVC: UIViewController {
         }
     }
     
+    var indexOfMeal: Int?
+    
     @IBOutlet weak var imageContentView: UIView!
     @IBOutlet weak var buttonContentView: UIView!
     @IBOutlet weak var memoTextView: UITextView!
@@ -49,6 +51,8 @@ class WriteVC: UIViewController {
     @IBOutlet weak var level4Button: UIButton!
     @IBOutlet weak var level5Button: UIButton!
     @IBOutlet weak var level6Button: UIButton!
+    
+    @IBOutlet var mealButtons: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +66,6 @@ class WriteVC: UIViewController {
     }
     
     @IBAction func touchUpToSaveButton(_ sender: Any) {
-//        self.navigationController?.popViewController(animated: true)
         let vc = CustomPopUpVC(nibName: CustomPopUpVC.className, bundle: nil)
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
@@ -105,6 +108,7 @@ class WriteVC: UIViewController {
         } else if !isLevel6Selected {
             level6Button.setImage(UIImage.init(named: "meat"), for: .normal)
         }
+
     }
     
     @IBAction func touchUpLevel1Btn(_ sender: Any) {
@@ -127,9 +131,42 @@ class WriteVC: UIViewController {
         isLevel6Selected = !isLevel6Selected
     }
     
+    @IBAction func touchUpMealButton(_ sender: UIButton) {
+        if indexOfMeal != nil {
+            if !sender.isSelected {
+                for index in mealButtons.indices {
+                    mealButtons[index].isSelected = false
+                }
+                sender.isSelected = true
+                indexOfMeal = mealButtons.firstIndex(of: sender)
+            } else {
+                sender.isSelected = false
+                indexOfMeal = nil
+            }
+        } else {
+            sender.isSelected = true
+            indexOfMeal = mealButtons.firstIndex(of: sender)
+        }
+    }
+    
     private func setUI() {
         imageContentView.layer.cornerRadius = 25
         buttonContentView.layer.cornerRadius = 20
+        mealButtons[0].setImage(UIImage.init(named: "select"), for: .selected)
+        mealButtons[0].setImage(UIImage.init(named: "breakfast"), for: .normal)
+        mealButtons[0].tintColor = .white
+        mealButtons[1].setImage(UIImage.init(named: "select-4"), for: .selected)
+        mealButtons[1].setImage(UIImage.init(named: "brunch"), for: .normal)
+        mealButtons[1].tintColor = .white
+        mealButtons[2].setImage(UIImage.init(named: "select-2"), for: .selected)
+        mealButtons[2].setImage(UIImage.init(named: "lunch"), for: .normal)
+        mealButtons[2].tintColor = .white
+        mealButtons[3].setImage(UIImage.init(named: "select-3"), for: .selected)
+        mealButtons[3].setImage(UIImage.init(named: "lundinner"), for: .normal)
+        mealButtons[3].tintColor = .white
+        mealButtons[4].setImage(UIImage.init(named: "select-1"), for: .selected)
+        mealButtons[4].setImage(UIImage.init(named: "dinner"), for: .normal)
+        mealButtons[4].tintColor = .white
     }
 }
 
