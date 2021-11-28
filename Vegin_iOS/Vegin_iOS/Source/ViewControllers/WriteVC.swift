@@ -41,6 +41,7 @@ class WriteVC: UIViewController {
     }
     
     var indexOfMeal: Int?
+    var indexOfAmount: Int?
     
     @IBOutlet weak var imageContentView: UIView!
     @IBOutlet weak var buttonContentView: UIView!
@@ -53,6 +54,7 @@ class WriteVC: UIViewController {
     @IBOutlet weak var level6Button: UIButton!
     
     @IBOutlet var mealButtons: [UIButton]!
+    @IBOutlet var amountButtons: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,6 +151,24 @@ class WriteVC: UIViewController {
         }
     }
     
+    @IBAction func touchUpAmountButton(_ sender: UIButton) {
+        if indexOfAmount != nil {
+            if !sender.isSelected {
+                for index in amountButtons.indices {
+                    amountButtons[index].isSelected = false
+                }
+                sender.isSelected = true
+                indexOfAmount = amountButtons.firstIndex(of: sender)
+            } else {
+                sender.isSelected = false
+                indexOfAmount = nil
+            }
+        } else {
+            sender.isSelected = true
+            indexOfAmount = amountButtons.firstIndex(of: sender)
+        }
+    }
+    
     private func setUI() {
         imageContentView.layer.cornerRadius = 25
         buttonContentView.layer.cornerRadius = 20
@@ -167,6 +187,15 @@ class WriteVC: UIViewController {
         mealButtons[4].setImage(UIImage.init(named: "select-1"), for: .selected)
         mealButtons[4].setImage(UIImage.init(named: "dinner"), for: .normal)
         mealButtons[4].tintColor = .white
+        amountButtons[0].setImage(UIImage.init(named: "little-select"), for: .selected)
+        amountButtons[0].setImage(UIImage.init(named: "little"), for: .normal)
+        amountButtons[0].tintColor = .white
+        amountButtons[1].setImage(UIImage.init(named: "medium-select"), for: .selected)
+        amountButtons[1].setImage(UIImage.init(named: "medium"), for: .normal)
+        amountButtons[1].tintColor = .white
+        amountButtons[2].setImage(UIImage.init(named: "much-select"), for: .selected)
+        amountButtons[2].setImage(UIImage.init(named: "much"), for: .normal)
+        amountButtons[2].tintColor = .white
     }
 }
 

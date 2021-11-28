@@ -262,6 +262,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="little"/>
+                                                        <connections>
+                                                            <action selector="touchUpAmountButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6ga-Yw-kNQ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhd-Ur-3t0">
                                                         <rect key="frame" x="57" y="0.0" width="47" height="36"/>
@@ -271,6 +274,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="medium"/>
+                                                        <connections>
+                                                            <action selector="touchUpAmountButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gMz-oQ-p4U"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du9-Ac-T4I">
                                                         <rect key="frame" x="114" y="0.0" width="47" height="36"/>
@@ -279,6 +285,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="much"/>
+                                                        <connections>
+                                                            <action selector="touchUpAmountButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gG4-FU-dIA"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -439,6 +448,9 @@
                         <outletCollection property="mealButtons" destination="hnH-20-ruc" collectionClass="NSMutableArray" id="5TM-uQ-Dtg"/>
                         <outletCollection property="mealButtons" destination="wD9-hC-qFb" collectionClass="NSMutableArray" id="lJy-aQ-1KZ"/>
                         <outletCollection property="mealButtons" destination="uyF-pX-WGo" collectionClass="NSMutableArray" id="re3-w1-k8F"/>
+                        <outletCollection property="amountButtons" destination="Pxq-SD-Roe" collectionClass="NSMutableArray" id="cs2-dF-le0"/>
+                        <outletCollection property="amountButtons" destination="Lhd-Ur-3t0" collectionClass="NSMutableArray" id="QD1-gm-pnQ"/>
+                        <outletCollection property="amountButtons" destination="du9-Ac-T4I" collectionClass="NSMutableArray" id="fRh-GV-jmm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
