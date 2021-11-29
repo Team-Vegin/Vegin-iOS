@@ -199,22 +199,6 @@
             </objects>
             <point key="canvasLocation" x="769" y="845"/>
         </scene>
-        <!--챌린지-->
-        <scene sceneID="B8M-xF-4xa">
-            <objects>
-                <viewController id="fbs-vh-AEQ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ics-T1-pYa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="W1P-Z8-uvP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="챌린지" image="challenge" selectedImage="challenge" id="eHj-jD-07O"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7uO-sT-YQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3113" y="98"/>
-        </scene>
         <!--마이페이지-->
         <scene sceneID="yVt-05-Hc8">
             <objects>
@@ -243,9 +227,8 @@
                         <color key="selectedImageTintColor" red="0.38817867639999998" green="0.59490376710000004" blue="0.3764356673" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="28b-C6-kti" kind="relationship" relationship="viewControllers" id="cAq-29-2GQ"/>
                         <segue destination="t7Z-hn-7uu" kind="relationship" relationship="viewControllers" id="Rsh-XH-o3Y"/>
-                        <segue destination="fbs-vh-AEQ" kind="relationship" relationship="viewControllers" id="rfX-9d-3vC"/>
+                        <segue destination="28b-C6-kti" kind="relationship" relationship="viewControllers" id="cAq-29-2GQ"/>
                         <segue destination="jHg-18-f0J" kind="relationship" relationship="viewControllers" id="kYB-oN-a5m"/>
                     </connections>
                 </tabBarController>
@@ -275,7 +258,6 @@
     <resources>
         <image name="backButton" width="24" height="24"/>
         <image name="calendar" width="32" height="32"/>
-        <image name="challenge" width="32" height="32"/>
         <image name="checkButton" width="77" height="28"/>
         <image name="farm" width="32" height="32"/>
         <image name="menuIcon" width="30" height="30"/>
