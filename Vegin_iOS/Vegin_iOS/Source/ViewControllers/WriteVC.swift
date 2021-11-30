@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WriteVC: UIViewController {
+class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     var isLevel1Selected = false {
         didSet {
@@ -42,7 +42,9 @@ class WriteVC: UIViewController {
     
     var indexOfMeal: Int?
     var indexOfAmount: Int?
+    let picker = UIImagePickerController()
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageContentView: UIView!
     @IBOutlet weak var buttonContentView: UIView!
     @IBOutlet weak var memoTextView: UITextView!
@@ -58,6 +60,7 @@ class WriteVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        picker.delegate = self
         setUI()
         hideKeyboardWhenTappedAround()
         initUI()
@@ -167,6 +170,44 @@ class WriteVC: UIViewController {
             sender.isSelected = true
             indexOfAmount = amountButtons.firstIndex(of: sender)
         }
+    }
+    @IBAction func touchUpToShowImage(_ sender: Any) {
+        let alert = UIAlertController(title: "이미지 업로드", message: "식단 사진을 업로드해주세요", preferredStyle: .actionSheet)
+        let library = UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
+        }
+        let camera = UIAlertAction(title: "카메라", style: .default) { (action) in
+            self.openCamera()
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(library)
+        alert.addAction(camera)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func openLibrary() {
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        present(picker, animated: false, completion: nil)
+    }
+    
+    func openCamera() {
+        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+            picker.sourceType = .camera
+            present(picker, animated: false, completion: nil)
+        }
+        else{
+            print("Camera not available")
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.image = image
+            print(info)
+        }
+        dismiss(animated: true, completion: nil)
     }
     
     private func setUI() {
