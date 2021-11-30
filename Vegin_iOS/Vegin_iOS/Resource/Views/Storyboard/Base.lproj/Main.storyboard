@@ -182,7 +182,7 @@
             </objects>
             <point key="canvasLocation" x="1871.2" y="97.536945812807886"/>
         </scene>
-        <!--농장-->
+        <!--홈-->
         <scene sceneID="IZO-w3-8S2">
             <objects>
                 <viewController storyboardIdentifier="FarmVC" id="t7Z-hn-7uu" customClass="FarmVC" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -192,7 +192,7 @@
                         <viewLayoutGuide key="safeArea" id="CNb-ym-CMi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="농장" image="farm" selectedImage="farm" id="qpL-Un-Agj"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="farm" selectedImage="farm" id="qpL-Un-Agj"/>
                     <navigationItem key="navigationItem" id="5ci-Q0-wHH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XD7-BR-39W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
