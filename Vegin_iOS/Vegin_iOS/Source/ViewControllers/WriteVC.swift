@@ -55,6 +55,7 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     @IBOutlet weak var level5Button: UIButton!
     @IBOutlet weak var level6Button: UIButton!
     
+    @IBOutlet weak var imageUploadButton: UIButton!
     @IBOutlet var mealButtons: [UIButton]!
     @IBOutlet var amountButtons: [UIButton]!
     
@@ -207,11 +208,13 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
             imageView.image = image
             print(info)
         }
+        imageUploadButton.tintColor = .clear
         dismiss(animated: true, completion: nil)
     }
     
     private func setUI() {
         imageContentView.layer.cornerRadius = 25
+        imageView.layer.cornerRadius = 25
         buttonContentView.layer.cornerRadius = 20
         mealButtons[0].setImage(UIImage.init(named: "select"), for: .selected)
         mealButtons[0].setImage(UIImage.init(named: "breakfast"), for: .normal)
