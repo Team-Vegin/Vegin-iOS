@@ -70,6 +70,9 @@ class CalendarVC: UIViewController {
             df.dateFormat = "yyyy년 M월 dd일"
             return df.string(from: date)
         }
+    func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+        return false // 날짜 선택 안되도록
+    }
     
     private func setUI() {
         firstListView.layer.cornerRadius = 19

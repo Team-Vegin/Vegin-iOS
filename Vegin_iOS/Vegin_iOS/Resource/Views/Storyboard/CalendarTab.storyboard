@@ -25,7 +25,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKy-n2-NKI">
                                                 <rect key="frame" x="22" y="20" width="331" height="331"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WGa-QR-0hm">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WGa-QR-0hm">
                                                         <rect key="frame" x="0.0" y="0.0" width="331" height="331"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdH-fF-dmK">
@@ -34,6 +34,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="사진 업로드">
                                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="touchUpToShowImage:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="USU-VO-u8c"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
@@ -172,15 +175,18 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hek-Cs-OOp">
                                                 <rect key="frame" x="36" y="492" width="275" height="36"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udT-HC-pCz">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udT-HC-pCz">
                                                         <rect key="frame" x="0.0" y="0.0" width="47" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="47" id="rUf-xn-Xou"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="breakfast"/>
+                                                        <connections>
+                                                            <action selector="touchUpMealButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="y4L-OM-U2A"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yk-6J-zCB">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yk-6J-zCB">
                                                         <rect key="frame" x="57" y="0.0" width="47" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="47" id="JZs-9f-zLq"/>
@@ -188,6 +194,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="brunch"/>
+                                                        <connections>
+                                                            <action selector="touchUpMealButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2lj-8i-NoE"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnH-20-ruc">
                                                         <rect key="frame" x="114" y="0.0" width="47" height="36"/>
@@ -197,6 +206,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="lunch"/>
+                                                        <connections>
+                                                            <action selector="touchUpMealButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8m7-tz-7Pb"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD9-hC-qFb">
                                                         <rect key="frame" x="171" y="0.0" width="47" height="36"/>
@@ -206,6 +218,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="lundinner"/>
+                                                        <connections>
+                                                            <action selector="touchUpMealButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mJe-tN-tt5"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyF-pX-WGo">
                                                         <rect key="frame" x="228" y="0.0" width="47" height="36"/>
@@ -215,6 +230,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="dinner"/>
+                                                        <connections>
+                                                            <action selector="touchUpMealButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="67h-K5-4uI"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -247,6 +265,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="little"/>
+                                                        <connections>
+                                                            <action selector="touchUpAmountButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6ga-Yw-kNQ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhd-Ur-3t0">
                                                         <rect key="frame" x="57" y="0.0" width="47" height="36"/>
@@ -256,6 +277,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="medium"/>
+                                                        <connections>
+                                                            <action selector="touchUpAmountButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gMz-oQ-p4U"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du9-Ac-T4I">
                                                         <rect key="frame" x="114" y="0.0" width="47" height="36"/>
@@ -264,6 +288,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="much"/>
+                                                        <connections>
+                                                            <action selector="touchUpAmountButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gG4-FU-dIA"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -412,6 +439,8 @@
                     <connections>
                         <outlet property="buttonContentView" destination="CH5-ui-hXz" id="9c2-ss-xCk"/>
                         <outlet property="imageContentView" destination="OKy-n2-NKI" id="cWF-bV-hws"/>
+                        <outlet property="imageUploadButton" destination="OdH-fF-dmK" id="I7F-hE-vZL"/>
+                        <outlet property="imageView" destination="WGa-QR-0hm" id="nQn-AU-40z"/>
                         <outlet property="level1Button" destination="gjA-eg-ThB" id="Uzv-TV-w8G"/>
                         <outlet property="level2Button" destination="kjA-UH-YXO" id="MGf-Mh-XLH"/>
                         <outlet property="level3Button" destination="d4D-Yv-eNv" id="1lZ-DB-w8n"/>
@@ -419,6 +448,14 @@
                         <outlet property="level5Button" destination="wte-aM-0VH" id="nfV-Zp-fMw"/>
                         <outlet property="level6Button" destination="C9G-ja-ueq" id="il1-uH-jxF"/>
                         <outlet property="memoTextView" destination="sGy-Zb-DAM" id="fof-Pr-Zfw"/>
+                        <outletCollection property="mealButtons" destination="udT-HC-pCz" collectionClass="NSMutableArray" id="xHJ-8o-Osv"/>
+                        <outletCollection property="mealButtons" destination="9yk-6J-zCB" collectionClass="NSMutableArray" id="hye-aA-9mn"/>
+                        <outletCollection property="mealButtons" destination="hnH-20-ruc" collectionClass="NSMutableArray" id="5TM-uQ-Dtg"/>
+                        <outletCollection property="mealButtons" destination="wD9-hC-qFb" collectionClass="NSMutableArray" id="lJy-aQ-1KZ"/>
+                        <outletCollection property="mealButtons" destination="uyF-pX-WGo" collectionClass="NSMutableArray" id="re3-w1-k8F"/>
+                        <outletCollection property="amountButtons" destination="Pxq-SD-Roe" collectionClass="NSMutableArray" id="cs2-dF-le0"/>
+                        <outletCollection property="amountButtons" destination="Lhd-Ur-3t0" collectionClass="NSMutableArray" id="QD1-gm-pnQ"/>
+                        <outletCollection property="amountButtons" destination="du9-Ac-T4I" collectionClass="NSMutableArray" id="fRh-GV-jmm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

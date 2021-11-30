@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WriteVC: UIViewController {
+class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     var isLevel1Selected = false {
         didSet {
@@ -40,6 +40,11 @@ class WriteVC: UIViewController {
         }
     }
     
+    var indexOfMeal: Int?
+    var indexOfAmount: Int?
+    let picker = UIImagePickerController()
+    
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageContentView: UIView!
     @IBOutlet weak var buttonContentView: UIView!
     @IBOutlet weak var memoTextView: UITextView!
@@ -50,8 +55,13 @@ class WriteVC: UIViewController {
     @IBOutlet weak var level5Button: UIButton!
     @IBOutlet weak var level6Button: UIButton!
     
+    @IBOutlet weak var imageUploadButton: UIButton!
+    @IBOutlet var mealButtons: [UIButton]!
+    @IBOutlet var amountButtons: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        picker.delegate = self
         setUI()
         hideKeyboardWhenTappedAround()
         initUI()
@@ -62,7 +72,6 @@ class WriteVC: UIViewController {
     }
     
     @IBAction func touchUpToSaveButton(_ sender: Any) {
-//        self.navigationController?.popViewController(animated: true)
         let vc = CustomPopUpVC(nibName: CustomPopUpVC.className, bundle: nil)
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
@@ -105,6 +114,7 @@ class WriteVC: UIViewController {
         } else if !isLevel6Selected {
             level6Button.setImage(UIImage.init(named: "meat"), for: .normal)
         }
+
     }
     
     @IBAction func touchUpLevel1Btn(_ sender: Any) {
@@ -127,9 +137,109 @@ class WriteVC: UIViewController {
         isLevel6Selected = !isLevel6Selected
     }
     
+    @IBAction func touchUpMealButton(_ sender: UIButton) {
+        if indexOfMeal != nil {
+            if !sender.isSelected {
+                for index in mealButtons.indices {
+                    mealButtons[index].isSelected = false
+                }
+                sender.isSelected = true
+                indexOfMeal = mealButtons.firstIndex(of: sender)
+            } else {
+                sender.isSelected = false
+                indexOfMeal = nil
+            }
+        } else {
+            sender.isSelected = true
+            indexOfMeal = mealButtons.firstIndex(of: sender)
+        }
+    }
+    
+    @IBAction func touchUpAmountButton(_ sender: UIButton) {
+        if indexOfAmount != nil {
+            if !sender.isSelected {
+                for index in amountButtons.indices {
+                    amountButtons[index].isSelected = false
+                }
+                sender.isSelected = true
+                indexOfAmount = amountButtons.firstIndex(of: sender)
+            } else {
+                sender.isSelected = false
+                indexOfAmount = nil
+            }
+        } else {
+            sender.isSelected = true
+            indexOfAmount = amountButtons.firstIndex(of: sender)
+        }
+    }
+    @IBAction func touchUpToShowImage(_ sender: Any) {
+        let alert = UIAlertController(title: "이미지 업로드", message: "식단 사진을 업로드해주세요", preferredStyle: .actionSheet)
+        let library = UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
+        }
+        let camera = UIAlertAction(title: "카메라", style: .default) { (action) in
+            self.openCamera()
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(library)
+        alert.addAction(camera)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func openLibrary() {
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        present(picker, animated: false, completion: nil)
+    }
+    
+    func openCamera() {
+        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+            picker.sourceType = .camera
+            present(picker, animated: false, completion: nil)
+        }
+        else{
+            print("Camera not available")
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.image = image
+            print(info)
+        }
+        imageUploadButton.tintColor = .clear
+        dismiss(animated: true, completion: nil)
+    }
+    
     private func setUI() {
         imageContentView.layer.cornerRadius = 25
+        imageView.layer.cornerRadius = 25
         buttonContentView.layer.cornerRadius = 20
+        mealButtons[0].setImage(UIImage.init(named: "select"), for: .selected)
+        mealButtons[0].setImage(UIImage.init(named: "breakfast"), for: .normal)
+        mealButtons[0].tintColor = .white
+        mealButtons[1].setImage(UIImage.init(named: "select-4"), for: .selected)
+        mealButtons[1].setImage(UIImage.init(named: "brunch"), for: .normal)
+        mealButtons[1].tintColor = .white
+        mealButtons[2].setImage(UIImage.init(named: "select-2"), for: .selected)
+        mealButtons[2].setImage(UIImage.init(named: "lunch"), for: .normal)
+        mealButtons[2].tintColor = .white
+        mealButtons[3].setImage(UIImage.init(named: "select-3"), for: .selected)
+        mealButtons[3].setImage(UIImage.init(named: "lundinner"), for: .normal)
+        mealButtons[3].tintColor = .white
+        mealButtons[4].setImage(UIImage.init(named: "select-1"), for: .selected)
+        mealButtons[4].setImage(UIImage.init(named: "dinner"), for: .normal)
+        mealButtons[4].tintColor = .white
+        amountButtons[0].setImage(UIImage.init(named: "little-select"), for: .selected)
+        amountButtons[0].setImage(UIImage.init(named: "little"), for: .normal)
+        amountButtons[0].tintColor = .white
+        amountButtons[1].setImage(UIImage.init(named: "medium-select"), for: .selected)
+        amountButtons[1].setImage(UIImage.init(named: "medium"), for: .normal)
+        amountButtons[1].tintColor = .white
+        amountButtons[2].setImage(UIImage.init(named: "much-select"), for: .selected)
+        amountButtons[2].setImage(UIImage.init(named: "much"), for: .normal)
+        amountButtons[2].tintColor = .white
     }
 }
 

@@ -28,22 +28,20 @@ class CustomPopUpVC: UIViewController {
     }
     
     @objc func okButtonClicked(_sender: UIButton) {
-        //dismiss(animated: true, completion: nil)
         let tabBarStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
         guard let nextVC = tabBarStoryBoard.instantiateViewController(withIdentifier: TabBarController.className) as? TabBarController else { return }
         
-        nextVC.selectedIndex = 0
+        nextVC.selectedIndex = 1
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         present(nextVC, animated: true, completion: nil)
     }
     
     @objc func farmCheckButtonClicked(_sender: UIButton) {
-        //dismiss(animated: true, completion: nil)
         let tabBarStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
         guard let nextVC = tabBarStoryBoard.instantiateViewController(withIdentifier: TabBarController.className) as? TabBarController else { return }
         
-        nextVC.selectedIndex = 1
+        nextVC.selectedIndex = 0
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         present(nextVC, animated: true, completion: nil)
