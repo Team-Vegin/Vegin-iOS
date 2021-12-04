@@ -192,7 +192,7 @@
                         <viewLayoutGuide key="safeArea" id="CNb-ym-CMi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="farm" selectedImage="farm" id="qpL-Un-Agj"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="home" selectedImage="home" id="qpL-Un-Agj"/>
                     <navigationItem key="navigationItem" id="5ci-Q0-wHH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XD7-BR-39W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -259,7 +259,7 @@
         <image name="backButton" width="24" height="24"/>
         <image name="calendar" width="32" height="32"/>
         <image name="checkButton" width="77" height="28"/>
-        <image name="farm" width="32" height="32"/>
+        <image name="home" width="24" height="24"/>
         <image name="menuIcon" width="30" height="30"/>
         <image name="my" width="32" height="32"/>
         <image name="nextButton" width="24" height="24"/>
