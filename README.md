@@ -9,9 +9,9 @@
 |:----------|:----------:|:----:|
 | 초기 세팅 및 리드 개발 | ✅ | 최은주 |
 | TabBar 구현 | ✅ | 최은주 |
-| DB 구축 |  |  |
-| Tab #1 - Home View |  |  |
+| DB 설계 및 구축 |  | 이태은, 최은주 |
+| Tab #1 - Home View |  | 이태은 |
 | Tab #2 - 기록 View (캘린더, 식단기록) | ✅ | 최은주 |
-| Tab #3 - My Page View |  |  |
-| Splash & Onboarding | |  |
-| 로그인, 회원가입 뷰 |  |  |
+| Tab #3 - My Page View |  | 최은주 |
+| Splash & Onboarding | | 이태은 |
+| 로그인, 회원가입 뷰 |  | 최은주 |
