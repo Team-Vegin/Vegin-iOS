@@ -63,6 +63,8 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isTranslucent = true
         picker.delegate = self
         setUI()
         hideKeyboardWhenTappedAround()
