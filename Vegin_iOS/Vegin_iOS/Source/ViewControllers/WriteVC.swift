@@ -43,6 +43,8 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     var indexOfMeal: Int?
     var indexOfAmount: Int?
     let picker = UIImagePickerController()
+    private let placeholder = "메모를 입력하세요."
+    private var textBottomConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageContentView: UIView!
@@ -61,6 +63,8 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isTranslucent = true
         picker.delegate = self
         setUI()
         hideKeyboardWhenTappedAround()
@@ -249,13 +253,27 @@ extension WriteVC: UITextViewDelegate {
         if let keyboardFrame = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-            self.view.frame.origin.y = -keyboardHeight
+            self.view.frame.origin.y = -keyboardHeight + 30
         }
     }
     
     @objc
     func keyboardWillHide(_ sender: Notification) {
         self.view.frame.origin.y = 0
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == placeholder {
+            textView.text.removeAll()
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if !textView.hasText || textView.text == placeholder {
+            textView.text = placeholder
+            textView.textColor = .gray
+        }
     }
 }
 
