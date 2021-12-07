@@ -126,7 +126,7 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
             return UIImage(named: "level6")
         } else if eventDate == "2021년 11월 21일" {
             return UIImage(named: "level1")
-        } else if eventDate == "2021년 12월 3일" {
+        } else if eventDate == "2021년 12월 03일" {
             return UIImage(named: "level2")
         } else { return nil }
         
