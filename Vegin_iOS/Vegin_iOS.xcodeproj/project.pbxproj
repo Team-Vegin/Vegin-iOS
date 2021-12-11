@@ -13,6 +13,7 @@
 		772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772C1477273B7DAE00BB0127 /* Assets.xcassets */; };
 		772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */; };
 		772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1482273CF9D500BB0127 /* CalendarVC.swift */; };
+		773966022764CD860017FB10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 773966012764CD860017FB10 /* GoogleService-Info.plist */; };
 		7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57B2742C0F000325814 /* UIViewController+.swift */; };
 		7744C57E2742C13600325814 /* ClassName+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57D2742C13600325814 /* ClassName+UIViewController.swift */; };
 		779015B92742E38300F83ACD /* CalendarTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779015B82742E38300F83ACD /* CalendarTab.storyboard */; };
@@ -36,6 +37,7 @@
 		772C147A273B7DAE00BB0127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		772C147C273B7DAE00BB0127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		772C1482273CF9D500BB0127 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		773966012764CD860017FB10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7744C57B2742C0F000325814 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		7744C57D2742C13600325814 /* ClassName+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClassName+UIViewController.swift"; sourceTree = "<group>"; };
 		779015B82742E38300F83ACD /* CalendarTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarTab.storyboard; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				772C1477273B7DAE00BB0127 /* Assets.xcassets */,
 				772C147C273B7DAE00BB0127 /* Info.plist */,
+				773966012764CD860017FB10 /* GoogleService-Info.plist */,
 				7744C5772742BDF500325814 /* Views */,
 			);
 			path = Resource;
@@ -271,6 +274,7 @@
 				772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */,
 				779015B92742E38300F83ACD /* CalendarTab.storyboard in Resources */,
 				772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */,
+				773966022764CD860017FB10 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
