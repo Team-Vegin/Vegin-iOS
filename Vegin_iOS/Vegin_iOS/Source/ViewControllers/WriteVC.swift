@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    let storage = Storage.storage().reference() // 인스턴스 생성
     
     var isLevel1Selected = false {
         didSet {
@@ -64,6 +66,7 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.contentMode = .scaleAspectFill
         self.tabBarController?.tabBar.isHidden = true
         self.tabBarController?.tabBar.isTranslucent = true
         picker.delegate = self
@@ -77,6 +80,9 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     }
     
     @IBAction func touchUpToSaveButton(_ sender: Any) {
+        var imageCount = UserDefaults.standard.integer(forKey: "imageCount")
+        imageCount += 1
+        UserDefaults.standard.set(imageCount, forKey: "imageCount")
         let vc = CustomPopUpVC(nibName: CustomPopUpVC.className, bundle: nil)
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
@@ -209,13 +215,26 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            imageView.image = image
-            print(info)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
         }
+
+        guard let imageData = image.pngData() else {
+            return
+        }
+        
+        storage.child("images/file\(UserDefaults.standard.integer(forKey: "imageCount")).png").putData(imageData, metadata: nil, completion: {_, error in
+            guard error == nil else {
+                print("Failed to upload")
+                return
+            }
+
+        })
+        imageView.image = image
         imageUploadButton.tintColor = .clear
         dismiss(animated: true, completion: nil)
     }
+    
     
     private func setUI() {
         imageContentView.layer.cornerRadius = 25
