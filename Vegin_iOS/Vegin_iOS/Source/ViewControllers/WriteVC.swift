@@ -9,6 +9,7 @@ import UIKit
 
 class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    
     var isLevel1Selected = false {
         didSet {
             setIconImage()

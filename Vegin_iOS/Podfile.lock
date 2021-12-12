@@ -357,6 +357,9 @@ PODS:
   - Firebase/Firestore (8.10.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 8.10.0)
+  - Firebase/Storage (8.10.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 8.10.0)
   - FirebaseAnalytics (8.10.0):
     - FirebaseAnalytics/AdIdSupport (= 8.10.0)
     - FirebaseCore (~> 8.0)
@@ -407,6 +410,9 @@ PODS:
     - GoogleUtilities/Environment (~> 7.6)
     - GoogleUtilities/UserDefaults (~> 7.6)
     - PromisesObjC (< 3.0, >= 1.2)
+  - FirebaseStorage (8.10.0):
+    - FirebaseCore (~> 8.0)
+    - GTMSessionFetcher/Core (~> 1.5)
   - FSCalendar (2.8.2)
   - GoogleAppMeasurement (8.10.0):
     - GoogleAppMeasurement/AdIdSupport (= 8.10.0)
@@ -488,6 +494,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
+  - Firebase/Storage
   - FSCalendar
 
 SPEC REPOS:
@@ -501,6 +508,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseFirestore
     - FirebaseInstallations
+    - FirebaseStorage
     - FSCalendar
     - GoogleAppMeasurement
     - GoogleDataTransport
@@ -522,6 +530,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 56fb7216d87e0e6ec2feddefa9d8a392fe8b2c18
   FirebaseFirestore: 0e7321a508cc9de54316ec45400caba6b5719beb
   FirebaseInstallations: 830327b45345ffc859eaa9c17bcd5ae893fd5425
+  FirebaseStorage: 815410224b548172c578f02554a86bbc8f817f50
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   GoogleAppMeasurement: a3311dbcf3ea651e5a070fe8559b57c174ada081
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
@@ -533,6 +542,6 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 5bae27103d84653c673b29925d42b3c3d1733eb4
+PODFILE CHECKSUM: de5cbfd079cd2f06d950195d79256f61763ac024
 
 COCOAPODS: 1.11.2
