@@ -11,6 +11,7 @@ import FirebaseStorage
 class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     let storage = Storage.storage().reference() // 인스턴스 생성
+    var emojiArray: [Bool] = [false,false,false,false,false,false]
     
     var isLevel1Selected = false {
         didSet {
@@ -83,10 +84,37 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         var imageCount = UserDefaults.standard.integer(forKey: "imageCount")
         imageCount += 1
         UserDefaults.standard.set(imageCount, forKey: "imageCount")
+        
+        emojiArray[0] = isLevel1Selected
+        emojiArray[1] = isLevel2Selected
+        emojiArray[2] = isLevel3Selected
+        emojiArray[3] = isLevel4Selected
+        emojiArray[4] = isLevel5Selected
+        emojiArray[5] = isLevel6Selected
+        
+        for i in 0...5 {
+            if emojiArray[5-i] == true {
+                UserDefaults.standard.set(5-i, forKey: "resultEmoji")
+                break
+            }
+        }
+        
+        let resultEmoji = UserDefaults.standard.integer(forKey: "resultEmoji")
+
+        var calendarEmoji: [String:Any] = UserDefaults.standard.dictionary(forKey: "calendarEmoji") ?? [:]
+
+        calendarEmoji.updateValue(resultEmoji, forKey: "\(getDayDate(date: Date()))")
+        UserDefaults.standard.set(calendarEmoji, forKey: "calendarEmoji")
+        //UserDefaults.standard.removeObject(forKey: "calendarEmoji")
+        print(UserDefaults.standard.dictionary(forKey: "calendarEmoji"))
+        
         let vc = CustomPopUpVC(nibName: CustomPopUpVC.className, bundle: nil)
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)
+//        print(emojiArray)
+//        print(resultEmoji)
+        
     }
     
     func setIconImage() {
@@ -122,6 +150,7 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         
         if isLevel6Selected {
             level6Button.setImage(UIImage.init(named: "level6_select"), for: .normal)
+            
         } else if !isLevel6Selected {
             level6Button.setImage(UIImage.init(named: "meat"), for: .normal)
         }
