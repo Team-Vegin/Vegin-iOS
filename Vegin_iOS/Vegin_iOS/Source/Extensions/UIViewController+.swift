@@ -14,6 +14,20 @@ extension UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    func getMonthDate(date: Date) -> String{
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "yyyy년 M월"
+        return df.string(from: date)
+    }
+    
+    func getDayDate(date: Date) -> String{
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "yyyy년 M월 dd일"
+        return df.string(from: date)
+    }
+    
     @objc
     func dismissKeyboard() {
         view.endEditing(true)

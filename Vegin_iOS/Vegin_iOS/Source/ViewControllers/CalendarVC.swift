@@ -58,19 +58,6 @@ class CalendarVC: UIViewController {
     
     // MARK: - Custom Method Part
     
-    func getMonthDate(date: Date) -> String{
-        let df = DateFormatter()
-        df.locale = Locale(identifier: "ko_KR")
-        df.dateFormat = "yyyy년 M월"
-        return df.string(from: date)
-    }
-    
-    func getDayDate(date: Date) -> String{
-            let df = DateFormatter()
-            df.locale = Locale(identifier: "ko_KR")
-            df.dateFormat = "yyyy년 M월 dd일"
-            return df.string(from: date)
-        }
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
         return false // 날짜 선택 안되도록
     }
@@ -122,6 +109,31 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
         let eventDate = getDayDate(date: date)
 
+        let dict = UserDefaults.standard.dictionary(forKey: "calendarEmoji")
+        if dict == nil {
+            UserDefaults.standard.set(["":0], forKey: "calendarEmoji")
+        }
+        let keys = Array(dict!.keys)
+        print(keys)
+        for key in 0...(keys.count-1) {
+            print(key)
+            if eventDate == keys[key] {
+                if dict?["\(keys[key])"] as! Int == 0 {
+                    return UIImage(named: "level1")
+                } else if dict?["\(keys[key])"] as! Int == 1 {
+                    return UIImage(named: "level2")
+                } else if dict?["\(keys[key])"] as! Int == 2 {
+                    return UIImage(named: "level3")
+                } else if dict?["\(keys[key])"] as! Int == 3 {
+                    return UIImage(named: "level4")
+                } else if dict?["\(keys[key])"] as! Int == 4 {
+                    return UIImage(named: "level5")
+                } else if dict?["\(keys[key])"] as! Int == 5 {
+                    return UIImage(named: "level6")
+                }
+            }
+        }
+        
         if eventDate == "2021년 11월 15일" {
             return UIImage(named: "level6")
         } else if eventDate == "2021년 11월 21일" {
@@ -129,8 +141,6 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
         } else if eventDate == "2021년 12월 03일" {
             return UIImage(named: "level2")
         } else { return nil }
-        
-        
-     }
+    }
         
 }
