@@ -1,3 +1,4 @@
+![기말발표_표지](https://user-images.githubusercontent.com/63277563/147177737-8de0015b-4db3-4108-a8fb-f23f37d7402a.jpg)
 ## Team Vegin
 | 이지윤 | 이지은 | 이태은 | 최은주 |
 | :---: | :---: | :---: | :---: |
