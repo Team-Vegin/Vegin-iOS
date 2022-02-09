@@ -7,7 +7,6 @@ target 'Vegin_iOS' do
 
   # Pods for Vegin_iOS
 pod 'FSCalendar'
-pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
