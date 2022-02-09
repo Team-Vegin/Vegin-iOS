@@ -278,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XD7-BR-39W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="882"/>
+            <point key="canvasLocation" x="49" y="882"/>
         </scene>
         <!--피드-->
         <scene sceneID="V4V-Zq-cSq">
@@ -294,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Da4-8L-Esn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="845"/>
+            <point key="canvasLocation" x="841" y="882"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="yVt-05-Hc8">
@@ -461,10 +461,10 @@
             </objects>
             <point key="canvasLocation" x="2618" y="98"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--VeginTBC-->
         <scene sceneID="EVm-AA-3Z1">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="QEv-yv-i7M" customClass="TabBarController" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="QEv-yv-i7M" customClass="VeginTBC" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k5n-1b-Qq7">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

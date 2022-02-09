@@ -18,7 +18,6 @@ class CustomPopUpVC: UIViewController {
         super.viewDidLoad()
         okButton.addTarget(self, action: #selector(okButtonClicked(_sender:)), for: .touchUpInside)
         setUI()
-
     }
     
     private func setUI() {
@@ -26,8 +25,8 @@ class CustomPopUpVC: UIViewController {
     }
     
     @objc func okButtonClicked(_sender: UIButton) {
-        let tabBarStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        guard let nextVC = tabBarStoryBoard.instantiateViewController(withIdentifier: TabBarController.className) as? TabBarController else { return }
+        let tabBarSB = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let nextVC = tabBarSB.instantiateViewController(withIdentifier: VeginTBC.className) as? VeginTBC else { return }
         
         nextVC.selectedIndex = 1
         nextVC.modalPresentationStyle = .fullScreen

@@ -50,7 +50,7 @@ class CalendarVC: UIViewController {
     }
     
     @IBAction func touchUpToGoWriteVC(_ sender: Any) {
-        let calendarTabSB = UIStoryboard.init(name: "CalendarTab", bundle: nil)
+        let calendarTabSB = UIStoryboard.init(name: "WriteSB", bundle: nil)
         guard let nextVC = calendarTabSB.instantiateViewController(withIdentifier: WriteVC.className) as? WriteVC else { return }
         
         self.navigationController?.pushViewController(nextVC, animated: true)

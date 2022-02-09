@@ -16,12 +16,12 @@
 		773966022764CD860017FB10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 773966012764CD860017FB10 /* GoogleService-Info.plist */; };
 		7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57B2742C0F000325814 /* UIViewController+.swift */; };
 		7744C57E2742C13600325814 /* ClassName+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57D2742C13600325814 /* ClassName+UIViewController.swift */; };
-		779015B92742E38300F83ACD /* CalendarTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779015B82742E38300F83ACD /* CalendarTab.storyboard */; };
+		779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779015B82742E38300F83ACD /* WriteSB.storyboard */; };
 		779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BA2742E51A00F83ACD /* WriteVC.swift */; };
 		779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BC2743ACE800F83ACD /* CalendarNaviController.swift */; };
 		77FE1735274B860C00F95F0D /* CustomPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE1733274B860C00F95F0D /* CustomPopUpVC.swift */; };
 		77FE1736274B860C00F95F0D /* CustomPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77FE1734274B860C00F95F0D /* CustomPopUpVC.xib */; };
-		77FE1738274D2EC800F95F0D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE1737274D2EC700F95F0D /* TabBarController.swift */; };
+		77FE1738274D2EC800F95F0D /* VeginTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE1737274D2EC700F95F0D /* VeginTBC.swift */; };
 		77FE173C274D8F7400F95F0D /* FarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE173B274D8F7400F95F0D /* FarmVC.swift */; };
 		EECC6F26D6F157BF59080165 /* Pods_Vegin_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24999E6C3C90A75DE12BA65A /* Pods_Vegin_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -40,12 +40,12 @@
 		773966012764CD860017FB10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7744C57B2742C0F000325814 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		7744C57D2742C13600325814 /* ClassName+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClassName+UIViewController.swift"; sourceTree = "<group>"; };
-		779015B82742E38300F83ACD /* CalendarTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarTab.storyboard; sourceTree = "<group>"; };
+		779015B82742E38300F83ACD /* WriteSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteSB.storyboard; sourceTree = "<group>"; };
 		779015BA2742E51A00F83ACD /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
-		779015BC2743ACE800F83ACD /* CalendarNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarNaviController.swift; path = Vegin_iOS/Source/ViewControllers/CalendarNaviController.swift; sourceTree = SOURCE_ROOT; };
+		779015BC2743ACE800F83ACD /* CalendarNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarNaviController.swift; path = Vegin_iOS/Screen/Write/VC/CalendarNaviController.swift; sourceTree = SOURCE_ROOT; };
 		77FE1733274B860C00F95F0D /* CustomPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUpVC.swift; sourceTree = "<group>"; };
 		77FE1734274B860C00F95F0D /* CustomPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopUpVC.xib; sourceTree = "<group>"; };
-		77FE1737274D2EC700F95F0D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		77FE1737274D2EC700F95F0D /* VeginTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeginTBC.swift; sourceTree = "<group>"; };
 		77FE173B274D8F7400F95F0D /* FarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmVC.swift; sourceTree = "<group>"; };
 		81674B682E3C2F3F4442D9A7 /* Pods-Vegin_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegin_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,23 +92,12 @@
 		772C146D273B7DAB00BB0127 /* Vegin_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				7744C5702742BD3200325814 /* Source */,
-				7744C5762742BDD500325814 /* Resource */,
+				77ED045627B4254500D077CA /* Global */,
+				77ED045827B4257700D077CA /* Network */,
+				77ED045727B4255D00D077CA /* Screen */,
+				7744C5762742BDD500325814 /* Support */,
 			);
 			path = Vegin_iOS;
-			sourceTree = "<group>";
-		};
-		7744C5702742BD3200325814 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				7744C57A2742BE6D00325814 /* ViewControllers */,
-				7744C5712742BD5900325814 /* Protocol */,
-				7744C5722742BD7100325814 /* Extensions */,
-				7744C5732742BD7E00325814 /* Models */,
-				7744C5742742BD8E00325814 /* Supporting Files */,
-				7744C5752742BD9900325814 /* Cells */,
-			);
-			path = Source;
 			sourceTree = "<group>";
 		};
 		7744C5712742BD5900325814 /* Protocol */ = {
@@ -118,87 +107,307 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		7744C5722742BD7100325814 /* Extensions */ = {
+		7744C5722742BD7100325814 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				7744C57B2742C0F000325814 /* UIViewController+.swift */,
 				7744C57D2742C13600325814 /* ClassName+UIViewController.swift */,
 			);
-			path = Extensions;
+			path = Extension;
 			sourceTree = "<group>";
 		};
-		7744C5732742BD7E00325814 /* Models */ = {
+		7744C5732742BD7E00325814 /* PublicData */ = {
 			isa = PBXGroup;
 			children = (
+				77ED047527B42D9700D077CA /* AppModel */,
 			);
-			path = Models;
+			path = PublicData;
 			sourceTree = "<group>";
 		};
-		7744C5742742BD8E00325814 /* Supporting Files */ = {
+		7744C5762742BDD500325814 /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				772C146E273B7DAB00BB0127 /* AppDelegate.swift */,
 				772C1470273B7DAB00BB0127 /* SceneDelegate.swift */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7744C5752742BD9900325814 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		7744C5762742BDD500325814 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
 				772C1477273B7DAE00BB0127 /* Assets.xcassets */,
 				772C147C273B7DAE00BB0127 /* Info.plist */,
 				773966012764CD860017FB10 /* GoogleService-Info.plist */,
-				7744C5772742BDF500325814 /* Views */,
 			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
-		7744C5772742BDF500325814 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				7744C5792742BE0700325814 /* Storyboard */,
-				7744C5782742BE0000325814 /* Nibs */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		7744C5782742BE0000325814 /* Nibs */ = {
-			isa = PBXGroup;
-			children = (
-				77FE1734274B860C00F95F0D /* CustomPopUpVC.xib */,
-			);
-			path = Nibs;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		7744C5792742BE0700325814 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				772C1474273B7DAB00BB0127 /* Main.storyboard */,
-				779015B82742E38300F83ACD /* CalendarTab.storyboard */,
 				772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		7744C57A2742BE6D00325814 /* ViewControllers */ = {
+		77ED045627B4254500D077CA /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				7744C5732742BD7E00325814 /* PublicData */,
+				77ED047427B42D0D00D077CA /* Factory */,
+				77ED047227B42CD800D077CA /* Class */,
+				77ED047327B42CEF00D077CA /* Struct */,
+				7744C5712742BD5900325814 /* Protocol */,
+				77ED046D27B42A6200D077CA /* UIComponent */,
+				7744C5792742BE0700325814 /* Storyboard */,
+				7744C5722742BD7100325814 /* Extension */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		77ED045727B4255D00D077CA /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				77ED047027B42B1200D077CA /* TabBar */,
+				77ED045C27B4265E00D077CA /* Home */,
+				77ED045B27B4262500D077CA /* Write */,
+				77ED045A27B425DB00D077CA /* Feed */,
+				77ED045927B425CC00D077CA /* Mypage */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		77ED045827B4257700D077CA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		77ED045927B425CC00D077CA /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				77ED046C27B4274900D077CA /* SB */,
+				77ED046B27B4274400D077CA /* VC */,
+				77ED046A27B4273F00D077CA /* Cell */,
+				77ED046927B4273A00D077CA /* Xib */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		77ED045A27B425DB00D077CA /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				77ED046827B4272B00D077CA /* SB */,
+				77ED046727B4272700D077CA /* VC */,
+				77ED046627B4272100D077CA /* Cell */,
+				77ED046527B4271B00D077CA /* Xib */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		77ED045B27B4262500D077CA /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				77ED046427B426E900D077CA /* SB */,
+				77ED046327B426E300D077CA /* VC */,
+				77ED046227B426D800D077CA /* Cell */,
+				77ED046127B426C700D077CA /* Xib */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		77ED045C27B4265E00D077CA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				77ED045D27B4269400D077CA /* SB */,
+				77ED045E27B4269B00D077CA /* VC */,
+				77ED045F27B426A200D077CA /* Cell */,
+				77ED046027B426A900D077CA /* Xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		77ED045D27B4269400D077CA /* SB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SB;
+			sourceTree = "<group>";
+		};
+		77ED045E27B4269B00D077CA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				77FE173B274D8F7400F95F0D /* FarmVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		77ED045F27B426A200D077CA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		77ED046027B426A900D077CA /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		77ED046127B426C700D077CA /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		77ED046227B426D800D077CA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		77ED046327B426E300D077CA /* VC */ = {
 			isa = PBXGroup;
 			children = (
 				779015BA2742E51A00F83ACD /* WriteVC.swift */,
 				772C1482273CF9D500BB0127 /* CalendarVC.swift */,
-				77FE1737274D2EC700F95F0D /* TabBarController.swift */,
 				779015BC2743ACE800F83ACD /* CalendarNaviController.swift */,
-				77FE173B274D8F7400F95F0D /* FarmVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		77ED046427B426E900D077CA /* SB */ = {
+			isa = PBXGroup;
+			children = (
+				779015B82742E38300F83ACD /* WriteSB.storyboard */,
+			);
+			path = SB;
+			sourceTree = "<group>";
+		};
+		77ED046527B4271B00D077CA /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		77ED046627B4272100D077CA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		77ED046727B4272700D077CA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		77ED046827B4272B00D077CA /* SB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SB;
+			sourceTree = "<group>";
+		};
+		77ED046927B4273A00D077CA /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		77ED046A27B4273F00D077CA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		77ED046B27B4274400D077CA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		77ED046C27B4274900D077CA /* SB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SB;
+			sourceTree = "<group>";
+		};
+		77ED046D27B42A6200D077CA /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				77ED046F27B42A8500D077CA /* Class */,
+				77ED046E27B42A7E00D077CA /* Xib */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		77ED046E27B42A7E00D077CA /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				77FE1734274B860C00F95F0D /* CustomPopUpVC.xib */,
+			);
+			name = Xib;
+			path = "../New Group/Xib";
+			sourceTree = "<group>";
+		};
+		77ED046F27B42A8500D077CA /* Class */ = {
+			isa = PBXGroup;
+			children = (
 				77FE1733274B860C00F95F0D /* CustomPopUpVC.swift */,
 			);
-			path = ViewControllers;
+			path = Class;
+			sourceTree = "<group>";
+		};
+		77ED047027B42B1200D077CA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				77ED047127B42B3200D077CA /* VC */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		77ED047127B42B3200D077CA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				77FE1737274D2EC700F95F0D /* VeginTBC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		77ED047227B42CD800D077CA /* Class */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		77ED047327B42CEF00D077CA /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
+		77ED047427B42D0D00D077CA /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		77ED047527B42D9700D077CA /* AppModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppModel;
 			sourceTree = "<group>";
 		};
 		987A9D7F730175B9FB161044 /* Frameworks */ = {
@@ -272,7 +481,7 @@
 				77FE1736274B860C00F95F0D /* CustomPopUpVC.xib in Resources */,
 				772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */,
 				772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */,
-				779015B92742E38300F83ACD /* CalendarTab.storyboard in Resources */,
+				779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */,
 				772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */,
 				773966022764CD860017FB10 /* GoogleService-Info.plist in Resources */,
 			);
@@ -330,7 +539,7 @@
 				772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */,
 				772C1471273B7DAB00BB0127 /* SceneDelegate.swift in Sources */,
 				779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */,
-				77FE1738274D2EC800F95F0D /* TabBarController.swift in Sources */,
+				77FE1738274D2EC800F95F0D /* VeginTBC.swift in Sources */,
 				7744C57E2742C13600325814 /* ClassName+UIViewController.swift in Sources */,
 				7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */,
 				77FE173C274D8F7400F95F0D /* FarmVC.swift in Sources */,
@@ -488,7 +697,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vegin_iOS/Resource/Info.plist;
+				INFOPLIST_FILE = Vegin_iOS/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -517,7 +726,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vegin_iOS/Resource/Info.plist;
+				INFOPLIST_FILE = Vegin_iOS/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
