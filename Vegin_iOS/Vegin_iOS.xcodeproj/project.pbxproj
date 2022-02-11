@@ -34,6 +34,7 @@
 		77ED049127B6C4FC00D077CA /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED049027B6C4FC00D077CA /* UserDefaults+.swift */; };
 		77ED049327B6C87200D077CA /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED049227B6C87200D077CA /* UITextView+.swift */; };
 		77ED049527B6C8BA00D077CA /* Adjusted+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED049427B6C8BA00D077CA /* Adjusted+.swift */; };
+		77ED049727B6CF9F00D077CA /* ColorSets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77ED049627B6CF9F00D077CA /* ColorSets.xcassets */; };
 		77FE1735274B860C00F95F0D /* CustomPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE1733274B860C00F95F0D /* CustomPopUpVC.swift */; };
 		77FE1736274B860C00F95F0D /* CustomPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77FE1734274B860C00F95F0D /* CustomPopUpVC.xib */; };
 		77FE1738274D2EC800F95F0D /* VeginTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FE1737274D2EC700F95F0D /* VeginTBC.swift */; };
@@ -73,6 +74,7 @@
 		77ED049027B6C4FC00D077CA /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 		77ED049227B6C87200D077CA /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		77ED049427B6C8BA00D077CA /* Adjusted+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+.swift"; sourceTree = "<group>"; };
+		77ED049627B6CF9F00D077CA /* ColorSets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorSets.xcassets; sourceTree = "<group>"; };
 		77FE1733274B860C00F95F0D /* CustomPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUpVC.swift; sourceTree = "<group>"; };
 		77FE1734274B860C00F95F0D /* CustomPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopUpVC.xib; sourceTree = "<group>"; };
 		77FE1737274D2EC700F95F0D /* VeginTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeginTBC.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				772C146E273B7DAB00BB0127 /* AppDelegate.swift */,
 				772C1470273B7DAB00BB0127 /* SceneDelegate.swift */,
 				772C1477273B7DAE00BB0127 /* Assets.xcassets */,
+				77ED049627B6CF9F00D077CA /* ColorSets.xcassets */,
 				772C147C273B7DAE00BB0127 /* Info.plist */,
 				773966012764CD860017FB10 /* GoogleService-Info.plist */,
 			);
@@ -513,6 +516,7 @@
 				779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */,
 				772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */,
 				773966022764CD860017FB10 /* GoogleService-Info.plist in Resources */,
+				77ED049727B6CF9F00D077CA /* ColorSets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
