@@ -3,6 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -283,18 +284,52 @@
         <!--피드-->
         <scene sceneID="V4V-Zq-cSq">
             <objects>
-                <viewController id="4Rh-zJ-sX2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedMainVC" id="4Rh-zJ-sX2" customClass="FeedMainVC" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q50-5L-hhN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URt-8p-8it">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" name="background"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bMh-np-pbl">
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vi6-ec-IdY">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vi6-ec-IdY" id="BQh-75-OKb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Wyz-xX-Lo9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wyz-xX-Lo9" firstAttribute="trailing" secondItem="URt-8p-8it" secondAttribute="trailing" id="7YB-FB-GOj"/>
+                            <constraint firstItem="bMh-np-pbl" firstAttribute="top" secondItem="Wyz-xX-Lo9" secondAttribute="top" id="BKL-he-0WD"/>
+                            <constraint firstItem="URt-8p-8it" firstAttribute="leading" secondItem="Wyz-xX-Lo9" secondAttribute="leading" id="Egj-NK-7Af"/>
+                            <constraint firstItem="URt-8p-8it" firstAttribute="top" secondItem="Q50-5L-hhN" secondAttribute="top" id="M9n-uv-tNM"/>
+                            <constraint firstItem="bMh-np-pbl" firstAttribute="leading" secondItem="Wyz-xX-Lo9" secondAttribute="leading" id="dc6-yi-yqc"/>
+                            <constraint firstItem="Wyz-xX-Lo9" firstAttribute="trailing" secondItem="bMh-np-pbl" secondAttribute="trailing" id="du3-Zk-bNB"/>
+                            <constraint firstItem="bMh-np-pbl" firstAttribute="top" secondItem="URt-8p-8it" secondAttribute="bottom" id="fWt-s1-RqA"/>
+                            <constraint firstItem="Wyz-xX-Lo9" firstAttribute="bottom" secondItem="bMh-np-pbl" secondAttribute="bottom" id="j5H-Jj-O2g"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="피드" image="feed" id="OhS-X6-u0A"/>
+                    <connections>
+                        <outlet property="feedTV" destination="bMh-np-pbl" id="cWF-IN-IGt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Da4-8L-Esn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="882"/>
+            <point key="canvasLocation" x="840.79999999999995" y="881.5270935960591"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="yVt-05-Hc8">
@@ -530,6 +565,9 @@
         <image name="tomavi" width="196" height="318"/>
         <image name="writeButton" width="77" height="28"/>
         <image name="writeIcon" width="30" height="30"/>
+        <namedColor name="background">
+            <color red="0.92941176470588238" green="0.95686274509803926" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
