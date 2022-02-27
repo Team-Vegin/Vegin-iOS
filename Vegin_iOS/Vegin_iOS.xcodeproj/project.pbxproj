@@ -23,6 +23,7 @@
 		7757286727C8CF0700148C9A /* FeedMainEmptyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757286527C8CF0700148C9A /* FeedMainEmptyTVC.swift */; };
 		7757286827C8CF0700148C9A /* FeedMainEmptyTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7757286627C8CF0700148C9A /* FeedMainEmptyTVC.xib */; };
 		7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757286B27C8DAF600148C9A /* AppContentDataModel.swift */; };
+		7757286E27CBDADA00148C9A /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757286D27CBDADA00148C9A /* BaseVC.swift */; };
 		779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779015B82742E38300F83ACD /* WriteSB.storyboard */; };
 		779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BA2742E51A00F83ACD /* WriteVC.swift */; };
 		779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BC2743ACE800F83ACD /* CalendarNaviController.swift */; };
@@ -71,6 +72,7 @@
 		7757286527C8CF0700148C9A /* FeedMainEmptyTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainEmptyTVC.swift; sourceTree = "<group>"; };
 		7757286627C8CF0700148C9A /* FeedMainEmptyTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedMainEmptyTVC.xib; sourceTree = "<group>"; };
 		7757286B27C8DAF600148C9A /* AppContentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentDataModel.swift; sourceTree = "<group>"; };
+		7757286D27CBDADA00148C9A /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		779015B82742E38300F83ACD /* WriteSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteSB.storyboard; sourceTree = "<group>"; };
 		779015BA2742E51A00F83ACD /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 		779015BC2743ACE800F83ACD /* CalendarNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarNaviController.swift; path = Vegin_iOS/Screen/Write/VC/CalendarNaviController.swift; sourceTree = SOURCE_ROOT; };
@@ -469,6 +471,7 @@
 				77ED047827B6927E00D077CA /* BaseNC.swift */,
 				77ED047A27B692B500D077CA /* BaseTVC.swift */,
 				77ED048027B6932D00D077CA /* BaseCVC.swift */,
+				7757286D27CBDADA00148C9A /* BaseVC.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				77ED049527B6C8BA00D077CA /* Adjusted+.swift in Sources */,
 				77ED047927B6927E00D077CA /* BaseNC.swift in Sources */,
 				77ED047727B691F800D077CA /* StoryboardRepresentation.swift in Sources */,
+				7757286E27CBDADA00148C9A /* BaseVC.swift in Sources */,
 				77ED048527B6944300D077CA /* NaviType.swift in Sources */,
 				77FE1738274D2EC800F95F0D /* VeginTBC.swift in Sources */,
 				7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */,
