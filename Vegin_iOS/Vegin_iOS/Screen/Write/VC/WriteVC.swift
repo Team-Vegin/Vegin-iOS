@@ -110,6 +110,9 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         
         guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
         alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인")
+        alert.confirmBtn.press {
+            self.navigationController?.popViewController(animated: true)
+        }
 //        print(emojiArray)
 //        print(resultEmoji)
         
