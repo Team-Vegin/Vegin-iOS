@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="82P-Su-p00" customClass="VeginAlertVC" customModule="Vegin_iOS" customModuleProvider="target">
+            <view key="view" contentMode="scaleToFill" id="f0Y-E4-lGA">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rg0-Cm-3nZ">
+                        <rect key="frame" x="41.5" y="356" width="331" height="194"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cheerUp" translatesAutoresizingMaskIntoConstraints="NO" id="J7z-7O-Kpo">
+                                <rect key="frame" x="146" y="18" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="b8D-zf-ps3"/>
+                                    <constraint firstAttribute="height" constant="40" id="cLX-fB-5i7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTU-kK-EJz">
+                                <rect key="frame" x="140.5" y="62" width="50" height="64"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WF-EF-weH">
+                                <rect key="frame" x="130.5" y="144" width="70" height="28"/>
+                                <color key="backgroundColor" name="darkMain"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="0ug-a3-Nqd"/>
+                                    <constraint firstAttribute="height" constant="28" id="8YG-vC-P62"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="확인">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapConfirmBtn:" destination="82P-Su-p00" eventType="touchUpInside" id="ceQ-n8-rx1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WTU-kK-EJz" firstAttribute="top" secondItem="J7z-7O-Kpo" secondAttribute="bottom" constant="4" id="8kF-5G-S0s"/>
+                            <constraint firstItem="WTU-kK-EJz" firstAttribute="centerX" secondItem="Rg0-Cm-3nZ" secondAttribute="centerX" id="GZj-fH-ce9"/>
+                            <constraint firstItem="J7z-7O-Kpo" firstAttribute="leading" secondItem="Rg0-Cm-3nZ" secondAttribute="leading" constant="146" id="K0F-RM-6yt"/>
+                            <constraint firstItem="J7z-7O-Kpo" firstAttribute="top" secondItem="Rg0-Cm-3nZ" secondAttribute="top" constant="18" id="cJY-TK-BYC"/>
+                            <constraint firstAttribute="height" constant="194" id="fUS-bp-ATW"/>
+                            <constraint firstItem="3WF-EF-weH" firstAttribute="centerX" secondItem="Rg0-Cm-3nZ" secondAttribute="centerX" id="q1Z-Tl-fG7"/>
+                            <constraint firstAttribute="bottom" secondItem="3WF-EF-weH" secondAttribute="bottom" constant="22" id="qZi-bi-1ir"/>
+                            <constraint firstAttribute="trailing" secondItem="J7z-7O-Kpo" secondAttribute="trailing" constant="145" id="wKk-aQ-TRc"/>
+                            <constraint firstItem="3WF-EF-weH" firstAttribute="top" secondItem="WTU-kK-EJz" secondAttribute="bottom" constant="18" id="xoD-ND-qud"/>
+                            <constraint firstAttribute="width" constant="331" id="ynP-wJ-gCp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <viewLayoutGuide key="safeArea" id="O08-7m-iXD"/>
+                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Rg0-Cm-3nZ" firstAttribute="centerY" secondItem="O08-7m-iXD" secondAttribute="centerY" id="1Xc-ij-sxf"/>
+                    <constraint firstItem="Rg0-Cm-3nZ" firstAttribute="centerX" secondItem="O08-7m-iXD" secondAttribute="centerX" id="Ihe-2X-IYb"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="alertView" destination="Rg0-Cm-3nZ" id="lxR-ue-UeV"/>
+                <outlet property="confirmBtn" destination="3WF-EF-weH" id="8Tc-zN-MSd"/>
+                <outlet property="messageLabel" destination="WTU-kK-EJz" id="xqy-t6-dyT"/>
+            </connections>
+            <point key="canvasLocation" x="838" y="93"/>
+        </viewController>
+    </objects>
+    <resources>
+        <image name="cheerUp" width="40" height="40"/>
+        <namedColor name="darkMain">
+            <color red="0.32156862745098042" green="0.59999999999999998" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

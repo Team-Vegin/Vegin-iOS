@@ -108,10 +108,11 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         //UserDefaults.standard.removeObject(forKey: "calendarEmoji")
         print(UserDefaults.standard.dictionary(forKey: "calendarEmoji"))
         
-        let vc = CustomPopUpVC(nibName: CustomPopUpVC.className, bundle: nil)
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.modalTransitionStyle = .crossDissolve
-        present(vc, animated: true, completion: nil)
+        guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+        alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인")
+        alert.confirmBtn.press {
+            self.navigationController?.popViewController(animated: true)
+        }
 //        print(emojiArray)
 //        print(resultEmoji)
         
