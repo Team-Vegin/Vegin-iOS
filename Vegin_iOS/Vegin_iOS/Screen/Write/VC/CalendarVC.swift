@@ -49,7 +49,7 @@ class CalendarVC: UIViewController {
         scrollCurrentPage(isPrev: false)
     }
     
-    @IBAction func touchUpToGoWriteVC(_ sender: Any) {
+    @IBAction func tapWriteBtn(_ sender: UIButton) {
         let calendarTabSB = UIStoryboard.init(name: "WriteSB", bundle: nil)
         guard let nextVC = calendarTabSB.instantiateViewController(withIdentifier: WriteVC.className) as? WriteVC else { return }
         
