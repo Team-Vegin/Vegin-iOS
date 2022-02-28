@@ -56,6 +56,14 @@ class CalendarVC: UIViewController {
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
+    @IBAction func tapDietListBtn(_ sender: UIButton) {
+        let dietListSB = UIStoryboard.init(name: "DietListSB", bundle: nil)
+        guard let nextVC = dietListSB.instantiateViewController(withIdentifier: DietListVC.className) as? DietListVC else { return }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    
     // MARK: - Custom Method Part
     
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
