@@ -51,6 +51,7 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     private var textBottomConstraint: NSLayoutConstraint!
     
     // MARK: IBOutlet
+    @IBOutlet weak var naviView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageContentView: UIView!
     @IBOutlet weak var buttonContentView: UIView!
@@ -72,6 +73,7 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         self.tabBarController?.tabBar.isHidden = true
         self.tabBarController?.tabBar.isTranslucent = true
         configureUI()
+        addShadowToNaviBar()
         addKeyboardObserver()
         hideKeyboardWhenTappedAround()
     }
@@ -292,6 +294,15 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         [mealButtons[0], mealButtons[1], mealButtons[2], mealButtons[3], mealButtons[4], amountButtons[0], amountButtons[1], amountButtons[2]].forEach {
             btn in btn?.tintColor = .white
         }
+    }
+    
+    /// NaviBar dropShadow 설정 함수
+    private func addShadowToNaviBar() {
+        naviView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.04).cgColor
+        naviView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        naviView.layer.shadowRadius = 8
+        naviView.layer.shadowOpacity = 1
+        naviView.layer.masksToBounds = false
     }
 }
 
