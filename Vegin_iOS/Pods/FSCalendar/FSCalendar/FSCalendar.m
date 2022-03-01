@@ -314,8 +314,8 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
                     break;
                 }
                 case FSCalendarScopeWeek: {
-                    CGFloat contentHeight = rowHeight + padding*2;
-                    _daysContainer.frame = CGRectMake(0, headerHeight+weekdayHeight, self.fs_width, contentHeight);
+                    CGFloat contentHeight = rowHeight + 30 + padding*2;
+                    _daysContainer.frame = CGRectMake(0, headerHeight+weekdayHeight, self.fs_width, contentHeight + 30);
                     _collectionView.frame = CGRectMake(0, 0, _daysContainer.fs_width, contentHeight);
                     break;
                 }
@@ -363,7 +363,7 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
             }
             case FSCalendarScopeWeek: {
                 CGFloat height = weekdayHeight + headerHeight + rowHeight + paddings;
-                return CGSizeMake(size.width, height);
+                return CGSizeMake(size.width, height + 30);
             }
         }
     } else {
