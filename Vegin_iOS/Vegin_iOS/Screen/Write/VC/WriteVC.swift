@@ -48,7 +48,6 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     var indexOfAmount: Int?
     let picker = UIImagePickerController()
     private let placeholder = "메모를 입력하세요."
-    private var textBottomConstraint: NSLayoutConstraint!
     
     // MARK: IBOutlet
     @IBOutlet weak var naviView: UIView!
