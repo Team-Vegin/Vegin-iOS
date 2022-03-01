@@ -102,8 +102,8 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
         calendar.appearance.headerTitleColor = .black
         calendar.appearance.weekdayTextColor = .gray
         calendar.appearance.headerMinimumDissolvedAlpha = 0
-        calendar.appearance.todayColor = UIColor(red: 194/255, green: 225/255, blue: 165/255, alpha: 1)
-        calendar.appearance.titleTodayColor = UIColor(red: 82/255, green: 153/255, blue: 90/255, alpha: 1)
+        calendar.appearance.todayColor = .main
+        calendar.appearance.titleTodayColor = .darkMain
         
         let monthData = getMonthDate(date: calendar.currentPage)
         self.headerLabel.text = monthData
