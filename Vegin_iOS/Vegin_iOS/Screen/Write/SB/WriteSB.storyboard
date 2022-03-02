@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LvC-UZ-jc8">
-                                <rect key="frame" x="0.0" y="101" width="375" height="865"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="862"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mtn-AY-7lt">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="878"/>
@@ -385,13 +385,13 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="3Fa-Hn-xbB"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYN-6y-tYI">
-                                <rect key="frame" x="0.0" y="44" width="375" height="57"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPw-Y2-Gki">
-                                        <rect key="frame" x="22" y="16" width="24" height="24"/>
+                                        <rect key="frame" x="22" y="62" width="24" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="0lD-A7-ydc"/>
-                                            <constraint firstAttribute="width" constant="24" id="P6k-QZ-5KP"/>
+                                            <constraint firstAttribute="width" constant="24" id="jzk-SR-Ho7"/>
+                                            <constraint firstAttribute="height" constant="24" id="vbo-t4-WCD"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="backButton"/>
@@ -400,11 +400,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="식단 기록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ene-2e-TvT">
-                                        <rect key="frame" x="68" y="15" width="74" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="74" id="BYz-bL-fC3"/>
-                                            <constraint firstAttribute="height" constant="27" id="f2f-zg-z26"/>
-                                        </constraints>
+                                        <rect key="frame" x="70" y="62" width="74" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -412,13 +408,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="RPw-Y2-Gki" firstAttribute="leading" secondItem="SYN-6y-tYI" secondAttribute="leading" constant="22" id="5aY-Kq-ecX"/>
-                                    <constraint firstAttribute="bottom" secondItem="RPw-Y2-Gki" secondAttribute="bottom" constant="17" id="J1A-oW-h6w"/>
-                                    <constraint firstItem="Ene-2e-TvT" firstAttribute="top" secondItem="SYN-6y-tYI" secondAttribute="top" constant="15" id="T6S-uq-y47"/>
-                                    <constraint firstItem="RPw-Y2-Gki" firstAttribute="top" secondItem="SYN-6y-tYI" secondAttribute="top" constant="16" id="WGd-BM-s1o"/>
-                                    <constraint firstItem="Ene-2e-TvT" firstAttribute="leading" secondItem="RPw-Y2-Gki" secondAttribute="trailing" constant="22" id="dUr-sq-VjD"/>
-                                    <constraint firstAttribute="height" constant="57" id="qIU-dh-vJk"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ene-2e-TvT" secondAttribute="bottom" constant="15" id="zmk-Fd-Vwh"/>
+                                    <constraint firstItem="RPw-Y2-Gki" firstAttribute="leading" secondItem="SYN-6y-tYI" secondAttribute="leading" constant="22" id="Vp8-2u-xDc"/>
+                                    <constraint firstAttribute="bottom" secondItem="RPw-Y2-Gki" secondAttribute="bottom" constant="18" id="asa-le-FtZ"/>
+                                    <constraint firstItem="Ene-2e-TvT" firstAttribute="leading" secondItem="RPw-Y2-Gki" secondAttribute="trailing" constant="24" id="oya-29-2cv"/>
+                                    <constraint firstAttribute="height" constant="104" id="qIU-dh-vJk"/>
+                                    <constraint firstItem="Ene-2e-TvT" firstAttribute="centerY" secondItem="RPw-Y2-Gki" secondAttribute="centerY" id="zaH-Tv-xWq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -427,7 +421,7 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="LvC-UZ-jc8" secondAttribute="bottom" id="1du-VL-edP"/>
                             <constraint firstItem="LvC-UZ-jc8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="68W-tW-uHb"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="SYN-6y-tYI" secondAttribute="top" id="CUl-9g-6rR"/>
+                            <constraint firstItem="SYN-6y-tYI" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Sfq-Kr-YPo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SYN-6y-tYI" secondAttribute="trailing" id="Wt1-eg-KFO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LvC-UZ-jc8" secondAttribute="trailing" id="YVt-gG-9G2"/>
                             <constraint firstItem="LvC-UZ-jc8" firstAttribute="top" secondItem="SYN-6y-tYI" secondAttribute="bottom" id="owh-Vr-Rcf"/>
@@ -448,6 +442,7 @@
                         <outlet property="level5Button" destination="wte-aM-0VH" id="nfV-Zp-fMw"/>
                         <outlet property="level6Button" destination="C9G-ja-ueq" id="il1-uH-jxF"/>
                         <outlet property="memoTextView" destination="sGy-Zb-DAM" id="fof-Pr-Zfw"/>
+                        <outlet property="naviView" destination="SYN-6y-tYI" id="OHM-m4-vYh"/>
                         <outletCollection property="mealButtons" destination="udT-HC-pCz" collectionClass="NSMutableArray" id="xHJ-8o-Osv"/>
                         <outletCollection property="mealButtons" destination="9yk-6J-zCB" collectionClass="NSMutableArray" id="hye-aA-9mn"/>
                         <outletCollection property="mealButtons" destination="hnH-20-ruc" collectionClass="NSMutableArray" id="5TM-uQ-Dtg"/>

@@ -49,12 +49,20 @@ class CalendarVC: UIViewController {
         scrollCurrentPage(isPrev: false)
     }
     
-    @IBAction func touchUpToGoWriteVC(_ sender: Any) {
+    @IBAction func tapWriteBtn(_ sender: UIButton) {
         let calendarTabSB = UIStoryboard.init(name: "WriteSB", bundle: nil)
         guard let nextVC = calendarTabSB.instantiateViewController(withIdentifier: WriteVC.className) as? WriteVC else { return }
         
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
+    @IBAction func tapDietListBtn(_ sender: UIButton) {
+        let dietListSB = UIStoryboard.init(name: "DietListSB", bundle: nil)
+        guard let nextVC = dietListSB.instantiateViewController(withIdentifier: DietListVC.className) as? DietListVC else { return }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
     
     // MARK: - Custom Method Part
     
@@ -94,8 +102,8 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
         calendar.appearance.headerTitleColor = .black
         calendar.appearance.weekdayTextColor = .gray
         calendar.appearance.headerMinimumDissolvedAlpha = 0
-        calendar.appearance.todayColor = UIColor(red: 194/255, green: 225/255, blue: 165/255, alpha: 1)
-        calendar.appearance.titleTodayColor = UIColor(red: 82/255, green: 153/255, blue: 90/255, alpha: 1)
+        calendar.appearance.todayColor = .main
+        calendar.appearance.titleTodayColor = .darkMain
         
         let monthData = getMonthDate(date: calendar.currentPage)
         self.headerLabel.text = monthData

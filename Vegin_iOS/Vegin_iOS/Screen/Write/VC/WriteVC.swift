@@ -48,8 +48,9 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     var indexOfAmount: Int?
     let picker = UIImagePickerController()
     private let placeholder = "메모를 입력하세요."
-    private var textBottomConstraint: NSLayoutConstraint!
     
+    // MARK: IBOutlet
+    @IBOutlet weak var naviView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageContentView: UIView!
     @IBOutlet weak var buttonContentView: UIView!
@@ -60,20 +61,20 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     @IBOutlet weak var level4Button: UIButton!
     @IBOutlet weak var level5Button: UIButton!
     @IBOutlet weak var level6Button: UIButton!
-    
     @IBOutlet weak var imageUploadButton: UIButton!
     @IBOutlet var mealButtons: [UIButton]!
     @IBOutlet var amountButtons: [UIButton]!
     
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.contentMode = .scaleAspectFill
         self.tabBarController?.tabBar.isHidden = true
         self.tabBarController?.tabBar.isTranslucent = true
-        picker.delegate = self
-        setUI()
+        configureUI()
+        addShadowToNaviBar()
+        addKeyboardObserver()
         hideKeyboardWhenTappedAround()
-        initUI()
     }
     
     @IBAction func touchUpToGoBack(_ sender: Any) {
@@ -266,52 +267,45 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     }
     
     
-    private func setUI() {
+    private func configureUI() {
+        picker.delegate = self
+        memoTextView.delegate = self
+        
         imageContentView.layer.cornerRadius = 25
         imageView.layer.cornerRadius = 25
         buttonContentView.layer.cornerRadius = 20
         mealButtons[0].setImage(UIImage.init(named: "select"), for: .selected)
         mealButtons[0].setImage(UIImage.init(named: "breakfast"), for: .normal)
-        mealButtons[0].tintColor = .white
         mealButtons[1].setImage(UIImage.init(named: "select-4"), for: .selected)
         mealButtons[1].setImage(UIImage.init(named: "brunch"), for: .normal)
-        mealButtons[1].tintColor = .white
         mealButtons[2].setImage(UIImage.init(named: "select-2"), for: .selected)
         mealButtons[2].setImage(UIImage.init(named: "lunch"), for: .normal)
-        mealButtons[2].tintColor = .white
         mealButtons[3].setImage(UIImage.init(named: "select-3"), for: .selected)
         mealButtons[3].setImage(UIImage.init(named: "lundinner"), for: .normal)
-        mealButtons[3].tintColor = .white
         mealButtons[4].setImage(UIImage.init(named: "select-1"), for: .selected)
         mealButtons[4].setImage(UIImage.init(named: "dinner"), for: .normal)
-        mealButtons[4].tintColor = .white
         amountButtons[0].setImage(UIImage.init(named: "little-select"), for: .selected)
         amountButtons[0].setImage(UIImage.init(named: "little"), for: .normal)
-        amountButtons[0].tintColor = .white
         amountButtons[1].setImage(UIImage.init(named: "medium-select"), for: .selected)
         amountButtons[1].setImage(UIImage.init(named: "medium"), for: .normal)
-        amountButtons[1].tintColor = .white
         amountButtons[2].setImage(UIImage.init(named: "much-select"), for: .selected)
         amountButtons[2].setImage(UIImage.init(named: "much"), for: .normal)
-        amountButtons[2].tintColor = .white
+        [mealButtons[0], mealButtons[1], mealButtons[2], mealButtons[3], mealButtons[4], amountButtons[0], amountButtons[1], amountButtons[2]].forEach {
+            btn in btn?.tintColor = .white
+        }
+    }
+    
+    /// NaviBar dropShadow 설정 함수
+    private func addShadowToNaviBar() {
+        naviView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.04).cgColor
+        naviView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        naviView.layer.shadowRadius = 8
+        naviView.layer.shadowOpacity = 1
+        naviView.layer.masksToBounds = false
     }
 }
 
 extension WriteVC: UITextViewDelegate {
-    @objc
-    func keyboardWillShow(_ sender: Notification) {
-        if let keyboardFrame = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            self.view.frame.origin.y = -keyboardHeight + 30
-        }
-    }
-    
-    @objc
-    func keyboardWillHide(_ sender: Notification) {
-        self.view.frame.origin.y = 0
-    }
-    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == placeholder {
             textView.text.removeAll()
@@ -327,18 +321,29 @@ extension WriteVC: UITextViewDelegate {
     }
 }
 
+// MARK: - Keyboard
 extension WriteVC {
-    func initUI() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow(_:)),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide(_:)),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
-        memoTextView.delegate = self
+    private func addKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc
+    private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc
+    private func keyboardWillHide(_ notification: Notification) {
+        if ((notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y = 0
+            }
+        }
     }
 }
 
