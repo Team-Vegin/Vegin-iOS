@@ -3,6 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="862"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mtn-AY-7lt">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="878"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="862"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKy-n2-NKI">
                                                 <rect key="frame" x="22" y="20" width="331" height="331"/>
@@ -316,35 +317,28 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CH5-ui-hXz">
-                                                <rect key="frame" x="38" y="810" width="300" height="40"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gg-1V-ZjI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="저장하기">
-                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
-                                                        </buttonConfiguration>
-                                                        <connections>
-                                                            <action selector="touchUpToSaveButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vL4-h2-7Xw"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.32156862745098036" green="0.59999999999999998" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gg-1V-ZjI">
+                                                <rect key="frame" x="37" y="794" width="300" height="40"/>
+                                                <color key="backgroundColor" name="darkMain"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="5gg-1V-ZjI" secondAttribute="bottom" id="M8U-cS-Nzz"/>
-                                                    <constraint firstAttribute="trailing" secondItem="5gg-1V-ZjI" secondAttribute="trailing" id="XQH-zF-sh0"/>
-                                                    <constraint firstItem="5gg-1V-ZjI" firstAttribute="leading" secondItem="CH5-ui-hXz" secondAttribute="leading" id="XbK-cG-x1A"/>
-                                                    <constraint firstAttribute="height" constant="40" id="jmi-JF-XnB"/>
-                                                    <constraint firstItem="5gg-1V-ZjI" firstAttribute="top" secondItem="CH5-ui-hXz" secondAttribute="top" id="kK5-H7-6jB"/>
+                                                    <constraint firstAttribute="height" constant="40" id="UEL-HB-OCf"/>
+                                                    <constraint firstAttribute="width" constant="300" id="YLQ-Qp-xDc"/>
                                                 </constraints>
-                                            </view>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="저장하기">
+                                                    <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="12"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchUpToSaveButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vL4-h2-7Xw"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ziu-Qm-hNG" firstAttribute="leading" secondItem="Mtn-AY-7lt" secondAttribute="leading" constant="36" id="4PX-48-rW7"/>
                                             <constraint firstItem="s75-is-HgT" firstAttribute="top" secondItem="5jX-D2-hPi" secondAttribute="bottom" constant="26" id="4fV-O0-amp"/>
+                                            <constraint firstAttribute="trailing" secondItem="5gg-1V-ZjI" secondAttribute="trailing" constant="38" id="4vG-Oe-6AK"/>
                                             <constraint firstItem="8Tw-jO-a6T" firstAttribute="top" secondItem="OKy-n2-NKI" secondAttribute="bottom" constant="19" id="BSv-EZ-g8J"/>
                                             <constraint firstItem="Hek-Cs-OOp" firstAttribute="leading" secondItem="Mtn-AY-7lt" secondAttribute="leading" constant="36" id="D33-mw-pFT"/>
                                             <constraint firstAttribute="trailing" secondItem="OKy-n2-NKI" secondAttribute="trailing" constant="22" id="G5q-zK-cyB"/>
@@ -360,15 +354,14 @@
                                             <constraint firstItem="sGy-Zb-DAM" firstAttribute="top" secondItem="s75-is-HgT" secondAttribute="bottom" constant="12" id="Z4X-dg-5EN"/>
                                             <constraint firstAttribute="trailing" secondItem="ziu-Qm-hNG" secondAttribute="trailing" constant="37" id="Z6t-Ov-Y06"/>
                                             <constraint firstItem="5jX-D2-hPi" firstAttribute="leading" secondItem="Mtn-AY-7lt" secondAttribute="leading" constant="36" id="ZHM-pc-RY7"/>
+                                            <constraint firstAttribute="bottom" secondItem="5gg-1V-ZjI" secondAttribute="bottom" constant="28" id="aHo-A3-Urn"/>
                                             <constraint firstItem="OKy-n2-NKI" firstAttribute="leading" secondItem="Mtn-AY-7lt" secondAttribute="leading" constant="22" id="bsH-9e-KJZ"/>
+                                            <constraint firstItem="5gg-1V-ZjI" firstAttribute="top" secondItem="sGy-Zb-DAM" secondAttribute="bottom" constant="12" id="dd3-0j-Ky9"/>
                                             <constraint firstItem="xY7-mF-NaC" firstAttribute="top" secondItem="ziu-Qm-hNG" secondAttribute="bottom" constant="26" id="dfa-fB-mmg"/>
-                                            <constraint firstItem="CH5-ui-hXz" firstAttribute="leading" secondItem="Mtn-AY-7lt" secondAttribute="leading" constant="38" id="fbQ-SY-Pal"/>
-                                            <constraint firstAttribute="bottom" secondItem="CH5-ui-hXz" secondAttribute="bottom" constant="28" id="hXm-au-Ydd"/>
-                                            <constraint firstItem="CH5-ui-hXz" firstAttribute="top" secondItem="sGy-Zb-DAM" secondAttribute="bottom" constant="28" id="lmy-cc-e2a"/>
+                                            <constraint firstItem="5gg-1V-ZjI" firstAttribute="leading" secondItem="Mtn-AY-7lt" secondAttribute="leading" constant="37" id="hou-Tn-leB"/>
                                             <constraint firstItem="OK7-AW-75t" firstAttribute="top" secondItem="Hek-Cs-OOp" secondAttribute="bottom" constant="26" id="mMt-YW-FXI"/>
                                             <constraint firstItem="Hek-Cs-OOp" firstAttribute="top" secondItem="xY7-mF-NaC" secondAttribute="bottom" constant="12" id="rqV-zR-1PB"/>
                                             <constraint firstAttribute="trailing" secondItem="sGy-Zb-DAM" secondAttribute="trailing" constant="36" id="shg-ic-4lS"/>
-                                            <constraint firstAttribute="trailing" secondItem="CH5-ui-hXz" secondAttribute="trailing" constant="37" id="tFd-Be-g99"/>
                                             <constraint firstAttribute="trailing" secondItem="Hek-Cs-OOp" secondAttribute="trailing" constant="64" id="xlu-3e-0gK"/>
                                         </constraints>
                                     </view>
@@ -431,7 +424,6 @@
                     <navigationItem key="navigationItem" id="VmM-zA-9wo"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
-                        <outlet property="buttonContentView" destination="CH5-ui-hXz" id="9c2-ss-xCk"/>
                         <outlet property="imageContentView" destination="OKy-n2-NKI" id="cWF-bV-hws"/>
                         <outlet property="imageUploadButton" destination="OdH-fF-dmK" id="I7F-hE-vZL"/>
                         <outlet property="imageView" destination="WGa-QR-0hm" id="nQn-AU-40z"/>
@@ -443,6 +435,7 @@
                         <outlet property="level6Button" destination="C9G-ja-ueq" id="il1-uH-jxF"/>
                         <outlet property="memoTextView" destination="sGy-Zb-DAM" id="fof-Pr-Zfw"/>
                         <outlet property="naviView" destination="SYN-6y-tYI" id="OHM-m4-vYh"/>
+                        <outlet property="saveBtn" destination="5gg-1V-ZjI" id="iJK-Tw-PLQ"/>
                         <outletCollection property="mealButtons" destination="udT-HC-pCz" collectionClass="NSMutableArray" id="xHJ-8o-Osv"/>
                         <outletCollection property="mealButtons" destination="9yk-6J-zCB" collectionClass="NSMutableArray" id="hye-aA-9mn"/>
                         <outletCollection property="mealButtons" destination="hnH-20-ruc" collectionClass="NSMutableArray" id="5TM-uQ-Dtg"/>
@@ -474,6 +467,9 @@
         <image name="medium" width="47" height="36"/>
         <image name="milk" width="42" height="42"/>
         <image name="much" width="47" height="36"/>
+        <namedColor name="darkMain">
+            <color red="0.32156862745098042" green="0.59999999999999998" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
