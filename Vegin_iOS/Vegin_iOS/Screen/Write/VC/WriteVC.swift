@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseStorage
 
-class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     let storage = Storage.storage().reference() // 인스턴스 생성
     var emojiArray: [Bool] = [false,false,false,false,false,false]
@@ -53,7 +53,6 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     @IBOutlet weak var naviView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageContentView: UIView!
-    @IBOutlet weak var buttonContentView: UIView!
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var level1Button: UIButton!
     @IBOutlet weak var level2Button: UIButton!
@@ -64,6 +63,7 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
     @IBOutlet weak var imageUploadButton: UIButton!
     @IBOutlet var mealButtons: [UIButton]!
     @IBOutlet var amountButtons: [UIButton]!
+    @IBOutlet weak var saveBtn: UIButton!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -81,7 +81,7 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func touchUpToSaveButton(_ sender: Any) {
+    @IBAction func touchUpToSaveButton(_ sender: UIButton) {
         var imageCount = UserDefaults.standard.integer(forKey: "imageCount")
         imageCount += 1
         UserDefaults.standard.set(imageCount, forKey: "imageCount")
@@ -273,7 +273,7 @@ class WriteVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCo
         
         imageContentView.layer.cornerRadius = 25
         imageView.layer.cornerRadius = 25
-        buttonContentView.layer.cornerRadius = 20
+        saveBtn.makeRounded(cornerRadius: 0.5 * saveBtn.bounds.size.height)
         mealButtons[0].setImage(UIImage.init(named: "select"), for: .selected)
         mealButtons[0].setImage(UIImage.init(named: "breakfast"), for: .normal)
         mealButtons[1].setImage(UIImage.init(named: "select-4"), for: .selected)

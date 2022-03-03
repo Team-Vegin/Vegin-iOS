@@ -9,38 +9,37 @@ import UIKit
 
 class VeginAlertVC: BaseVC {
 
+    // MARK: Properties
     @IBOutlet weak var alertView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
        
-    // MARK: Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: LifeCycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
         configureUI()
     }
     
-    // MARK: IBAction
-    @IBAction func tapConfirmBtn(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-}
-
-// MARK: - UI
-extension VeginAlertVC {
+    
     private func configureUI() {
         alertView.makeRounded(cornerRadius: 20.adjusted)
-        confirmBtn.makeRounded(cornerRadius: 12.adjusted)
+        confirmBtn.makeRounded(cornerRadius: 0.5 * confirmBtn.bounds.size.height)
         messageLabel.setLineSpacing(lineSpacing: 5)
         messageLabel.textAlignment = .center
         self.modalPresentationStyle = .overFullScreen
         self.modalTransitionStyle = .crossDissolve
     }
-}
-
-// MARK: - Custom Methods
-extension VeginAlertVC {
+    
     func showVeginAlert(vc: UIViewController, message: String, confirmBtnTitle: String) {
         messageLabel.text = message
         vc.present(self, animated: true, completion: nil)
+    }
+    
+    // MARK: IBAction
+    @IBAction func tapConfirmBtn(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

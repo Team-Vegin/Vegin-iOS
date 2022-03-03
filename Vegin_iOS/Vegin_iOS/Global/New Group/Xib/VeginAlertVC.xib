@@ -42,7 +42,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="확인">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
+                                    <fontDescription key="titleFontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="12"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="tapConfirmBtn:" destination="82P-Su-p00" eventType="touchUpInside" id="ceQ-n8-rx1"/>
@@ -73,7 +73,7 @@
             </view>
             <connections>
                 <outlet property="alertView" destination="Rg0-Cm-3nZ" id="lxR-ue-UeV"/>
-                <outlet property="confirmBtn" destination="3WF-EF-weH" id="8Tc-zN-MSd"/>
+                <outlet property="confirmBtn" destination="3WF-EF-weH" id="Dbm-gd-vzj"/>
                 <outlet property="messageLabel" destination="WTU-kK-EJz" id="xqy-t6-dyT"/>
             </connections>
             <point key="canvasLocation" x="838" y="93"/>
