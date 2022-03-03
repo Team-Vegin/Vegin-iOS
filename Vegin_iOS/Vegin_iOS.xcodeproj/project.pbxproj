@@ -29,6 +29,11 @@
 		7757287827CD337D00148C9A /* DietListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757287727CD337D00148C9A /* DietListVC.swift */; };
 		7757288027CE0F9500148C9A /* DietListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757287E27CE0F9500148C9A /* DietListTVC.swift */; };
 		7757288127CE0F9500148C9A /* DietListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7757287F27CE0F9500148C9A /* DietListTVC.xib */; };
+		7757288827D0B0E400148C9A /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7757288327D0B0E200148C9A /* Pretendard-Bold.otf */; };
+		7757288927D0B0E400148C9A /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7757288427D0B0E200148C9A /* Pretendard-Medium.otf */; };
+		7757288A27D0B0E400148C9A /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7757288527D0B0E300148C9A /* Pretendard-Regular.otf */; };
+		7757288B27D0B0E400148C9A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7757288627D0B0E300148C9A /* Pretendard-SemiBold.otf */; };
+		7757288C27D0B0E400148C9A /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7757288727D0B0E400148C9A /* Pretendard-Light.otf */; };
 		779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779015B82742E38300F83ACD /* WriteSB.storyboard */; };
 		779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BA2742E51A00F83ACD /* WriteVC.swift */; };
 		779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BC2743ACE800F83ACD /* CalendarNaviController.swift */; };
@@ -83,6 +88,11 @@
 		7757287727CD337D00148C9A /* DietListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietListVC.swift; sourceTree = "<group>"; };
 		7757287E27CE0F9500148C9A /* DietListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietListTVC.swift; sourceTree = "<group>"; };
 		7757287F27CE0F9500148C9A /* DietListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietListTVC.xib; sourceTree = "<group>"; };
+		7757288327D0B0E200148C9A /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		7757288427D0B0E200148C9A /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		7757288527D0B0E300148C9A /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		7757288627D0B0E300148C9A /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		7757288727D0B0E400148C9A /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		779015B82742E38300F83ACD /* WriteSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteSB.storyboard; sourceTree = "<group>"; };
 		779015BA2742E51A00F83ACD /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 		779015BC2743ACE800F83ACD /* CalendarNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarNaviController.swift; path = Vegin_iOS/Screen/Write/VC/CalendarNaviController.swift; sourceTree = SOURCE_ROOT; };
@@ -245,6 +255,18 @@
 			path = TVC;
 			sourceTree = "<group>";
 		};
+		7757288227D0AFF200148C9A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				7757288327D0B0E200148C9A /* Pretendard-Bold.otf */,
+				7757288727D0B0E400148C9A /* Pretendard-Light.otf */,
+				7757288427D0B0E200148C9A /* Pretendard-Medium.otf */,
+				7757288527D0B0E300148C9A /* Pretendard-Regular.otf */,
+				7757288627D0B0E300148C9A /* Pretendard-SemiBold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		77ED045627B4254500D077CA /* Global */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +278,7 @@
 				77ED046D27B42A6200D077CA /* UIComponent */,
 				7744C5792742BE0700325814 /* Storyboard */,
 				7744C5722742BD7100325814 /* Extension */,
+				7757288227D0AFF200148C9A /* Font */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -584,12 +607,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7757288827D0B0E400148C9A /* Pretendard-Bold.otf in Resources */,
 				77FE1736274B860C00F95F0D /* VeginAlertVC.xib in Resources */,
+				7757288C27D0B0E400148C9A /* Pretendard-Light.otf in Resources */,
 				772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */,
+				7757288B27D0B0E400148C9A /* Pretendard-SemiBold.otf in Resources */,
 				772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */,
 				7757288127CE0F9500148C9A /* DietListTVC.xib in Resources */,
 				779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */,
 				7757287627CD301E00148C9A /* DietListSB.storyboard in Resources */,
+				7757288A27D0B0E400148C9A /* Pretendard-Regular.otf in Resources */,
+				7757288927D0B0E400148C9A /* Pretendard-Medium.otf in Resources */,
 				7757286827C8CF0700148C9A /* FeedMainEmptyTVC.xib in Resources */,
 				772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */,
 				7757286027C8C7C300148C9A /* FeedMainPostTVC.xib in Resources */,
