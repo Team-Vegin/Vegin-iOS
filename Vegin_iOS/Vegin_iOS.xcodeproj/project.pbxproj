@@ -24,7 +24,6 @@
 		7757286827C8CF0700148C9A /* FeedMainEmptyTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7757286627C8CF0700148C9A /* FeedMainEmptyTVC.xib */; };
 		7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757286B27C8DAF600148C9A /* AppContentDataModel.swift */; };
 		7757286E27CBDADA00148C9A /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757286D27CBDADA00148C9A /* BaseVC.swift */; };
-		7757287027CBE17F00148C9A /* VeginBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757286F27CBE17F00148C9A /* VeginBtn.swift */; };
 		7757287627CD301E00148C9A /* DietListSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7757287527CD301E00148C9A /* DietListSB.storyboard */; };
 		7757287827CD337D00148C9A /* DietListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757287727CD337D00148C9A /* DietListVC.swift */; };
 		7757288027CE0F9500148C9A /* DietListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757287E27CE0F9500148C9A /* DietListTVC.swift */; };
@@ -84,7 +83,6 @@
 		7757286627C8CF0700148C9A /* FeedMainEmptyTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedMainEmptyTVC.xib; sourceTree = "<group>"; };
 		7757286B27C8DAF600148C9A /* AppContentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentDataModel.swift; sourceTree = "<group>"; };
 		7757286D27CBDADA00148C9A /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
-		7757286F27CBE17F00148C9A /* VeginBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeginBtn.swift; sourceTree = "<group>"; };
 		7757287527CD301E00148C9A /* DietListSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DietListSB.storyboard; sourceTree = "<group>"; };
 		7757287727CD337D00148C9A /* DietListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietListVC.swift; sourceTree = "<group>"; };
 		7757287E27CE0F9500148C9A /* DietListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietListTVC.swift; sourceTree = "<group>"; };
@@ -493,7 +491,6 @@
 			isa = PBXGroup;
 			children = (
 				77FE1733274B860C00F95F0D /* VeginAlertVC.swift */,
-				7757286F27CBE17F00148C9A /* VeginBtn.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -686,7 +683,6 @@
 				7757287827CD337D00148C9A /* DietListVC.swift in Sources */,
 				77ED049527B6C8BA00D077CA /* Adjusted+.swift in Sources */,
 				77ED047927B6927E00D077CA /* BaseNC.swift in Sources */,
-				7757287027CBE17F00148C9A /* VeginBtn.swift in Sources */,
 				77ED047727B691F800D077CA /* StoryboardRepresentation.swift in Sources */,
 				7757286E27CBDADA00148C9A /* BaseVC.swift in Sources */,
 				77ED048527B6944300D077CA /* NaviType.swift in Sources */,
