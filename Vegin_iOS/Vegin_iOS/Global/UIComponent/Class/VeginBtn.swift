@@ -28,8 +28,8 @@ class VeginBtn: UIButton {
         }
     }
     
-    private var normalBgColor: UIColor = .gray0
-    private var normalFontColor: UIColor = .white
+    private var normalBgColor: UIColor = .defaultGray
+    private var normalFontColor: UIColor = .defaultTextGray
     private var activatedBgColor: UIColor = .darkMain
     var activatedFontColor: UIColor = .white
     
@@ -49,7 +49,7 @@ class VeginBtn: UIButton {
         self.makeRounded(cornerRadius: 0.5 * self.bounds.size.height)
         self.titleLabel?.font = .PretendardSB(size: 16)
         self.backgroundColor = self.normalBgColor
-        self.tintColor = UIColor.gray0
+        self.tintColor = UIColor.white
         self.setTitleColor(self.normalFontColor, for: .normal)
     }
     
