@@ -12,7 +12,7 @@ class VeginAlertVC: BaseVC {
     // MARK: Properties
     @IBOutlet weak var alertView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var confirmBtn: UIButton!
+    @IBOutlet weak var confirmBtn: VeginBtn!
        
     // MARK: LifeCycle
     override func awakeFromNib() {
@@ -26,7 +26,7 @@ class VeginAlertVC: BaseVC {
     
     private func configureUI() {
         alertView.makeRounded(cornerRadius: 20.adjusted)
-        confirmBtn.makeRounded(cornerRadius: 0.5 * confirmBtn.bounds.size.height)
+        confirmBtn.isActivated = true
         messageLabel.setLineSpacing(lineSpacing: 5)
         messageLabel.textAlignment = .center
         self.modalPresentationStyle = .overFullScreen
@@ -35,6 +35,9 @@ class VeginAlertVC: BaseVC {
     
     func showVeginAlert(vc: UIViewController, message: String, confirmBtnTitle: String) {
         messageLabel.text = message
+        DispatchQueue.main.async {
+            self.confirmBtn.setTitleWithStyle(title: confirmBtnTitle, size: 12, weight: .bold)
+        }
         vc.present(self, animated: true, completion: nil)
     }
     

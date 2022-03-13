@@ -63,7 +63,12 @@ class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDe
     @IBOutlet weak var imageUploadButton: UIButton!
     @IBOutlet var mealButtons: [UIButton]!
     @IBOutlet var amountButtons: [UIButton]!
-    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var saveBtn: VeginBtn! {
+        didSet {
+            saveBtn.isActivated = false
+            saveBtn.setTitleWithStyle(title: "저장하기", size: 16, weight: .semiBold)
+        }
+    }
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -106,7 +111,6 @@ class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDe
 
         calendarEmoji.updateValue(resultEmoji, forKey: "\(getDayDate(date: Date()))")
         UserDefaults.standard.set(calendarEmoji, forKey: "calendarEmoji")
-        //UserDefaults.standard.removeObject(forKey: "calendarEmoji")
         print(UserDefaults.standard.dictionary(forKey: "calendarEmoji"))
         
         guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
@@ -114,9 +118,6 @@ class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDe
         alert.confirmBtn.press {
             self.navigationController?.popViewController(animated: true)
         }
-//        print(emojiArray)
-//        print(resultEmoji)
-        
     }
     
     func setIconImage() {
@@ -156,7 +157,7 @@ class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDe
         } else if !isLevel6Selected {
             level6Button.setImage(UIImage.init(named: "meat"), for: .normal)
         }
-
+        setUpSaveBtnStatus()
     }
     
     @IBAction func touchUpLevel1Btn(_ sender: Any) {
@@ -195,6 +196,7 @@ class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDe
             sender.isSelected = true
             indexOfMeal = mealButtons.firstIndex(of: sender)
         }
+        setUpSaveBtnStatus()
     }
     
     @IBAction func touchUpAmountButton(_ sender: UIButton) {
@@ -213,6 +215,7 @@ class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDe
             sender.isSelected = true
             indexOfAmount = amountButtons.firstIndex(of: sender)
         }
+        setUpSaveBtnStatus()
     }
     @IBAction func touchUpToShowImage(_ sender: Any) {
         let alert = UIAlertController(title: "이미지 업로드", message: "식단 사진을 업로드해주세요", preferredStyle: .actionSheet)
@@ -265,8 +268,10 @@ class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDe
         imageUploadButton.tintColor = .clear
         dismiss(animated: true, completion: nil)
     }
-    
-    
+}
+
+// MARK: - UI
+extension WriteVC {
     private func configureUI() {
         picker.delegate = self
         memoTextView.delegate = self
@@ -305,6 +310,24 @@ class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDe
     }
 }
 
+// MARK: - Custom Methods
+extension WriteVC {
+    
+    /// 저장하기 버튼 상태 지정 메소드
+    private func setUpSaveBtnStatus() {
+        if isLevel1Selected || isLevel2Selected || isLevel3Selected || isLevel4Selected || isLevel5Selected || isLevel6Selected {
+            if indexOfMeal != nil && indexOfAmount != nil {
+                self.saveBtn.isActivated = true
+            } else {
+                self.saveBtn.isActivated = false
+            }
+        } else {
+            self.saveBtn.isActivated = false
+        }
+    }
+}
+
+// MARK: - UITextViewDelegate
 extension WriteVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == placeholder {
