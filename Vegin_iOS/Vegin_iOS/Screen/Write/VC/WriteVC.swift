@@ -11,7 +11,7 @@ import FirebaseStorage
 class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     let storage = Storage.storage().reference() // 인스턴스 생성
-    var emojiArray: [Bool] = [false,false,false,false,false,false]
+    var emojiArray: [Bool] = [false, false, false, false, false, false]
     
     var isLevel1Selected = false {
         didSet {
