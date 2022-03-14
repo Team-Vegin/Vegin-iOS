@@ -12,6 +12,7 @@ class WriteVC: BaseVC {
 
     let storage = Storage.storage().reference() // 인스턴스 생성
     var emojiArray: [Bool] = [false, false, false, false, false, false]
+    var selectedDate: String = ""
     
     var isLevel1Selected = false {
         didSet {
@@ -110,7 +111,7 @@ class WriteVC: BaseVC {
 
         var calendarEmoji: [String:Any] = UserDefaults.standard.dictionary(forKey: "calendarEmoji") ?? [:]
 
-        calendarEmoji.updateValue(resultEmoji, forKey: "\(getDayDate(date: Date()))")
+        calendarEmoji.updateValue(resultEmoji, forKey: selectedDate)
         UserDefaults.standard.set(calendarEmoji, forKey: "calendarEmoji")
         print(UserDefaults.standard.dictionary(forKey: "calendarEmoji"))
         

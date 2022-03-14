@@ -22,6 +22,7 @@ class CalendarVC: UIViewController {
     // MARK: - Vars & Lets Part
     
     private var currentPage: Date?
+    private var selectedDate: String?
     private lazy var today: Date = {
         return Date()
     }()
@@ -30,6 +31,7 @@ class CalendarVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        calendar.reloadData()
         setUI()
         setCalendarUI()
         setCalendarDelegate()
@@ -52,6 +54,8 @@ class CalendarVC: UIViewController {
         let calendarTabSB = UIStoryboard.init(name: "WriteSB", bundle: nil)
         guard let nextVC = calendarTabSB.instantiateViewController(withIdentifier: WriteVC.className) as? WriteVC else { return }
         
+        nextVC.selectedDate = self.selectedDate ?? getDayDate(date: today)
+        print("넘어간날짜", nextVC.selectedDate)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -66,7 +70,17 @@ class CalendarVC: UIViewController {
     // MARK: - Custom Method Part
     
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-        return false // 날짜 선택 안되도록
+        /// 날짜 하나만 선택가능하도록
+        if calendar.selectedDates.count > 1 {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        self.selectedDate = getDayDate(date: date)
+        print("선택날짜", selectedDate)
     }
     
     private func setUI() {
