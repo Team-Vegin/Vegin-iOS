@@ -420,9 +420,9 @@
                     <navigationItem key="navigationItem" id="VmM-zA-9wo"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="foodImgView" destination="WGa-QR-0hm" id="dT8-lm-66v"/>
                         <outlet property="imageContentView" destination="OKy-n2-NKI" id="cWF-bV-hws"/>
                         <outlet property="imageUploadButton" destination="OdH-fF-dmK" id="I7F-hE-vZL"/>
-                        <outlet property="imageView" destination="WGa-QR-0hm" id="nQn-AU-40z"/>
                         <outlet property="level1Button" destination="gjA-eg-ThB" id="Uzv-TV-w8G"/>
                         <outlet property="level2Button" destination="kjA-UH-YXO" id="MGf-Mh-XLH"/>
                         <outlet property="level3Button" destination="d4D-Yv-eNv" id="1lZ-DB-w8n"/>
