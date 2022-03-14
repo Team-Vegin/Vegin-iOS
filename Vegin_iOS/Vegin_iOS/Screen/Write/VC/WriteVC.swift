@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseStorage
 
-class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class WriteVC: BaseVC {
 
     let storage = Storage.storage().reference() // 인스턴스 생성
     var emojiArray: [Bool] = [false, false, false, false, false, false]
@@ -46,12 +46,12 @@ class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDe
     
     var indexOfMeal: Int?
     var indexOfAmount: Int?
-    let picker = UIImagePickerController()
+    let foodImgPicker = UIImagePickerController()
     private let placeholder = "메모를 입력하세요."
     
     // MARK: IBOutlet
     @IBOutlet weak var naviView: UIView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var foodImgView: UIImageView!
     @IBOutlet weak var imageContentView: UIView!
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var level1Button: UIButton!
@@ -73,11 +73,12 @@ class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDe
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.contentMode = .scaleAspectFill
+        foodImgView.contentMode = .scaleAspectFill
         self.tabBarController?.tabBar.isHidden = true
         self.tabBarController?.tabBar.isTranslucent = true
         configureUI()
         addShadowToNaviBar()
+        setUpDelegate()
         addKeyboardObserver()
         hideKeyboardWhenTappedAround()
     }
@@ -218,66 +219,19 @@ class WriteVC: BaseVC, UINavigationControllerDelegate, UIImagePickerControllerDe
         setUpSaveBtnStatus()
     }
     @IBAction func touchUpToShowImage(_ sender: Any) {
-        let alert = UIAlertController(title: "이미지 업로드", message: "식단 사진을 업로드해주세요", preferredStyle: .actionSheet)
-        let library = UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
-        }
-        let camera = UIAlertAction(title: "카메라", style: .default) { (action) in
+        makeTwoAlertWithCancel(title: "이미지 업로드", message: "식단 사진을 업로드해주세요", okTitle: "사진앨범", secondOkTitle: "카메라", okAction: { _ in
+            self.openLibrary()
+        }, secondOkAction: { _ in
             self.openCamera()
-        }
-        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        
-        alert.addAction(library)
-        alert.addAction(camera)
-        alert.addAction(cancel)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func openLibrary() {
-        picker.sourceType = .photoLibrary
-        picker.allowsEditing = true
-        present(picker, animated: false, completion: nil)
-    }
-    
-    func openCamera() {
-        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
-            picker.sourceType = .camera
-            present(picker, animated: false, completion: nil)
-        }
-        else{
-            print("Camera not available")
-        }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
-            return
-        }
-
-        guard let imageData = image.pngData() else {
-            return
-        }
-        
-        storage.child("images/file\(UserDefaults.standard.integer(forKey: "imageCount")).png").putData(imageData, metadata: nil, completion: {_, error in
-            guard error == nil else {
-                print("Failed to upload")
-                return
-            }
-
         })
-        imageView.image = image
-        imageUploadButton.tintColor = .clear
-        dismiss(animated: true, completion: nil)
     }
 }
 
 // MARK: - UI
 extension WriteVC {
     private func configureUI() {
-        picker.delegate = self
-        memoTextView.delegate = self
-        
         imageContentView.layer.cornerRadius = 25
-        imageView.layer.cornerRadius = 25
+        foodImgView.layer.cornerRadius = 25
         saveBtn.makeRounded(cornerRadius: 0.5 * saveBtn.bounds.size.height)
         mealButtons[0].setImage(UIImage.init(named: "select"), for: .selected)
         mealButtons[0].setImage(UIImage.init(named: "breakfast"), for: .normal)
@@ -324,6 +278,57 @@ extension WriteVC {
         } else {
             self.saveBtn.isActivated = false
         }
+    }
+    
+    /// 사진앨범 불러오는 메소드
+    private func openLibrary() {
+        foodImgPicker.sourceType = .photoLibrary
+        foodImgPicker.allowsEditing = true
+        present(foodImgPicker, animated: false, completion: nil)
+    }
+    
+    /// 카메라 불러오는 메소드
+    private func openCamera() {
+        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+            foodImgPicker.sourceType = .camera
+            present(foodImgPicker, animated: false, completion: nil)
+        }
+        else{
+            print("Camera not available")
+        }
+    }
+}
+
+// MARK: - UINavigationControllerDelegate
+extension WriteVC: UINavigationControllerDelegate {
+    
+    /// 대리자 위임 메소드
+    private func setUpDelegate() {
+        foodImgPicker.delegate = self
+        memoTextView.delegate = self
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension WriteVC: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+
+        guard let imageData = image.pngData() else {
+            return
+        }
+        
+        storage.child("images/file\(UserDefaults.standard.integer(forKey: "imageCount")).png").putData(imageData, metadata: nil, completion: {_, error in
+            guard error == nil else {
+                print("Failed to upload")
+                return
+            }
+        })
+        foodImgView.image = image
+        imageUploadButton.tintColor = .clear
+        dismiss(animated: true, completion: nil)
     }
 }
 
