@@ -117,6 +117,8 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
         calendar.appearance.headerMinimumDissolvedAlpha = 0
         calendar.appearance.todayColor = .main
         calendar.appearance.titleTodayColor = .darkMain
+        calendar.appearance.selectionColor = .main
+        calendar.appearance.titleSelectionColor = .black
         
         let monthData = getMonthDate(date: calendar.currentPage)
         self.headerLabel.text = monthData
