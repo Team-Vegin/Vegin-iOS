@@ -40,6 +40,8 @@
 		77DBB84627DB186100000623 /* VeginBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB84527DB186100000623 /* VeginBtn.swift */; };
 		77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB84827DEF29F00000623 /* CategoryCVC.swift */; };
 		77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB84927DEF29F00000623 /* CategoryCVC.xib */; };
+		77DBB85427DF428300000623 /* DietDetailImgTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB85227DF428300000623 /* DietDetailImgTVC.swift */; };
+		77DBB85527DF428300000623 /* DietDetailImgTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB85327DF428300000623 /* DietDetailImgTVC.xib */; };
 		77ED047727B691F800D077CA /* StoryboardRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047627B691F800D077CA /* StoryboardRepresentation.swift */; };
 		77ED047927B6927E00D077CA /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047827B6927E00D077CA /* BaseNC.swift */; };
 		77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047A27B692B500D077CA /* BaseTVC.swift */; };
@@ -102,6 +104,8 @@
 		77DBB84527DB186100000623 /* VeginBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeginBtn.swift; sourceTree = "<group>"; };
 		77DBB84827DEF29F00000623 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		77DBB84927DEF29F00000623 /* CategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCVC.xib; sourceTree = "<group>"; };
+		77DBB85227DF428300000623 /* DietDetailImgTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailImgTVC.swift; sourceTree = "<group>"; };
+		77DBB85327DF428300000623 /* DietDetailImgTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailImgTVC.xib; sourceTree = "<group>"; };
 		77ED047627B691F800D077CA /* StoryboardRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRepresentation.swift; sourceTree = "<group>"; };
 		77ED047827B6927E00D077CA /* BaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNC.swift; sourceTree = "<group>"; };
 		77ED047A27B692B500D077CA /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 			children = (
 				7757287E27CE0F9500148C9A /* DietListTVC.swift */,
 				7757287F27CE0F9500148C9A /* DietListTVC.xib */,
+				77DBB85227DF428300000623 /* DietDetailImgTVC.swift */,
+				77DBB85327DF428300000623 /* DietDetailImgTVC.xib */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -631,6 +637,7 @@
 				7757288B27D0B0E400148C9A /* Pretendard-SemiBold.otf in Resources */,
 				772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */,
 				7757288127CE0F9500148C9A /* DietListTVC.xib in Resources */,
+				77DBB85527DF428300000623 /* DietDetailImgTVC.xib in Resources */,
 				779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */,
 				7757287627CD301E00148C9A /* DietListSB.storyboard in Resources */,
 				7757288A27D0B0E400148C9A /* Pretendard-Regular.otf in Resources */,
@@ -725,6 +732,7 @@
 				77ED048727B6965D00D077CA /* UIView+.swift in Sources */,
 				772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */,
 				77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */,
+				77DBB85427DF428300000623 /* DietDetailImgTVC.swift in Sources */,
 				7757285F27C8C7C300148C9A /* FeedMainPostTVC.swift in Sources */,
 				77ED048127B6932D00D077CA /* BaseCVC.swift in Sources */,
 				77ED048B27B6994900D077CA /* UIButton+.swift in Sources */,
