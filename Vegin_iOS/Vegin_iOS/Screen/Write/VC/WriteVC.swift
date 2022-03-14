@@ -291,6 +291,7 @@ extension WriteVC {
     private func openCamera() {
         if(UIImagePickerController .isSourceTypeAvailable(.camera)){
             foodImgPicker.sourceType = .camera
+            foodImgPicker.allowsEditing = true
             present(foodImgPicker, animated: false, completion: nil)
         }
         else{
