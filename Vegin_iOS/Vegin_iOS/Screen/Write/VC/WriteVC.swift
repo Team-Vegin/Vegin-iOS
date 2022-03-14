@@ -219,7 +219,7 @@ class WriteVC: BaseVC {
         setUpSaveBtnStatus()
     }
     @IBAction func touchUpToShowImage(_ sender: Any) {
-        makeTwoAlertWithCancel(title: "이미지 업로드", message: "식단 사진을 업로드해주세요", okTitle: "사진앨범", secondOkTitle: "카메라", okAction: { _ in
+        makeTwoAlertWithCancelAndTitle(title: "이미지 업로드", message: "식단 사진을 업로드해주세요", okTitle: "사진앨범", secondOkTitle: "카메라", okAction: { _ in
             self.openLibrary()
         }, secondOkAction: { _ in
             self.openCamera()
