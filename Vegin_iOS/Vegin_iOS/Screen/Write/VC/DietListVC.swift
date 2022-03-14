@@ -105,6 +105,7 @@ extension DietListVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DietListTVC.className) as? DietListTVC else { return UITableViewCell() }
         
         cell.setData(postData: postList[indexPath.row])
+        cell.selectionStyle = .none
         return cell
     }
     
