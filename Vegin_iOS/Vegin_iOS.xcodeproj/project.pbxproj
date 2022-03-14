@@ -44,6 +44,8 @@
 		77DBB85527DF428300000623 /* DietDetailImgTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB85327DF428300000623 /* DietDetailImgTVC.xib */; };
 		77DBB85827DF449800000623 /* DietDetailIconTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB85627DF449800000623 /* DietDetailIconTVC.swift */; };
 		77DBB85927DF449800000623 /* DietDetailIconTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB85727DF449800000623 /* DietDetailIconTVC.xib */; };
+		77DBB85D27DF46FB00000623 /* IconImgCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB85B27DF46FB00000623 /* IconImgCVC.swift */; };
+		77DBB85E27DF46FB00000623 /* IconImgCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB85C27DF46FB00000623 /* IconImgCVC.xib */; };
 		77ED047727B691F800D077CA /* StoryboardRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047627B691F800D077CA /* StoryboardRepresentation.swift */; };
 		77ED047927B6927E00D077CA /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047827B6927E00D077CA /* BaseNC.swift */; };
 		77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047A27B692B500D077CA /* BaseTVC.swift */; };
@@ -110,6 +112,8 @@
 		77DBB85327DF428300000623 /* DietDetailImgTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailImgTVC.xib; sourceTree = "<group>"; };
 		77DBB85627DF449800000623 /* DietDetailIconTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailIconTVC.swift; sourceTree = "<group>"; };
 		77DBB85727DF449800000623 /* DietDetailIconTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailIconTVC.xib; sourceTree = "<group>"; };
+		77DBB85B27DF46FB00000623 /* IconImgCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImgCVC.swift; sourceTree = "<group>"; };
+		77DBB85C27DF46FB00000623 /* IconImgCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconImgCVC.xib; sourceTree = "<group>"; };
 		77ED047627B691F800D077CA /* StoryboardRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRepresentation.swift; sourceTree = "<group>"; };
 		77ED047827B6927E00D077CA /* BaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNC.swift; sourceTree = "<group>"; };
 		77ED047A27B692B500D077CA /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
@@ -295,6 +299,15 @@
 			path = CVC;
 			sourceTree = "<group>";
 		};
+		77DBB85A27DF46DB00000623 /* CVC */ = {
+			isa = PBXGroup;
+			children = (
+				77DBB85B27DF46FB00000623 /* IconImgCVC.swift */,
+				77DBB85C27DF46FB00000623 /* IconImgCVC.xib */,
+			);
+			path = CVC;
+			sourceTree = "<group>";
+		};
 		77ED045627B4254500D077CA /* Global */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +426,7 @@
 		77ED046227B426D800D077CA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				77DBB85A27DF46DB00000623 /* CVC */,
 				7757287927CE0A6900148C9A /* TVC */,
 			);
 			path = Cell;
@@ -648,6 +662,7 @@
 				779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */,
 				7757287627CD301E00148C9A /* DietListSB.storyboard in Resources */,
 				7757288A27D0B0E400148C9A /* Pretendard-Regular.otf in Resources */,
+				77DBB85E27DF46FB00000623 /* IconImgCVC.xib in Resources */,
 				7757288927D0B0E400148C9A /* Pretendard-Medium.otf in Resources */,
 				7757286827C8CF0700148C9A /* FeedMainEmptyTVC.xib in Resources */,
 				77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */,
@@ -736,6 +751,7 @@
 				77FE173C274D8F7400F95F0D /* FarmVC.swift in Sources */,
 				779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */,
 				77ED047F27B6930000D077CA /* CVRegisterable.swift in Sources */,
+				77DBB85D27DF46FB00000623 /* IconImgCVC.swift in Sources */,
 				77FE1735274B860C00F95F0D /* VeginAlertVC.swift in Sources */,
 				77ED048727B6965D00D077CA /* UIView+.swift in Sources */,
 				772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */,
