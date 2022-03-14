@@ -42,6 +42,8 @@
 		77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB84927DEF29F00000623 /* CategoryCVC.xib */; };
 		77DBB85427DF428300000623 /* DietDetailImgTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB85227DF428300000623 /* DietDetailImgTVC.swift */; };
 		77DBB85527DF428300000623 /* DietDetailImgTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB85327DF428300000623 /* DietDetailImgTVC.xib */; };
+		77DBB85827DF449800000623 /* DietDetailIconTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB85627DF449800000623 /* DietDetailIconTVC.swift */; };
+		77DBB85927DF449800000623 /* DietDetailIconTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB85727DF449800000623 /* DietDetailIconTVC.xib */; };
 		77ED047727B691F800D077CA /* StoryboardRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047627B691F800D077CA /* StoryboardRepresentation.swift */; };
 		77ED047927B6927E00D077CA /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047827B6927E00D077CA /* BaseNC.swift */; };
 		77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047A27B692B500D077CA /* BaseTVC.swift */; };
@@ -106,6 +108,8 @@
 		77DBB84927DEF29F00000623 /* CategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCVC.xib; sourceTree = "<group>"; };
 		77DBB85227DF428300000623 /* DietDetailImgTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailImgTVC.swift; sourceTree = "<group>"; };
 		77DBB85327DF428300000623 /* DietDetailImgTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailImgTVC.xib; sourceTree = "<group>"; };
+		77DBB85627DF449800000623 /* DietDetailIconTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailIconTVC.swift; sourceTree = "<group>"; };
+		77DBB85727DF449800000623 /* DietDetailIconTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailIconTVC.xib; sourceTree = "<group>"; };
 		77ED047627B691F800D077CA /* StoryboardRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRepresentation.swift; sourceTree = "<group>"; };
 		77ED047827B6927E00D077CA /* BaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNC.swift; sourceTree = "<group>"; };
 		77ED047A27B692B500D077CA /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 				7757287F27CE0F9500148C9A /* DietListTVC.xib */,
 				77DBB85227DF428300000623 /* DietDetailImgTVC.swift */,
 				77DBB85327DF428300000623 /* DietDetailImgTVC.xib */,
+				77DBB85627DF449800000623 /* DietDetailIconTVC.swift */,
+				77DBB85727DF449800000623 /* DietDetailIconTVC.xib */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -634,6 +640,7 @@
 				77FE1736274B860C00F95F0D /* VeginAlertVC.xib in Resources */,
 				7757288C27D0B0E400148C9A /* Pretendard-Light.otf in Resources */,
 				772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */,
+				77DBB85927DF449800000623 /* DietDetailIconTVC.xib in Resources */,
 				7757288B27D0B0E400148C9A /* Pretendard-SemiBold.otf in Resources */,
 				772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */,
 				7757288127CE0F9500148C9A /* DietListTVC.xib in Resources */,
@@ -718,6 +725,7 @@
 				77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */,
 				77ED047D27B692E500D077CA /* TVRegisterable.swift in Sources */,
 				7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */,
+				77DBB85827DF449800000623 /* DietDetailIconTVC.swift in Sources */,
 				7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */,
 				7757288E27D0B3D500148C9A /* UIFont+.swift in Sources */,
 				77ED048927B697C900D077CA /* UITextField+.swift in Sources */,
