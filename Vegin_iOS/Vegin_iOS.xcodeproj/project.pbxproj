@@ -48,6 +48,8 @@
 		77DBB85E27DF46FB00000623 /* IconImgCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB85C27DF46FB00000623 /* IconImgCVC.xib */; };
 		77DBB86127DF47DF00000623 /* DietDetailInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB85F27DF47DF00000623 /* DietDetailInfoTVC.swift */; };
 		77DBB86227DF47DF00000623 /* DietDetailInfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86027DF47DF00000623 /* DietDetailInfoTVC.xib */; };
+		77DBB86527DF49A600000623 /* DietDetailMemoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB86327DF49A600000623 /* DietDetailMemoTVC.swift */; };
+		77DBB86627DF49A600000623 /* DietDetailMemoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86427DF49A600000623 /* DietDetailMemoTVC.xib */; };
 		77ED047727B691F800D077CA /* StoryboardRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047627B691F800D077CA /* StoryboardRepresentation.swift */; };
 		77ED047927B6927E00D077CA /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047827B6927E00D077CA /* BaseNC.swift */; };
 		77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047A27B692B500D077CA /* BaseTVC.swift */; };
@@ -118,6 +120,8 @@
 		77DBB85C27DF46FB00000623 /* IconImgCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconImgCVC.xib; sourceTree = "<group>"; };
 		77DBB85F27DF47DF00000623 /* DietDetailInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailInfoTVC.swift; sourceTree = "<group>"; };
 		77DBB86027DF47DF00000623 /* DietDetailInfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailInfoTVC.xib; sourceTree = "<group>"; };
+		77DBB86327DF49A600000623 /* DietDetailMemoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailMemoTVC.swift; sourceTree = "<group>"; };
+		77DBB86427DF49A600000623 /* DietDetailMemoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailMemoTVC.xib; sourceTree = "<group>"; };
 		77ED047627B691F800D077CA /* StoryboardRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRepresentation.swift; sourceTree = "<group>"; };
 		77ED047827B6927E00D077CA /* BaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNC.swift; sourceTree = "<group>"; };
 		77ED047A27B692B500D077CA /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 				77DBB85727DF449800000623 /* DietDetailIconTVC.xib */,
 				77DBB85F27DF47DF00000623 /* DietDetailInfoTVC.swift */,
 				77DBB86027DF47DF00000623 /* DietDetailInfoTVC.xib */,
+				77DBB86327DF49A600000623 /* DietDetailMemoTVC.swift */,
+				77DBB86427DF49A600000623 /* DietDetailMemoTVC.xib */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -673,6 +679,7 @@
 				7757288927D0B0E400148C9A /* Pretendard-Medium.otf in Resources */,
 				7757286827C8CF0700148C9A /* FeedMainEmptyTVC.xib in Resources */,
 				77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */,
+				77DBB86627DF49A600000623 /* DietDetailMemoTVC.xib in Resources */,
 				772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */,
 				7757286027C8C7C300148C9A /* FeedMainPostTVC.xib in Resources */,
 				7757285C27C8C31400148C9A /* FeedMainTitleTVC.xib in Resources */,
@@ -751,6 +758,7 @@
 				7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */,
 				7757288E27D0B3D500148C9A /* UIFont+.swift in Sources */,
 				77ED048927B697C900D077CA /* UITextField+.swift in Sources */,
+				77DBB86527DF49A600000623 /* DietDetailMemoTVC.swift in Sources */,
 				77DBB86127DF47DF00000623 /* DietDetailInfoTVC.swift in Sources */,
 				7757286727C8CF0700148C9A /* FeedMainEmptyTVC.swift in Sources */,
 				77ED048327B693CB00D077CA /* Identifiers.swift in Sources */,
