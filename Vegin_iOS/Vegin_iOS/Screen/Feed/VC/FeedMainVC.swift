@@ -66,7 +66,7 @@ extension FeedMainVC: UITableViewDelegate {
         if indexPath.section == 0 {
             return 150.adjustedH
         } else if indexPath.section == 1 {
-            return 21.adjustedH
+            return 55.adjustedH
         } else if indexPath.section == 2 {
             return 102.adjustedH
         } else {

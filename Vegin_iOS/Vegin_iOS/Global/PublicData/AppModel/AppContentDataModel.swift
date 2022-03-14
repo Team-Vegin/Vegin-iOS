@@ -37,3 +37,8 @@ struct DietPostData {
     }
 }
 
+/// 피드 메인 뷰 카테고리 리스트 위한 모델
+struct CategoryData {
+    let title: String
+}
+
