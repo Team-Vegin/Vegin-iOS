@@ -107,6 +107,12 @@ extension DietListVC: UITableViewDataSource {
         cell.setData(postData: postList[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let nextVC = UIStoryboard.init(name: Identifiers.DietDetailSB, bundle: nil).instantiateViewController(withIdentifier: DietDetailVC.className) as? DietDetailVC else { return }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 // MARK: - Custom FSCalendar
