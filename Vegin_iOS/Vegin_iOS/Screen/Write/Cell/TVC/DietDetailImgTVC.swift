@@ -12,6 +12,7 @@ class DietDetailImgTVC: BaseTVC {
     // MARK: IBOutlet
     @IBOutlet weak var foodImgView: UIImageView!
     
+    // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
