@@ -103,15 +103,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZn-7s-lJe">
-                                <rect key="frame" x="303" y="671" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="RJC-9k-hTN"/>
-                                    <constraint firstAttribute="height" constant="50" id="aIF-u5-Jff"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="writeFloating"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -120,12 +111,10 @@
                             <constraint firstItem="7Cv-0x-wBD" firstAttribute="top" secondItem="td8-fq-M8V" secondAttribute="bottom" constant="21" id="Aod-32-pUP"/>
                             <constraint firstItem="chV-sS-LHv" firstAttribute="top" secondItem="7Cv-0x-wBD" secondAttribute="bottom" constant="19" id="D1X-Gf-H3v"/>
                             <constraint firstItem="td8-fq-M8V" firstAttribute="top" secondItem="UaX-AN-ZSo" secondAttribute="bottom" constant="17" id="KnV-sv-Mpv"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="cZn-7s-lJe" secondAttribute="bottom" constant="57" id="Mb7-KO-ujC"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="chV-sS-LHv" secondAttribute="trailing" constant="36" id="Ybd-tW-rv7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="chV-sS-LHv" secondAttribute="bottom" id="ekQ-Tg-S4S"/>
                             <constraint firstItem="UaX-AN-ZSo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jBL-Pl-KV3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="td8-fq-M8V" secondAttribute="trailing" constant="42" id="jTl-2c-Xz8"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cZn-7s-lJe" secondAttribute="trailing" constant="22" id="jdT-nR-0Yk"/>
                             <constraint firstItem="td8-fq-M8V" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="42" id="nVh-g4-1wE"/>
                             <constraint firstItem="chV-sS-LHv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="36" id="rhC-bo-ukP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7Cv-0x-wBD" secondAttribute="trailing" constant="24" id="tSL-Mz-otD"/>
@@ -148,7 +137,6 @@
     <resources>
         <image name="backButton" width="24" height="24"/>
         <image name="nextButton" width="24" height="24"/>
-        <image name="writeFloating" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
