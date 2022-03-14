@@ -42,3 +42,12 @@ struct CategoryData {
     let title: String
 }
 
+/// 식단 상세 뷰 아이콘 리스트 위한 모델
+struct IconImgData {
+    let iconImgName: String
+    
+    func makeIconImg() -> UIImage? {
+        return UIImage(named: iconImgName)
+    }
+}
+
