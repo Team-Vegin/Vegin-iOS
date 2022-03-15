@@ -11,6 +11,10 @@ class DietDetailVC: UIViewController {
 
     // MARK: IBOutlet
     @IBOutlet weak var naviView: UIView!
+    @IBOutlet weak var naviTitleLabel: UILabel!
+    
+    // MARK: Properties
+    var selectedDate: String = ""
     
     /// 게시글 길이에 따른 동적 높이 셀 구현
     @IBOutlet weak var dietPostTV: UITableView! {
@@ -22,6 +26,7 @@ class DietDetailVC: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         addShadowToNaviBar()
         registerTVC()
         setUpTV()
@@ -42,6 +47,9 @@ class DietDetailVC: UIViewController {
 
 // MARK: - UI
 extension DietDetailVC {
+    private func configureUI() {
+        naviTitleLabel.text = selectedDate + " 식단"
+    }
     
     /// NaviBar dropShadow 설정 함수
     private func addShadowToNaviBar() {
