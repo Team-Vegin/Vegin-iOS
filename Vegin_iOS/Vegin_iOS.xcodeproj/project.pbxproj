@@ -52,6 +52,7 @@
 		77DBB86227DF47DF00000623 /* DietDetailInfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86027DF47DF00000623 /* DietDetailInfoTVC.xib */; };
 		77DBB86527DF49A600000623 /* DietDetailMemoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB86327DF49A600000623 /* DietDetailMemoTVC.swift */; };
 		77DBB86627DF49A600000623 /* DietDetailMemoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86427DF49A600000623 /* DietDetailMemoTVC.xib */; };
+		77DBB86A27E0CF8C00000623 /* FeedNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB86927E0CF8C00000623 /* FeedNC.swift */; };
 		77ED047727B691F800D077CA /* StoryboardRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047627B691F800D077CA /* StoryboardRepresentation.swift */; };
 		77ED047927B6927E00D077CA /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047827B6927E00D077CA /* BaseNC.swift */; };
 		77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047A27B692B500D077CA /* BaseTVC.swift */; };
@@ -126,6 +127,7 @@
 		77DBB86027DF47DF00000623 /* DietDetailInfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailInfoTVC.xib; sourceTree = "<group>"; };
 		77DBB86327DF49A600000623 /* DietDetailMemoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailMemoTVC.swift; sourceTree = "<group>"; };
 		77DBB86427DF49A600000623 /* DietDetailMemoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailMemoTVC.xib; sourceTree = "<group>"; };
+		77DBB86927E0CF8C00000623 /* FeedNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedNC.swift; sourceTree = "<group>"; };
 		77ED047627B691F800D077CA /* StoryboardRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRepresentation.swift; sourceTree = "<group>"; };
 		77ED047827B6927E00D077CA /* BaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNC.swift; sourceTree = "<group>"; };
 		77ED047A27B692B500D077CA /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				7757285627C8C11E00148C9A /* FeedMainVC.swift */,
+				77DBB86927E0CF8C00000623 /* FeedNC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				7757286E27CBDADA00148C9A /* BaseVC.swift in Sources */,
 				77ED048527B6944300D077CA /* NaviType.swift in Sources */,
 				77FE1738274D2EC800F95F0D /* VeginTBC.swift in Sources */,
+				77DBB86A27E0CF8C00000623 /* FeedNC.swift in Sources */,
 				7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */,
 				77ED048F27B6C46900D077CA /* UILabel+.swift in Sources */,
 				77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */,
