@@ -64,7 +64,7 @@ extension FeedMainVC: UITableViewDelegate {
     /// cell 높이 설정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 150.adjustedH
+            return 197.adjustedH
         } else if indexPath.section == 1 {
             return 55.adjustedH
         } else if indexPath.section == 2 {
