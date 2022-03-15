@@ -48,9 +48,9 @@
                                             <action selector="tapRightNaviBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8at-Bh-62W"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQr-cA-8as">
-                                        <rect key="frame" x="162" y="62.000000000000007" width="51" height="24.333333333333336"/>
-                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQr-cA-8as">
+                                        <rect key="frame" x="165" y="63.333333333333336" width="45.333333333333343" height="21.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -95,6 +95,7 @@
                     </view>
                     <connections>
                         <outlet property="dietPostTV" destination="NTp-OC-v23" id="27c-s2-MfI"/>
+                        <outlet property="naviTitleLabel" destination="aQr-cA-8as" id="xkI-xV-WCJ"/>
                         <outlet property="naviView" destination="W35-hp-UCv" id="IjN-0C-K1e"/>
                     </connections>
                 </viewController>

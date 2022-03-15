@@ -22,7 +22,6 @@ class CalendarVC: UIViewController {
     // MARK: - Vars & Lets Part
     
     private var currentPage: Date?
-    private var selectedDate: String?
     private lazy var today: Date = {
         return Date()
     }()
@@ -54,7 +53,7 @@ class CalendarVC: UIViewController {
         let calendarTabSB = UIStoryboard.init(name: "WriteSB", bundle: nil)
         guard let nextVC = calendarTabSB.instantiateViewController(withIdentifier: WriteVC.className) as? WriteVC else { return }
         
-        nextVC.selectedDate = self.selectedDate ?? getDayDate(date: today)
+        nextVC.selectedDate = getDayDate(date: calendar.selectedDate ?? today)
         print("넘어간날짜", nextVC.selectedDate)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
@@ -76,11 +75,6 @@ class CalendarVC: UIViewController {
         } else {
             return true
         }
-    }
-    
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        self.selectedDate = getDayDate(date: date)
-        print("선택날짜", selectedDate)
     }
     
     private func setUI() {
