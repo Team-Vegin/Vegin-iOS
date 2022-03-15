@@ -12,6 +12,7 @@ class WriteVC: BaseVC {
 
     let storage = Storage.storage().reference() // 인스턴스 생성
     var emojiArray: [Bool] = [false, false, false, false, false, false]
+    var selectedDate: String = ""
     
     var isLevel1Selected = false {
         didSet {
@@ -110,7 +111,7 @@ class WriteVC: BaseVC {
 
         var calendarEmoji: [String:Any] = UserDefaults.standard.dictionary(forKey: "calendarEmoji") ?? [:]
 
-        calendarEmoji.updateValue(resultEmoji, forKey: "\(getDayDate(date: Date()))")
+        calendarEmoji.updateValue(resultEmoji, forKey: selectedDate)
         UserDefaults.standard.set(calendarEmoji, forKey: "calendarEmoji")
         print(UserDefaults.standard.dictionary(forKey: "calendarEmoji"))
         
@@ -219,7 +220,7 @@ class WriteVC: BaseVC {
         setUpSaveBtnStatus()
     }
     @IBAction func touchUpToShowImage(_ sender: Any) {
-        makeTwoAlertWithCancel(title: "이미지 업로드", message: "식단 사진을 업로드해주세요", okTitle: "사진앨범", secondOkTitle: "카메라", okAction: { _ in
+        makeTwoAlertWithCancelAndTitle(title: "이미지 업로드", message: "식단 사진을 업로드해주세요", okTitle: "사진앨범", secondOkTitle: "카메라", okAction: { _ in
             self.openLibrary()
         }, secondOkAction: { _ in
             self.openCamera()

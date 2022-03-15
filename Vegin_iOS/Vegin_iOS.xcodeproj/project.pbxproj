@@ -40,6 +40,18 @@
 		77DBB84627DB186100000623 /* VeginBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB84527DB186100000623 /* VeginBtn.swift */; };
 		77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB84827DEF29F00000623 /* CategoryCVC.swift */; };
 		77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB84927DEF29F00000623 /* CategoryCVC.xib */; };
+		77DBB84F27DF2BBD00000623 /* DietDetailSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB84E27DF2BBD00000623 /* DietDetailSB.storyboard */; };
+		77DBB85127DF414000000623 /* DietDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB85027DF414000000623 /* DietDetailVC.swift */; };
+		77DBB85427DF428300000623 /* DietDetailImgTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB85227DF428300000623 /* DietDetailImgTVC.swift */; };
+		77DBB85527DF428300000623 /* DietDetailImgTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB85327DF428300000623 /* DietDetailImgTVC.xib */; };
+		77DBB85827DF449800000623 /* DietDetailIconTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB85627DF449800000623 /* DietDetailIconTVC.swift */; };
+		77DBB85927DF449800000623 /* DietDetailIconTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB85727DF449800000623 /* DietDetailIconTVC.xib */; };
+		77DBB85D27DF46FB00000623 /* IconImgCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB85B27DF46FB00000623 /* IconImgCVC.swift */; };
+		77DBB85E27DF46FB00000623 /* IconImgCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB85C27DF46FB00000623 /* IconImgCVC.xib */; };
+		77DBB86127DF47DF00000623 /* DietDetailInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB85F27DF47DF00000623 /* DietDetailInfoTVC.swift */; };
+		77DBB86227DF47DF00000623 /* DietDetailInfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86027DF47DF00000623 /* DietDetailInfoTVC.xib */; };
+		77DBB86527DF49A600000623 /* DietDetailMemoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB86327DF49A600000623 /* DietDetailMemoTVC.swift */; };
+		77DBB86627DF49A600000623 /* DietDetailMemoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86427DF49A600000623 /* DietDetailMemoTVC.xib */; };
 		77ED047727B691F800D077CA /* StoryboardRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047627B691F800D077CA /* StoryboardRepresentation.swift */; };
 		77ED047927B6927E00D077CA /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047827B6927E00D077CA /* BaseNC.swift */; };
 		77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047A27B692B500D077CA /* BaseTVC.swift */; };
@@ -102,6 +114,18 @@
 		77DBB84527DB186100000623 /* VeginBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeginBtn.swift; sourceTree = "<group>"; };
 		77DBB84827DEF29F00000623 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		77DBB84927DEF29F00000623 /* CategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCVC.xib; sourceTree = "<group>"; };
+		77DBB84E27DF2BBD00000623 /* DietDetailSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DietDetailSB.storyboard; sourceTree = "<group>"; };
+		77DBB85027DF414000000623 /* DietDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailVC.swift; sourceTree = "<group>"; };
+		77DBB85227DF428300000623 /* DietDetailImgTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailImgTVC.swift; sourceTree = "<group>"; };
+		77DBB85327DF428300000623 /* DietDetailImgTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailImgTVC.xib; sourceTree = "<group>"; };
+		77DBB85627DF449800000623 /* DietDetailIconTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailIconTVC.swift; sourceTree = "<group>"; };
+		77DBB85727DF449800000623 /* DietDetailIconTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailIconTVC.xib; sourceTree = "<group>"; };
+		77DBB85B27DF46FB00000623 /* IconImgCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImgCVC.swift; sourceTree = "<group>"; };
+		77DBB85C27DF46FB00000623 /* IconImgCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconImgCVC.xib; sourceTree = "<group>"; };
+		77DBB85F27DF47DF00000623 /* DietDetailInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailInfoTVC.swift; sourceTree = "<group>"; };
+		77DBB86027DF47DF00000623 /* DietDetailInfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailInfoTVC.xib; sourceTree = "<group>"; };
+		77DBB86327DF49A600000623 /* DietDetailMemoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailMemoTVC.swift; sourceTree = "<group>"; };
+		77DBB86427DF49A600000623 /* DietDetailMemoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailMemoTVC.xib; sourceTree = "<group>"; };
 		77ED047627B691F800D077CA /* StoryboardRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRepresentation.swift; sourceTree = "<group>"; };
 		77ED047827B6927E00D077CA /* BaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNC.swift; sourceTree = "<group>"; };
 		77ED047A27B692B500D077CA /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
@@ -258,6 +282,14 @@
 			children = (
 				7757287E27CE0F9500148C9A /* DietListTVC.swift */,
 				7757287F27CE0F9500148C9A /* DietListTVC.xib */,
+				77DBB85227DF428300000623 /* DietDetailImgTVC.swift */,
+				77DBB85327DF428300000623 /* DietDetailImgTVC.xib */,
+				77DBB85627DF449800000623 /* DietDetailIconTVC.swift */,
+				77DBB85727DF449800000623 /* DietDetailIconTVC.xib */,
+				77DBB85F27DF47DF00000623 /* DietDetailInfoTVC.swift */,
+				77DBB86027DF47DF00000623 /* DietDetailInfoTVC.xib */,
+				77DBB86327DF49A600000623 /* DietDetailMemoTVC.swift */,
+				77DBB86427DF49A600000623 /* DietDetailMemoTVC.xib */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -279,6 +311,15 @@
 			children = (
 				77DBB84827DEF29F00000623 /* CategoryCVC.swift */,
 				77DBB84927DEF29F00000623 /* CategoryCVC.xib */,
+			);
+			path = CVC;
+			sourceTree = "<group>";
+		};
+		77DBB85A27DF46DB00000623 /* CVC */ = {
+			isa = PBXGroup;
+			children = (
+				77DBB85B27DF46FB00000623 /* IconImgCVC.swift */,
+				77DBB85C27DF46FB00000623 /* IconImgCVC.xib */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -401,6 +442,7 @@
 		77ED046227B426D800D077CA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				77DBB85A27DF46DB00000623 /* CVC */,
 				7757287927CE0A6900148C9A /* TVC */,
 			);
 			path = Cell;
@@ -410,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				779015BA2742E51A00F83ACD /* WriteVC.swift */,
+				77DBB85027DF414000000623 /* DietDetailVC.swift */,
 				772C1482273CF9D500BB0127 /* CalendarVC.swift */,
 				7757287727CD337D00148C9A /* DietListVC.swift */,
 				779015BC2743ACE800F83ACD /* CalendarNaviController.swift */,
@@ -421,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				779015B82742E38300F83ACD /* WriteSB.storyboard */,
+				77DBB84E27DF2BBD00000623 /* DietDetailSB.storyboard */,
 				7757287527CD301E00148C9A /* DietListSB.storyboard */,
 			);
 			path = SB;
@@ -627,16 +671,22 @@
 				7757288827D0B0E400148C9A /* Pretendard-Bold.otf in Resources */,
 				77FE1736274B860C00F95F0D /* VeginAlertVC.xib in Resources */,
 				7757288C27D0B0E400148C9A /* Pretendard-Light.otf in Resources */,
+				77DBB84F27DF2BBD00000623 /* DietDetailSB.storyboard in Resources */,
 				772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */,
+				77DBB85927DF449800000623 /* DietDetailIconTVC.xib in Resources */,
 				7757288B27D0B0E400148C9A /* Pretendard-SemiBold.otf in Resources */,
 				772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */,
 				7757288127CE0F9500148C9A /* DietListTVC.xib in Resources */,
+				77DBB85527DF428300000623 /* DietDetailImgTVC.xib in Resources */,
 				779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */,
 				7757287627CD301E00148C9A /* DietListSB.storyboard in Resources */,
 				7757288A27D0B0E400148C9A /* Pretendard-Regular.otf in Resources */,
+				77DBB85E27DF46FB00000623 /* IconImgCVC.xib in Resources */,
+				77DBB86227DF47DF00000623 /* DietDetailInfoTVC.xib in Resources */,
 				7757288927D0B0E400148C9A /* Pretendard-Medium.otf in Resources */,
 				7757286827C8CF0700148C9A /* FeedMainEmptyTVC.xib in Resources */,
 				77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */,
+				77DBB86627DF49A600000623 /* DietDetailMemoTVC.xib in Resources */,
 				772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */,
 				7757286027C8C7C300148C9A /* FeedMainPostTVC.xib in Resources */,
 				7757285C27C8C31400148C9A /* FeedMainTitleTVC.xib in Resources */,
@@ -711,9 +761,13 @@
 				77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */,
 				77ED047D27B692E500D077CA /* TVRegisterable.swift in Sources */,
 				7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */,
+				77DBB85827DF449800000623 /* DietDetailIconTVC.swift in Sources */,
 				7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */,
 				7757288E27D0B3D500148C9A /* UIFont+.swift in Sources */,
 				77ED048927B697C900D077CA /* UITextField+.swift in Sources */,
+				77DBB85127DF414000000623 /* DietDetailVC.swift in Sources */,
+				77DBB86527DF49A600000623 /* DietDetailMemoTVC.swift in Sources */,
+				77DBB86127DF47DF00000623 /* DietDetailInfoTVC.swift in Sources */,
 				7757286727C8CF0700148C9A /* FeedMainEmptyTVC.swift in Sources */,
 				77ED048327B693CB00D077CA /* Identifiers.swift in Sources */,
 				77ED049127B6C4FC00D077CA /* UserDefaults+.swift in Sources */,
@@ -721,10 +775,12 @@
 				77FE173C274D8F7400F95F0D /* FarmVC.swift in Sources */,
 				779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */,
 				77ED047F27B6930000D077CA /* CVRegisterable.swift in Sources */,
+				77DBB85D27DF46FB00000623 /* IconImgCVC.swift in Sources */,
 				77FE1735274B860C00F95F0D /* VeginAlertVC.swift in Sources */,
 				77ED048727B6965D00D077CA /* UIView+.swift in Sources */,
 				772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */,
 				77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */,
+				77DBB85427DF428300000623 /* DietDetailImgTVC.swift in Sources */,
 				7757285F27C8C7C300148C9A /* FeedMainPostTVC.swift in Sources */,
 				77ED048127B6932D00D077CA /* BaseCVC.swift in Sources */,
 				77ED048B27B6994900D077CA /* UIButton+.swift in Sources */,

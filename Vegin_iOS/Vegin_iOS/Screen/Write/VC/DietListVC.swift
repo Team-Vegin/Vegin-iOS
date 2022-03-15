@@ -105,7 +105,15 @@ extension DietListVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DietListTVC.className) as? DietListTVC else { return UITableViewCell() }
         
         cell.setData(postData: postList[indexPath.row])
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let nextVC = UIStoryboard.init(name: Identifiers.DietDetailSB, bundle: nil).instantiateViewController(withIdentifier: DietDetailVC.className) as? DietDetailVC else { return }
+        
+        nextVC.selectedDate = getDayDate(date: listCalendar.selectedDate ?? today )
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 
@@ -126,6 +134,8 @@ extension DietListVC: FSCalendarDelegate, FSCalendarDataSource {
         listCalendar.appearance.todayColor = .main
         listCalendar.appearance.titleTodayColor = .darkMain
         listCalendar.appearance.calendar.weekdayHeight = 20
+        listCalendar.appearance.selectionColor = .main
+        listCalendar.appearance.titleSelectionColor = .black
         
         let monthData = getMonthDate(date: listCalendar.currentPage)
         self.headerLabel.text = monthData
@@ -146,7 +156,12 @@ extension DietListVC: FSCalendarDelegate, FSCalendarDataSource {
     }
     
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-        return false // 날짜 선택 안되도록
+        /// 날짜 하나만 선택가능하도록
+        if calendar.selectedDates.count > 1 {
+            return false
+        } else {
+            return true
+        }
     }
     
 }
