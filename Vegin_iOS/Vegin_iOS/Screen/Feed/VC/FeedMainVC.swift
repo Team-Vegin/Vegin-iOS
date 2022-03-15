@@ -95,6 +95,11 @@ extension FeedMainVC: UITableViewDataSource {
               let feedMainEmptyTVC = tableView.dequeueReusableCell(withIdentifier: FeedMainEmptyTVC.className) as? FeedMainEmptyTVC,
               let feedMainPostTVC = tableView.dequeueReusableCell(withIdentifier: FeedMainPostTVC.className) as? FeedMainPostTVC else { return UITableViewCell() }
         if indexPath.section == 0 {
+            feedMainTitleTVC.tapListBtnAction = {
+                guard let myPostListVC = UIStoryboard.init(name: Identifiers.MyFeedPostSB, bundle: nil).instantiateViewController(withIdentifier: MyFeedPostVC.className) as? MyFeedPostVC else { return }
+                
+                self.navigationController?.pushViewController(myPostListVC, animated: true)
+            }
             return feedMainTitleTVC
         } else if indexPath.section == 1 {
             return feedMainEmptyTVC
