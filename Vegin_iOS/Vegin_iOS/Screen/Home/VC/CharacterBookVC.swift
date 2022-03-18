@@ -13,4 +13,8 @@ class CharacterBookVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func tapNaviBackBtn(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

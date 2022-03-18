@@ -23,7 +23,10 @@ class FarmVC: UIViewController {
     }
     
     // MARK: IBAction
-    @IBAction func tapCharacterPageBtn(_ sender: Any) {  //캐릭터 도감 페이지로 이동
+    @IBAction func tapCharacterPageBtn(_ sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: CharacterBookVC.className) as? CharacterBookVC else { return }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     @IBAction func tapCharaterBtn(_ sender: Any) {  //메인 캐릭터를 누르면 새로운 메세지로 변경
     }
