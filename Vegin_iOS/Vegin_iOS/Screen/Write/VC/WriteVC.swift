@@ -6,11 +6,9 @@
 //
 
 import UIKit
-import FirebaseStorage
 
 class WriteVC: BaseVC {
 
-    let storage = Storage.storage().reference() // 인스턴스 생성
     var emojiArray: [Bool] = [false, false, false, false, false, false]
     var selectedDate: String = ""
     
@@ -317,17 +315,7 @@ extension WriteVC: UIImagePickerControllerDelegate {
         guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
             return
         }
-
-        guard let imageData = image.pngData() else {
-            return
-        }
         
-        storage.child("images/file\(UserDefaults.standard.integer(forKey: "imageCount")).png").putData(imageData, metadata: nil, completion: {_, error in
-            guard error == nil else {
-                print("Failed to upload")
-                return
-            }
-        })
         foodImgView.image = image
         imageUploadButton.tintColor = .clear
         dismiss(animated: true, completion: nil)
