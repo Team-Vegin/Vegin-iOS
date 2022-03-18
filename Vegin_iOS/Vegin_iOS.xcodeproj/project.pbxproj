@@ -13,7 +13,6 @@
 		772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772C1477273B7DAE00BB0127 /* Assets.xcassets */; };
 		772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */; };
 		772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1482273CF9D500BB0127 /* CalendarVC.swift */; };
-		773966022764CD860017FB10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 773966012764CD860017FB10 /* GoogleService-Info.plist */; };
 		7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57B2742C0F000325814 /* UIViewController+.swift */; };
 		7757285727C8C11E00148C9A /* FeedMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285627C8C11E00148C9A /* FeedMainVC.swift */; };
 		7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */; };
@@ -59,6 +58,7 @@
 		77DBB87027E0D61200000623 /* FeedMyPostTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86E27E0D61200000623 /* FeedMyPostTVC.xib */; };
 		77DBB87327E1106600000623 /* FeedMyPostEmptyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB87127E1106600000623 /* FeedMyPostEmptyTVC.swift */; };
 		77DBB87427E1106700000623 /* FeedMyPostEmptyTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB87227E1106600000623 /* FeedMyPostEmptyTVC.xib */; };
+		77DBB87827E47ECE00000623 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB87727E47ECE00000623 /* GoogleService-Info.plist */; };
 		77ED047727B691F800D077CA /* StoryboardRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047627B691F800D077CA /* StoryboardRepresentation.swift */; };
 		77ED047927B6927E00D077CA /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047827B6927E00D077CA /* BaseNC.swift */; };
 		77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047A27B692B500D077CA /* BaseTVC.swift */; };
@@ -94,7 +94,6 @@
 		772C147A273B7DAE00BB0127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		772C147C273B7DAE00BB0127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		772C1482273CF9D500BB0127 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
-		773966012764CD860017FB10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7744C57B2742C0F000325814 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		7757285627C8C11E00148C9A /* FeedMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainVC.swift; sourceTree = "<group>"; };
 		7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainTitleTVC.swift; sourceTree = "<group>"; };
@@ -140,6 +139,7 @@
 		77DBB86E27E0D61200000623 /* FeedMyPostTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedMyPostTVC.xib; sourceTree = "<group>"; };
 		77DBB87127E1106600000623 /* FeedMyPostEmptyTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMyPostEmptyTVC.swift; sourceTree = "<group>"; };
 		77DBB87227E1106600000623 /* FeedMyPostEmptyTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedMyPostEmptyTVC.xib; sourceTree = "<group>"; };
+		77DBB87727E47ECE00000623 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77ED047627B691F800D077CA /* StoryboardRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRepresentation.swift; sourceTree = "<group>"; };
 		77ED047827B6927E00D077CA /* BaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNC.swift; sourceTree = "<group>"; };
 		77ED047A27B692B500D077CA /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 				772C1477273B7DAE00BB0127 /* Assets.xcassets */,
 				77ED049627B6CF9F00D077CA /* ColorSets.xcassets */,
 				772C147C273B7DAE00BB0127 /* Info.plist */,
-				773966012764CD860017FB10 /* GoogleService-Info.plist */,
+				77DBB87727E47ECE00000623 /* GoogleService-Info.plist */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -700,6 +700,7 @@
 				772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */,
 				7757288127CE0F9500148C9A /* DietListTVC.xib in Resources */,
 				77DBB85527DF428300000623 /* DietDetailImgTVC.xib in Resources */,
+				77DBB87827E47ECE00000623 /* GoogleService-Info.plist in Resources */,
 				779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */,
 				7757287627CD301E00148C9A /* DietListSB.storyboard in Resources */,
 				7757288A27D0B0E400148C9A /* Pretendard-Regular.otf in Resources */,
@@ -714,7 +715,6 @@
 				772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */,
 				7757286027C8C7C300148C9A /* FeedMainPostTVC.xib in Resources */,
 				7757285C27C8C31400148C9A /* FeedMainTitleTVC.xib in Resources */,
-				773966022764CD860017FB10 /* GoogleService-Info.plist in Resources */,
 				77ED049727B6CF9F00D077CA /* ColorSets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
