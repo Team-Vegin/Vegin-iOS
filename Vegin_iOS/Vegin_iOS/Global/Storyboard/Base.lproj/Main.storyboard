@@ -407,7 +407,7 @@
             </objects>
             <point key="canvasLocation" x="-214" y="882"/>
         </scene>
-        <!--피드-->
+        <!--Feed MainVC-->
         <scene sceneID="V4V-Zq-cSq">
             <objects>
                 <viewController storyboardIdentifier="FeedMainVC" id="4Rh-zJ-sX2" customClass="FeedMainVC" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -420,7 +420,7 @@
                                 <color key="backgroundColor" name="background"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bMh-np-pbl">
-                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -428,23 +428,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Wyz-xX-Lo9" firstAttribute="trailing" secondItem="URt-8p-8it" secondAttribute="trailing" id="7YB-FB-GOj"/>
-                            <constraint firstItem="bMh-np-pbl" firstAttribute="top" secondItem="Wyz-xX-Lo9" secondAttribute="top" id="BKL-he-0WD"/>
                             <constraint firstItem="URt-8p-8it" firstAttribute="leading" secondItem="Wyz-xX-Lo9" secondAttribute="leading" id="Egj-NK-7Af"/>
                             <constraint firstItem="URt-8p-8it" firstAttribute="top" secondItem="Q50-5L-hhN" secondAttribute="top" id="M9n-uv-tNM"/>
+                            <constraint firstItem="bMh-np-pbl" firstAttribute="top" secondItem="Q50-5L-hhN" secondAttribute="top" id="YeP-kk-UB3"/>
+                            <constraint firstItem="Wyz-xX-Lo9" firstAttribute="bottom" secondItem="URt-8p-8it" secondAttribute="bottom" constant="685" id="d2D-tO-3HW"/>
                             <constraint firstItem="bMh-np-pbl" firstAttribute="leading" secondItem="Wyz-xX-Lo9" secondAttribute="leading" id="dc6-yi-yqc"/>
                             <constraint firstItem="Wyz-xX-Lo9" firstAttribute="trailing" secondItem="bMh-np-pbl" secondAttribute="trailing" id="du3-Zk-bNB"/>
-                            <constraint firstItem="bMh-np-pbl" firstAttribute="top" secondItem="URt-8p-8it" secondAttribute="bottom" id="fWt-s1-RqA"/>
                             <constraint firstItem="Wyz-xX-Lo9" firstAttribute="bottom" secondItem="bMh-np-pbl" secondAttribute="bottom" id="j5H-Jj-O2g"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="피드" image="feed" id="OhS-X6-u0A"/>
+                    <navigationItem key="navigationItem" id="X33-Os-W6O"/>
                     <connections>
                         <outlet property="feedTV" destination="bMh-np-pbl" id="cWF-IN-IGt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Da4-8L-Esn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840.79999999999995" y="881.5270935960591"/>
+            <point key="canvasLocation" x="1663" y="882"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="yVt-05-Hc8">
@@ -626,7 +626,7 @@
                     <connections>
                         <segue destination="t7Z-hn-7uu" kind="relationship" relationship="viewControllers" id="Rsh-XH-o3Y"/>
                         <segue destination="28b-C6-kti" kind="relationship" relationship="viewControllers" id="cAq-29-2GQ"/>
-                        <segue destination="4Rh-zJ-sX2" kind="relationship" relationship="viewControllers" id="jUM-x4-G1v"/>
+                        <segue destination="SSh-SB-k6V" kind="relationship" relationship="viewControllers" id="jUM-x4-G1v"/>
                         <segue destination="jHg-18-f0J" kind="relationship" relationship="viewControllers" id="kYB-oN-a5m"/>
                     </connections>
                 </tabBarController>
@@ -651,6 +651,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHS-mb-XPn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.79999999999995" y="97.536945812807886"/>
+        </scene>
+        <!--피드-->
+        <scene sceneID="XMp-Ae-Wr8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="SSh-SB-k6V" customClass="FeedNC" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="피드" image="feed" id="OhS-X6-u0A"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kVW-jj-Fmc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4Rh-zJ-sX2" kind="relationship" relationship="rootViewController" id="Mc7-uy-Sk4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2z-Wh-9Sj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="882"/>
         </scene>
     </scenes>
     <resources>

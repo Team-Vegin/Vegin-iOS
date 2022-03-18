@@ -14,7 +14,6 @@
 		772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772C1477273B7DAE00BB0127 /* Assets.xcassets */; };
 		772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */; };
 		772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1482273CF9D500BB0127 /* CalendarVC.swift */; };
-		773966022764CD860017FB10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 773966012764CD860017FB10 /* GoogleService-Info.plist */; };
 		7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57B2742C0F000325814 /* UIViewController+.swift */; };
 		7757285727C8C11E00148C9A /* FeedMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285627C8C11E00148C9A /* FeedMainVC.swift */; };
 		7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */; };
@@ -53,6 +52,14 @@
 		77DBB86227DF47DF00000623 /* DietDetailInfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86027DF47DF00000623 /* DietDetailInfoTVC.xib */; };
 		77DBB86527DF49A600000623 /* DietDetailMemoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB86327DF49A600000623 /* DietDetailMemoTVC.swift */; };
 		77DBB86627DF49A600000623 /* DietDetailMemoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86427DF49A600000623 /* DietDetailMemoTVC.xib */; };
+		77DBB86827E0CD4100000623 /* MyFeedPostSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86727E0CD4100000623 /* MyFeedPostSB.storyboard */; };
+		77DBB86A27E0CF8C00000623 /* FeedNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB86927E0CF8C00000623 /* FeedNC.swift */; };
+		77DBB86C27E0D46000000623 /* MyFeedPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB86B27E0D45F00000623 /* MyFeedPostVC.swift */; };
+		77DBB86F27E0D61200000623 /* FeedMyPostTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB86D27E0D61200000623 /* FeedMyPostTVC.swift */; };
+		77DBB87027E0D61200000623 /* FeedMyPostTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86E27E0D61200000623 /* FeedMyPostTVC.xib */; };
+		77DBB87327E1106600000623 /* FeedMyPostEmptyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB87127E1106600000623 /* FeedMyPostEmptyTVC.swift */; };
+		77DBB87427E1106700000623 /* FeedMyPostEmptyTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB87227E1106600000623 /* FeedMyPostEmptyTVC.xib */; };
+		77DBB87827E47ECE00000623 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB87727E47ECE00000623 /* GoogleService-Info.plist */; };
 		77ED047727B691F800D077CA /* StoryboardRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047627B691F800D077CA /* StoryboardRepresentation.swift */; };
 		77ED047927B6927E00D077CA /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047827B6927E00D077CA /* BaseNC.swift */; };
 		77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED047A27B692B500D077CA /* BaseTVC.swift */; };
@@ -89,7 +96,6 @@
 		772C147A273B7DAE00BB0127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		772C147C273B7DAE00BB0127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		772C1482273CF9D500BB0127 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
-		773966012764CD860017FB10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7744C57B2742C0F000325814 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		7757285627C8C11E00148C9A /* FeedMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainVC.swift; sourceTree = "<group>"; };
 		7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainTitleTVC.swift; sourceTree = "<group>"; };
@@ -128,6 +134,14 @@
 		77DBB86027DF47DF00000623 /* DietDetailInfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailInfoTVC.xib; sourceTree = "<group>"; };
 		77DBB86327DF49A600000623 /* DietDetailMemoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailMemoTVC.swift; sourceTree = "<group>"; };
 		77DBB86427DF49A600000623 /* DietDetailMemoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailMemoTVC.xib; sourceTree = "<group>"; };
+		77DBB86727E0CD4100000623 /* MyFeedPostSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyFeedPostSB.storyboard; sourceTree = "<group>"; };
+		77DBB86927E0CF8C00000623 /* FeedNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedNC.swift; sourceTree = "<group>"; };
+		77DBB86B27E0D45F00000623 /* MyFeedPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedPostVC.swift; sourceTree = "<group>"; };
+		77DBB86D27E0D61200000623 /* FeedMyPostTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMyPostTVC.swift; sourceTree = "<group>"; };
+		77DBB86E27E0D61200000623 /* FeedMyPostTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedMyPostTVC.xib; sourceTree = "<group>"; };
+		77DBB87127E1106600000623 /* FeedMyPostEmptyTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMyPostEmptyTVC.swift; sourceTree = "<group>"; };
+		77DBB87227E1106600000623 /* FeedMyPostEmptyTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedMyPostEmptyTVC.xib; sourceTree = "<group>"; };
+		77DBB87727E47ECE00000623 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77ED047627B691F800D077CA /* StoryboardRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRepresentation.swift; sourceTree = "<group>"; };
 		77ED047827B6927E00D077CA /* BaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNC.swift; sourceTree = "<group>"; };
 		77ED047A27B692B500D077CA /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
@@ -236,7 +250,7 @@
 				772C1477273B7DAE00BB0127 /* Assets.xcassets */,
 				77ED049627B6CF9F00D077CA /* ColorSets.xcassets */,
 				772C147C273B7DAE00BB0127 /* Info.plist */,
-				773966012764CD860017FB10 /* GoogleService-Info.plist */,
+				77DBB87727E47ECE00000623 /* GoogleService-Info.plist */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -253,6 +267,10 @@
 		7757285827C8C1B700148C9A /* TVC */ = {
 			isa = PBXGroup;
 			children = (
+				77DBB86D27E0D61200000623 /* FeedMyPostTVC.swift */,
+				77DBB86E27E0D61200000623 /* FeedMyPostTVC.xib */,
+				77DBB87127E1106600000623 /* FeedMyPostEmptyTVC.swift */,
+				77DBB87227E1106600000623 /* FeedMyPostEmptyTVC.xib */,
 				7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */,
 				7757285A27C8C31400148C9A /* FeedMainTitleTVC.xib */,
 				7757285D27C8C7C300148C9A /* FeedMainPostTVC.swift */,
@@ -493,6 +511,8 @@
 			isa = PBXGroup;
 			children = (
 				7757285627C8C11E00148C9A /* FeedMainVC.swift */,
+				77DBB86927E0CF8C00000623 /* FeedNC.swift */,
+				77DBB86B27E0D45F00000623 /* MyFeedPostVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -500,6 +520,7 @@
 		77ED046827B4272B00D077CA /* SB */ = {
 			isa = PBXGroup;
 			children = (
+				77DBB86727E0CD4100000623 /* MyFeedPostSB.storyboard */,
 			);
 			path = SB;
 			sourceTree = "<group>";
@@ -675,25 +696,28 @@
 				77FE1736274B860C00F95F0D /* VeginAlertVC.xib in Resources */,
 				7757288C27D0B0E400148C9A /* Pretendard-Light.otf in Resources */,
 				77DBB84F27DF2BBD00000623 /* DietDetailSB.storyboard in Resources */,
+				77DBB87427E1106700000623 /* FeedMyPostEmptyTVC.xib in Resources */,
 				772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */,
 				77DBB85927DF449800000623 /* DietDetailIconTVC.xib in Resources */,
 				7757288B27D0B0E400148C9A /* Pretendard-SemiBold.otf in Resources */,
 				772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */,
 				7757288127CE0F9500148C9A /* DietListTVC.xib in Resources */,
 				77DBB85527DF428300000623 /* DietDetailImgTVC.xib in Resources */,
+				77DBB87827E47ECE00000623 /* GoogleService-Info.plist in Resources */,
 				779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */,
 				7757287627CD301E00148C9A /* DietListSB.storyboard in Resources */,
 				7757288A27D0B0E400148C9A /* Pretendard-Regular.otf in Resources */,
 				77DBB85E27DF46FB00000623 /* IconImgCVC.xib in Resources */,
 				77DBB86227DF47DF00000623 /* DietDetailInfoTVC.xib in Resources */,
 				7757288927D0B0E400148C9A /* Pretendard-Medium.otf in Resources */,
+				77DBB86827E0CD4100000623 /* MyFeedPostSB.storyboard in Resources */,
 				7757286827C8CF0700148C9A /* FeedMainEmptyTVC.xib in Resources */,
 				77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */,
+				77DBB87027E0D61200000623 /* FeedMyPostTVC.xib in Resources */,
 				77DBB86627DF49A600000623 /* DietDetailMemoTVC.xib in Resources */,
 				772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */,
 				7757286027C8C7C300148C9A /* FeedMainPostTVC.xib in Resources */,
 				7757285C27C8C31400148C9A /* FeedMainTitleTVC.xib in Resources */,
-				773966022764CD860017FB10 /* GoogleService-Info.plist in Resources */,
 				77ED049727B6CF9F00D077CA /* ColorSets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,11 +783,14 @@
 				7757286E27CBDADA00148C9A /* BaseVC.swift in Sources */,
 				77ED048527B6944300D077CA /* NaviType.swift in Sources */,
 				77FE1738274D2EC800F95F0D /* VeginTBC.swift in Sources */,
+				77DBB86A27E0CF8C00000623 /* FeedNC.swift in Sources */,
 				7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */,
 				77ED048F27B6C46900D077CA /* UILabel+.swift in Sources */,
 				77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */,
 				77ED047D27B692E500D077CA /* TVRegisterable.swift in Sources */,
 				7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */,
+				77DBB86F27E0D61200000623 /* FeedMyPostTVC.swift in Sources */,
+				77DBB87327E1106600000623 /* FeedMyPostEmptyTVC.swift in Sources */,
 				77DBB85827DF449800000623 /* DietDetailIconTVC.swift in Sources */,
 				7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */,
 				7757288E27D0B3D500148C9A /* UIFont+.swift in Sources */,
@@ -789,6 +816,7 @@
 				77ED048127B6932D00D077CA /* BaseCVC.swift in Sources */,
 				77ED048B27B6994900D077CA /* UIButton+.swift in Sources */,
 				77ED048D27B699A700D077CA /* UIColor+.swift in Sources */,
+				77DBB86C27E0D46000000623 /* MyFeedPostVC.swift in Sources */,
 				7757288027CE0F9500148C9A /* DietListTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

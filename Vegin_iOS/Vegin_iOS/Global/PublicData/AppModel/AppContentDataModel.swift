@@ -51,3 +51,17 @@ struct IconImgData {
     }
 }
 
+/// 내가 쓴 피드 게시글 리스트 위한 모델
+struct FeedMyPostListData {
+    let title: String
+    let content: String
+    let nickName: String
+    let date: String
+    let category: String
+    let thumbnailImgName: String
+    
+    func makeThumbnailImg() -> UIImage? {
+        return UIImage(named: thumbnailImgName)
+    }
+}
+
