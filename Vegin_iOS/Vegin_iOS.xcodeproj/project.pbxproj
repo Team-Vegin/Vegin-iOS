@@ -13,6 +13,8 @@
 		772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772C1477273B7DAE00BB0127 /* Assets.xcassets */; };
 		772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */; };
 		772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1482273CF9D500BB0127 /* CalendarVC.swift */; };
+		7742884327EDEB1E001A7CFA /* SignInSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742884227EDEB1E001A7CFA /* SignInSB.storyboard */; };
+		7742884727EE18CB001A7CFA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742884627EE18CB001A7CFA /* SignInVC.swift */; };
 		7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57B2742C0F000325814 /* UIViewController+.swift */; };
 		7757285727C8C11E00148C9A /* FeedMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285627C8C11E00148C9A /* FeedMainVC.swift */; };
 		7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */; };
@@ -94,6 +96,8 @@
 		772C147A273B7DAE00BB0127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		772C147C273B7DAE00BB0127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		772C1482273CF9D500BB0127 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		7742884227EDEB1E001A7CFA /* SignInSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSB.storyboard; sourceTree = "<group>"; };
+		7742884627EE18CB001A7CFA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		7744C57B2742C0F000325814 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		7757285627C8C11E00148C9A /* FeedMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainVC.swift; sourceTree = "<group>"; };
 		7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainTitleTVC.swift; sourceTree = "<group>"; };
@@ -212,6 +216,31 @@
 				7744C5762742BDD500325814 /* Support */,
 			);
 			path = Vegin_iOS;
+			sourceTree = "<group>";
+		};
+		7742883F27EDEABE001A7CFA /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				7742884127EDEADA001A7CFA /* SB */,
+				7742884027EDEAD4001A7CFA /* VC */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		7742884027EDEAD4001A7CFA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				7742884627EE18CB001A7CFA /* SignInVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		7742884127EDEADA001A7CFA /* SB */ = {
+			isa = PBXGroup;
+			children = (
+				7742884227EDEB1E001A7CFA /* SignInSB.storyboard */,
+			);
+			path = SB;
 			sourceTree = "<group>";
 		};
 		7744C5712742BD5900325814 /* Protocol */ = {
@@ -361,6 +390,7 @@
 		77ED045727B4255D00D077CA /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				7742883F27EDEABE001A7CFA /* SignIn */,
 				77ED047027B42B1200D077CA /* TabBar */,
 				77ED045C27B4265E00D077CA /* Home */,
 				77ED045B27B4262500D077CA /* Write */,
@@ -700,6 +730,7 @@
 				772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */,
 				7757288127CE0F9500148C9A /* DietListTVC.xib in Resources */,
 				77DBB85527DF428300000623 /* DietDetailImgTVC.xib in Resources */,
+				7742884327EDEB1E001A7CFA /* SignInSB.storyboard in Resources */,
 				77DBB87827E47ECE00000623 /* GoogleService-Info.plist in Resources */,
 				779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */,
 				7757287627CD301E00148C9A /* DietListSB.storyboard in Resources */,
@@ -799,6 +830,7 @@
 				77ED048327B693CB00D077CA /* Identifiers.swift in Sources */,
 				77ED049127B6C4FC00D077CA /* UserDefaults+.swift in Sources */,
 				77ED049327B6C87200D077CA /* UITextView+.swift in Sources */,
+				7742884727EE18CB001A7CFA /* SignInVC.swift in Sources */,
 				77FE173C274D8F7400F95F0D /* FarmVC.swift in Sources */,
 				779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */,
 				77ED047F27B6930000D077CA /* CVRegisterable.swift in Sources */,
