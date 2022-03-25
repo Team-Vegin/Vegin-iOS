@@ -139,7 +139,7 @@
 		77DBB86E27E0D61200000623 /* FeedMyPostTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedMyPostTVC.xib; sourceTree = "<group>"; };
 		77DBB87127E1106600000623 /* FeedMyPostEmptyTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMyPostEmptyTVC.swift; sourceTree = "<group>"; };
 		77DBB87227E1106600000623 /* FeedMyPostEmptyTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedMyPostEmptyTVC.xib; sourceTree = "<group>"; };
-		77DBB87727E47ECE00000623 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		77DBB87727E47ECE00000623 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77ED047627B691F800D077CA /* StoryboardRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRepresentation.swift; sourceTree = "<group>"; };
 		77ED047827B6927E00D077CA /* BaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNC.swift; sourceTree = "<group>"; };
 		77ED047A27B692B500D077CA /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
