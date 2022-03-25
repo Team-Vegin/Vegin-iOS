@@ -67,7 +67,7 @@
             </constraints>
             <connections>
                 <outlet property="characterImg" destination="TxP-Qa-tmb" id="WbQ-2I-f8A"/>
-                <outlet property="characterName" destination="yj4-2y-Ih2" id="PnC-Fg-kBZ"/>
+                <outlet property="characterNameLabel" destination="yj4-2y-Ih2" id="e9Q-vC-unx"/>
                 <outlet property="getMissionBtn" destination="WbC-HQ-OJH" id="2Wn-Ja-aOf"/>
                 <outlet property="missionLabel" destination="kWv-js-p3t" id="oLQ-Dv-84b"/>
             </connections>

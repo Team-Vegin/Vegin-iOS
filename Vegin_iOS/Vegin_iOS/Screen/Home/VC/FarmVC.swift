@@ -23,11 +23,12 @@ class FarmVC: UIViewController {
     }
     
     // MARK: IBAction
-    @IBAction func tapCharacterPageBtn(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: CharacterBookVC.className) as? CharacterBookVC else { return }
+    @IBAction func tapCahracterPageBtn(_ sender: UIButton) {
+        guard let CharacterBookVC = self.storyboard?.instantiateViewController(withIdentifier: CharacterBookVC.className) as? CharacterBookVC else { return }
         
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        self.navigationController?.pushViewController(CharacterBookVC, animated: true)
     }
+ 
     @IBAction func tapCharaterBtn(_ sender: Any) {  //메인 캐릭터를 누르면 새로운 메세지로 변경
     }
     @IBAction func tapProgressBarBtn(_ sender: Any) {   //progressBar 누르면 진행중인 미션 노출
