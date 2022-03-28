@@ -9,21 +9,26 @@ import UIKit
 
 class NickNameVC: UIViewController {
 
+    @IBOutlet weak var flexiterianBtn: UIButton!
+    @IBOutlet weak var polloBtn: UIButton!
+    @IBOutlet weak var pescoBtn: UIButton!
+    @IBOutlet weak var lactoOvoBtn: UIButton!
+    @IBOutlet weak var lactoBtn: UIButton!
+    @IBOutlet weak var veganBtn: UIButton!
+    @IBOutlet weak var notYetBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureUI()
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension NickNameVC {
+    private func configureUI() {
+        [flexiterianBtn, polloBtn, pescoBtn, lactoOvoBtn, lactoBtn, veganBtn, notYetBtn].forEach { btn in btn?.backgroundColor = .white
+            btn?.makeRounded(cornerRadius: 0.5 * (btn?.bounds.size.height)!)
+            btn?.layer.borderColor = UIColor.gray0.cgColor
+            btn?.layer.borderWidth = 1
+        }
     }
-    */
-
 }
