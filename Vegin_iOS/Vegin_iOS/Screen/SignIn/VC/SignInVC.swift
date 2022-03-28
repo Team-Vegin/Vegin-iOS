@@ -22,6 +22,14 @@ class SignInVC: UIViewController {
         configureUI()
         setUpDelegate()
     }
+    
+    // MARK: IBAction
+    @IBAction func tapSignUpBtn(_ sender: UIButton) {
+        guard let signUpVC = UIStoryboard.init(name: Identifiers.SignUpSB, bundle: nil).instantiateViewController(withIdentifier: SignUpNVC.className) as? SignUpNVC else { return }
+        
+        signUpVC.modalPresentationStyle = .fullScreen
+        self.present(signUpVC, animated: true, completion: nil)
+    }
 }
 
 // MARK: - UI
