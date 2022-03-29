@@ -10,6 +10,7 @@ import Foundation
 struct Identifiers {
     static let Main = "Main"
     static let SignInSB = "SignInSB"
+    static let SignUpSB = "SignUpSB"
     static let WriteSB = "WriteSB"
     static let DietDetailSB = "DietDetailSB"
     static let MyFeedPostSB = "MyFeedPostSB"

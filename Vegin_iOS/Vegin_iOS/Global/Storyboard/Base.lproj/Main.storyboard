@@ -491,7 +491,7 @@
         <!--VeginTBC-->
         <scene sceneID="EVm-AA-3Z1">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="QEv-yv-i7M" customClass="VeginTBC" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="VeginTBC" automaticallyAdjustsScrollViewInsets="NO" id="QEv-yv-i7M" customClass="VeginTBC" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k5n-1b-Qq7">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

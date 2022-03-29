@@ -10,7 +10,16 @@ import UIKit
 class SignInVC: UIViewController {
 
     // MARK: IBOutlet
-    @IBOutlet weak var loginBtn: VeginBtn!
+    @IBOutlet weak var loginBtn: VeginBtn! {
+        didSet {
+            loginBtn.press {
+                guard let veginTBC = UIStoryboard.init(name: Identifiers.Main, bundle: nil).instantiateViewController(withIdentifier: VeginTBC.className) as? VeginTBC else { return }
+                
+                veginTBC.modalPresentationStyle = .fullScreen
+                self.present(veginTBC, animated: true, completion: nil)
+            }
+        }
+    }
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var emailErrorLabel: UILabel!
@@ -21,6 +30,14 @@ class SignInVC: UIViewController {
         super.viewDidLoad()
         configureUI()
         setUpDelegate()
+    }
+    
+    // MARK: IBAction
+    @IBAction func tapSignUpBtn(_ sender: UIButton) {
+        guard let signUpVC = UIStoryboard.init(name: Identifiers.SignUpSB, bundle: nil).instantiateViewController(withIdentifier: SignUpNVC.className) as? SignUpNVC else { return }
+        
+        signUpVC.modalPresentationStyle = .fullScreen
+        self.present(signUpVC, animated: true, completion: nil)
     }
 }
 

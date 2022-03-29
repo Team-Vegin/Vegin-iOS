@@ -55,19 +55,19 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 회원이 아니신가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVH-Up-I1B">
-                                <rect key="frame" x="119" y="609" width="137" height="17"/>
+                                <rect key="frame" x="120" y="609" width="135" height="17"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
                                 <color key="textColor" name="gray0"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8G-1T-A1j">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8G-1T-A1j">
                                 <rect key="frame" x="24" y="325" width="327" height="1"/>
                                 <color key="backgroundColor" name="gray0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="swa-NH-pPK"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Cw-EG-VTa">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Cw-EG-VTa">
                                 <rect key="frame" x="24" y="399" width="327" height="1"/>
                                 <color key="backgroundColor" name="gray0"/>
                                 <constraints>
@@ -75,12 +75,15 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7L2-wN-E50">
-                                <rect key="frame" x="141.66666666666666" y="640" width="92" height="24"/>
+                                <rect key="frame" x="142" y="640" width="91" height="24"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="회원가입 " image="green_right">
                                     <color key="titleColor" name="darkMain"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapSignUpBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1ai-3I-R61"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="존재하지 않는 계정입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFN-K7-OA3">
                                 <rect key="frame" x="24" y="330" width="327" height="13"/>
