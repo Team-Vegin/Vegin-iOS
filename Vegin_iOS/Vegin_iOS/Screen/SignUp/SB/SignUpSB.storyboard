@@ -130,8 +130,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5q0-k0-jON"/>
                                 </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평상시 섭취하는 음식을 선택하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykd-hh-ax2">
                                 <rect key="frame" x="103.66666666666667" y="476.66666666666669" width="167.66666666666663" height="14.666666666666686"/>
@@ -146,37 +146,53 @@
                                         <rect key="frame" x="0.0" y="0.0" width="99" height="28"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="12"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="플렉시테리언">
                                             <color key="titleColor" name="gray0"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapFlexiterianBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0Ie-nx-o2J"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QB3-8i-un0">
                                         <rect key="frame" x="110.99999999999999" y="0.0" width="47.333333333333329" height="28"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="12"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="폴로">
                                             <color key="titleColor" name="gray0"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapPolloBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Pmh-5R-SEd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNo-Mw-fXl">
                                         <rect key="frame" x="170.33333333333334" y="0.0" width="50.333333333333343" height="28"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="12"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="페스코">
                                             <color key="titleColor" name="gray0"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapPescoBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uak-vo-z3S"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6a-kL-opS">
                                         <rect key="frame" x="232.66666666666671" y="0.0" width="94.333333333333343" height="28"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="12"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="락토-오보">
                                             <color key="titleColor" name="gray0"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapLactoOvoBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LpL-wz-tnh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -190,28 +206,40 @@
                                         <rect key="frame" x="0.0" y="0.0" width="43.666666666666664" height="28"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="12"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="락토">
                                             <color key="titleColor" name="gray0"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapLactoBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lOt-gH-QP7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8F-9m-eha">
                                         <rect key="frame" x="55.666666666666671" y="0.0" width="44" height="28"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="12"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="비건">
                                             <color key="titleColor" name="gray0"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapVeganBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nKW-5a-X7b"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qev-pW-gog">
                                         <rect key="frame" x="111.66666666666664" y="0.0" width="136.33333333333337" height="28"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="12"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="아직은 모르겠어요">
                                             <color key="titleColor" name="gray0"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapNotYetBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Gd8-Fd-a1X"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -253,12 +281,20 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="brocoliImgView" destination="PEO-DO-gQg" id="NVE-b7-w1Z"/>
+                        <outlet property="chickenImgView" destination="dcA-Vs-cLN" id="eWc-5P-pa9"/>
+                        <outlet property="eggImgView" destination="rav-cT-fCM" id="QZu-AF-QIf"/>
+                        <outlet property="fishImgView" destination="Ldp-nK-kiw" id="Fem-rT-aQv"/>
                         <outlet property="flexiterianBtn" destination="K1f-Q0-Ws2" id="1AF-PZ-hw2"/>
                         <outlet property="lactoBtn" destination="yu9-wJ-EKp" id="aRC-W5-77f"/>
                         <outlet property="lactoOvoBtn" destination="E6a-kL-opS" id="xxM-hy-sLJ"/>
+                        <outlet property="meatImgView" destination="KDR-3X-V7H" id="5RE-sN-1o7"/>
+                        <outlet property="milkImgView" destination="2zE-sS-DOf" id="mr3-4w-35b"/>
+                        <outlet property="nickNameTextField" destination="9s5-eS-gCf" id="0VE-gK-RVT"/>
                         <outlet property="notYetBtn" destination="qev-pW-gog" id="PgP-df-VMc"/>
                         <outlet property="pescoBtn" destination="LNo-Mw-fXl" id="kmX-lt-ePY"/>
                         <outlet property="polloBtn" destination="QB3-8i-un0" id="8XT-UF-uZb"/>
+                        <outlet property="startBtn" destination="jDk-IJ-JSL" id="J7H-ht-PlL"/>
                         <outlet property="veganBtn" destination="a8F-9m-eha" id="W4a-Yo-mc2"/>
                     </connections>
                 </viewController>
