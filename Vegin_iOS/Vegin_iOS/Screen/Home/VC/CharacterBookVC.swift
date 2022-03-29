@@ -27,6 +27,7 @@ extension CharacterBookVC {
     private func setUpCV() {
         characterBookCV.delegate = self
         characterBookCV.dataSource = self
+        characterBookCV.isPagingEnabled = true
     }
     
     private func registerCVC() {
@@ -51,7 +52,7 @@ extension CharacterBookVC {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension CharacterBookVC: UICollectionViewDelegateFlowLayout {
+extension CharacterBookVC: UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
@@ -59,10 +60,37 @@ extension CharacterBookVC: UICollectionViewDelegateFlowLayout {
         return 0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-           return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+    }
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let layout = self.characterBookCV.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+        
+        var offset = targetContentOffset.pointee
+        /// 멈추는 위치 설정
+        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+        var roundedIndex = round(index)
+        
+        if scrollView.contentOffset.x > targetContentOffset.pointee.x { roundedIndex = floor(index) }
+        else if scrollView.contentOffset.x < targetContentOffset.pointee.x {
+            roundedIndex = ceil(index)
+        } else {
+            roundedIndex = round(index)
         }
+        
+        if index > roundedIndex {
+            roundedIndex = index
+        } else if index < roundedIndex {
+            roundedIndex = index
+        }
+        
+        /// 멈추는 위치 계산
+        offset = CGPoint(x: (roundedIndex * cellWidthIncludingSpacing) - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+        targetContentOffset.pointee = offset
+    }
 }
 
+// MARK: - UICollectionViewDataSource
 extension CharacterBookVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
