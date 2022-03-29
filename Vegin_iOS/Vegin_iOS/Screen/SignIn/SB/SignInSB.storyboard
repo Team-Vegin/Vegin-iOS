@@ -60,14 +60,14 @@
                                 <color key="textColor" name="gray0"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8G-1T-A1j">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8G-1T-A1j">
                                 <rect key="frame" x="24" y="325" width="327" height="1"/>
                                 <color key="backgroundColor" name="gray0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="swa-NH-pPK"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Cw-EG-VTa">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Cw-EG-VTa">
                                 <rect key="frame" x="24" y="399" width="327" height="1"/>
                                 <color key="backgroundColor" name="gray0"/>
                                 <constraints>
