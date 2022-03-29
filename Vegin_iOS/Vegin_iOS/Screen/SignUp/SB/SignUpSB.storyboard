@@ -28,21 +28,165 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcQ-Ab-GDj" customClass="VeginBtn" customModule="Vegin_iOS" customModuleProvider="target">
-                                <rect key="frame" x="144" y="707" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcQ-Ab-GDj" customClass="VeginBtn" customModule="Vegin_iOS" customModuleProvider="target">
+                                <rect key="frame" x="22" y="693" width="331" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qWM-tL-YFd"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="tapSignUpBtn:" destination="eMS-fM-zLc" eventType="touchUpInside" id="Le7-4b-jfN"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-signUp" translatesAutoresizingMaskIntoConstraints="NO" id="ahL-hy-DyI">
+                                <rect key="frame" x="130.66666666666666" y="94" width="114" height="100"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HV3-8b-fKn">
+                                <rect key="frame" x="24" y="274" width="327" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ndm-1y-A8U"/>
+                                </constraints>
+                                <color key="textColor" name="darkMain"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-5C-FSz">
+                                <rect key="frame" x="24" y="249" width="42" height="20"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                                <color key="textColor" name="darkText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3y-25-spv">
+                                <rect key="frame" x="24" y="355" width="56" height="20"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                                <color key="textColor" name="darkText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbt-Ry-KX6">
+                                <rect key="frame" x="24" y="314" width="327" height="1"/>
+                                <color key="backgroundColor" name="gray0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="0V7-jS-dHg"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brr-HE-wmg">
+                                <rect key="frame" x="24" y="420" width="327" height="1"/>
+                                <color key="backgroundColor" name="gray0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="lN0-NJ-1LD"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfa-4w-1Ty">
+                                <rect key="frame" x="24" y="528" width="327" height="1"/>
+                                <color key="backgroundColor" name="gray0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="oIc-uc-PgV"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odv-lc-GR8" customClass="VeginBtn" customModule="Vegin_iOS" customModuleProvider="target">
+                                <rect key="frame" x="282" y="281" width="69" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="G38-vk-Wwq"/>
+                                    <constraint firstAttribute="width" constant="69" id="PwJ-zf-HPx"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 이메일입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE4-YA-UTb">
+                                <rect key="frame" x="24" y="320" width="113" height="13"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="11"/>
+                                <color key="textColor" name="darkMain"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최소 10자 이상 입력해 주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShA-sa-UPW">
+                                <rect key="frame" x="24" y="426" width="130" height="13"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="11"/>
+                                <color key="textColor" red="1" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxB-SZ-YZH">
+                                <rect key="frame" x="24" y="463" width="87" height="20"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                                <color key="textColor" name="darkText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 입력해 주세요. (최소 10자)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FoP-N3-TAT">
+                                <rect key="frame" x="24" y="380" width="327" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Zes-lK-R2D"/>
+                                </constraints>
+                                <color key="textColor" name="darkMain"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 다시 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cp-5N-15D">
+                                <rect key="frame" x="24" y="488" width="327" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xxb-MN-TTB"/>
+                                </constraints>
+                                <color key="textColor" name="darkMain"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호가 다릅니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWQ-8s-ob0">
+                                <rect key="frame" x="23.999999999999993" y="534" width="91.333333333333314" height="13"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="11"/>
+                                <color key="textColor" red="1" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ILD-IA-Zkw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uWQ-8s-ob0" firstAttribute="leading" secondItem="Pfa-4w-1Ty" secondAttribute="leading" id="0ia-4G-NMG"/>
+                            <constraint firstItem="2Cp-5N-15D" firstAttribute="top" secondItem="DxB-SZ-YZH" secondAttribute="bottom" constant="5" id="5CZ-Gs-rEd"/>
+                            <constraint firstItem="Vbt-Ry-KX6" firstAttribute="top" secondItem="HV3-8b-fKn" secondAttribute="bottom" id="5fO-Dk-z7R"/>
+                            <constraint firstItem="oE4-YA-UTb" firstAttribute="leading" secondItem="Vbt-Ry-KX6" secondAttribute="leading" id="81r-ZF-Upa"/>
+                            <constraint firstItem="qcQ-Ab-GDj" firstAttribute="leading" secondItem="ILD-IA-Zkw" secondAttribute="leading" constant="22" id="BPL-Xu-EJk"/>
+                            <constraint firstItem="HV3-8b-fKn" firstAttribute="top" secondItem="Dhj-5C-FSz" secondAttribute="bottom" constant="5" id="Bwm-xb-9bv"/>
+                            <constraint firstItem="2Cp-5N-15D" firstAttribute="leading" secondItem="DxB-SZ-YZH" secondAttribute="leading" id="ESu-x4-gRM"/>
+                            <constraint firstItem="FoP-N3-TAT" firstAttribute="leading" secondItem="T3y-25-spv" secondAttribute="leading" id="EUp-VA-o2O"/>
+                            <constraint firstItem="FoP-N3-TAT" firstAttribute="top" secondItem="T3y-25-spv" secondAttribute="bottom" constant="5" id="F3a-ef-Suf"/>
+                            <constraint firstItem="uWQ-8s-ob0" firstAttribute="top" secondItem="Pfa-4w-1Ty" secondAttribute="bottom" constant="5" id="JYr-oL-ypm"/>
+                            <constraint firstItem="ILD-IA-Zkw" firstAttribute="trailing" secondItem="qcQ-Ab-GDj" secondAttribute="trailing" constant="22" id="KJE-xG-Vhy"/>
+                            <constraint firstItem="ShA-sa-UPW" firstAttribute="top" secondItem="brr-HE-wmg" secondAttribute="bottom" constant="5" id="MzD-uZ-0lj"/>
+                            <constraint firstItem="DxB-SZ-YZH" firstAttribute="top" secondItem="brr-HE-wmg" secondAttribute="bottom" constant="42" id="Nmn-b3-cmw"/>
+                            <constraint firstItem="ahL-hy-DyI" firstAttribute="top" secondItem="ILD-IA-Zkw" secondAttribute="top" constant="50" id="OZO-3e-cvr"/>
+                            <constraint firstItem="Pfa-4w-1Ty" firstAttribute="trailing" secondItem="2Cp-5N-15D" secondAttribute="trailing" id="Rlg-Fc-vgB"/>
+                            <constraint firstItem="ILD-IA-Zkw" firstAttribute="bottom" secondItem="qcQ-Ab-GDj" secondAttribute="bottom" constant="45" id="TB5-ZE-izN"/>
+                            <constraint firstItem="DxB-SZ-YZH" firstAttribute="leading" secondItem="ILD-IA-Zkw" secondAttribute="leading" constant="24" id="VQd-r2-DrT"/>
+                            <constraint firstItem="Vbt-Ry-KX6" firstAttribute="leading" secondItem="HV3-8b-fKn" secondAttribute="leading" id="Xqv-wA-b1C"/>
+                            <constraint firstItem="ILD-IA-Zkw" firstAttribute="trailing" secondItem="2Cp-5N-15D" secondAttribute="trailing" constant="24" id="Y0o-VZ-ZYr"/>
+                            <constraint firstItem="ShA-sa-UPW" firstAttribute="leading" secondItem="brr-HE-wmg" secondAttribute="leading" id="YPY-K1-FgN"/>
+                            <constraint firstItem="brr-HE-wmg" firstAttribute="trailing" secondItem="FoP-N3-TAT" secondAttribute="trailing" id="ZGB-CF-P5c"/>
+                            <constraint firstItem="ILD-IA-Zkw" firstAttribute="trailing" secondItem="FoP-N3-TAT" secondAttribute="trailing" constant="24" id="Zsn-s2-flH"/>
+                            <constraint firstItem="ILD-IA-Zkw" firstAttribute="trailing" secondItem="HV3-8b-fKn" secondAttribute="trailing" constant="24" id="bmR-9V-buH"/>
+                            <constraint firstItem="oE4-YA-UTb" firstAttribute="top" secondItem="Vbt-Ry-KX6" secondAttribute="bottom" constant="5" id="bym-Eo-hrk"/>
+                            <constraint firstItem="ahL-hy-DyI" firstAttribute="centerX" secondItem="ILD-IA-Zkw" secondAttribute="centerX" id="cJe-fT-N8Z"/>
+                            <constraint firstItem="T3y-25-spv" firstAttribute="top" secondItem="Vbt-Ry-KX6" secondAttribute="bottom" constant="40" id="do5-8L-TAM"/>
+                            <constraint firstItem="brr-HE-wmg" firstAttribute="leading" secondItem="FoP-N3-TAT" secondAttribute="leading" id="emi-Hg-jeJ"/>
+                            <constraint firstItem="Vbt-Ry-KX6" firstAttribute="trailing" secondItem="HV3-8b-fKn" secondAttribute="trailing" id="gOw-fM-uGt"/>
+                            <constraint firstItem="Dhj-5C-FSz" firstAttribute="top" secondItem="ahL-hy-DyI" secondAttribute="bottom" constant="55" id="gZU-TK-hBJ"/>
+                            <constraint firstItem="HV3-8b-fKn" firstAttribute="leading" secondItem="ILD-IA-Zkw" secondAttribute="leading" constant="24" id="hD1-ST-02f"/>
+                            <constraint firstItem="Dhj-5C-FSz" firstAttribute="leading" secondItem="ILD-IA-Zkw" secondAttribute="leading" constant="24" id="hDw-B0-esG"/>
+                            <constraint firstItem="T3y-25-spv" firstAttribute="leading" secondItem="ILD-IA-Zkw" secondAttribute="leading" constant="24" id="jYt-12-tdS"/>
+                            <constraint firstItem="brr-HE-wmg" firstAttribute="top" secondItem="FoP-N3-TAT" secondAttribute="bottom" id="kFj-Gg-qhg"/>
+                            <constraint firstItem="Pfa-4w-1Ty" firstAttribute="top" secondItem="2Cp-5N-15D" secondAttribute="bottom" id="pLr-Cf-u9T"/>
+                            <constraint firstItem="Vbt-Ry-KX6" firstAttribute="top" secondItem="Odv-lc-GR8" secondAttribute="bottom" constant="5" id="uy7-JW-Q9K"/>
+                            <constraint firstItem="ILD-IA-Zkw" firstAttribute="trailing" secondItem="Odv-lc-GR8" secondAttribute="trailing" constant="24" id="ya1-1Z-lls"/>
+                            <constraint firstItem="Pfa-4w-1Ty" firstAttribute="leading" secondItem="2Cp-5N-15D" secondAttribute="leading" id="z73-CX-oYn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="odf-Dd-g7p"/>
                     <connections>
+                        <outlet property="emailCheckBtn" destination="Odv-lc-GR8" id="awX-nr-Rnq"/>
+                        <outlet property="emailInfoLabel" destination="oE4-YA-UTb" id="b5B-vo-u3l"/>
+                        <outlet property="emailTextField" destination="HV3-8b-fKn" id="EvP-Yu-NZY"/>
+                        <outlet property="pwCheckInfoLabel" destination="uWQ-8s-ob0" id="Zgo-BP-gJn"/>
+                        <outlet property="pwCheckTextField" destination="2Cp-5N-15D" id="dFb-mC-6sY"/>
+                        <outlet property="pwInfoLabel" destination="ShA-sa-UPW" id="byz-Ju-ha1"/>
+                        <outlet property="pwTextField" destination="FoP-N3-TAT" id="8Fz-LI-dfm"/>
                         <outlet property="signUpBtn" destination="qcQ-Ab-GDj" id="IQK-uM-vg1"/>
                     </connections>
                 </viewController>
@@ -68,13 +212,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GG-7v-jpI">
                                 <rect key="frame" x="23.999999999999996" y="249.00000000000003" width="41.666666666666657" height="19.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="darkText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비건 지향성 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjR-kv-ipH">
                                 <rect key="frame" x="24.000000000000007" y="377.33333333333331" width="104.66666666666669" height="19.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="darkText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해 주세요. (최대 12자)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9s5-eS-gCf">
@@ -94,8 +238,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 닉네임입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VS-dA-GNP">
-                                <rect key="frame" x="24.000000000000007" y="319.33333333333331" width="102.66666666666669" height="12.333333333333314"/>
-                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="10"/>
+                                <rect key="frame" x="24" y="319.33333333333331" width="113" height="13.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="11"/>
                                 <color key="textColor" name="darkMain"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -334,6 +478,9 @@
         <image name="milk" width="42" height="42"/>
         <namedColor name="darkMain">
             <color red="0.32156862745098042" green="0.59999999999999998" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkText">
+            <color red="0.10588235294117647" green="0.17647058823529413" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray0">
             <color red="0.61176470588235299" green="0.61176470588235299" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
