@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "tomavi.png",
+      "filename" : "Hidden_Hovi.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "tomavi@2x.png",
+      "filename" : "Hidden_Hovi@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "tomavi@3x.png",
+      "filename" : "Hidden_Hovi@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
