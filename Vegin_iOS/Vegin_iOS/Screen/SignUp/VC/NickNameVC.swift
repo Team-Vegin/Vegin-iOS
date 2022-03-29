@@ -148,6 +148,12 @@ class NickNameVC: UIViewController {
         setExplanationLabel()
     }
     
+    @IBAction func tapStartBtn(_ sender: UIButton) {
+        guard let signInVC = UIStoryboard.init(name: Identifiers.SignInSB, bundle: nil).instantiateViewController(withIdentifier: SignInVC.className) as? SignInVC else { return }
+        
+        signInVC.modalPresentationStyle = .fullScreen
+        self.present(signInVC, animated: true, completion: nil)
+    }
 }
 
 // MARK: - UI
