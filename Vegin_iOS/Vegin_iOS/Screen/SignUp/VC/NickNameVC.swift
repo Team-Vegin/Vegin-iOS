@@ -17,6 +17,12 @@ class NickNameVC: UIViewController {
     @IBOutlet weak var lactoBtn: UIButton!
     @IBOutlet weak var veganBtn: UIButton!
     @IBOutlet weak var notYetBtn: UIButton!
+    @IBOutlet weak var startBtn: VeginBtn! {
+        didSet {
+            startBtn.isActivated = true
+            startBtn.setTitleWithStyle(title: "Vegin 시작하기!", size: 16, weight: .bold)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
