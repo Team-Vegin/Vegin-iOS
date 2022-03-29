@@ -18,6 +18,13 @@ class NickNameVC: UIViewController {
     @IBOutlet weak var lactoBtn: UIButton!
     @IBOutlet weak var veganBtn: UIButton!
     @IBOutlet weak var notYetBtn: UIButton!
+    @IBOutlet weak var brocoliImgView: UIImageView!
+    @IBOutlet weak var milkImgView: UIImageView!
+    @IBOutlet weak var eggImgView: UIImageView!
+    @IBOutlet weak var fishImgView: UIImageView!
+    @IBOutlet weak var chickenImgView: UIImageView!
+    @IBOutlet weak var meatImgView: UIImageView!
+    @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var startBtn: VeginBtn! {
         didSet {
             startBtn.isActivated = true
@@ -40,6 +47,10 @@ class NickNameVC: UIViewController {
         [flexiterianBtn, polloBtn, pescoBtn, lactoOvoBtn, lactoBtn, veganBtn, notYetBtn].forEach {
             btn in setBtnStatus(btn: btn)
         }
+        [brocoliImgView, milkImgView, eggImgView, fishImgView, chickenImgView, meatImgView].forEach {
+            img in setImg(img: img, status: flexiterianBtn.isSelected)
+        }
+        setExplanationLabel()
     }
     
     @IBAction func tapPolloBtn(_ sender: UIButton) {
@@ -50,6 +61,11 @@ class NickNameVC: UIViewController {
         [flexiterianBtn, polloBtn, pescoBtn, lactoOvoBtn, lactoBtn, veganBtn, notYetBtn].forEach {
             btn in setBtnStatus(btn: btn)
         }
+        [brocoliImgView, milkImgView, eggImgView, fishImgView, chickenImgView].forEach {
+            img in setImg(img: img, status: polloBtn.isSelected)
+        }
+        setImg(img: meatImgView, status: false)
+        setExplanationLabel()
     }
     
     @IBAction func tapPescoBtn(_ sender: UIButton) {
@@ -60,6 +76,13 @@ class NickNameVC: UIViewController {
         [flexiterianBtn, polloBtn, pescoBtn, lactoOvoBtn, lactoBtn, veganBtn, notYetBtn].forEach {
             btn in setBtnStatus(btn: btn)
         }
+        [brocoliImgView, milkImgView, eggImgView, fishImgView].forEach {
+            img in setImg(img: img, status: pescoBtn.isSelected)
+        }
+        [chickenImgView, meatImgView].forEach {
+            img in setImg(img: img, status: false)
+        }
+        setExplanationLabel()
     }
     
     @IBAction func tapLactoOvoBtn(_ sender: UIButton) {
@@ -70,6 +93,13 @@ class NickNameVC: UIViewController {
         [flexiterianBtn, polloBtn, pescoBtn, lactoOvoBtn, lactoBtn, veganBtn, notYetBtn].forEach {
             btn in setBtnStatus(btn: btn)
         }
+        [brocoliImgView, milkImgView, eggImgView].forEach {
+            img in setImg(img: img, status: lactoOvoBtn.isSelected)
+        }
+        [fishImgView, chickenImgView, meatImgView].forEach {
+            img in setImg(img: img, status: false)
+        }
+        setExplanationLabel()
     }
     
     @IBAction func tapLactoBtn(_ sender: UIButton) {
@@ -80,6 +110,13 @@ class NickNameVC: UIViewController {
         [flexiterianBtn, polloBtn, pescoBtn, lactoOvoBtn, lactoBtn, veganBtn, notYetBtn].forEach {
             btn in setBtnStatus(btn: btn)
         }
+        [brocoliImgView, milkImgView].forEach {
+            img in setImg(img: img, status: lactoBtn.isSelected)
+        }
+        [eggImgView, fishImgView, chickenImgView, meatImgView].forEach {
+            img in setImg(img: img, status: false)
+        }
+        setExplanationLabel()
     }
     
     @IBAction func tapVeganBtn(_ sender: UIButton) {
@@ -90,6 +127,11 @@ class NickNameVC: UIViewController {
         [flexiterianBtn, polloBtn, pescoBtn, lactoOvoBtn, lactoBtn, veganBtn, notYetBtn].forEach {
             btn in setBtnStatus(btn: btn)
         }
+        setImg(img: brocoliImgView, status: veganBtn.isSelected)
+        [milkImgView, eggImgView, fishImgView, chickenImgView, meatImgView].forEach {
+            img in setImg(img: img, status: false)
+        }
+        setExplanationLabel()
     }
     
     @IBAction func tapNotYetBtn(_ sender: UIButton) {
@@ -100,6 +142,10 @@ class NickNameVC: UIViewController {
         [flexiterianBtn, polloBtn, pescoBtn, lactoOvoBtn, lactoBtn, veganBtn, notYetBtn].forEach {
             btn in setBtnStatus(btn: btn)
         }
+        [brocoliImgView, milkImgView, eggImgView, fishImgView, chickenImgView, meatImgView].forEach {
+            img in setImg(img: img, status: notYetBtn.isSelected)
+        }
+        setExplanationLabel()
     }
     
 }
@@ -132,6 +178,78 @@ extension NickNameVC {
             configureBtnUI(btn: btn, btnBgColor: .darkMain, btnTitleColor: .white, btnBorderColor: UIColor.darkMain.cgColor)
         } else {
             configureBtnUI(btn: btn, btnBgColor: .white, btnTitleColor: .gray0, btnBorderColor: UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 0.5).cgColor)
+        }
+    }
+    
+    /// 버튼 상태에 따른 이미지 설정 함수
+    private func setImg(img: UIImageView, status: Bool) {
+        if img == brocoliImgView {
+            if status {
+                brocoliImgView.image = UIImage.init(named: "level1_select")
+            } else {
+                brocoliImgView.image = UIImage.init(named: "brocoli")
+            }
+        }
+        
+        if img == milkImgView {
+            if status {
+                milkImgView.image = UIImage.init(named: "level2_select")
+            } else {
+                milkImgView.image = UIImage.init(named: "milk")
+            }
+        }
+        
+        if img == eggImgView {
+            if status {
+                eggImgView.image = UIImage.init(named: "level3_select")
+            } else {
+                eggImgView.image = UIImage.init(named: "egg")
+            }
+        }
+        
+        if img == fishImgView {
+            if status {
+                fishImgView.image = UIImage.init(named: "level4_select")
+            } else {
+                fishImgView.image = UIImage.init(named: "fish")
+            }
+        }
+        
+        if img == chickenImgView {
+            if status {
+                chickenImgView.image = UIImage.init(named: "level5_select")
+            } else {
+                chickenImgView.image = UIImage.init(named: "chicken")
+            }
+        }
+        
+        if img == meatImgView {
+            if status {
+                meatImgView.image = UIImage.init(named: "level6_select")
+            } else {
+                meatImgView.image = UIImage.init(named: "meat")
+            }
+        }
+    }
+    
+    /// 비건 지향성 설명 Label 설정 함수
+    private func setExplanationLabel() {
+        if !flexiterianBtn.isSelected && !polloBtn.isSelected && !pescoBtn.isSelected && !lactoOvoBtn.isSelected && !lactoBtn.isSelected && !veganBtn.isSelected && !notYetBtn.isSelected {
+            explanationLabel.text = "평상시 섭취하는 음식을 선택하세요."
+        } else if flexiterianBtn.isSelected {
+            explanationLabel.text = "채식을 실천하지만 상황에 따라 육식을 해요."
+        } else if polloBtn.isSelected {
+            explanationLabel.text = "동물성 원료 중 닭까지 섭취해요 소고기와 돼지는 No!"
+        } else if pescoBtn.isSelected {
+            explanationLabel.text = "소, 닭, 돼지, 오리 등 육지 동물을 섭취하지 않지만, 해산물은 섭취해요."
+        } else if lactoOvoBtn.isSelected {
+            explanationLabel.text = "채소와 우유, 달걀만 섭취할 수 있어요."
+        } else if lactoBtn.isSelected {
+            explanationLabel.text = "동물성 원료 중 우유까지 섭취할 수 있어요."
+        } else if veganBtn.isSelected {
+            explanationLabel.text = "윤리적인 이유로 모든 동물성 원료를 거부해요!"
+        } else if notYetBtn.isSelected {
+            explanationLabel.text = "채식을 실천하지만 상황에 따라 육식을 하는 것을 추천해요."
         }
     }
 }

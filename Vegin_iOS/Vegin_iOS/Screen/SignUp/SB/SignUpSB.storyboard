@@ -284,6 +284,7 @@
                         <outlet property="brocoliImgView" destination="PEO-DO-gQg" id="NVE-b7-w1Z"/>
                         <outlet property="chickenImgView" destination="dcA-Vs-cLN" id="eWc-5P-pa9"/>
                         <outlet property="eggImgView" destination="rav-cT-fCM" id="QZu-AF-QIf"/>
+                        <outlet property="explanationLabel" destination="Ykd-hh-ax2" id="btF-3T-flF"/>
                         <outlet property="fishImgView" destination="Ldp-nK-kiw" id="Fem-rT-aQv"/>
                         <outlet property="flexiterianBtn" destination="K1f-Q0-Ws2" id="1AF-PZ-hw2"/>
                         <outlet property="lactoBtn" destination="yu9-wJ-EKp" id="aRC-W5-77f"/>
