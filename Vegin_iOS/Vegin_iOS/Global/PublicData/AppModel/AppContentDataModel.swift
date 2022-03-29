@@ -36,6 +36,18 @@ struct DietPostData {
         return UIImage(named: iconImgName)
     }
 }
+/// 홈 탭 도감 뷰 리스트 위한 모델
+struct CharacterBookData {
+    let characterImgName: String
+    let characterName: String
+    let firstMission: String
+    let secondMission: String
+    let thirdMission: String
+    
+    func makeCharacterImg() -> UIImage? {
+        return UIImage(named: characterImgName)
+    }
+}
 
 /// 피드 메인 뷰 카테고리 리스트 위한 모델
 struct CategoryData {

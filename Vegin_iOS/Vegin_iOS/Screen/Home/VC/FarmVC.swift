@@ -3,7 +3,6 @@
 //  Vegin_iOS
 //
 //  Created by EUNJU on 2021/11/24.
-//  Edited by TAEEUN on 2022/03/15.
 //
 
 import UIKit
@@ -24,13 +23,13 @@ class FarmVC: UIViewController {
     
     // MARK: IBAction
     @IBAction func tapCahracterPageBtn(_ sender: UIButton) {
-        guard let CharacterBookVC = self.storyboard?.instantiateViewController(withIdentifier: CharacterBookVC.className) as? CharacterBookVC else { return }
+        guard let CharacterBookVC = UIStoryboard.init(name: "HomeSB", bundle: nil).instantiateViewController(withIdentifier: CharacterBookVC.className) as? CharacterBookVC else { return }
         
         self.navigationController?.pushViewController(CharacterBookVC, animated: true)
     }
  
-    @IBAction func tapCharaterBtn(_ sender: Any) {  //메인 캐릭터를 누르면 새로운 메세지로 변경
+    @IBAction func tapCharaterBtn(_ sender: Any) {  //메인 캐릭터를 누르면 새로운 메세지로 변경 (서버 연결 전)
     }
-    @IBAction func tapProgressBarBtn(_ sender: Any) {   //progressBar 누르면 진행중인 미션 노출
+    @IBAction func tapProgressBarBtn(_ sender: Any) {   //progressBar 누르면 진행중인 미션 노출 (서버 연결 전)
     }
 }

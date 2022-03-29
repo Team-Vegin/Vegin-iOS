@@ -2,104 +2,77 @@
 //  CharacterBookVC.swift
 //  Vegin_iOS
 //
-//  Created by Taeeun Lee on 2022/03/24.
+//  Created by Taeeun Lee on 2022/03/28.
 //
 
 import UIKit
 
-///UICharacterControllView
 class CharacterBookVC: UIViewController {
-    // MARK: IBOutlet
-    @IBOutlet weak var characterCV: UICollectionView!
+    @IBOutlet weak var characterBookCV: UICollectionView!
     
-    // MARK: Life Cycle
+    // MARK: Properties
+    var charcterBookData: [CharacterBookData] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //collectionView.delegate = self
-        //collectionView.dataSource = self
-        configureUI()
+        setUpCV()
+        registerCVC()
+        initData()
+    }
+}
+
+// MARK: - Custom Methods
+extension CharacterBookVC {
+    private func setUpCV() {
+        characterBookCV.delegate = self
+        characterBookCV.dataSource = self
     }
     
-    // MARK: IBAction
-    @IBAction func tapNaviBackBtn(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+    private func registerCVC() {
+        CharacterBookCVC.register(target: characterBookCV)
     }
     
-    // MARK: Proporties
-    private lazy var carouselCV : UICollectionView = {
-        let collectionViewLayout = UICollectionViewFlowLayout()
-        ///수평으로 스크롤
-        collectionViewLayout.scrollDirection = .horizontal
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.isPagingEnabled = true
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CharacterBookCVC")
-        return collectionView
-    }()
-    
-    // MARK: UICollectionViewCell
-    ///cell을 xib로
-    private let cellData : [UICollectionViewCell] = []
-    
-    private lazy var increasedCellData :  [UICollectionViewCell] = {
-        cellData + cellData + cellData
-    }()
-    
-    private var originalCellDataCount : Int {
-        cellData.count
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        carouselCV.horizontalScrollIndicatorInsets
-        //carouselCV.scrollToItem(at: IndexPath(item: originalCellDataCount, section: 11), at: .centeredHorizontally, animated: false)
-    }
-    
-    // MARK: ConfigureUI
-    private func configureUI() {
-        view.addSubview(carouselCV)
-        
-        carouselCV.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            carouselCV.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            carouselCV.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            carouselCV.widthAnchor.constraint(equalTo: view.widthAnchor),
-            carouselCV.heightAnchor.constraint(equalToConstant: 616)
+    private func initData() {
+        charcterBookData.append(contentsOf: [
+            CharacterBookData(characterImgName: "Tomavi_1", characterName: "토마비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Dangvi", characterName: "당비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Onion", characterName: "양비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Pavi", characterName: "파비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Cabbage", characterName: "양배비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Suvi", characterName: "수비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Oksuvi", characterName: "옥수비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Bluevi", characterName: "블루비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Ddalvi", characterName: "딸비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Hovi", characterName: "호비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
+            
         ])
     }
 }
 
-//MARK: UICollectionViewDelegate
-extension CharacterBookVC : UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfRowsInSection section: Int) -> Int {
+// MARK: - UICollectionViewDelegateFlowLayout
+extension CharacterBookVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    func collectionView(_ collectionView: UICollectionView, cellForRowAt indexpath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
-    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+           return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        }
 }
 
-//MARK:  UICollectionViewDelegateFlowLayout
-extension CharacterBookVC : UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.bounds.width, height: 616)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return .zero
-    }
-}
-
-//MARK: UICollectionViewDataSource
-extension CharacterBookVC : UICollectionViewDataSource {
+extension CharacterBookVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return increasedCellData.count
+        return 10
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CharacterBookCVC", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterBookCVC.className, for: indexPath) as? CharacterBookCVC else {
+            return UICollectionViewCell()
+        }
+        cell.setData(characterData: charcterBookData[indexPath.row])
         return cell
     }
 }
+
