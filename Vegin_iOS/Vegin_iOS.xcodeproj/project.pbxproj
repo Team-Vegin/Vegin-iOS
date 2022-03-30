@@ -19,6 +19,13 @@
 		7742884E27F15462001A7CFA /* NickNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742884D27F15462001A7CFA /* NickNameVC.swift */; };
 		7742885027F154DB001A7CFA /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742884F27F154DA001A7CFA /* SignUpVC.swift */; };
 		7742885227F159E3001A7CFA /* SignUpNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742885127F159E3001A7CFA /* SignUpNVC.swift */; };
+		7742885927F40CCD001A7CFA /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742885827F40CCD001A7CFA /* APIConstants.swift */; };
+		7742885B27F40CF9001A7CFA /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742885A27F40CF9001A7CFA /* NetworkResult.swift */; };
+		7742885D27F40D19001A7CFA /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742885C27F40D19001A7CFA /* GenericResponse.swift */; };
+		7742885F27F40EF5001A7CFA /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742885E27F40EF5001A7CFA /* BaseTargetType.swift */; };
+		7742886127F40F1D001A7CFA /* DietService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742886027F40F1D001A7CFA /* DietService.swift */; };
+		7742886327F40F7B001A7CFA /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742886227F40F7B001A7CFA /* NetworkLoggerPlugin.swift */; };
+		7742886527F40FCB001A7CFA /* DietAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742886427F40FCB001A7CFA /* DietAPI.swift */; };
 		7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57B2742C0F000325814 /* UIViewController+.swift */; };
 		7757285727C8C11E00148C9A /* FeedMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285627C8C11E00148C9A /* FeedMainVC.swift */; };
 		7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */; };
@@ -106,6 +113,13 @@
 		7742884D27F15462001A7CFA /* NickNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameVC.swift; sourceTree = "<group>"; };
 		7742884F27F154DA001A7CFA /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		7742885127F159E3001A7CFA /* SignUpNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNVC.swift; sourceTree = "<group>"; };
+		7742885827F40CCD001A7CFA /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		7742885A27F40CF9001A7CFA /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		7742885C27F40D19001A7CFA /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		7742885E27F40EF5001A7CFA /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
+		7742886027F40F1D001A7CFA /* DietService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietService.swift; sourceTree = "<group>"; };
+		7742886227F40F7B001A7CFA /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
+		7742886427F40FCB001A7CFA /* DietAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietAPI.swift; sourceTree = "<group>"; };
 		7744C57B2742C0F000325814 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		7757285627C8C11E00148C9A /* FeedMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainVC.swift; sourceTree = "<group>"; };
 		7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainTitleTVC.swift; sourceTree = "<group>"; };
@@ -278,6 +292,48 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		7742885327F40C39001A7CFA /* APIEssentials */ = {
+			isa = PBXGroup;
+			children = (
+				7742885827F40CCD001A7CFA /* APIConstants.swift */,
+				7742885A27F40CF9001A7CFA /* NetworkResult.swift */,
+			);
+			path = APIEssentials;
+			sourceTree = "<group>";
+		};
+		7742885427F40C57001A7CFA /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				7742885727F40C97001A7CFA /* Models */,
+				7742885C27F40D19001A7CFA /* GenericResponse.swift */,
+			);
+			path = APIModels;
+			sourceTree = "<group>";
+		};
+		7742885527F40C6B001A7CFA /* APIManagers */ = {
+			isa = PBXGroup;
+			children = (
+				7742886427F40FCB001A7CFA /* DietAPI.swift */,
+			);
+			path = APIManagers;
+			sourceTree = "<group>";
+		};
+		7742885627F40C76001A7CFA /* MoyaTarget */ = {
+			isa = PBXGroup;
+			children = (
+				7742885E27F40EF5001A7CFA /* BaseTargetType.swift */,
+				7742886027F40F1D001A7CFA /* DietService.swift */,
+			);
+			path = MoyaTarget;
+			sourceTree = "<group>";
+		};
+		7742885727F40C97001A7CFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		7744C5712742BD5900325814 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +495,11 @@
 		77ED045827B4257700D077CA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7742885327F40C39001A7CFA /* APIEssentials */,
+				7742885427F40C57001A7CFA /* APIModels */,
+				7742885527F40C6B001A7CFA /* APIManagers */,
+				7742885627F40C76001A7CFA /* MoyaTarget */,
+				7742886227F40F7B001A7CFA /* NetworkLoggerPlugin.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -838,14 +899,19 @@
 			files = (
 				772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */,
 				7757285727C8C11E00148C9A /* FeedMainVC.swift in Sources */,
+				7742885927F40CCD001A7CFA /* APIConstants.swift in Sources */,
+				7742886527F40FCB001A7CFA /* DietAPI.swift in Sources */,
 				772C1471273B7DAB00BB0127 /* SceneDelegate.swift in Sources */,
 				779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */,
 				7757287827CD337D00148C9A /* DietListVC.swift in Sources */,
 				77DBB84627DB186100000623 /* VeginBtn.swift in Sources */,
 				77ED049527B6C8BA00D077CA /* Adjusted+.swift in Sources */,
 				77ED047927B6927E00D077CA /* BaseNC.swift in Sources */,
+				7742885D27F40D19001A7CFA /* GenericResponse.swift in Sources */,
 				77ED047727B691F800D077CA /* StoryboardRepresentation.swift in Sources */,
+				7742885F27F40EF5001A7CFA /* BaseTargetType.swift in Sources */,
 				7757286E27CBDADA00148C9A /* BaseVC.swift in Sources */,
+				7742886327F40F7B001A7CFA /* NetworkLoggerPlugin.swift in Sources */,
 				77ED048527B6944300D077CA /* NaviType.swift in Sources */,
 				77FE1738274D2EC800F95F0D /* VeginTBC.swift in Sources */,
 				77DBB86A27E0CF8C00000623 /* FeedNC.swift in Sources */,
@@ -854,6 +920,7 @@
 				77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */,
 				77ED047D27B692E500D077CA /* TVRegisterable.swift in Sources */,
 				7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */,
+				7742885B27F40CF9001A7CFA /* NetworkResult.swift in Sources */,
 				77DBB86F27E0D61200000623 /* FeedMyPostTVC.swift in Sources */,
 				77DBB87327E1106600000623 /* FeedMyPostEmptyTVC.swift in Sources */,
 				77DBB85827DF449800000623 /* DietDetailIconTVC.swift in Sources */,
@@ -874,6 +941,7 @@
 				77ED047F27B6930000D077CA /* CVRegisterable.swift in Sources */,
 				77DBB85D27DF46FB00000623 /* IconImgCVC.swift in Sources */,
 				77FE1735274B860C00F95F0D /* VeginAlertVC.swift in Sources */,
+				7742886127F40F1D001A7CFA /* DietService.swift in Sources */,
 				77ED048727B6965D00D077CA /* UIView+.swift in Sources */,
 				772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */,
 				77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */,
