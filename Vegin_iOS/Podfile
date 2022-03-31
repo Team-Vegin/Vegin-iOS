@@ -9,5 +9,6 @@ target 'Vegin_iOS' do
 pod 'FSCalendar'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
+pod 'Moya', '~> 15.0'
 
 end

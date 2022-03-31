@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.5.0)
   - Firebase/Auth (8.10.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 8.10.0)
@@ -45,6 +46,10 @@ PODS:
   - GoogleUtilities/Reachability (7.6.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.7.0)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -56,9 +61,11 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Storage
   - FSCalendar
+  - Moya (~> 15.0)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Firebase
     - FirebaseAuth
     - FirebaseCore
@@ -68,10 +75,12 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - Moya
     - nanopb
     - PromisesObjC
 
 SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   Firebase: 44213362f1dcc52555b935dc925ed35ac55f1b20
   FirebaseAuth: 59a2d2b933b5b79e18fb1e6ad230c6abdaa73d26
   FirebaseCore: 04186597c095da37d90ff9fd3e53bc61a1ff2440
@@ -81,9 +90,10 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
   GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 28f2195557e7cf4c5d92380c04efa54f42136186
+PODFILE CHECKSUM: c7cb60753bc3b5968624820676aaeebe272b3091
 
 COCOAPODS: 1.11.2
