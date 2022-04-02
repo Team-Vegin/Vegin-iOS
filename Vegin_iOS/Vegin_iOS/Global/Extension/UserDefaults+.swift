@@ -16,6 +16,15 @@ extension UserDefaults {
         static var AccessToken = "AccessToken"
         
         /// Int
-        static var UserID = "userID"
+        static var UserID = "UserID"
+        
+        /// Int
+        static var CharacterID = "CharacterID"
+        
+        /// String
+        static var Email = "Email"
+        
+        /// String
+        static var PW = "PW"
     }
 }
