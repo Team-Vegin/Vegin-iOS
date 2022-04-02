@@ -26,6 +26,7 @@
 		7742886127F40F1D001A7CFA /* DietService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742886027F40F1D001A7CFA /* DietService.swift */; };
 		7742886327F40F7B001A7CFA /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742886227F40F7B001A7CFA /* NetworkLoggerPlugin.swift */; };
 		7742886527F40FCB001A7CFA /* DietAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742886427F40FCB001A7CFA /* DietAPI.swift */; };
+		7742886827F6C8E0001A7CFA /* SignInDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742886727F6C8E0001A7CFA /* SignInDataModel.swift */; };
 		7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57B2742C0F000325814 /* UIViewController+.swift */; };
 		7757285727C8C11E00148C9A /* FeedMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285627C8C11E00148C9A /* FeedMainVC.swift */; };
 		7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */; };
@@ -120,6 +121,7 @@
 		7742886027F40F1D001A7CFA /* DietService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietService.swift; sourceTree = "<group>"; };
 		7742886227F40F7B001A7CFA /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		7742886427F40FCB001A7CFA /* DietAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietAPI.swift; sourceTree = "<group>"; };
+		7742886727F6C8E0001A7CFA /* SignInDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataModel.swift; sourceTree = "<group>"; };
 		7744C57B2742C0F000325814 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		7757285627C8C11E00148C9A /* FeedMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainVC.swift; sourceTree = "<group>"; };
 		7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainTitleTVC.swift; sourceTree = "<group>"; };
@@ -330,8 +332,17 @@
 		7742885727F40C97001A7CFA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7742886627F6C893001A7CFA /* Sign */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7742886627F6C893001A7CFA /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				7742886727F6C8E0001A7CFA /* SignInDataModel.swift */,
+			);
+			path = Sign;
 			sourceTree = "<group>";
 		};
 		7744C5712742BD5900325814 /* Protocol */ = {
@@ -898,6 +909,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */,
+				7742886827F6C8E0001A7CFA /* SignInDataModel.swift in Sources */,
 				7757285727C8C11E00148C9A /* FeedMainVC.swift in Sources */,
 				7742885927F40CCD001A7CFA /* APIConstants.swift in Sources */,
 				7742886527F40FCB001A7CFA /* DietAPI.swift in Sources */,
