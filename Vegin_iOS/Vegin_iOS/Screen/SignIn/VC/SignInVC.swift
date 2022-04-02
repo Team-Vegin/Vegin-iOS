@@ -10,7 +10,7 @@ import UIKit
 class SignInVC: BaseVC {
 
     // MARK: IBOutlet
-    @IBOutlet weak var loginBtn: VeginBtn! 
+    @IBOutlet weak var loginBtn: VeginBtn!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var emailErrorLabel: UILabel!
@@ -102,6 +102,8 @@ extension SignInVC: UITextFieldDelegate {
     
     @objc
     func textFieldDidChange(_ sender: Any?) {
+        emailErrorLabel.text = ""
+        pwErrorLabel.text = ""
         checkEmailPwIsValid()
     }
 }
@@ -123,9 +125,13 @@ extension SignInVC {
             case .requestErr(let res):
                 self.activityIndicator.stopAnimating()
                 if let message = res as? String {
-                    self.emailErrorLabel.text = message
+                    if message == "이메일 형식을 확인해주세요." {
+                        self.emailErrorLabel.text = "존재하지 않는 회원입니다."
+                    } else {
+                        self.pwErrorLabel.text = "잘못된 비밀번호입니다."
+                    }
                 } else if res is Int {
-                    self.pwErrorLabel.text = "잘못된 비밀번호입니다."
+                    self.emailErrorLabel.text = "존재하지 않는 회원입니다."
                 }
             default:
                 self.activityIndicator.stopAnimating()

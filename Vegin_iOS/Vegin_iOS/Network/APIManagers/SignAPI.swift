@@ -46,9 +46,9 @@ extension SignAPI {
         case 200:
             return .success(decodedData.data ?? "None-Data")
         case 400:
-            return .requestErr(400)
-        case 404:
             return .requestErr(decodedData.message)
+        case 404:
+            return .requestErr(404)
         case 500:
             return .serverErr
         default:
