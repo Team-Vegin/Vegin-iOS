@@ -92,3 +92,32 @@ extension SignInVC: UITextFieldDelegate {
         checkEmailPwIsValid()
     }
 }
+
+// MARK: - Network
+extension SignInVC {
+    
+    /// 로그인 요청하는 메서드
+    private func requestSignIn() {
+        self.activityIndicator.startAnimating()
+        SignAPI.shared.requestSignInAPI(email: emailTextField.text ?? "", pw: pwTextField.text ?? "") { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+                if let data = res as? SignInDataModel {
+                    self.doForIsEmailVerified(data: data)
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                if let message = res as? String {
+                    self.emailErrorLabel.text = message
+                } else if res is Int {
+                    self.pwErrorLabel.text = "잘못된 비밀번호입니다."
+                }
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+}
