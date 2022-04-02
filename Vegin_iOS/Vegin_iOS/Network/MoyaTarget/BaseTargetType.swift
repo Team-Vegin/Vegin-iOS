@@ -15,7 +15,18 @@ extension BaseTargetType {
         return URL(string: APIConstants.baseURL)!
     }
     
-    var sampleData: Data {
-        return Data()
+    var headers: [String : String]? {
+        if let accessToken = UserDefaults.standard.value(forKey: UserDefaults.Keys.AccessToken) {
+            let header = [
+                "Content-Type": "application/json",
+                "accessToken": "\(accessToken)"
+            ]
+            return header
+        } else {
+            let header = [
+                "Content-Type": "application/json"
+            ]
+            return header
+        }
     }
 }
