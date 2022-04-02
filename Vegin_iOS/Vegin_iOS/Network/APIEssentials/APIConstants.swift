@@ -10,5 +10,5 @@ import Foundation
 struct APIConstants {
     
     // MARK: Base URL
-    static let baseURL = ""
+    static let baseURL = "https://asia-northeast3-vegin-2a51e.cloudfunctions.net/api"
 }

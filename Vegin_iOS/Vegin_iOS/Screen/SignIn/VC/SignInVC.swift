@@ -7,19 +7,10 @@
 
 import UIKit
 
-class SignInVC: UIViewController {
+class SignInVC: BaseVC {
 
     // MARK: IBOutlet
-    @IBOutlet weak var loginBtn: VeginBtn! {
-        didSet {
-            loginBtn.press {
-                guard let veginTBC = UIStoryboard.init(name: Identifiers.Main, bundle: nil).instantiateViewController(withIdentifier: VeginTBC.className) as? VeginTBC else { return }
-                
-                veginTBC.modalPresentationStyle = .fullScreen
-                self.present(veginTBC, animated: true, completion: nil)
-            }
-        }
-    }
+    @IBOutlet weak var loginBtn: VeginBtn!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var emailErrorLabel: UILabel!
@@ -33,9 +24,12 @@ class SignInVC: UIViewController {
     }
     
     // MARK: IBAction
+    @IBAction func tapSignInBtn(_ sender: Any) {
+        requestSignIn()
+    }
     @IBAction func tapSignUpBtn(_ sender: UIButton) {
         guard let signUpVC = UIStoryboard.init(name: Identifiers.SignUpSB, bundle: nil).instantiateViewController(withIdentifier: SignUpNVC.className) as? SignUpNVC else { return }
-        
+
         signUpVC.modalPresentationStyle = .fullScreen
         self.present(signUpVC, animated: true, completion: nil)
     }
@@ -65,6 +59,7 @@ extension SignInVC {
         emailTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         pwTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
+    
     private func checkEmailPwIsValid() {
         let emailText = emailTextField.text
         
@@ -73,6 +68,24 @@ extension SignInVC {
         } else {
             loginBtn.isActivated = false
         }
+    }
+    
+    /// UserDefault에 값 세팅하는 함수
+    private func setUpUserdefaultValuesForSignIn(data: SignInDataModel) {
+        UserDefaults.standard.set(emailTextField.text, forKey: UserDefaults.Keys.Email)
+        UserDefaults.standard.set(pwTextField.text, forKey: UserDefaults.Keys.PW)
+        UserDefaults.standard.set(data.user.userID, forKey: UserDefaults.Keys.UserID)
+        UserDefaults.standard.set(data.accesstoken, forKey: UserDefaults.Keys.AccessToken)
+        UserDefaults.standard.set(data.user.character, forKey: UserDefaults.Keys.CharacterID)
+    }
+    
+    private func doForIsEmailVerified(data: SignInDataModel) {
+        
+        /// 메인 화면으로 전환
+        guard let veginTBC = UIStoryboard.init(name: Identifiers.Main, bundle: nil).instantiateViewController(withIdentifier: VeginTBC.className) as? VeginTBC else { return }
+        
+        veginTBC.modalPresentationStyle = .fullScreen
+        self.present(veginTBC, animated: true, completion: nil)
     }
 }
 
@@ -89,6 +102,41 @@ extension SignInVC: UITextFieldDelegate {
     
     @objc
     func textFieldDidChange(_ sender: Any?) {
+        emailErrorLabel.text = ""
+        pwErrorLabel.text = ""
         checkEmailPwIsValid()
+    }
+}
+
+// MARK: - Network
+extension SignInVC {
+    
+    /// 로그인 요청하는 메서드
+    private func requestSignIn() {
+        self.activityIndicator.startAnimating()
+        SignAPI.shared.requestSignInAPI(email: emailTextField.text ?? "", pw: pwTextField.text ?? "") { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+                if let data = res as? SignInDataModel {
+                    self.doForIsEmailVerified(data: data)
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                if let message = res as? String {
+                    if message == "이메일 형식을 확인해주세요." {
+                        self.emailErrorLabel.text = "존재하지 않는 회원입니다."
+                    } else {
+                        self.pwErrorLabel.text = "잘못된 비밀번호입니다."
+                    }
+                } else if res is Int {
+                    self.emailErrorLabel.text = "존재하지 않는 회원입니다."
+                }
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
     }
 }
