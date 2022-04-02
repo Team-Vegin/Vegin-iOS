@@ -7,19 +7,10 @@
 
 import UIKit
 
-class SignInVC: UIViewController {
+class SignInVC: BaseVC {
 
     // MARK: IBOutlet
-    @IBOutlet weak var loginBtn: VeginBtn! {
-        didSet {
-            loginBtn.press {
-                guard let veginTBC = UIStoryboard.init(name: Identifiers.Main, bundle: nil).instantiateViewController(withIdentifier: VeginTBC.className) as? VeginTBC else { return }
-                
-                veginTBC.modalPresentationStyle = .fullScreen
-                self.present(veginTBC, animated: true, completion: nil)
-            }
-        }
-    }
+    @IBOutlet weak var loginBtn: VeginBtn! 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var emailErrorLabel: UILabel!
@@ -33,9 +24,12 @@ class SignInVC: UIViewController {
     }
     
     // MARK: IBAction
+    @IBAction func tapSignInBtn(_ sender: Any) {
+        requestSignIn()
+    }
     @IBAction func tapSignUpBtn(_ sender: UIButton) {
         guard let signUpVC = UIStoryboard.init(name: Identifiers.SignUpSB, bundle: nil).instantiateViewController(withIdentifier: SignUpNVC.className) as? SignUpNVC else { return }
-        
+
         signUpVC.modalPresentationStyle = .fullScreen
         self.present(signUpVC, animated: true, completion: nil)
     }
@@ -65,6 +59,7 @@ extension SignInVC {
         emailTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         pwTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
+    
     private func checkEmailPwIsValid() {
         let emailText = emailTextField.text
         
@@ -73,6 +68,24 @@ extension SignInVC {
         } else {
             loginBtn.isActivated = false
         }
+    }
+    
+    /// UserDefault에 값 세팅하는 함수
+    private func setUpUserdefaultValuesForSignIn(data: SignInDataModel) {
+        UserDefaults.standard.set(emailTextField.text, forKey: UserDefaults.Keys.Email)
+        UserDefaults.standard.set(pwTextField.text, forKey: UserDefaults.Keys.PW)
+        UserDefaults.standard.set(data.user.userID, forKey: UserDefaults.Keys.UserID)
+        UserDefaults.standard.set(data.accesstoken, forKey: UserDefaults.Keys.AccessToken)
+        UserDefaults.standard.set(data.user.character, forKey: UserDefaults.Keys.CharacterID)
+    }
+    
+    private func doForIsEmailVerified(data: SignInDataModel) {
+        
+        /// 메인 화면으로 전환
+        guard let veginTBC = UIStoryboard.init(name: Identifiers.Main, bundle: nil).instantiateViewController(withIdentifier: VeginTBC.className) as? VeginTBC else { return }
+        
+        veginTBC.modalPresentationStyle = .fullScreen
+        self.present(veginTBC, animated: true, completion: nil)
     }
 }
 
