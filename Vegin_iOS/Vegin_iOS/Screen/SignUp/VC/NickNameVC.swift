@@ -47,6 +47,10 @@ class NickNameVC: BaseVC {
     }
     
     // MARK: IBAction
+    @IBAction func tapNickNameCheckBtn(_ sender: UIButton) {
+        requestCheckNickName(nickname: nickNameTextField.text ?? "")
+    }
+    
     @IBAction func tapFlexiterianBtn(_ sender: UIButton) {
         flexiterianBtn.isSelected.toggle()
         [polloBtn, pescoBtn, lactoOvoBtn, lactoBtn, veganBtn, notYetBtn].forEach {
@@ -283,6 +287,32 @@ extension NickNameVC: UITextFieldDelegate {
             nickNameCheckBtn.isActivated = true
         } else {
             nickNameCheckBtn.isActivated = false
+        }
+    }
+}
+
+// MARK: - Network
+extension NickNameVC {
+    
+    /// 닉네임 중복 확인 메서드
+    private func requestCheckNickName(nickname: String) {
+        self.activityIndicator.startAnimating()
+        SignAPI.shared.checkNickNameDuplicateAPI(nickname: nickname) { networkResult in
+            switch networkResult {
+            case .success:
+                self.activityIndicator.stopAnimating()
+                self.nickNameInfoLabel.textColor = .darkMain
+                self.nickNameInfoLabel.text = "사용 가능한 닉네임입니다."
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                if let message = res as? String {
+                    self.nickNameInfoLabel.textColor = .errorTextRed
+                    self.nickNameInfoLabel.text = message
+                }
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
         }
     }
 }
