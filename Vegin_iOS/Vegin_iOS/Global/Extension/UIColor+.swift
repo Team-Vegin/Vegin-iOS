@@ -44,4 +44,8 @@ extension UIColor {
     @nonobjc class var defaultTextGray: UIColor {
         return UIColor(red: 168.0 / 255.0, green: 168.0 / 255.0, blue: 168.0 / 255.0, alpha: 1.0)
     }
+    
+    @nonobjc class var errorTextRed: UIColor {
+        return UIColor(red: 255.0 / 255.0, green: 9.0 / 255.0, blue: 9.0 / 255.0, alpha: 1.0)
+    }
 }
