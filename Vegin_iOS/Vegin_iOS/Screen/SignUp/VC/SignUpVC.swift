@@ -53,7 +53,7 @@ class SignUpVC: BaseVC {
     }
 }
 
-// MARK: - Custom Method
+// MARK: - UI
 extension SignUpVC {
     private func configureUI() {
         emailTextField.attributedPlaceholder = NSAttributedString(string: "이메일을 입력해주세요.", attributes: [NSAttributedString.Key.font: UIFont.PretendardR(size: 14)!])
@@ -161,5 +161,4 @@ extension SignUpVC {
             }
         }
     }
-    
 }
