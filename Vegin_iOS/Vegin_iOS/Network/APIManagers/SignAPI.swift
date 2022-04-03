@@ -30,7 +30,22 @@ extension SignAPI {
             case .failure(let err):
                 print(err.localizedDescription)
             }
-            
+        }
+    }
+    
+    /// [POST] 이메일 중복 확인 요청
+    func checkEmailDuplicateAPI(email: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        provider.request(.checkEmailDuplicate(email: email)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                completion(self.checkEmailDuplicateJudgeData(status: statusCode, data: data))
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
         }
     }
 }
@@ -49,6 +64,23 @@ extension SignAPI {
             return .requestErr(decodedData.message)
         case 404:
             return .requestErr(404)
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
+        }
+    }
+    
+    private func checkEmailDuplicateJudgeData(status: Int, data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        
+        guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else { return .pathErr }
+        
+        switch status {
+        case 200:
+            return .success(decodedData.data ?? "None-Data")
+        case 400...409:
+            return .requestErr(decodedData.message)
         case 500:
             return .serverErr
         default:

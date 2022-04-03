@@ -10,6 +10,7 @@ import Moya
 
 enum SignService {
     case requestSignIn(email: String, pw: String)
+    case checkEmailDuplicate(email: String)
 }
 
 extension SignService: BaseTargetType {
@@ -17,12 +18,14 @@ extension SignService: BaseTargetType {
         switch self {
         case .requestSignIn:
             return "/auth/login"
+        case .checkEmailDuplicate:
+            return "/auth/duplication-check/email"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .requestSignIn:
+        case .requestSignIn, .checkEmailDuplicate:
             return .post
         }
     }
@@ -35,6 +38,13 @@ extension SignService: BaseTargetType {
             let body: [String : Any] = [
                 "email" : email,
                 "password" : pw
+            ]
+            return .requestParameters(parameters: body, encoding: JSONEncoding.default)
+            
+        /// 이메일 중복 체크
+        case .checkEmailDuplicate(let email):
+            let body: [String : Any] = [
+                "email" : email
             ]
             return .requestParameters(parameters: body, encoding: JSONEncoding.default)
         }

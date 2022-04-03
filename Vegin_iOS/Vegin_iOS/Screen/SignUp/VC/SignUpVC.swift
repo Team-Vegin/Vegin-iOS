@@ -7,16 +7,13 @@
 
 import UIKit
 
-class SignUpVC: UIViewController {
+class SignUpVC: BaseVC {
 
     // MARK: IBOutlet
     @IBOutlet weak var emailCheckBtn: VeginBtn! {
         didSet {
             emailCheckBtn.isActivated = false
             emailCheckBtn.setTitleWithStyle(title: "중복확인", size: 12, weight: .bold)
-            emailCheckBtn.press {
-                self.emailInfoLabel.text = "사용 가능한 이메일입니다."
-            }
         }
     }
     @IBOutlet weak var signUpBtn: VeginBtn! {
@@ -44,6 +41,15 @@ class SignUpVC: UIViewController {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: NickNameVC.className) as? NickNameVC else { return }
         
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    @IBAction func tapCheckEmailBtn(_ sender: UIButton) {
+        let emailText = emailTextField.text
+        if (emailText?.contains("@"))! && (emailText?.contains("."))! {
+            requestCheckEmail(email: emailTextField.text ?? "")
+        } else {
+            emailInfoLabel.textColor = .errorTextRed
+            emailInfoLabel.text = "이메일 형식을 확인해주세요"
+        }
     }
 }
 
@@ -129,4 +135,31 @@ extension SignUpVC: UITextFieldDelegate {
         setBtnStatus()
         checkPwIsValid()
     }
+}
+
+// MARK: - Network
+extension SignUpVC {
+    
+    /// 이메일 중복 확인 메서드
+    private func requestCheckEmail(email: String) {
+        self.activityIndicator.startAnimating()
+        SignAPI.shared.checkEmailDuplicateAPI(email: email) { networkResult in
+            switch networkResult {
+            case .success:
+                self.activityIndicator.stopAnimating()
+                self.emailInfoLabel.textColor = .darkMain
+                self.emailInfoLabel.text = "사용 가능한 이메일입니다."
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                if let message = res as? String {
+                    self.emailInfoLabel.textColor = .errorTextRed
+                    self.emailInfoLabel.text = message
+                }
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
 }
