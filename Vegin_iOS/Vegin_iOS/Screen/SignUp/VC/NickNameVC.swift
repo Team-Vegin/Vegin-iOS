@@ -42,6 +42,7 @@ class NickNameVC: BaseVC {
     // MARK: Properties
     var email: String?
     var password: String?
+    var orientation: String?
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -66,6 +67,7 @@ class NickNameVC: BaseVC {
         [brocoliImgView, milkImgView, eggImgView, fishImgView, chickenImgView, meatImgView].forEach {
             img in setImg(img: img, status: flexiterianBtn.isSelected)
         }
+        orientation = "Flexiterian"
         setExplanationLabel()
     }
     
@@ -81,6 +83,7 @@ class NickNameVC: BaseVC {
             img in setImg(img: img, status: polloBtn.isSelected)
         }
         setImg(img: meatImgView, status: false)
+        orientation = "Pollo"
         setExplanationLabel()
     }
     
@@ -98,6 +101,7 @@ class NickNameVC: BaseVC {
         [chickenImgView, meatImgView].forEach {
             img in setImg(img: img, status: false)
         }
+        orientation = "Pesco"
         setExplanationLabel()
     }
     
@@ -115,6 +119,7 @@ class NickNameVC: BaseVC {
         [fishImgView, chickenImgView, meatImgView].forEach {
             img in setImg(img: img, status: false)
         }
+        orientation = "Lacto-Ovo"
         setExplanationLabel()
     }
     
@@ -132,6 +137,7 @@ class NickNameVC: BaseVC {
         [eggImgView, fishImgView, chickenImgView, meatImgView].forEach {
             img in setImg(img: img, status: false)
         }
+        orientation = "Lacto"
         setExplanationLabel()
     }
     
@@ -147,6 +153,7 @@ class NickNameVC: BaseVC {
         [milkImgView, eggImgView, fishImgView, chickenImgView, meatImgView].forEach {
             img in setImg(img: img, status: false)
         }
+        orientation = "Vegan"
         setExplanationLabel()
     }
     
@@ -161,14 +168,12 @@ class NickNameVC: BaseVC {
         [brocoliImgView, milkImgView, eggImgView, fishImgView, chickenImgView, meatImgView].forEach {
             img in setImg(img: img, status: notYetBtn.isSelected)
         }
+        orientation = "Flexiterian"
         setExplanationLabel()
     }
     
     @IBAction func tapStartBtn(_ sender: UIButton) {
-        guard let signInVC = UIStoryboard.init(name: Identifiers.SignInSB, bundle: nil).instantiateViewController(withIdentifier: SignInVC.className) as? SignInVC else { return }
-        
-        signInVC.modalPresentationStyle = .fullScreen
-        self.present(signInVC, animated: true, completion: nil)
+        requestSignUp(email: self.email ?? "", pw: self.password ?? "", nickname: nickNameTextField.text ?? "", orientation: self.orientation ?? "")
     }
 }
 
