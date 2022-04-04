@@ -43,6 +43,8 @@ class SignUpVC: BaseVC {
     @IBAction func tapSignUpBtn(_ sender: UIButton) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: NickNameVC.className) as? NickNameVC else { return }
         
+        nextVC.email = emailTextField.text
+        nextVC.password = pwCheckTextField.text
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     @IBAction func tapCheckEmailBtn(_ sender: UIButton) {

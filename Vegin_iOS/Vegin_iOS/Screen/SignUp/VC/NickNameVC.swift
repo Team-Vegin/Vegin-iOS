@@ -39,6 +39,10 @@ class NickNameVC: BaseVC {
         }
     }
     
+    // MARK: Properties
+    var email: String?
+    var password: String?
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
