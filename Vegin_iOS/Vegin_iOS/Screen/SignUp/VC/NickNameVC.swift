@@ -7,11 +7,18 @@
 
 import UIKit
 
-class NickNameVC: UIViewController {
+class NickNameVC: BaseVC {
 
     // MARK: IBOutlet
     @IBOutlet weak var nickNameTextField: UITextField!
+    @IBOutlet weak var nickNameInfoLabel: UILabel!
     @IBOutlet weak var flexiterianBtn: UIButton!
+    @IBOutlet weak var nickNameCheckBtn: VeginBtn! {
+        didSet {
+            nickNameCheckBtn.isActivated = false
+            nickNameCheckBtn.setTitleWithStyle(title: "중복확인", size: 12, weight: .bold)
+        }
+    }
     @IBOutlet weak var polloBtn: UIButton!
     @IBOutlet weak var pescoBtn: UIButton!
     @IBOutlet weak var lactoOvoBtn: UIButton!
@@ -36,9 +43,14 @@ class NickNameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setUpDelegate()
     }
     
     // MARK: IBAction
+    @IBAction func tapNickNameCheckBtn(_ sender: UIButton) {
+        requestCheckNickName(nickname: nickNameTextField.text ?? "")
+    }
+    
     @IBAction func tapFlexiterianBtn(_ sender: UIButton) {
         flexiterianBtn.isSelected.toggle()
         [polloBtn, pescoBtn, lactoOvoBtn, lactoBtn, veganBtn, notYetBtn].forEach {
@@ -160,6 +172,7 @@ class NickNameVC: UIViewController {
 extension NickNameVC {
     private func configureUI() {
         nickNameTextField.attributedPlaceholder = NSAttributedString(string: "닉네임을 입력해 주세요. (최대 12자)", attributes: [NSAttributedString.Key.font: UIFont.PretendardR(size: 14)!])
+        nickNameInfoLabel.text = ""
         [flexiterianBtn, polloBtn, pescoBtn, lactoOvoBtn, lactoBtn, veganBtn, notYetBtn].forEach { btn in btn?.backgroundColor = .white
             btn?.makeRounded(cornerRadius: 0.5 * (btn?.bounds.size.height)!)
             btn?.layer.borderColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 0.5).cgColor
@@ -177,6 +190,10 @@ extension NickNameVC {
 
 // MARK: - Custom Methods
 extension NickNameVC {
+    private func setUpDelegate() {
+        nickNameTextField.delegate = self
+        nickNameTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+    }
     
     /// 버튼 상태에 따른 UI 설정 함수
     private func setBtnStatus(btn: UIButton) {
@@ -256,6 +273,46 @@ extension NickNameVC {
             explanationLabel.text = "윤리적인 이유로 모든 동물성 원료를 거부해요!"
         } else if notYetBtn.isSelected {
             explanationLabel.text = "채식을 실천하지만 상황에 따라 육식을 하는 것을 추천해요."
+        }
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension NickNameVC: UITextFieldDelegate {
+    @objc
+    func textFieldDidChange(_ sender: Any?) {
+        nickNameInfoLabel.text = ""
+        
+        if !nickNameTextField.isEmpty {
+            nickNameCheckBtn.isActivated = true
+        } else {
+            nickNameCheckBtn.isActivated = false
+        }
+    }
+}
+
+// MARK: - Network
+extension NickNameVC {
+    
+    /// 닉네임 중복 확인 메서드
+    private func requestCheckNickName(nickname: String) {
+        self.activityIndicator.startAnimating()
+        SignAPI.shared.checkNickNameDuplicateAPI(nickname: nickname) { networkResult in
+            switch networkResult {
+            case .success:
+                self.activityIndicator.stopAnimating()
+                self.nickNameInfoLabel.textColor = .darkMain
+                self.nickNameInfoLabel.text = "사용 가능한 닉네임입니다."
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                if let message = res as? String {
+                    self.nickNameInfoLabel.textColor = .errorTextRed
+                    self.nickNameInfoLabel.text = message
+                }
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
         }
     }
 }

@@ -49,7 +49,7 @@
                                 </constraints>
                                 <color key="textColor" name="darkMain"/>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-5C-FSz">
                                 <rect key="frame" x="24" y="249" width="42" height="20"/>
@@ -396,6 +396,18 @@
                                     <constraint firstAttribute="height" constant="28" id="pf0-jp-vwn"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfg-XK-HpP" customClass="VeginBtn" customModule="Vegin_iOS" customModuleProvider="target">
+                                <rect key="frame" x="282" y="280.33333333333331" width="69" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="FH2-7X-coF"/>
+                                    <constraint firstAttribute="width" constant="69" id="R4u-hp-m7b"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapNickNameCheckBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Aef-mg-h6h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -405,6 +417,7 @@
                             <constraint firstItem="cKB-Qp-Cme" firstAttribute="top" secondItem="k26-2T-plq" secondAttribute="bottom" constant="18" id="4K8-sb-Act"/>
                             <constraint firstItem="7VS-dA-GNP" firstAttribute="leading" secondItem="Mvs-Az-ERE" secondAttribute="leading" id="C1m-XM-lIO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="jDk-IJ-JSL" secondAttribute="bottom" constant="45" id="KIF-JK-dHh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zfg-XK-HpP" secondAttribute="trailing" constant="24" id="KsN-Wr-E66"/>
                             <constraint firstItem="5GG-7v-jpI" firstAttribute="top" secondItem="8pV-zL-zX8" secondAttribute="bottom" constant="55" id="LiH-yg-Kux"/>
                             <constraint firstItem="9s5-eS-gCf" firstAttribute="top" secondItem="5GG-7v-jpI" secondAttribute="bottom" constant="5" id="MHt-MW-Zwl"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="k26-2T-plq" secondAttribute="trailing" constant="24" id="MWx-6d-x3k"/>
@@ -414,6 +427,7 @@
                             <constraint firstItem="3T4-kZ-wPL" firstAttribute="top" secondItem="GjR-kv-ipH" secondAttribute="bottom" constant="26" id="YPz-M3-ajN"/>
                             <constraint firstItem="Ykd-hh-ax2" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="YZE-Ma-BQd"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cKB-Qp-Cme" secondAttribute="trailing" constant="103" id="bkQ-w6-juo"/>
+                            <constraint firstItem="Mvs-Az-ERE" firstAttribute="top" secondItem="zfg-XK-HpP" secondAttribute="bottom" constant="5" id="dYw-KZ-sF2"/>
                             <constraint firstItem="7VS-dA-GNP" firstAttribute="top" secondItem="Mvs-Az-ERE" secondAttribute="bottom" constant="5" id="eMF-Y0-kqa"/>
                             <constraint firstItem="cKB-Qp-Cme" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="g22-ER-TNR"/>
                             <constraint firstItem="9s5-eS-gCf" firstAttribute="leading" secondItem="5GG-7v-jpI" secondAttribute="leading" id="gEE-sP-hT0"/>
@@ -436,11 +450,13 @@
                         <outlet property="eggImgView" destination="rav-cT-fCM" id="QZu-AF-QIf"/>
                         <outlet property="explanationLabel" destination="Ykd-hh-ax2" id="btF-3T-flF"/>
                         <outlet property="fishImgView" destination="Ldp-nK-kiw" id="Fem-rT-aQv"/>
-                        <outlet property="flexiterianBtn" destination="K1f-Q0-Ws2" id="1AF-PZ-hw2"/>
+                        <outlet property="flexiterianBtn" destination="K1f-Q0-Ws2" id="5ys-el-NVg"/>
                         <outlet property="lactoBtn" destination="yu9-wJ-EKp" id="aRC-W5-77f"/>
                         <outlet property="lactoOvoBtn" destination="E6a-kL-opS" id="xxM-hy-sLJ"/>
                         <outlet property="meatImgView" destination="KDR-3X-V7H" id="5RE-sN-1o7"/>
                         <outlet property="milkImgView" destination="2zE-sS-DOf" id="mr3-4w-35b"/>
+                        <outlet property="nickNameCheckBtn" destination="zfg-XK-HpP" id="Aft-9C-yaK"/>
+                        <outlet property="nickNameInfoLabel" destination="7VS-dA-GNP" id="aEn-xM-e4c"/>
                         <outlet property="nickNameTextField" destination="9s5-eS-gCf" id="0VE-gK-RVT"/>
                         <outlet property="notYetBtn" destination="qev-pW-gog" id="PgP-df-VMc"/>
                         <outlet property="pescoBtn" destination="LNo-Mw-fXl" id="kmX-lt-ePY"/>

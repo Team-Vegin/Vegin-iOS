@@ -48,6 +48,22 @@ extension SignAPI {
             }
         }
     }
+    
+    /// [POST] 닉네임 중복 확인 요청
+    func checkNickNameDuplicateAPI(nickname: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        provider.request(.checkNickNameDuplicate(nickname: nickname)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                completion(self.checkNickNameDuplicateJudgeData(status: statusCode, data: data))
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }
 
 // MARK: - judgeData
@@ -72,6 +88,23 @@ extension SignAPI {
     }
     
     private func checkEmailDuplicateJudgeData(status: Int, data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        
+        guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else { return .pathErr }
+        
+        switch status {
+        case 200:
+            return .success(decodedData.data ?? "None-Data")
+        case 400...409:
+            return .requestErr(decodedData.message)
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
+        }
+    }
+    
+    private func checkNickNameDuplicateJudgeData(status: Int, data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         
         guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else { return .pathErr }
