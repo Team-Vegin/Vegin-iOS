@@ -34,7 +34,7 @@ class NickNameVC: BaseVC {
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var startBtn: VeginBtn! {
         didSet {
-            startBtn.isActivated = true
+            startBtn.isActivated = false
             startBtn.setTitleWithStyle(title: "Vegin 시작하기!", size: 16, weight: .bold)
         }
     }
@@ -43,6 +43,7 @@ class NickNameVC: BaseVC {
     var email: String?
     var password: String?
     var orientation: String?
+    private var isValidNickName = false
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -69,6 +70,7 @@ class NickNameVC: BaseVC {
         }
         orientation = "Flexiterian"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapPolloBtn(_ sender: UIButton) {
@@ -85,6 +87,7 @@ class NickNameVC: BaseVC {
         setImg(img: meatImgView, status: false)
         orientation = "Pollo"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapPescoBtn(_ sender: UIButton) {
@@ -103,6 +106,7 @@ class NickNameVC: BaseVC {
         }
         orientation = "Pesco"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapLactoOvoBtn(_ sender: UIButton) {
@@ -121,6 +125,7 @@ class NickNameVC: BaseVC {
         }
         orientation = "Lacto-Ovo"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapLactoBtn(_ sender: UIButton) {
@@ -139,6 +144,7 @@ class NickNameVC: BaseVC {
         }
         orientation = "Lacto"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapVeganBtn(_ sender: UIButton) {
@@ -155,6 +161,7 @@ class NickNameVC: BaseVC {
         }
         orientation = "Vegan"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapNotYetBtn(_ sender: UIButton) {
@@ -170,6 +177,7 @@ class NickNameVC: BaseVC {
         }
         orientation = "Flexiterian"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapStartBtn(_ sender: UIButton) {
@@ -210,6 +218,14 @@ extension NickNameVC {
             configureBtnUI(btn: btn, btnBgColor: .darkMain, btnTitleColor: .white, btnBorderColor: UIColor.darkMain.cgColor)
         } else {
             configureBtnUI(btn: btn, btnBgColor: .white, btnTitleColor: .gray0, btnBorderColor: UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 0.5).cgColor)
+        }
+    }
+    
+    private func setStartBtnStatus() {
+        if isValidNickName && (flexiterianBtn.isSelected || polloBtn.isSelected || pescoBtn.isSelected || lactoOvoBtn.isSelected || lactoBtn.isSelected || veganBtn.isSelected || notYetBtn.isSelected) {
+            startBtn.isActivated = true
+        } else {
+            startBtn.isActivated = false
         }
     }
     
@@ -291,6 +307,8 @@ extension NickNameVC: UITextFieldDelegate {
     @objc
     func textFieldDidChange(_ sender: Any?) {
         nickNameInfoLabel.text = ""
+        isValidNickName = false
+        setStartBtnStatus()
         
         if !nickNameTextField.isEmpty {
             nickNameCheckBtn.isActivated = true
@@ -312,6 +330,8 @@ extension NickNameVC {
                 self.activityIndicator.stopAnimating()
                 self.nickNameInfoLabel.textColor = .darkMain
                 self.nickNameInfoLabel.text = "사용 가능한 닉네임입니다."
+                self.isValidNickName = true
+                self.setStartBtnStatus()
             case .requestErr(let res):
                 self.activityIndicator.stopAnimating()
                 if let message = res as? String {
