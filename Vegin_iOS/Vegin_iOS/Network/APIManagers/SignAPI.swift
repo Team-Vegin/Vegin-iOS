@@ -33,6 +33,22 @@ extension SignAPI {
         }
     }
     
+    /// [POST] 회원가입 요청
+    func requestSignUpAPI(email: String, pw: String, nickname: String, orientation: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        provider.request(.requestSignUp(email: email, pw: pw, nickname: nickname, orientation: orientation)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                completion(self.signUpJudgeData(status: statusCode, data: data))
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     /// [POST] 이메일 중복 확인 요청
     func checkEmailDuplicateAPI(email: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         provider.request(.checkEmailDuplicate(email: email)) { result in
@@ -80,6 +96,23 @@ extension SignAPI {
             return .requestErr(decodedData.message)
         case 404:
             return .requestErr(404)
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
+        }
+    }
+    
+    private func signUpJudgeData(status: Int, data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        
+        guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else { return .pathErr }
+        
+        switch status {
+        case 200:
+            return .success(decodedData.data ?? "None-Data")
+        case 400...409:
+            return .requestErr(decodedData.message)
         case 500:
             return .serverErr
         default:
