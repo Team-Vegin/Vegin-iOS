@@ -34,10 +34,16 @@ class NickNameVC: BaseVC {
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var startBtn: VeginBtn! {
         didSet {
-            startBtn.isActivated = true
+            startBtn.isActivated = false
             startBtn.setTitleWithStyle(title: "Vegin 시작하기!", size: 16, weight: .bold)
         }
     }
+    
+    // MARK: Properties
+    var email: String?
+    var password: String?
+    var orientation: String?
+    private var isValidNickName = false
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -62,7 +68,9 @@ class NickNameVC: BaseVC {
         [brocoliImgView, milkImgView, eggImgView, fishImgView, chickenImgView, meatImgView].forEach {
             img in setImg(img: img, status: flexiterianBtn.isSelected)
         }
+        orientation = "Flexiterian"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapPolloBtn(_ sender: UIButton) {
@@ -77,7 +85,9 @@ class NickNameVC: BaseVC {
             img in setImg(img: img, status: polloBtn.isSelected)
         }
         setImg(img: meatImgView, status: false)
+        orientation = "Pollo"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapPescoBtn(_ sender: UIButton) {
@@ -94,7 +104,9 @@ class NickNameVC: BaseVC {
         [chickenImgView, meatImgView].forEach {
             img in setImg(img: img, status: false)
         }
+        orientation = "Pesco"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapLactoOvoBtn(_ sender: UIButton) {
@@ -111,7 +123,9 @@ class NickNameVC: BaseVC {
         [fishImgView, chickenImgView, meatImgView].forEach {
             img in setImg(img: img, status: false)
         }
+        orientation = "Lacto-Ovo"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapLactoBtn(_ sender: UIButton) {
@@ -128,7 +142,9 @@ class NickNameVC: BaseVC {
         [eggImgView, fishImgView, chickenImgView, meatImgView].forEach {
             img in setImg(img: img, status: false)
         }
+        orientation = "Lacto"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapVeganBtn(_ sender: UIButton) {
@@ -143,7 +159,9 @@ class NickNameVC: BaseVC {
         [milkImgView, eggImgView, fishImgView, chickenImgView, meatImgView].forEach {
             img in setImg(img: img, status: false)
         }
+        orientation = "Vegan"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapNotYetBtn(_ sender: UIButton) {
@@ -157,14 +175,13 @@ class NickNameVC: BaseVC {
         [brocoliImgView, milkImgView, eggImgView, fishImgView, chickenImgView, meatImgView].forEach {
             img in setImg(img: img, status: notYetBtn.isSelected)
         }
+        orientation = "Flexiterian"
         setExplanationLabel()
+        setStartBtnStatus()
     }
     
     @IBAction func tapStartBtn(_ sender: UIButton) {
-        guard let signInVC = UIStoryboard.init(name: Identifiers.SignInSB, bundle: nil).instantiateViewController(withIdentifier: SignInVC.className) as? SignInVC else { return }
-        
-        signInVC.modalPresentationStyle = .fullScreen
-        self.present(signInVC, animated: true, completion: nil)
+        requestSignUp(email: self.email ?? "", pw: self.password ?? "", nickname: nickNameTextField.text ?? "", orientation: self.orientation ?? "")
     }
 }
 
@@ -201,6 +218,14 @@ extension NickNameVC {
             configureBtnUI(btn: btn, btnBgColor: .darkMain, btnTitleColor: .white, btnBorderColor: UIColor.darkMain.cgColor)
         } else {
             configureBtnUI(btn: btn, btnBgColor: .white, btnTitleColor: .gray0, btnBorderColor: UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 0.5).cgColor)
+        }
+    }
+    
+    private func setStartBtnStatus() {
+        if isValidNickName && (flexiterianBtn.isSelected || polloBtn.isSelected || pescoBtn.isSelected || lactoOvoBtn.isSelected || lactoBtn.isSelected || veganBtn.isSelected || notYetBtn.isSelected) {
+            startBtn.isActivated = true
+        } else {
+            startBtn.isActivated = false
         }
     }
     
@@ -282,6 +307,8 @@ extension NickNameVC: UITextFieldDelegate {
     @objc
     func textFieldDidChange(_ sender: Any?) {
         nickNameInfoLabel.text = ""
+        isValidNickName = false
+        setStartBtnStatus()
         
         if !nickNameTextField.isEmpty {
             nickNameCheckBtn.isActivated = true
@@ -303,12 +330,35 @@ extension NickNameVC {
                 self.activityIndicator.stopAnimating()
                 self.nickNameInfoLabel.textColor = .darkMain
                 self.nickNameInfoLabel.text = "사용 가능한 닉네임입니다."
+                self.isValidNickName = true
+                self.setStartBtnStatus()
             case .requestErr(let res):
                 self.activityIndicator.stopAnimating()
                 if let message = res as? String {
                     self.nickNameInfoLabel.textColor = .errorTextRed
                     self.nickNameInfoLabel.text = message
                 }
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 회원가입 요청 메서드
+    private func requestSignUp(email: String, pw: String, nickname: String, orientation: String) {
+        self.activityIndicator.startAnimating()
+        SignAPI.shared.requestSignUpAPI(email: email, pw: pw, nickname: nickname, orientation: orientation) { networkResult in
+            switch networkResult {
+            case .success:
+                self.activityIndicator.stopAnimating()
+                guard let signInVC = UIStoryboard.init(name: Identifiers.SignInSB, bundle: nil).instantiateViewController(withIdentifier: SignInVC.className) as? SignInVC else { return }
+                
+                signInVC.modalPresentationStyle = .fullScreen
+                self.present(signInVC, animated: true, completion: nil)
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
             default:
                 self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")

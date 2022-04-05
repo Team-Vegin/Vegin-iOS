@@ -29,6 +29,9 @@ class SignUpVC: BaseVC {
     @IBOutlet weak var pwCheckTextField: UITextField!
     @IBOutlet weak var pwCheckInfoLabel: UILabel!
     
+    // MARK: Properties
+    private var isValidEmail = false
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,8 @@ class SignUpVC: BaseVC {
     @IBAction func tapSignUpBtn(_ sender: UIButton) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: NickNameVC.className) as? NickNameVC else { return }
         
+        nextVC.email = emailTextField.text
+        nextVC.password = pwCheckTextField.text
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     @IBAction func tapCheckEmailBtn(_ sender: UIButton) {
@@ -49,6 +54,7 @@ class SignUpVC: BaseVC {
         } else {
             emailInfoLabel.textColor = .errorTextRed
             emailInfoLabel.text = "이메일 형식을 확인해주세요"
+            signUpBtn.isActivated = false
         }
     }
 }
@@ -87,12 +93,10 @@ extension SignUpVC {
             emailInfoLabel.text = ""
         }
         
-        if !emailTextField.isEmpty && pwTextField.text?.count ?? 0 >= 10 && !pwCheckTextField.isEmpty {
-            if pwTextField.text == pwCheckTextField.text {
-                signUpBtn.isActivated = true
-            } else {
-                signUpBtn.isActivated = false
-            }
+        if isValidEmail && pwTextField.text?.count ?? 0 >= 10 && (pwTextField.text == pwCheckTextField.text) {
+            signUpBtn.isActivated = true
+        } else {
+            signUpBtn.isActivated = false
         }
     }
     
@@ -131,7 +135,10 @@ extension SignUpVC: UITextFieldDelegate {
     }
     
     @objc
-    func textFieldDidChange(_ sender: Any?) {
+    func textFieldDidChange(_ sender: UITextField) {
+        if sender == emailTextField {
+            self.isValidEmail = false
+        }
         setBtnStatus()
         checkPwIsValid()
     }
@@ -149,11 +156,14 @@ extension SignUpVC {
                 self.activityIndicator.stopAnimating()
                 self.emailInfoLabel.textColor = .darkMain
                 self.emailInfoLabel.text = "사용 가능한 이메일입니다."
+                self.isValidEmail = true
+                self.setBtnStatus()
             case .requestErr(let res):
                 self.activityIndicator.stopAnimating()
                 if let message = res as? String {
                     self.emailInfoLabel.textColor = .errorTextRed
                     self.emailInfoLabel.text = message
+                    self.isValidEmail = false
                 }
             default:
                 self.activityIndicator.stopAnimating()

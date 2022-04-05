@@ -29,6 +29,7 @@
 		7742886827F6C8E0001A7CFA /* SignInDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742886727F6C8E0001A7CFA /* SignInDataModel.swift */; };
 		7742886A27F6CA24001A7CFA /* SignAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742886927F6CA24001A7CFA /* SignAPI.swift */; };
 		7742886C27F6CA36001A7CFA /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742886B27F6CA36001A7CFA /* SignService.swift */; };
+		7742889227FACE89001A7CFA /* SignUpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742889127FACE89001A7CFA /* SignUpDataModel.swift */; };
 		7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57B2742C0F000325814 /* UIViewController+.swift */; };
 		7757285727C8C11E00148C9A /* FeedMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285627C8C11E00148C9A /* FeedMainVC.swift */; };
 		7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */; };
@@ -126,6 +127,7 @@
 		7742886727F6C8E0001A7CFA /* SignInDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataModel.swift; sourceTree = "<group>"; };
 		7742886927F6CA24001A7CFA /* SignAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignAPI.swift; sourceTree = "<group>"; };
 		7742886B27F6CA36001A7CFA /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
+		7742889127FACE89001A7CFA /* SignUpDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataModel.swift; sourceTree = "<group>"; };
 		7744C57B2742C0F000325814 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		7757285627C8C11E00148C9A /* FeedMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainVC.swift; sourceTree = "<group>"; };
 		7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainTitleTVC.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				7742886727F6C8E0001A7CFA /* SignInDataModel.swift */,
+				7742889127FACE89001A7CFA /* SignUpDataModel.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -963,6 +966,7 @@
 				77FE1735274B860C00F95F0D /* VeginAlertVC.swift in Sources */,
 				7742886127F40F1D001A7CFA /* DietService.swift in Sources */,
 				77ED048727B6965D00D077CA /* UIView+.swift in Sources */,
+				7742889227FACE89001A7CFA /* SignUpDataModel.swift in Sources */,
 				772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */,
 				77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */,
 				77DBB85427DF428300000623 /* DietDetailImgTVC.swift in Sources */,
