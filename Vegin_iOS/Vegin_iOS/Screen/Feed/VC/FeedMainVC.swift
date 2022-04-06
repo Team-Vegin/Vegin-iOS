@@ -100,6 +100,11 @@ extension FeedMainVC: UITableViewDataSource {
                 
                 self.navigationController?.pushViewController(myPostListVC, animated: true)
             }
+            feedMainTitleTVC.tapWriteBtnAction = {
+                guard let feedWriteVC = UIStoryboard.init(name: Identifiers.FeedWriteSB, bundle: nil).instantiateViewController(withIdentifier: FeedWriteVC.className) as? FeedWriteVC else { return }
+                
+                self.navigationController?.pushViewController(feedWriteVC, animated: true)
+            }
             return feedMainTitleTVC
         } else if indexPath.section == 1 {
             return feedMainEmptyTVC

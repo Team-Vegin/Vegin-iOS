@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A751C8C27E4CE5C003DCD7C /* HomeNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A751C8B27E4CE5C003DCD7C /* HomeNC.swift */; };
+		5A95325927E1375E001E72A3 /* CharacterBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95325827E1375E001E72A3 /* CharacterBookVC.swift */; };
 		772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C146E273B7DAB00BB0127 /* AppDelegate.swift */; };
 		772C1471273B7DAB00BB0127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1470273B7DAB00BB0127 /* SceneDelegate.swift */; };
 		772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1474273B7DAB00BB0127 /* Main.storyboard */; };
@@ -103,6 +105,8 @@
 /* Begin PBXFileReference section */
 		24999E6C3C90A75DE12BA65A /* Pods_Vegin_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegin_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4633DCDA9E2208418F65B04D /* Pods-Vegin_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegin_iOS.release.xcconfig"; path = "Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		5A751C8B27E4CE5C003DCD7C /* HomeNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNC.swift; sourceTree = "<group>"; };
+		5A95325827E1375E001E72A3 /* CharacterBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBookVC.swift; sourceTree = "<group>"; };
 		772C146B273B7DAB00BB0127 /* Vegin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772C146E273B7DAB00BB0127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772C1470273B7DAB00BB0127 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -579,6 +583,8 @@
 			isa = PBXGroup;
 			children = (
 				77FE173B274D8F7400F95F0D /* FarmVC.swift */,
+				5A95325827E1375E001E72A3 /* CharacterBookVC.swift */,
+				5A751C8B27E4CE5C003DCD7C /* HomeNC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -942,6 +948,7 @@
 				7742886C27F6CA36001A7CFA /* SignService.swift in Sources */,
 				77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */,
 				77ED047D27B692E500D077CA /* TVRegisterable.swift in Sources */,
+				5A751C8C27E4CE5C003DCD7C /* HomeNC.swift in Sources */,
 				7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */,
 				7742885B27F40CF9001A7CFA /* NetworkResult.swift in Sources */,
 				77DBB86F27E0D61200000623 /* FeedMyPostTVC.swift in Sources */,
@@ -970,6 +977,7 @@
 				772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */,
 				77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */,
 				77DBB85427DF428300000623 /* DietDetailImgTVC.swift in Sources */,
+				5A95325927E1375E001E72A3 /* CharacterBookVC.swift in Sources */,
 				7757285F27C8C7C300148C9A /* FeedMainPostTVC.swift in Sources */,
 				7742885027F154DB001A7CFA /* SignUpVC.swift in Sources */,
 				7742884E27F15462001A7CFA /* NickNameVC.swift in Sources */,
