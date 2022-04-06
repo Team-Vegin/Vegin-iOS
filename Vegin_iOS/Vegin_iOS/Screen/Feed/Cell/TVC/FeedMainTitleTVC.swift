@@ -11,6 +11,7 @@ class FeedMainTitleTVC: BaseTVC {
 
     // MARK: Properties
     var tapListBtnAction: (() -> ())?
+    var tapWriteBtnAction: (() -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +24,8 @@ class FeedMainTitleTVC: BaseTVC {
     // MARK: IBAction
     @IBAction func tapListBtn(_ sender: UIButton) {
         tapListBtnAction?()
+    }
+    @IBAction func tapWriteBtn(_ sender: UIButton) {
+        tapWriteBtnAction?()
     }
 }
