@@ -33,6 +33,11 @@
 		7742886C27F6CA36001A7CFA /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742886B27F6CA36001A7CFA /* SignService.swift */; };
 		7742889227FACE89001A7CFA /* SignUpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742889127FACE89001A7CFA /* SignUpDataModel.swift */; };
 		7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57B2742C0F000325814 /* UIViewController+.swift */; };
+		7756F9AD27FDFDB8006F6EF3 /* CharacterBookCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7756F9AB27FDFDB8006F6EF3 /* CharacterBookCVC.swift */; };
+		7756F9AE27FDFDB8006F6EF3 /* CharacterBookCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7756F9AC27FDFDB8006F6EF3 /* CharacterBookCVC.xib */; };
+		7756F9B027FDFE08006F6EF3 /* FeedWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7756F9AF27FDFE08006F6EF3 /* FeedWriteVC.swift */; };
+		7756F9B227FDFEBA006F6EF3 /* HomeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7756F9B127FDFEBA006F6EF3 /* HomeSB.storyboard */; };
+		7756F9B427FDFF03006F6EF3 /* FeedWriteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7756F9B327FDFF03006F6EF3 /* FeedWriteSB.storyboard */; };
 		7757285727C8C11E00148C9A /* FeedMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285627C8C11E00148C9A /* FeedMainVC.swift */; };
 		7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */; };
 		7757285C27C8C31400148C9A /* FeedMainTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7757285A27C8C31400148C9A /* FeedMainTitleTVC.xib */; };
@@ -133,6 +138,11 @@
 		7742886B27F6CA36001A7CFA /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
 		7742889127FACE89001A7CFA /* SignUpDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataModel.swift; sourceTree = "<group>"; };
 		7744C57B2742C0F000325814 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		7756F9AB27FDFDB8006F6EF3 /* CharacterBookCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterBookCVC.swift; sourceTree = "<group>"; };
+		7756F9AC27FDFDB8006F6EF3 /* CharacterBookCVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterBookCVC.xib; sourceTree = "<group>"; };
+		7756F9AF27FDFE08006F6EF3 /* FeedWriteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedWriteVC.swift; sourceTree = "<group>"; };
+		7756F9B127FDFEBA006F6EF3 /* HomeSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = HomeSB.storyboard; path = Vegin_iOS/Screen/Home/VC/HomeSB.storyboard; sourceTree = SOURCE_ROOT; };
+		7756F9B327FDFF03006F6EF3 /* FeedWriteSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FeedWriteSB.storyboard; sourceTree = "<group>"; };
 		7757285627C8C11E00148C9A /* FeedMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainVC.swift; sourceTree = "<group>"; };
 		7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMainTitleTVC.swift; sourceTree = "<group>"; };
 		7757285A27C8C31400148C9A /* FeedMainTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedMainTitleTVC.xib; sourceTree = "<group>"; };
@@ -575,6 +585,7 @@
 		77ED045D27B4269400D077CA /* SB */ = {
 			isa = PBXGroup;
 			children = (
+				7756F9B127FDFEBA006F6EF3 /* HomeSB.storyboard */,
 			);
 			path = SB;
 			sourceTree = "<group>";
@@ -592,6 +603,8 @@
 		77ED045F27B426A200D077CA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				7756F9AB27FDFDB8006F6EF3 /* CharacterBookCVC.swift */,
+				7756F9AC27FDFDB8006F6EF3 /* CharacterBookCVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -661,6 +674,7 @@
 			isa = PBXGroup;
 			children = (
 				7757285627C8C11E00148C9A /* FeedMainVC.swift */,
+				7756F9AF27FDFE08006F6EF3 /* FeedWriteVC.swift */,
 				77DBB86927E0CF8C00000623 /* FeedNC.swift */,
 				77DBB86B27E0D45F00000623 /* MyFeedPostVC.swift */,
 			);
@@ -670,6 +684,7 @@
 		77ED046827B4272B00D077CA /* SB */ = {
 			isa = PBXGroup;
 			children = (
+				7756F9B327FDFF03006F6EF3 /* FeedWriteSB.storyboard */,
 				77DBB86727E0CD4100000623 /* MyFeedPostSB.storyboard */,
 			);
 			path = SB;
@@ -843,6 +858,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7757288827D0B0E400148C9A /* Pretendard-Bold.otf in Resources */,
+				7756F9B427FDFF03006F6EF3 /* FeedWriteSB.storyboard in Resources */,
 				77FE1736274B860C00F95F0D /* VeginAlertVC.xib in Resources */,
 				7757288C27D0B0E400148C9A /* Pretendard-Light.otf in Resources */,
 				77DBB84F27DF2BBD00000623 /* DietDetailSB.storyboard in Resources */,
@@ -857,6 +873,7 @@
 				7742884327EDEB1E001A7CFA /* SignInSB.storyboard in Resources */,
 				77DBB87827E47ECE00000623 /* GoogleService-Info.plist in Resources */,
 				779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */,
+				7756F9AE27FDFDB8006F6EF3 /* CharacterBookCVC.xib in Resources */,
 				7757287627CD301E00148C9A /* DietListSB.storyboard in Resources */,
 				7757288A27D0B0E400148C9A /* Pretendard-Regular.otf in Resources */,
 				77DBB85E27DF46FB00000623 /* IconImgCVC.xib in Resources */,
@@ -864,6 +881,7 @@
 				7757288927D0B0E400148C9A /* Pretendard-Medium.otf in Resources */,
 				77DBB86827E0CD4100000623 /* MyFeedPostSB.storyboard in Resources */,
 				7757286827C8CF0700148C9A /* FeedMainEmptyTVC.xib in Resources */,
+				7756F9B227FDFEBA006F6EF3 /* HomeSB.storyboard in Resources */,
 				77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */,
 				77DBB87027E0D61200000623 /* FeedMyPostTVC.xib in Resources */,
 				77DBB86627DF49A600000623 /* DietDetailMemoTVC.xib in Resources */,
@@ -953,6 +971,7 @@
 				7742885B27F40CF9001A7CFA /* NetworkResult.swift in Sources */,
 				77DBB86F27E0D61200000623 /* FeedMyPostTVC.swift in Sources */,
 				77DBB87327E1106600000623 /* FeedMyPostEmptyTVC.swift in Sources */,
+				7756F9B027FDFE08006F6EF3 /* FeedWriteVC.swift in Sources */,
 				77DBB85827DF449800000623 /* DietDetailIconTVC.swift in Sources */,
 				7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */,
 				7757288E27D0B3D500148C9A /* UIFont+.swift in Sources */,
@@ -960,6 +979,7 @@
 				77DBB85127DF414000000623 /* DietDetailVC.swift in Sources */,
 				77DBB86527DF49A600000623 /* DietDetailMemoTVC.swift in Sources */,
 				77DBB86127DF47DF00000623 /* DietDetailInfoTVC.swift in Sources */,
+				7756F9AD27FDFDB8006F6EF3 /* CharacterBookCVC.swift in Sources */,
 				7757286727C8CF0700148C9A /* FeedMainEmptyTVC.swift in Sources */,
 				77ED048327B693CB00D077CA /* Identifiers.swift in Sources */,
 				77ED049127B6C4FC00D077CA /* UserDefaults+.swift in Sources */,
