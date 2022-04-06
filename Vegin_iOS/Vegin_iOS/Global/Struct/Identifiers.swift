@@ -12,4 +12,5 @@ struct Identifiers {
     static let WriteSB = "WriteSB"
     static let DietDetailSB = "DietDetailSB"
     static let MyFeedPostSB = "MyFeedPostSB"
+    static let FeedWriteSB = "FeedWriteSB"
 }
