@@ -45,8 +45,8 @@ class FeedWriteVC: BaseVC {
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var saveBtn: VeginBtn! {
         didSet {
-            saveBtn.isActivated = false
-            saveBtn.setTitleWithStyle(title: "저장하기", size: 16, weight: .semiBold)
+            //saveBtn.isActivated = false
+            //saveBtn.setTitleWithStyle(title: "저장하기", size: 16, weight: .semiBold)
         }
     }
     
