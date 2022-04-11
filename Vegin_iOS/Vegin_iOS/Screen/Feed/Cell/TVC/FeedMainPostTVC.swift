@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FeedMainPostTVC: BaseTVC {
 
@@ -35,12 +36,14 @@ extension FeedMainPostTVC {
 
 // MARK: - Custom Methods
 extension FeedMainPostTVC {
-    func setData(postData: FeedPostData) {
+    func setData(postData: FeedListDataModel) {
+        let url = URL(string: postData.imageURL)
+        
         titleLabel.text = postData.title
         contentLabel.text = postData.content
-        nickNameLabel.text = postData.nickName
-        dateLabel.text = postData.date
-        thumbnailImgView.image = postData.makeThumbnailImg()
+        nickNameLabel.text = postData.tag
+        dateLabel.text = postData.createdAt.serverTimeToString(forUse: .forDefault)
+        thumbnailImgView.kf.setImage(with: url)
     }
     
 }
