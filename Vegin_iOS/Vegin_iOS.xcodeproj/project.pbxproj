@@ -61,6 +61,7 @@
 		779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BA2742E51A00F83ACD /* WriteVC.swift */; };
 		779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BC2743ACE800F83ACD /* CalendarNaviController.swift */; };
 		77D9ED2628046414000EA76A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED2528046414000EA76A /* String+.swift */; };
+		77D9ED28280470AF000EA76A /* SendDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED27280470AF000EA76A /* SendDataDelegate.swift */; };
 		77DBB84627DB186100000623 /* VeginBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB84527DB186100000623 /* VeginBtn.swift */; };
 		77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB84827DEF29F00000623 /* CategoryCVC.swift */; };
 		77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB84927DEF29F00000623 /* CategoryCVC.xib */; };
@@ -167,6 +168,7 @@
 		779015BA2742E51A00F83ACD /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 		779015BC2743ACE800F83ACD /* CalendarNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarNaviController.swift; path = Vegin_iOS/Screen/Write/VC/CalendarNaviController.swift; sourceTree = SOURCE_ROOT; };
 		77D9ED2528046414000EA76A /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		77D9ED27280470AF000EA76A /* SendDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDataDelegate.swift; sourceTree = "<group>"; };
 		77DBB84527DB186100000623 /* VeginBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeginBtn.swift; sourceTree = "<group>"; };
 		77DBB84827DEF29F00000623 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		77DBB84927DEF29F00000623 /* CategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCVC.xib; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 			children = (
 				77ED047C27B692E500D077CA /* TVRegisterable.swift */,
 				77ED047E27B6930000D077CA /* CVRegisterable.swift */,
+				77D9ED27280470AF000EA76A /* SendDataDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1006,6 +1009,7 @@
 				7742885027F154DB001A7CFA /* SignUpVC.swift in Sources */,
 				7742884E27F15462001A7CFA /* NickNameVC.swift in Sources */,
 				77ED048127B6932D00D077CA /* BaseCVC.swift in Sources */,
+				77D9ED28280470AF000EA76A /* SendDataDelegate.swift in Sources */,
 				77ED048B27B6994900D077CA /* UIButton+.swift in Sources */,
 				77ED048D27B699A700D077CA /* UIColor+.swift in Sources */,
 				77DBB86C27E0D46000000623 /* MyFeedPostVC.swift in Sources */,
