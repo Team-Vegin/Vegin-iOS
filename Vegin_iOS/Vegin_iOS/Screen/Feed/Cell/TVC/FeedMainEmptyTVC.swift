@@ -75,6 +75,4 @@ extension FeedMainEmptyTVC: UICollectionViewDataSource {
         cell.setCategoryData(categoryData: categoryList[indexPath.row])
         return cell
     }
-    
-    
 }
