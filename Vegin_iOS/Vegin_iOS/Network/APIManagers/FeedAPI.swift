@@ -33,11 +33,46 @@ extension FeedAPI {
             }
         }
     }
+    
+    /// [GET] 내가 쓴 게시글 리스트 조회
+    func getMyFeedListAPI(completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        provider.request(.getMyFeedList) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                completion(self.getMyFeedListJudgeData(status: statusCode, data: data))
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }
 
 // MARK: - judgeData
 extension FeedAPI {
     private func getFeedListJudgeData(status: Int, data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        
+        guard let decodedData = try? decoder.decode(GenericResponse<[FeedListDataModel]>.self, from: data) else { return .pathErr }
+        
+        switch status {
+        case 200:
+            return .success(decodedData.data ?? "None-Data")
+        case 400:
+            return .requestErr(decodedData.message)
+        case 404:
+            return .requestErr(404)
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
+        }
+    }
+    
+    private func getMyFeedListJudgeData(status: Int, data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         
         guard let decodedData = try? decoder.decode(GenericResponse<[FeedListDataModel]>.self, from: data) else { return .pathErr }

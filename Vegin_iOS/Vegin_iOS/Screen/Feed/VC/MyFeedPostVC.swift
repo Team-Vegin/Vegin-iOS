@@ -7,14 +7,14 @@
 
 import UIKit
 
-class MyFeedPostVC: UIViewController {
+class MyFeedPostVC: BaseVC {
 
     // MARK: IBOutlet
     @IBOutlet weak var naviView: UIView!
     @IBOutlet weak var feedPostTV: UITableView!
     
     // MARK: Properties
-    var feedMyPostList: [FeedMyPostListData] = []
+    var feedMyPostList: [FeedListDataModel] = []
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class MyFeedPostVC: UIViewController {
         addShadowToNaviBar()
         registerTVC()
         setUpTV()
-        initPostList()
+        getMyPostList()
     }
     
     // MARK: IBAction
@@ -54,17 +54,6 @@ extension MyFeedPostVC {
     private func setUpTV() {
         feedPostTV.delegate = self
         feedPostTV.dataSource = self
-    }
-    
-    private func initPostList() {
-        feedMyPostList.append(contentsOf: [
-            FeedMyPostListData.init(title: "맛있는 비건 식당 발견!", content: "최근 성북구에 갔다가 엄청 맛있는 비건 식당을 발견했어요!가까우신 분들은 방문해서 다같이 비긴생활에 힘내셨으면 좋겠어요", nickName: "은주", date: "2021.12.12", category: "맛집", thumbnailImgName: "sample"),
-            FeedMyPostListData.init(title: "플렉시테리언이 제일 낫다", content: "일주일에 고기 한두 번 먹어도 양심에 안 찔리는 ㅎ", nickName: "은주", date: "2021.12.14", category: "생활", thumbnailImgName: "Rectangle 419"),
-            FeedMyPostListData.init(title: "오늘 비긴 했나요?", content: "사진 찍을 때마다 조금 귀찮지만\n힘내 보는 중...", nickName: "은주", date: "2021.12.17", category: "생활", thumbnailImgName: "Rectangle 419"),
-            FeedMyPostListData.init(title: "비건 식당 많이 생겼음 좋겠다", content: "제발... 이렇게 원해...", nickName: "은주", date: "2022.01.12", category: "생활", thumbnailImgName: "Rectangle 419"),
-            FeedMyPostListData.init(title: "제일 좋아하는 젤리 못 먹다니", content: "비건도 하면서 같이 다이어트 식단도 병행하니까\n군것질 하기가 넘 힘드네요 ㅠ\n잘 참아 봅니다... 오늘도 ㅠㅠ", nickName: "은주", date: "2022.01.18", category: "생활", thumbnailImgName: "Rectangle 419"),
-            FeedMyPostListData.init(title: "레시피 공유합니다~", content: "제가 요즘 즐겨먹는 샐러드 레시피 소개해드릴게요!", nickName: "은주", date: "2022.03.01", category: "레시피", thumbnailImgName: "Rectangle 293"),
-        ])
     }
 }
 
@@ -109,6 +98,35 @@ extension MyFeedPostVC: UITableViewDataSource {
             return cell
         } else {
             return UITableViewCell()
+        }
+    }
+}
+
+// MARK: - Network
+extension MyFeedPostVC {
+    
+    /// 내가 쓴 게시글 조회 메서드
+    private func getMyPostList() {
+        self.activityIndicator.startAnimating()
+        FeedAPI.shared.getMyFeedListAPI() { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+                if let data = res as? [FeedListDataModel] {
+                    DispatchQueue.main.async {
+                        self.feedMyPostList = data
+                        self.feedPostTV.reloadData()
+                    }
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
         }
     }
 }
