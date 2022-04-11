@@ -19,6 +19,7 @@ class FeedMainVC: UIViewController {
         registerTVC()
         setUpTV()
         initPostList()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadTagData), name: NSNotification.Name(rawValue: "sendTagData"), object: nil)
     }
 }
 // MARK: - Custom Methods
@@ -34,8 +35,8 @@ extension FeedMainVC {
         feedTV.delegate = self
     }
     
-    private func initPostList() {
-        postList.append(contentsOf: [
+    @objc func loadTagData (_ notification : NSNotification)
+    {
             FeedPostData(title: "맛있는 비건 식당 발견!", content: "최근 성북구에 갔다가 엄청 맛있는 비건 식당을 발견했어요! 가까우신 분들은 방문해서 다같이 비긴생활에 힘내셨으면 좋겠어요", nickName: "최은주", date: "2021.12.12", thumbnailImgName: "sample"),
             FeedPostData(title: "맛있는 비건 식당 발견!", content: "비건 식당 숨은 맛집 정말 많네요!", nickName: "최은주", date: "2021.12.12", thumbnailImgName: "sample"),
             FeedPostData(title: "기록 처음에는 귀찮았는데", content: "캐릭터 키우는 맛이 있네요~", nickName: "최은주", date: "2021.12.12", thumbnailImgName: "sample"),
