@@ -121,6 +121,7 @@ extension SignInVC {
                 self.activityIndicator.stopAnimating()
                 if let data = res as? SignInDataModel {
                     self.doForIsEmailVerified(data: data)
+                    self.setUpUserdefaultValuesForSignIn(data: data)
                 }
             case .requestErr(let res):
                 self.activityIndicator.stopAnimating()

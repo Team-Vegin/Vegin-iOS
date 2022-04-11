@@ -7,18 +7,19 @@
 
 import UIKit
 
-class FeedMainVC: UIViewController {
+class FeedMainVC: BaseVC {
 
     // MARK: IBOutlet
     @IBOutlet weak var feedTV: UITableView!
     
-    var postList: [FeedPostData] = []
+    var postList: [FeedListDataModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTVC()
         setUpTV()
-        initPostList()
+        getFeedPostList(tagID: 1)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadTagData), name: NSNotification.Name(rawValue: "sendTagData"), object: nil)
     }
 }
 // MARK: - Custom Methods
@@ -30,25 +31,29 @@ extension FeedMainVC {
     }
     
     private func setUpTV() {
+        feedTV.contentInsetAdjustmentBehavior = .never
         feedTV.dataSource = self
         feedTV.delegate = self
     }
     
-    private func initPostList() {
-        postList.append(contentsOf: [
-            FeedPostData(title: "맛있는 비건 식당 발견!", content: "최근 성북구에 갔다가 엄청 맛있는 비건 식당을 발견했어요! 가까우신 분들은 방문해서 다같이 비긴생활에 힘내셨으면 좋겠어요", nickName: "최은주", date: "2021.12.12", thumbnailImgName: "sample"),
-            FeedPostData(title: "맛있는 비건 식당 발견!", content: "비건 식당 숨은 맛집 정말 많네요!", nickName: "최은주", date: "2021.12.12", thumbnailImgName: "sample"),
-            FeedPostData(title: "기록 처음에는 귀찮았는데", content: "캐릭터 키우는 맛이 있네요~", nickName: "최은주", date: "2021.12.12", thumbnailImgName: "sample"),
-            FeedPostData(title: "안녕하세요", content: "안녕안녕", nickName: "최은주", date: "2021.12.12", thumbnailImgName: "sample"),
-            FeedPostData(title: "비긴 시작한 이전에는", content: "채소를 잘 안먹었지만...이제 먹으려고 노력중!!", nickName: "최은주", date: "2021.12.12", thumbnailImgName: "sample"),
-            FeedPostData(title: "비긴 시작한 이전에는", content: "채소를 잘 안먹었지만...이제 먹으려고 노력중!!", nickName: "최은주", date: "2021.12.12", thumbnailImgName: "sample")
-        ])
-    }
-    
-    /// 화면 상단에 닿으면 스크롤 disable
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < 0 {
-            scrollView.contentOffset.y = 0
+    @objc func loadTagData (_ notification : NSNotification)
+    {
+        let data = notification.object as? String ?? ""
+        switch data {
+        case "전체":
+            getFeedPostList(tagID: 1)
+        case "생활":
+            getFeedPostList(tagID: 2)
+        case "맛집":
+            getFeedPostList(tagID: 3)
+        case "꿀팁":
+            getFeedPostList(tagID: 4)
+        case "레시피":
+            getFeedPostList(tagID: 5)
+        case "기타":
+            getFeedPostList(tagID: 6)
+        default:
+            break
         }
     }
 }
@@ -113,6 +118,35 @@ extension FeedMainVC: UITableViewDataSource {
             return feedMainPostTVC
         } else {
             return UITableViewCell()
+        }
+    }
+}
+
+// MARK: - Network
+extension FeedMainVC {
+    
+    /// 게시글 조회 메서드
+    private func getFeedPostList(tagID: Int) {
+        self.activityIndicator.startAnimating()
+        FeedAPI.shared.getFeedListAPI(tagID: tagID) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+                if let data = res as? [FeedListDataModel] {
+                    DispatchQueue.main.async {
+                        self.postList = data
+                        self.feedTV.reloadSections([2], with: .none)
+                    }
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
         }
     }
 }

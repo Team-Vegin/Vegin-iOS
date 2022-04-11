@@ -46,6 +46,7 @@ PODS:
   - GoogleUtilities/Reachability (7.6.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.7.0)
+  - Kingfisher (7.2.1)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
@@ -61,6 +62,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Storage
   - FSCalendar
+  - Kingfisher (~> 7.0)
   - Moya (~> 15.0)
 
 SPEC REPOS:
@@ -75,6 +77,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - Kingfisher
     - Moya
     - nanopb
     - PromisesObjC
@@ -90,10 +93,11 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
   GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
+  Kingfisher: 7c084bebf7d548c623ad41bcf765fb200efed369
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: c7cb60753bc3b5968624820676aaeebe272b3091
+PODFILE CHECKSUM: 35dbb2be652e0988599180d48951d59ad69933cf
 
 COCOAPODS: 1.11.2
