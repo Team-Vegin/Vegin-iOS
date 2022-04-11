@@ -10,5 +10,6 @@ pod 'FSCalendar'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Moya', '~> 15.0'
+pod 'Kingfisher', '~> 7.0'
 
 end
