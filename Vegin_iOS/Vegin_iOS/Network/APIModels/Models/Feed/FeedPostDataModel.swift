@@ -10,7 +10,9 @@ import Foundation
 // MARK: - FeedPostDataModel
 struct FeedPostDataModel: Codable {
     let postID: Int
-    let title, content, tag: String
+    let title: String
+    let content: String
+    let tag: String
     let imageURL: String
     let createdAt: String
     let writer: Writer
