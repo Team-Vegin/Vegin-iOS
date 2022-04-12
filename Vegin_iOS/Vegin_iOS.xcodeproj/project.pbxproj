@@ -73,6 +73,7 @@
 		77D9ED342805D2C2000EA76A /* FeedDetailContentTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D9ED322805D2C2000EA76A /* FeedDetailContentTVC.xib */; };
 		77D9ED372805D4B5000EA76A /* FeedDetailEmojiTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED352805D4B5000EA76A /* FeedDetailEmojiTVC.swift */; };
 		77D9ED382805D4B5000EA76A /* FeedDetailEmojiTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D9ED362805D4B5000EA76A /* FeedDetailEmojiTVC.xib */; };
+		77D9ED3A2805ECE4000EA76A /* FeedPostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED392805ECE4000EA76A /* FeedPostDataModel.swift */; };
 		77DBB84627DB186100000623 /* VeginBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB84527DB186100000623 /* VeginBtn.swift */; };
 		77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB84827DEF29F00000623 /* CategoryCVC.swift */; };
 		77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB84927DEF29F00000623 /* CategoryCVC.xib */; };
@@ -191,6 +192,7 @@
 		77D9ED322805D2C2000EA76A /* FeedDetailContentTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailContentTVC.xib; sourceTree = "<group>"; };
 		77D9ED352805D4B5000EA76A /* FeedDetailEmojiTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailEmojiTVC.swift; sourceTree = "<group>"; };
 		77D9ED362805D4B5000EA76A /* FeedDetailEmojiTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailEmojiTVC.xib; sourceTree = "<group>"; };
+		77D9ED392805ECE4000EA76A /* FeedPostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostDataModel.swift; sourceTree = "<group>"; };
 		77DBB84527DB186100000623 /* VeginBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeginBtn.swift; sourceTree = "<group>"; };
 		77DBB84827DEF29F00000623 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		77DBB84927DEF29F00000623 /* CategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCVC.xib; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				77D9ED1F28043DF5000EA76A /* FeedListDataModel.swift */,
+				77D9ED392805ECE4000EA76A /* FeedPostDataModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -1010,6 +1013,7 @@
 				7742885F27F40EF5001A7CFA /* BaseTargetType.swift in Sources */,
 				7757286E27CBDADA00148C9A /* BaseVC.swift in Sources */,
 				7742886327F40F7B001A7CFA /* NetworkLoggerPlugin.swift in Sources */,
+				77D9ED3A2805ECE4000EA76A /* FeedPostDataModel.swift in Sources */,
 				77ED048527B6944300D077CA /* NaviType.swift in Sources */,
 				77FE1738274D2EC800F95F0D /* VeginTBC.swift in Sources */,
 				77DBB86A27E0CF8C00000623 /* FeedNC.swift in Sources */,
