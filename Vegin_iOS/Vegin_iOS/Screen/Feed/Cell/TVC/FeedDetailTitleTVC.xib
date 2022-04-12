@@ -46,9 +46,12 @@
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="1x5-Hr-c2P">
                         <rect key="frame" x="22" y="79" width="331" height="303"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="303" id="4yx-SB-7Py"/>
+                        </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fS6-Aw-CPq">
-                        <rect key="frame" x="22" y="402" width="55" height="30"/>
+                        <rect key="frame" x="23" y="402" width="55" height="30"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맛집" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7B-Tm-x0O">
                                 <rect key="frame" x="15" y="6.5" width="25" height="17"/>
@@ -81,7 +84,7 @@
                     <constraint firstItem="Le1-aw-i8K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="HyW-SA-YDE"/>
                     <constraint firstItem="vOi-aB-Cdb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Qw4-tN-3T6"/>
                     <constraint firstAttribute="trailing" secondItem="1x5-Hr-c2P" secondAttribute="trailing" constant="22" id="U5Z-ol-F8R"/>
-                    <constraint firstItem="fS6-Aw-CPq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="aCZ-JD-rMo"/>
+                    <constraint firstItem="fS6-Aw-CPq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="aCZ-JD-rMo"/>
                     <constraint firstItem="6Je-ns-LwX" firstAttribute="leading" secondItem="Le1-aw-i8K" secondAttribute="trailing" constant="18" id="kFD-9e-I4f"/>
                     <constraint firstItem="6Je-ns-LwX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="she-ka-mTz"/>
                     <constraint firstItem="87Q-vJ-Is0" firstAttribute="top" secondItem="6Je-ns-LwX" secondAttribute="bottom" constant="6" id="ti1-m1-tMt"/>
@@ -91,8 +94,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="categoryLabel" destination="x7B-Tm-x0O" id="zs2-qn-NeN"/>
                 <outlet property="categoryVIew" destination="fS6-Aw-CPq" id="0Xq-hv-LjP"/>
                 <outlet property="contentImgView" destination="1x5-Hr-c2P" id="ULG-2l-QJW"/>
+                <outlet property="dateLabel" destination="87Q-vJ-Is0" id="g5z-Nw-a8x"/>
+                <outlet property="nickNameLabel" destination="6Je-ns-LwX" id="YmL-Lb-kYv"/>
+                <outlet property="titleLabel" destination="vOi-aB-Cdb" id="HYN-xA-Gft"/>
             </connections>
             <point key="canvasLocation" x="139" y="104"/>
         </tableViewCell>
