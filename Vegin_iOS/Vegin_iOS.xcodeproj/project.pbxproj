@@ -65,6 +65,12 @@
 		77D9ED2428044024000EA76A /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED2328044024000EA76A /* FeedAPI.swift */; };
 		77D9ED2628046414000EA76A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED2528046414000EA76A /* String+.swift */; };
 		77D9ED28280470AF000EA76A /* SendDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED27280470AF000EA76A /* SendDataDelegate.swift */; };
+		77D9ED2F2805BC56000EA76A /* FeedDetailTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED2D2805BC56000EA76A /* FeedDetailTitleTVC.swift */; };
+		77D9ED302805BC56000EA76A /* FeedDetailTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D9ED2E2805BC56000EA76A /* FeedDetailTitleTVC.xib */; };
+		77D9ED332805D2C2000EA76A /* FeedDetailContentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED312805D2C2000EA76A /* FeedDetailContentTVC.swift */; };
+		77D9ED342805D2C2000EA76A /* FeedDetailContentTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D9ED322805D2C2000EA76A /* FeedDetailContentTVC.xib */; };
+		77D9ED372805D4B5000EA76A /* FeedDetailEmojiTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED352805D4B5000EA76A /* FeedDetailEmojiTVC.swift */; };
+		77D9ED382805D4B5000EA76A /* FeedDetailEmojiTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D9ED362805D4B5000EA76A /* FeedDetailEmojiTVC.xib */; };
 		77DBB84627DB186100000623 /* VeginBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB84527DB186100000623 /* VeginBtn.swift */; };
 		77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB84827DEF29F00000623 /* CategoryCVC.swift */; };
 		77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB84927DEF29F00000623 /* CategoryCVC.xib */; };
@@ -175,6 +181,12 @@
 		77D9ED2328044024000EA76A /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
 		77D9ED2528046414000EA76A /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		77D9ED27280470AF000EA76A /* SendDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDataDelegate.swift; sourceTree = "<group>"; };
+		77D9ED2D2805BC56000EA76A /* FeedDetailTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailTitleTVC.swift; sourceTree = "<group>"; };
+		77D9ED2E2805BC56000EA76A /* FeedDetailTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailTitleTVC.xib; sourceTree = "<group>"; };
+		77D9ED312805D2C2000EA76A /* FeedDetailContentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailContentTVC.swift; sourceTree = "<group>"; };
+		77D9ED322805D2C2000EA76A /* FeedDetailContentTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailContentTVC.xib; sourceTree = "<group>"; };
+		77D9ED352805D4B5000EA76A /* FeedDetailEmojiTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailEmojiTVC.swift; sourceTree = "<group>"; };
+		77D9ED362805D4B5000EA76A /* FeedDetailEmojiTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailEmojiTVC.xib; sourceTree = "<group>"; };
 		77DBB84527DB186100000623 /* VeginBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeginBtn.swift; sourceTree = "<group>"; };
 		77DBB84827DEF29F00000623 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		77DBB84927DEF29F00000623 /* CategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCVC.xib; sourceTree = "<group>"; };
@@ -444,6 +456,12 @@
 				7757285E27C8C7C300148C9A /* FeedMainPostTVC.xib */,
 				7757286527C8CF0700148C9A /* FeedMainEmptyTVC.swift */,
 				7757286627C8CF0700148C9A /* FeedMainEmptyTVC.xib */,
+				77D9ED2D2805BC56000EA76A /* FeedDetailTitleTVC.swift */,
+				77D9ED2E2805BC56000EA76A /* FeedDetailTitleTVC.xib */,
+				77D9ED312805D2C2000EA76A /* FeedDetailContentTVC.swift */,
+				77D9ED322805D2C2000EA76A /* FeedDetailContentTVC.xib */,
+				77D9ED352805D4B5000EA76A /* FeedDetailEmojiTVC.swift */,
+				77D9ED362805D4B5000EA76A /* FeedDetailEmojiTVC.xib */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -896,12 +914,14 @@
 				7742884327EDEB1E001A7CFA /* SignInSB.storyboard in Resources */,
 				77DBB87827E47ECE00000623 /* GoogleService-Info.plist in Resources */,
 				779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */,
+				77D9ED342805D2C2000EA76A /* FeedDetailContentTVC.xib in Resources */,
 				7756F9AE27FDFDB8006F6EF3 /* CharacterBookCVC.xib in Resources */,
 				7757287627CD301E00148C9A /* DietListSB.storyboard in Resources */,
 				7757288A27D0B0E400148C9A /* Pretendard-Regular.otf in Resources */,
 				77DBB85E27DF46FB00000623 /* IconImgCVC.xib in Resources */,
 				77DBB86227DF47DF00000623 /* DietDetailInfoTVC.xib in Resources */,
 				7757288927D0B0E400148C9A /* Pretendard-Medium.otf in Resources */,
+				77D9ED302805BC56000EA76A /* FeedDetailTitleTVC.xib in Resources */,
 				77DBB86827E0CD4100000623 /* MyFeedPostSB.storyboard in Resources */,
 				7757286827C8CF0700148C9A /* FeedMainEmptyTVC.xib in Resources */,
 				7756F9B227FDFEBA006F6EF3 /* HomeSB.storyboard in Resources */,
@@ -912,6 +932,7 @@
 				7757286027C8C7C300148C9A /* FeedMainPostTVC.xib in Resources */,
 				7757285C27C8C31400148C9A /* FeedMainTitleTVC.xib in Resources */,
 				77ED049727B6CF9F00D077CA /* ColorSets.xcassets in Resources */,
+				77D9ED382805D4B5000EA76A /* FeedDetailEmojiTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,6 +1025,8 @@
 				77DBB85127DF414000000623 /* DietDetailVC.swift in Sources */,
 				77DBB86527DF49A600000623 /* DietDetailMemoTVC.swift in Sources */,
 				77DBB86127DF47DF00000623 /* DietDetailInfoTVC.swift in Sources */,
+				77D9ED332805D2C2000EA76A /* FeedDetailContentTVC.swift in Sources */,
+				77D9ED372805D4B5000EA76A /* FeedDetailEmojiTVC.swift in Sources */,
 				7756F9AD27FDFDB8006F6EF3 /* CharacterBookCVC.swift in Sources */,
 				7757286727C8CF0700148C9A /* FeedMainEmptyTVC.swift in Sources */,
 				77ED048327B693CB00D077CA /* Identifiers.swift in Sources */,
@@ -1021,9 +1044,11 @@
 				77ED048727B6965D00D077CA /* UIView+.swift in Sources */,
 				77D9ED2228043E99000EA76A /* FeedService.swift in Sources */,
 				7742889227FACE89001A7CFA /* SignUpDataModel.swift in Sources */,
+				77D9ED2F2805BC56000EA76A /* FeedDetailTitleTVC.swift in Sources */,
 				772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */,
 				77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */,
 				77DBB85427DF428300000623 /* DietDetailImgTVC.swift in Sources */,
+				77D9ED2C2805BA11000EA76A /* FeedDetailVC.swift in Sources */,
 				5A95325927E1375E001E72A3 /* CharacterBookVC.swift in Sources */,
 				7757285F27C8C7C300148C9A /* FeedMainPostTVC.swift in Sources */,
 				7742885027F154DB001A7CFA /* SignUpVC.swift in Sources */,

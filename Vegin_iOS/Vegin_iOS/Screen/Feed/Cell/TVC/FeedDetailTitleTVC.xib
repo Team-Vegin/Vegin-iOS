@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Regular.otf">
+            <string>Pretendard-Regular</string>
+        </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FeedDetailTitleTVC" customModule="Vegin_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="479"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="479"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Je-ns-LwX">
+                        <rect key="frame" x="84" y="26" width="65" height="17"/>
+                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                        <color key="textColor" name="darkText"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.01.21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87Q-vJ-Is0">
+                        <rect key="frame" x="84" y="49" width="47" height="13"/>
+                        <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="10"/>
+                        <color key="textColor" name="darkGray"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 361" translatesAutoresizingMaskIntoConstraints="NO" id="Le1-aw-i8K">
+                        <rect key="frame" x="22" y="22" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="7d3-iq-lB1"/>
+                            <constraint firstAttribute="width" constant="44" id="Cld-Gp-d2D"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="1x5-Hr-c2P">
+                        <rect key="frame" x="22" y="79" width="331" height="303"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fS6-Aw-CPq">
+                        <rect key="frame" x="22" y="402" width="55" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맛집" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7B-Tm-x0O">
+                                <rect key="frame" x="15" y="6.5" width="25" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="darkMain"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="79p-Fr-383"/>
+                            <constraint firstItem="x7B-Tm-x0O" firstAttribute="centerY" secondItem="fS6-Aw-CPq" secondAttribute="centerY" id="EQO-ku-meI"/>
+                            <constraint firstAttribute="trailing" secondItem="x7B-Tm-x0O" secondAttribute="trailing" constant="15" id="LOn-HR-2Ob"/>
+                            <constraint firstItem="x7B-Tm-x0O" firstAttribute="leading" secondItem="fS6-Aw-CPq" secondAttribute="leading" constant="15" id="adA-FY-nsu"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOi-aB-Cdb">
+                        <rect key="frame" x="24" y="446" width="51" height="24"/>
+                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                        <color key="textColor" name="darkMain"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1x5-Hr-c2P" firstAttribute="top" secondItem="Le1-aw-i8K" secondAttribute="bottom" constant="13" id="2OT-Oj-ScZ"/>
+                    <constraint firstItem="Le1-aw-i8K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="2aw-NO-rkz"/>
+                    <constraint firstItem="fS6-Aw-CPq" firstAttribute="top" secondItem="1x5-Hr-c2P" secondAttribute="bottom" constant="20" id="80O-i3-8Vi"/>
+                    <constraint firstItem="1x5-Hr-c2P" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="84P-8I-k3e"/>
+                    <constraint firstAttribute="bottom" secondItem="vOi-aB-Cdb" secondAttribute="bottom" constant="9" id="BA1-MB-I18"/>
+                    <constraint firstItem="Le1-aw-i8K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="HyW-SA-YDE"/>
+                    <constraint firstItem="vOi-aB-Cdb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Qw4-tN-3T6"/>
+                    <constraint firstAttribute="trailing" secondItem="1x5-Hr-c2P" secondAttribute="trailing" constant="22" id="U5Z-ol-F8R"/>
+                    <constraint firstItem="fS6-Aw-CPq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="aCZ-JD-rMo"/>
+                    <constraint firstItem="6Je-ns-LwX" firstAttribute="leading" secondItem="Le1-aw-i8K" secondAttribute="trailing" constant="18" id="kFD-9e-I4f"/>
+                    <constraint firstItem="6Je-ns-LwX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="she-ka-mTz"/>
+                    <constraint firstItem="87Q-vJ-Is0" firstAttribute="top" secondItem="6Je-ns-LwX" secondAttribute="bottom" constant="6" id="ti1-m1-tMt"/>
+                    <constraint firstItem="vOi-aB-Cdb" firstAttribute="top" secondItem="fS6-Aw-CPq" secondAttribute="bottom" constant="14" id="tzS-1a-97o"/>
+                    <constraint firstItem="87Q-vJ-Is0" firstAttribute="leading" secondItem="6Je-ns-LwX" secondAttribute="leading" id="wIZ-da-0Ih"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="categoryVIew" destination="fS6-Aw-CPq" id="0Xq-hv-LjP"/>
+                <outlet property="contentImgView" destination="1x5-Hr-c2P" id="ULG-2l-QJW"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="104"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Group 361" width="44" height="44"/>
+        <image name="sample" width="80" height="80"/>
+        <namedColor name="darkGray">
+            <color red="0.41176470588235292" green="0.41176470588235292" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkMain">
+            <color red="0.32156862745098042" green="0.59999999999999998" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkText">
+            <color red="0.10588235294117647" green="0.17647058823529413" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
