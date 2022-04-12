@@ -45,15 +45,21 @@ class FeedWriteVC: BaseVC {
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var saveBtn: VeginBtn! {
         didSet {
-            //saveBtn.isActivated = false
-            //saveBtn.setTitleWithStyle(title: "저장하기", size: 16, weight: .semiBold)
+           // saveBtn.setTitleWithStyle(title: "작성하기", size: 16, weight: .semiBold)
         }
     }
     
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //saveBtn.isActivated = false     /// 기본상태: 비활성화
+        feedImgView.contentMode = .scaleAspectFill
+        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isTranslucent = true
+        configureUI()
+        setUpDelegate()
+        addKeyboardObserver()
+        hideKeyboardWhenTappedAround()
     }
     
     //MARK: IBAction
@@ -116,35 +122,41 @@ class FeedWriteVC: BaseVC {
         }
         
         if isCategory4Selected {
-            categoryBtn4.setImage(UIImage.init(named: "recipe_slected"), for: .normal)
+            categoryBtn4.setImage(UIImage.init(named: "recipe_selected"), for: .normal)
         } else if !isCategory4Selected {
             categoryBtn4.setImage(UIImage.init(named: "recipe"), for: .normal)
         }
         
         if isCategory5Selected {
-            categoryBtn5.setImage(UIImage.init(named: "ect_selected"), for: .normal)
+            categoryBtn5.setImage(UIImage.init(named: "etc_selected"), for: .normal)
         } else if !isCategory5Selected {
             categoryBtn5.setImage(UIImage.init(named: "etc"), for: .normal)
         }
-        setUpSaveBtnStatus()
+        //setUpSaveBtnStatus()
     }
     
     @IBAction func tapCategoryBtn1(_ sender: Any) {
+        isCategory1Selected = !isCategory1Selected
     }
     @IBAction func tabCategoryBtn2(_ sender: Any) {
+        isCategory2Selected = !isCategory2Selected
     }
     @IBAction func tabCategoryBtn3(_ sender: Any) {
+        isCategory3Selected = !isCategory3Selected
     }
     @IBAction func tabCategoryBtn4(_ sender: Any) {
+        isCategory4Selected = !isCategory4Selected
     }
     @IBAction func tabCategoryBtn5(_ sender: Any) {
+        isCategory5Selected = !isCategory5Selected
     }
     
-    //MARK: Custom Method
+    //MARK: - Custom Method
+    /*
     /// 저장하기 버튼 상태 지정 메소드
     private func setUpSaveBtnStatus() {
         if isCategory1Selected || isCategory2Selected || isCategory3Selected || isCategory4Selected || isCategory5Selected  {
-            if titleTextView != nil && memoTextView != nil {
+            if titleTextView.text != nil && memoTextView.text != nil {
                 self.saveBtn.isActivated = true
             } else {
                 self.saveBtn.isActivated = false
@@ -153,6 +165,7 @@ class FeedWriteVC: BaseVC {
             self.saveBtn.isActivated = false
         }
     }
+     */
     
     /// 사진앨범 불러오는 메소드
     private func openLibrary() {
@@ -171,6 +184,14 @@ class FeedWriteVC: BaseVC {
         else{
             print("Camera not available")
         }
+    }
+}
+// MARK: - UI
+extension FeedWriteVC {
+    private func configureUI() {
+        imgContentView.layer.cornerRadius = 25
+        feedImgView.layer.cornerRadius = 25
+        saveBtn.makeRounded(cornerRadius: 0.5 * saveBtn.bounds.size.height)
     }
 }
 
@@ -222,3 +243,30 @@ extension FeedWriteVC: UITextViewDelegate {
         }
     }
 }
+
+// MARK: - Keyboard
+extension FeedWriteVC {
+    private func addKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc
+    private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc
+    private func keyboardWillHide(_ notification: Notification) {
+        if ((notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y = 0
+            }
+        }
+    }
+}
+
