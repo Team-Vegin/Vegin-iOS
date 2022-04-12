@@ -11,6 +11,7 @@ import Moya
 enum FeedService {
     case getFeedList(tagID: Int)
     case getMyFeedList
+    case getFeedDetailPost(postID: Int)
 }
 
 extension FeedService: BaseTargetType {
@@ -20,21 +21,21 @@ extension FeedService: BaseTargetType {
             return "/post/list/\(tagID)"
         case .getMyFeedList:
             return "/post/myList"
+        case .getFeedDetailPost(let postID):
+            return "/post/\(postID)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getFeedList, .getMyFeedList:
+        case .getFeedList, .getMyFeedList, .getFeedDetailPost:
             return .get
         }
     }
     
     var task: Task {
         switch self {
-            
-        /// 피드 게시글 리스트 조회
-        case .getFeedList, .getMyFeedList:
+        case .getFeedList, .getMyFeedList, .getFeedDetailPost:
             return .requestPlain
         }
     }
