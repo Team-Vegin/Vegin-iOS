@@ -48,7 +48,7 @@ extension MyFeedPostVC {
 extension MyFeedPostVC {
     private func registerTVC() {
         FeedMyPostEmptyTVC.register(target: feedPostTV)
-        FeedMyPostTVC.register(target: feedPostTV)
+        FeedMainPostTVC.register(target: feedPostTV)
     }
     
     private func setUpTV() {
@@ -89,7 +89,7 @@ extension MyFeedPostVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let emptyCell = tableView.dequeueReusableCell(withIdentifier: FeedMyPostEmptyTVC.className) as? FeedMyPostEmptyTVC,
-              let cell = tableView.dequeueReusableCell(withIdentifier: FeedMyPostTVC.className) as? FeedMyPostTVC else { return UITableViewCell() }
+              let cell = tableView.dequeueReusableCell(withIdentifier: FeedMainPostTVC.className) as? FeedMainPostTVC else { return UITableViewCell() }
         
         if indexPath.section == 0 {
             return emptyCell
