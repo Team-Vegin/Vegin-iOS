@@ -14,6 +14,11 @@ class FeedMainVC: BaseVC {
     
     var postList: [FeedListDataModel] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.feedTV.reloadSections([2], with: .none)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTVC()

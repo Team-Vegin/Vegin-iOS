@@ -6,13 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FeedMyPostTVC: BaseTVC {
 
     @IBOutlet weak var thumbnailImgView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     
@@ -35,12 +35,13 @@ extension FeedMyPostTVC {
 
 // MARK: - Custom Methods
 extension FeedMyPostTVC {
-    func setData(postData: FeedMyPostListData) {
-        thumbnailImgView.image = postData.makeThumbnailImg()
+    func setData(postData: FeedListDataModel) {
+        let url = URL(string: postData.imageURL)
+        
+        thumbnailImgView.kf.setImage(with: url)
         titleLabel.text = postData.title
         contentLabel.text = postData.content
-        nickNameLabel.text = postData.nickName
-        dateLabel.text = postData.date
-        categoryLabel.text = postData.category
+        dateLabel.text = postData.createdAt.serverTimeToString(forUse: .forDefault)
+        categoryLabel.text = postData.tag
     }
 }
