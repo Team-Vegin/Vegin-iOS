@@ -130,6 +130,7 @@ extension FeedMainVC: UITableViewDataSource {
         if indexPath.section == 2 {
             guard let feedDetailVC = UIStoryboard.init(name: Identifiers.FeedDetailSB, bundle: nil).instantiateViewController(withIdentifier: FeedDetailVC.className) as? FeedDetailVC else { return }
             
+            feedDetailVC.postId = postList[indexPath.row].postID
             self.navigationController?.pushViewController(feedDetailVC, animated: true)
         }
     }
