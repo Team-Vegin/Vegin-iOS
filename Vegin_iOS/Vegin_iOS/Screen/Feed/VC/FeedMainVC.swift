@@ -125,6 +125,14 @@ extension FeedMainVC: UITableViewDataSource {
             return UITableViewCell()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2 {
+            guard let feedDetailVC = UIStoryboard.init(name: Identifiers.FeedDetailSB, bundle: nil).instantiateViewController(withIdentifier: FeedDetailVC.className) as? FeedDetailVC else { return }
+            
+            self.navigationController?.pushViewController(feedDetailVC, animated: true)
+        }
+    }
 }
 
 // MARK: - Network
