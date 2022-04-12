@@ -48,7 +48,7 @@ extension MyFeedPostVC {
 extension MyFeedPostVC {
     private func registerTVC() {
         FeedMyPostEmptyTVC.register(target: feedPostTV)
-        FeedMyPostTVC.register(target: feedPostTV)
+        FeedMainPostTVC.register(target: feedPostTV)
     }
     
     private func setUpTV() {
@@ -89,7 +89,7 @@ extension MyFeedPostVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let emptyCell = tableView.dequeueReusableCell(withIdentifier: FeedMyPostEmptyTVC.className) as? FeedMyPostEmptyTVC,
-              let cell = tableView.dequeueReusableCell(withIdentifier: FeedMyPostTVC.className) as? FeedMyPostTVC else { return UITableViewCell() }
+              let cell = tableView.dequeueReusableCell(withIdentifier: FeedMainPostTVC.className) as? FeedMainPostTVC else { return UITableViewCell() }
         
         if indexPath.section == 0 {
             return emptyCell
@@ -98,6 +98,15 @@ extension MyFeedPostVC: UITableViewDataSource {
             return cell
         } else {
             return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            guard let feedDetailVC = UIStoryboard.init(name: Identifiers.FeedDetailSB, bundle: nil).instantiateViewController(withIdentifier: FeedDetailVC.className) as? FeedDetailVC else { return }
+            
+            feedDetailVC.postId = feedMyPostList[indexPath.row].postID
+            self.navigationController?.pushViewController(feedDetailVC, animated: true)
         }
     }
 }

@@ -73,6 +73,7 @@
 		77D9ED342805D2C2000EA76A /* FeedDetailContentTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D9ED322805D2C2000EA76A /* FeedDetailContentTVC.xib */; };
 		77D9ED372805D4B5000EA76A /* FeedDetailEmojiTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED352805D4B5000EA76A /* FeedDetailEmojiTVC.swift */; };
 		77D9ED382805D4B5000EA76A /* FeedDetailEmojiTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D9ED362805D4B5000EA76A /* FeedDetailEmojiTVC.xib */; };
+		77D9ED3A2805ECE4000EA76A /* FeedPostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED392805ECE4000EA76A /* FeedPostDataModel.swift */; };
 		77DBB84627DB186100000623 /* VeginBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB84527DB186100000623 /* VeginBtn.swift */; };
 		77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB84827DEF29F00000623 /* CategoryCVC.swift */; };
 		77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB84927DEF29F00000623 /* CategoryCVC.xib */; };
@@ -91,8 +92,6 @@
 		77DBB86827E0CD4100000623 /* MyFeedPostSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86727E0CD4100000623 /* MyFeedPostSB.storyboard */; };
 		77DBB86A27E0CF8C00000623 /* FeedNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB86927E0CF8C00000623 /* FeedNC.swift */; };
 		77DBB86C27E0D46000000623 /* MyFeedPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB86B27E0D45F00000623 /* MyFeedPostVC.swift */; };
-		77DBB86F27E0D61200000623 /* FeedMyPostTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB86D27E0D61200000623 /* FeedMyPostTVC.swift */; };
-		77DBB87027E0D61200000623 /* FeedMyPostTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB86E27E0D61200000623 /* FeedMyPostTVC.xib */; };
 		77DBB87327E1106600000623 /* FeedMyPostEmptyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DBB87127E1106600000623 /* FeedMyPostEmptyTVC.swift */; };
 		77DBB87427E1106700000623 /* FeedMyPostEmptyTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB87227E1106600000623 /* FeedMyPostEmptyTVC.xib */; };
 		77DBB87827E47ECE00000623 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77DBB87727E47ECE00000623 /* GoogleService-Info.plist */; };
@@ -191,6 +190,7 @@
 		77D9ED322805D2C2000EA76A /* FeedDetailContentTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailContentTVC.xib; sourceTree = "<group>"; };
 		77D9ED352805D4B5000EA76A /* FeedDetailEmojiTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailEmojiTVC.swift; sourceTree = "<group>"; };
 		77D9ED362805D4B5000EA76A /* FeedDetailEmojiTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailEmojiTVC.xib; sourceTree = "<group>"; };
+		77D9ED392805ECE4000EA76A /* FeedPostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostDataModel.swift; sourceTree = "<group>"; };
 		77DBB84527DB186100000623 /* VeginBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeginBtn.swift; sourceTree = "<group>"; };
 		77DBB84827DEF29F00000623 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		77DBB84927DEF29F00000623 /* CategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCVC.xib; sourceTree = "<group>"; };
@@ -209,8 +209,6 @@
 		77DBB86727E0CD4100000623 /* MyFeedPostSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyFeedPostSB.storyboard; sourceTree = "<group>"; };
 		77DBB86927E0CF8C00000623 /* FeedNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedNC.swift; sourceTree = "<group>"; };
 		77DBB86B27E0D45F00000623 /* MyFeedPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedPostVC.swift; sourceTree = "<group>"; };
-		77DBB86D27E0D61200000623 /* FeedMyPostTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMyPostTVC.swift; sourceTree = "<group>"; };
-		77DBB86E27E0D61200000623 /* FeedMyPostTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedMyPostTVC.xib; sourceTree = "<group>"; };
 		77DBB87127E1106600000623 /* FeedMyPostEmptyTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMyPostEmptyTVC.swift; sourceTree = "<group>"; };
 		77DBB87227E1106600000623 /* FeedMyPostEmptyTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedMyPostEmptyTVC.xib; sourceTree = "<group>"; };
 		77DBB87727E47ECE00000623 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -450,8 +448,6 @@
 		7757285827C8C1B700148C9A /* TVC */ = {
 			isa = PBXGroup;
 			children = (
-				77DBB86D27E0D61200000623 /* FeedMyPostTVC.swift */,
-				77DBB86E27E0D61200000623 /* FeedMyPostTVC.xib */,
 				77DBB87127E1106600000623 /* FeedMyPostEmptyTVC.swift */,
 				77DBB87227E1106600000623 /* FeedMyPostEmptyTVC.xib */,
 				7757285927C8C31400148C9A /* FeedMainTitleTVC.swift */,
@@ -519,6 +515,7 @@
 			isa = PBXGroup;
 			children = (
 				77D9ED1F28043DF5000EA76A /* FeedListDataModel.swift */,
+				77D9ED392805ECE4000EA76A /* FeedPostDataModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -933,7 +930,6 @@
 				7757286827C8CF0700148C9A /* FeedMainEmptyTVC.xib in Resources */,
 				7756F9B227FDFEBA006F6EF3 /* HomeSB.storyboard in Resources */,
 				77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */,
-				77DBB87027E0D61200000623 /* FeedMyPostTVC.xib in Resources */,
 				77DBB86627DF49A600000623 /* DietDetailMemoTVC.xib in Resources */,
 				772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */,
 				7757286027C8C7C300148C9A /* FeedMainPostTVC.xib in Resources */,
@@ -1010,6 +1006,7 @@
 				7742885F27F40EF5001A7CFA /* BaseTargetType.swift in Sources */,
 				7757286E27CBDADA00148C9A /* BaseVC.swift in Sources */,
 				7742886327F40F7B001A7CFA /* NetworkLoggerPlugin.swift in Sources */,
+				77D9ED3A2805ECE4000EA76A /* FeedPostDataModel.swift in Sources */,
 				77ED048527B6944300D077CA /* NaviType.swift in Sources */,
 				77FE1738274D2EC800F95F0D /* VeginTBC.swift in Sources */,
 				77DBB86A27E0CF8C00000623 /* FeedNC.swift in Sources */,
@@ -1021,7 +1018,6 @@
 				5A751C8C27E4CE5C003DCD7C /* HomeNC.swift in Sources */,
 				7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */,
 				7742885B27F40CF9001A7CFA /* NetworkResult.swift in Sources */,
-				77DBB86F27E0D61200000623 /* FeedMyPostTVC.swift in Sources */,
 				77DBB87327E1106600000623 /* FeedMyPostEmptyTVC.swift in Sources */,
 				7756F9B027FDFE08006F6EF3 /* FeedWriteVC.swift in Sources */,
 				77D9ED2028043DF5000EA76A /* FeedListDataModel.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FeedDetailVC: UIViewController {
+class FeedDetailVC: BaseVC {
 
     // MARK: IBOutlet
     @IBOutlet weak var naviView: UIView!
@@ -19,12 +19,17 @@ class FeedDetailVC: UIViewController {
         }
     }
     
+    // MARK: Properties
+    var postId: Int?
+    var detailPost: FeedPostDataModel = FeedPostDataModel(postID: 0, title: "", content: "", tag: "", imageURL: "", createdAt: "", writer: Writer(userID: 0, nickname: "", profileImageID: 0))
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addShadowToNaviBar()
         registerTVC()
         setUpTV()
+        getFeedDetailPost(postID: postId ?? 0)
     }
     
     // MARK: IBAction
@@ -93,8 +98,12 @@ extension FeedDetailVC: UITableViewDataSource {
               let feedDetailEmojiTVC = tableView.dequeueReusableCell(withIdentifier: FeedDetailEmojiTVC.className) as? FeedDetailEmojiTVC else { return UITableViewCell() }
         
         if indexPath.section == 0 {
+            feedDetailTitleTVC.titleLabel.sizeToFit()
+            feedDetailTitleTVC.setData(postData: detailPost)
             return feedDetailTitleTVC
         } else if indexPath.section == 1 {
+            feedDetailContentTVC.contentLabel.sizeToFit()
+            feedDetailContentTVC.setData(postData: detailPost)
             return feedDetailContentTVC
         } else if indexPath.section == 2 {
             return feedDetailEmojiTVC
@@ -103,4 +112,33 @@ extension FeedDetailVC: UITableViewDataSource {
         }
     }
 }
+
+// MARK: - Network
+extension FeedDetailVC {
+    
+    /// 게시글 조회 메서드
+    private func getFeedDetailPost(postID: Int) {
+        self.activityIndicator.startAnimating()
+        FeedAPI.shared.getFeedDetailPostAPI(postID: postID) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+                if let data = res as? FeedPostDataModel {
+                    print(data)
+                    self.detailPost = data
+                    self.postTV.reloadData()
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+}
+
 
