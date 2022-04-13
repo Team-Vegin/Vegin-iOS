@@ -20,6 +20,10 @@ class CharacterBookVC: UIViewController {
         registerCVC()
         initData()
     }
+    
+    @IBAction func tapBackBtn(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 // MARK: - Custom Methods
