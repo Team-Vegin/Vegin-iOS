@@ -13,6 +13,12 @@ class CharacterBookCVC: BaseCVC {
     @IBOutlet weak var firstMissionLabel: UILabel!
     @IBOutlet weak var secondMissionLabel: UILabel!
     @IBOutlet weak var thirdMissionLabel: UILabel!
+    @IBOutlet weak var chooseBtn: VeginBtn! {
+        didSet {
+            chooseBtn.isActivated = false
+            chooseBtn.setTitleWithStyle(title: "캐릭터 선택하기", size: 16, weight: .bold)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

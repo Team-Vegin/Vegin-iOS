@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -143,6 +143,7 @@
             <connections>
                 <outlet property="characterImgView" destination="COt-LJ-Hd0" id="sF0-L8-H85"/>
                 <outlet property="characterNameLabel" destination="C8e-SL-ACK" id="v98-EM-TUg"/>
+                <outlet property="chooseBtn" destination="XFR-QW-b4z" id="hbk-Re-Ndp"/>
                 <outlet property="firstMissionLabel" destination="FQb-MD-LCh" id="h1l-0o-XBl"/>
                 <outlet property="secondMissionLabel" destination="swb-aV-jgp" id="dBs-jv-Czw"/>
                 <outlet property="thirdMissionLabel" destination="wlF-ye-rOW" id="D0Z-oV-ThC"/>
