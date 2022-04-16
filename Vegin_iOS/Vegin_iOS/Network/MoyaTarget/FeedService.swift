@@ -12,6 +12,7 @@ enum FeedService {
     case getFeedList(tagID: Int)
     case getMyFeedList
     case getFeedDetailPost(postID: Int)
+    case deleteFeedPost(postID: Int)
 }
 
 extension FeedService: BaseTargetType {
@@ -21,7 +22,7 @@ extension FeedService: BaseTargetType {
             return "/post/list/\(tagID)"
         case .getMyFeedList:
             return "/post/myList"
-        case .getFeedDetailPost(let postID):
+        case .getFeedDetailPost(let postID), .deleteFeedPost(let postID):
             return "/post/\(postID)"
         }
     }
@@ -30,12 +31,14 @@ extension FeedService: BaseTargetType {
         switch self {
         case .getFeedList, .getMyFeedList, .getFeedDetailPost:
             return .get
+        case .deleteFeedPost:
+            return .delete
         }
     }
     
     var task: Task {
         switch self {
-        case .getFeedList, .getMyFeedList, .getFeedDetailPost:
+        case .getFeedList, .getMyFeedList, .getFeedDetailPost, .deleteFeedPost:
             return .requestPlain
         }
     }

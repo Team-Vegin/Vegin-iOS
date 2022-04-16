@@ -38,6 +38,7 @@ extension FeedMainVC {
     
     private func setUpTV() {
         feedTV.contentInsetAdjustmentBehavior = .never
+        feedTV.separatorColor = .clear
         feedTV.dataSource = self
         feedTV.delegate = self
     }

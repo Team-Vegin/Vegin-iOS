@@ -18,6 +18,7 @@ class FeedDetailVC: BaseVC {
             postTV.rowHeight = UITableView.automaticDimension
         }
     }
+    @IBOutlet weak var naviRightBtn: UIButton!
     
     // MARK: Properties
     var postId: Int?
@@ -36,10 +37,32 @@ class FeedDetailVC: BaseVC {
     @IBAction func tapBackBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func tapRightNaviBtn(_ sender: UIButton) {
+        makeTwoAlertWithCancel(okTitle: "수정하기", secondOkTitle: "삭제하기", okAction: { _ in
+            print("수정하기")
+        }, secondOkAction: { _ in
+            guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+            alert.showVeginAlert(vc: self, message: "글을 삭제하시겠습니까?", confirmBtnTitle: "확인", cancelBtnTitle: "취소", iconImg: "delete", type: .withDoubleBtn)
+            alert.confirmBtn.press {
+                self.deleteFeedPost(postID: self.postId ?? 0)
+            }
+            alert.cancelBtn.press {
+                alert.dismiss(animated: true, completion: nil)
+            }
+        })
+    }
 }
 
 // MARK: - UI
 extension FeedDetailVC {
+    private func setNaviRightBtn() {
+        if UserDefaults.standard.integer(forKey: UserDefaults.Keys.UserID) != self.detailPost.writer.userID {
+            self.naviRightBtn.isHidden = true
+        } else {
+            self.naviRightBtn.isHidden = false
+        }
+    }
     
     /// NaviBar dropShadow 설정 함수
     private func addShadowToNaviBar() {
@@ -128,6 +151,30 @@ extension FeedDetailVC {
                     print(data)
                     self.detailPost = data
                     self.postTV.reloadData()
+                    self.setNaviRightBtn()
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 게시글 삭제 요청 메서드
+    private func deleteFeedPost(postID: Int) {
+        self.activityIndicator.startAnimating()
+        FeedAPI.shared.deleteFeedPostAPI(postID: postID) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+                if let data = res as? PostResModel {
+                    print(data)
+                    self.navigationController?.popViewController(animated: true)
                 }
             case .requestErr(let res):
                 self.activityIndicator.stopAnimating()
