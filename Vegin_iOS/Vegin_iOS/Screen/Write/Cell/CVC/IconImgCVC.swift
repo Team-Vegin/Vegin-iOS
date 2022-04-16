@@ -15,7 +15,19 @@ class IconImgCVC: BaseCVC {
         super.awakeFromNib()
     }
 
-    func setData(iconData: IconImgData) {
-        iconImgView.image = iconData.makeIconImg()
+    func setData(iconData: Int) {
+        if iconData == 1 {
+            iconImgView.image = UIImage(named: "level1")
+        } else if iconData == 2 {
+            iconImgView.image = UIImage(named: "level2")
+        } else if iconData == 3 {
+            iconImgView.image = UIImage(named: "level3")
+        } else if iconData == 4 {
+            iconImgView.image = UIImage(named: "level4")
+        } else if iconData == 5 {
+            iconImgView.image = UIImage(named: "level5")
+        } else if iconData == 6 {
+            iconImgView.image = UIImage(named: "level6")
+        }
     }
 }
