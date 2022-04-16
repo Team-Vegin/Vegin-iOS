@@ -48,6 +48,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="more"/>
+                                        <connections>
+                                            <action selector="tapRightNaviBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Zz5-07-AP7"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="피드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXE-S1-CsG">
                                         <rect key="frame" x="170" y="61.666666666666657" width="35" height="25"/>
@@ -81,6 +84,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="naviRightBtn" destination="7K0-h2-8Qe" id="zve-rO-2RF"/>
                         <outlet property="naviView" destination="c15-J9-0Ly" id="7Ds-W5-mfr"/>
                         <outlet property="postTV" destination="eO1-Uh-wb6" id="2vN-v8-iyc"/>
                     </connections>
