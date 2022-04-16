@@ -15,6 +15,7 @@ class DietDetailVC: UIViewController {
     
     // MARK: Properties
     var selectedDate: String = ""
+    var postId: Int?
     
     /// 게시글 길이에 따른 동적 높이 셀 구현
     @IBOutlet weak var dietPostTV: UITableView! {
