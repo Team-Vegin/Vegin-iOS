@@ -9,32 +9,29 @@ import Foundation
 import Moya
 
 enum DietService {
-    
+    case getDietList(date: String)
 }
 
 extension DietService: BaseTargetType {
     
     var path: String {
         switch self {
-            
+        case .getDietList(let date):
+            return "/diet/day/\(date)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-            
+        case .getDietList:
+            return .get
         }
     }
     
     var task: Task {
         switch self {
-            
-        }
-    }
-    
-    var headers: [String : String]? {
-        switch self {
-            
+        case .getDietList:
+            return .requestPlain
         }
     }
 }
