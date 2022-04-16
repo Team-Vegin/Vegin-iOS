@@ -10,6 +10,7 @@ import Moya
 
 enum DietService {
     case getDietList(date: String)
+    case getDietDetail(postID: Int)
 }
 
 extension DietService: BaseTargetType {
@@ -18,19 +19,21 @@ extension DietService: BaseTargetType {
         switch self {
         case .getDietList(let date):
             return "/diet/day/\(date)"
+        case .getDietDetail(let postID):
+            return "/diet/\(postID)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getDietList:
+        case .getDietList, .getDietDetail:
             return .get
         }
     }
     
     var task: Task {
         switch self {
-        case .getDietList:
+        case .getDietList, .getDietDetail:
             return .requestPlain
         }
     }

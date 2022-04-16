@@ -62,6 +62,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="mealAmountLabel" destination="rF0-vp-SdJ" id="RVg-Rc-Y4X"/>
+                <outlet property="mealTimeLabel" destination="AMl-VG-aly" id="gwA-Se-HbB"/>
+            </connections>
             <point key="canvasLocation" x="139" y="29"/>
         </tableViewCell>
     </objects>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DietDetailVC: UIViewController {
+class DietDetailVC: BaseVC {
 
     // MARK: IBOutlet
     @IBOutlet weak var naviView: UIView!
@@ -15,6 +15,8 @@ class DietDetailVC: UIViewController {
     
     // MARK: Properties
     var selectedDate: String = ""
+    var postId: Int?
+    var detailDiet: DietPostDataModel = DietPostDataModel(postID: 0, meal: [0], mealTime: 0, amount: 0, memo: "", imageURL: "", createdAt: "")
     
     /// 게시글 길이에 따른 동적 높이 셀 구현
     @IBOutlet weak var dietPostTV: UITableView! {
@@ -30,6 +32,7 @@ class DietDetailVC: UIViewController {
         addShadowToNaviBar()
         registerTVC()
         setUpTV()
+        getDietDetail(postID: self.postId ?? 0)
     }
     
     @IBAction func tapBackNaviBtn(_ sender: UIButton) {
@@ -112,15 +115,49 @@ extension DietDetailVC: UITableViewDataSource {
               let dietDetailMemoTVC = tableView.dequeueReusableCell(withIdentifier: DietDetailMemoTVC.className) as? DietDetailMemoTVC else { return UITableViewCell() }
         
         if indexPath.section == 0 {
+            dietDetailImgTVC.setData(dietData: detailDiet)
             return dietDetailImgTVC
         } else if indexPath.section == 1 {
+            dietDetailIconTVC.iconImgList = detailDiet.meal
             return dietDetailIconTVC
         } else if indexPath.section == 2 {
+            dietDetailInfoTVC.setData(dietData: detailDiet)
             return dietDetailInfoTVC
         } else if indexPath.section == 3 {
+            dietDetailMemoTVC.setData(dietData: detailDiet)
             return dietDetailMemoTVC
         } else {
             return UITableViewCell()
+        }
+    }
+}
+
+// MARK: - Network
+extension DietDetailVC {
+    
+    /// 식단 상세 조회 메서드
+    private func getDietDetail(postID: Int) {
+        self.activityIndicator.startAnimating()
+        DietAPI.shared.getDietDetailAPI(postID: postID) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+                if let data = res as? DietPostDataModel {
+                    DispatchQueue.main.async {
+                        print(data)
+                        self.detailDiet = data
+                        self.dietPostTV.reloadData()
+                    }
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
         }
     }
 }
