@@ -110,7 +110,7 @@ extension UIViewController {
      - Description: 날짜 관련 메서드
      */
     /// 년, 월 형식으로 리턴하는 함수
-    func getMonthDate(date: Date) -> String{
+    func getMonthDate(date: Date) -> String {
         let df = DateFormatter()
         df.locale = Locale(identifier: "ko_KR")
         df.dateFormat = "yyyy년 M월"
@@ -118,10 +118,17 @@ extension UIViewController {
     }
     
     /// 년, 월, 일 형식으로 리턴하는 함수
-    func getDayDate(date: Date) -> String{
+    func getDayDate(date: Date) -> String {
         let df = DateFormatter()
         df.locale = Locale(identifier: "ko_KR")
         df.dateFormat = "yyyy년 M월 dd일"
+        return df.string(from: date)
+    }
+    
+    /// yyyy-MM-dd 형식으로 리턴하는 함수
+    func getSelectedDate(date: Date) -> String {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
         return df.string(from: date)
     }
     
