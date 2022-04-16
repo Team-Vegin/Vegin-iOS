@@ -31,7 +31,7 @@ class VeginBtn: UIButton {
     private var normalBgColor: UIColor = .defaultGray
     private var normalFontColor: UIColor = .defaultTextGray
     private var activatedBgColor: UIColor = .darkMain
-    var activatedFontColor: UIColor = .white
+    private var activatedFontColor: UIColor = .white
     
     init() {
         super.init(frame: .zero)
