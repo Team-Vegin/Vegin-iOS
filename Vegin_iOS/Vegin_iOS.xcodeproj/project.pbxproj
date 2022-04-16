@@ -61,6 +61,7 @@
 		779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BA2742E51A00F83ACD /* WriteVC.swift */; };
 		779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BC2743ACE800F83ACD /* CalendarNaviController.swift */; };
 		77C03F71280A8CA200B0EE84 /* PostResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03F70280A8CA200B0EE84 /* PostResModel.swift */; };
+		77C03F75280AECFB00B0EE84 /* DietListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03F74280AECFB00B0EE84 /* DietListDataModel.swift */; };
 		77D9ED2028043DF5000EA76A /* FeedListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED1F28043DF5000EA76A /* FeedListDataModel.swift */; };
 		77D9ED2228043E99000EA76A /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED2128043E99000EA76A /* FeedService.swift */; };
 		77D9ED2428044024000EA76A /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED2328044024000EA76A /* FeedAPI.swift */; };
@@ -179,6 +180,7 @@
 		779015BA2742E51A00F83ACD /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 		779015BC2743ACE800F83ACD /* CalendarNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarNaviController.swift; path = Vegin_iOS/Screen/Write/VC/CalendarNaviController.swift; sourceTree = SOURCE_ROOT; };
 		77C03F70280A8CA200B0EE84 /* PostResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResModel.swift; sourceTree = "<group>"; };
+		77C03F74280AECFB00B0EE84 /* DietListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietListDataModel.swift; sourceTree = "<group>"; };
 		77D9ED1F28043DF5000EA76A /* FeedListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListDataModel.swift; sourceTree = "<group>"; };
 		77D9ED2128043E99000EA76A /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		77D9ED2328044024000EA76A /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				77C03F72280A8CA700B0EE84 /* Public */,
+				77C03F73280AECE100B0EE84 /* Diet */,
 				77D9ED1E28043DD2000EA76A /* Feed */,
 				7742886627F6C893001A7CFA /* Sign */,
 			);
@@ -520,6 +523,14 @@
 				77C03F70280A8CA200B0EE84 /* PostResModel.swift */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		77C03F73280AECE100B0EE84 /* Diet */ = {
+			isa = PBXGroup;
+			children = (
+				77C03F74280AECFB00B0EE84 /* DietListDataModel.swift */,
+			);
+			path = Diet;
 			sourceTree = "<group>";
 		};
 		77D9ED1E28043DD2000EA76A /* Feed */ = {
@@ -1066,6 +1077,7 @@
 				77D9ED2C2805BA11000EA76A /* FeedDetailVC.swift in Sources */,
 				5A95325927E1375E001E72A3 /* CharacterBookVC.swift in Sources */,
 				7757285F27C8C7C300148C9A /* FeedMainPostTVC.swift in Sources */,
+				77C03F75280AECFB00B0EE84 /* DietListDataModel.swift in Sources */,
 				7742885027F154DB001A7CFA /* SignUpVC.swift in Sources */,
 				7742884E27F15462001A7CFA /* NickNameVC.swift in Sources */,
 				77ED048127B6932D00D077CA /* BaseCVC.swift in Sources */,
