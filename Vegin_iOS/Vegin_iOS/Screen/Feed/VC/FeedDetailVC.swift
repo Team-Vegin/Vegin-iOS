@@ -18,6 +18,7 @@ class FeedDetailVC: BaseVC {
             postTV.rowHeight = UITableView.automaticDimension
         }
     }
+    @IBOutlet weak var naviRightBtn: UIButton!
     
     // MARK: Properties
     var postId: Int?
@@ -55,6 +56,13 @@ class FeedDetailVC: BaseVC {
 
 // MARK: - UI
 extension FeedDetailVC {
+    private func setNaviRightBtn() {
+        if UserDefaults.standard.integer(forKey: UserDefaults.Keys.UserID) != self.detailPost.writer.userID {
+            self.naviRightBtn.isHidden = true
+        } else {
+            self.naviRightBtn.isHidden = false
+        }
+    }
     
     /// NaviBar dropShadow 설정 함수
     private func addShadowToNaviBar() {
@@ -143,6 +151,7 @@ extension FeedDetailVC {
                     print(data)
                     self.detailPost = data
                     self.postTV.reloadData()
+                    self.setNaviRightBtn()
                 }
             case .requestErr(let res):
                 self.activityIndicator.stopAnimating()

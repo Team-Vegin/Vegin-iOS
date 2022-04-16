@@ -84,6 +84,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="naviRightBtn" destination="7K0-h2-8Qe" id="zve-rO-2RF"/>
                         <outlet property="naviView" destination="c15-J9-0Ly" id="7Ds-W5-mfr"/>
                         <outlet property="postTV" destination="eO1-Uh-wb6" id="2vN-v8-iyc"/>
                     </connections>
