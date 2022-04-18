@@ -54,7 +54,7 @@ class CalendarVC: UIViewController {
         guard let nextVC = calendarTabSB.instantiateViewController(withIdentifier: WriteVC.className) as? WriteVC else { return }
         
         nextVC.selectedDate = getDayDate(date: calendar.selectedDate ?? today)
-        print("넘어간날짜", nextVC.selectedDate)
+        nextVC.writeDate = getSelectedDate(date: calendar.selectedDate ?? today)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -159,5 +159,4 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
             return UIImage(named: "level2")
         } else { return nil }
     }
-        
 }
