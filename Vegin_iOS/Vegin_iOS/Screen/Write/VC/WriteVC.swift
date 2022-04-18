@@ -365,3 +365,31 @@ extension WriteVC {
     }
 }
 
+// MARK: - Network
+extension WriteVC {
+    
+    /// 식단 작성  메서드
+    private func createDietPost(image: UIImage, meal: [Int], mealTime: Int, amount: Int, memo: String, date: String) {
+        self.activityIndicator.startAnimating()
+        DietAPI.shared.createDietPostAPI(image: image, meal: meal, mealTime: mealTime, amount: amount, memo: memo, date: date) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+                print("알럿띄우기")
+                guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+                alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
+                alert.confirmBtn.press {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+}
+
