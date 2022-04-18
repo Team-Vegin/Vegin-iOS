@@ -14,11 +14,11 @@
             <objects>
                 <viewController storyboardIdentifier="FeedWriteVC" id="Y6W-OH-hqX" customClass="FeedWriteVC" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="946"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYH-AQ-PdP">
-                                <rect key="frame" x="0.0" y="104" width="375" height="800"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="854"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNt-rI-96r">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="895"/>
@@ -91,6 +91,13 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4L-lJ-as3" userLabel="Title Underbar">
+                                                <rect key="frame" x="23" y="450" width="329" height="1"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="7jB-qN-bKi"/>
+                                                </constraints>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ell-4Q-BHW">
                                                 <rect key="frame" x="24" y="492" width="56" height="19"/>
                                                 <constraints>
@@ -202,7 +209,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABB-9N-Yl8" userLabel="Save Button">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABB-9N-Yl8" userLabel="Save Button" customClass="VeginBtn" customModule="Vegin_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="22" y="798" width="331" height="40"/>
                                                 <color key="backgroundColor" name="darkMain"/>
                                                 <constraints>
@@ -210,7 +217,7 @@
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="작성하기">
+                                                <buttonConfiguration key="configuration" style="plain" title="작성 완료">
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
@@ -243,9 +250,13 @@
                                             <constraint firstItem="N6j-5p-kEA" firstAttribute="leading" secondItem="jNt-rI-96r" secondAttribute="leading" constant="34" id="Uu7-5N-Ud5"/>
                                             <constraint firstItem="9ul-1n-1gN" firstAttribute="top" secondItem="jNt-rI-96r" secondAttribute="top" constant="20" id="VzA-xG-Tne"/>
                                             <constraint firstItem="9ul-1n-1gN" firstAttribute="leading" secondItem="jNt-rI-96r" secondAttribute="leading" constant="22" id="Xic-pO-9wc"/>
+                                            <constraint firstAttribute="trailing" secondItem="S4L-lJ-as3" secondAttribute="trailing" constant="23" id="YmN-wn-T43"/>
                                             <constraint firstItem="zRX-V0-Ucj" firstAttribute="leading" secondItem="jNt-rI-96r" secondAttribute="leading" constant="24" id="bzb-tL-2jZ"/>
                                             <constraint firstItem="FcH-nX-2hi" firstAttribute="leading" secondItem="jNt-rI-96r" secondAttribute="leading" constant="24" id="cef-Mi-j1e"/>
+                                            <constraint firstItem="Ell-4Q-BHW" firstAttribute="top" secondItem="S4L-lJ-as3" secondAttribute="bottom" constant="41" id="dCL-fg-JHL"/>
                                             <constraint firstItem="ABB-9N-Yl8" firstAttribute="leading" secondItem="jNt-rI-96r" secondAttribute="leading" constant="22" id="iEo-62-xlW"/>
+                                            <constraint firstItem="S4L-lJ-as3" firstAttribute="leading" secondItem="jNt-rI-96r" secondAttribute="leading" constant="23" id="jUY-AQ-nHU"/>
+                                            <constraint firstItem="S4L-lJ-as3" firstAttribute="top" secondItem="91e-mL-Qpp" secondAttribute="bottom" id="kMg-Hm-bag"/>
                                             <constraint firstItem="91e-mL-Qpp" firstAttribute="leading" secondItem="jNt-rI-96r" secondAttribute="leading" constant="24" id="v8E-6I-bhY"/>
                                             <constraint firstItem="QAR-v7-eGc" firstAttribute="leading" secondItem="jNt-rI-96r" secondAttribute="leading" constant="24" id="xpR-pj-hb3"/>
                                         </constraints>
@@ -309,7 +320,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="s5O-3M-Dm4" userLabel="Navigation Item"/>
-                    <size key="freeformSize" width="375" height="946"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="categoryBtn1" destination="f0V-OJ-XHm" id="er9-jq-Are"/>
                         <outlet property="categoryBtn2" destination="V3S-e9-ONL" id="l9c-Rx-D04"/>
@@ -345,6 +356,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

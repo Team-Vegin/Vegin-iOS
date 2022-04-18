@@ -45,15 +45,17 @@ class FeedWriteVC: BaseVC {
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var saveBtn: VeginBtn! {
         didSet {
-           // saveBtn.setTitleWithStyle(title: "작성하기", size: 16, weight: .semiBold)
+            saveBtn.isActivated = false     /// 기본상태: 비활성화
+            saveBtn.setTitleWithStyle(title: "작성 완료", size: 16, weight: .semiBold)
         }
     }
     
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //saveBtn.isActivated = false     /// 기본상태: 비활성화
         feedImgView.contentMode = .scaleAspectFill
+        self.titleTextView.delegate = self
+        self.memoTextView.delegate = self
         self.tabBarController?.tabBar.isHidden = true
         self.tabBarController?.tabBar.isTranslucent = true
         configureUI()
@@ -152,11 +154,10 @@ class FeedWriteVC: BaseVC {
     }
     
     //MARK: - Custom Method
-    /*
     /// 저장하기 버튼 상태 지정 메소드
     private func setUpSaveBtnStatus() {
         if isCategory1Selected || isCategory2Selected || isCategory3Selected || isCategory4Selected || isCategory5Selected  {
-            if titleTextView.text != nil && memoTextView.text != nil {
+            if titleTextView.text.count != 0 && memoTextView.text.count != 0 {
                 self.saveBtn.isActivated = true
             } else {
                 self.saveBtn.isActivated = false
@@ -165,7 +166,6 @@ class FeedWriteVC: BaseVC {
             self.saveBtn.isActivated = false
         }
     }
-     */
     
     /// 사진앨범 불러오는 메소드
     private func openLibrary() {
@@ -224,9 +224,8 @@ extension FeedWriteVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == titlePlaceholder {
             textView.text.removeAll()
-            textView.textColor = .darkText
-        }
-        if textView.text == memoPlaceholder {
+            textView.textColor = .darkMain
+        } else if textView.text == memoPlaceholder {
             textView.text.removeAll()
             textView.textColor = .black
         }
@@ -236,11 +235,20 @@ extension FeedWriteVC: UITextViewDelegate {
         if !textView.hasText || textView.text == titlePlaceholder {
             textView.text = titlePlaceholder
             textView.textColor = .gray
-        }
-        if !textView.hasText || textView.text == memoPlaceholder {
+        } else if !textView.hasText || textView.text == memoPlaceholder {
             textView.text = memoPlaceholder
             textView.textColor = .gray
         }
+    }
+    
+    ///텍스트 값에 따른 저장버튼 활성화
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if range.location == 0 || range.length != 0 {
+            self.saveBtn.isActivated = false
+        } else {
+            self.saveBtn.isActivated = true
+        }
+        return true
     }
 }
 
