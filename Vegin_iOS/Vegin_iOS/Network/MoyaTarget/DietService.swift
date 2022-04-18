@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import CoreMedia
 
 enum DietService {
     case getDietList(date: String)
@@ -60,10 +61,8 @@ extension DietService: TargetType {
             
             for (key, value) in body {
                 if key == "meal" {
-                    let arrData =  try! JSONSerialization.data(withJSONObject: value, options: [.prettyPrinted])
-                    let formData = MultipartFormData(provider: .data(arrData), name: "\(key)", mimeType: "text/plain")
-                    print("배열값", arrData)
-                    print("폼데이터", formData)
+                    let jsonData = arrayToJson(arr: value)
+                    let formData = MultipartFormData(provider: .data("\(jsonData)".data(using: .utf8)!), name: key, mimeType: "text/plain")
                     multiPartData.append(formData)
                 } else {
                     let formData = MultipartFormData(provider: .data("\(value)".data(using: .utf8) ?? Data()), name: "\(key)", mimeType: "text/plain")
@@ -83,5 +82,17 @@ extension DietService: TargetType {
         case .createDietPost:
             return ["Content-Type": "multipart/form-data", "accessToken": accessToken]
         }
+    }
+}
+
+extension DietService {
+    
+    /// 배열값 인코딩 메서드
+    private func arrayToJson(arr: Any) -> String {
+        let arrData = String(describing: arr)
+        var jsonData = arrData.replacingOccurrences(of: "[", with: "{")
+        jsonData = jsonData.replacingOccurrences(of: "]", with: "}")
+        
+        return jsonData
     }
 }
