@@ -11,9 +11,13 @@ import Moya
 enum DietService {
     case getDietList(date: String)
     case getDietDetail(postID: Int)
+    case createDietPost(image: UIImage, meal: [Int], mealTime: Int, amount: Int, memo: String, date: String)
 }
 
-extension DietService: BaseTargetType {
+extension DietService: TargetType {
+    var baseURL: URL {
+        return URL(string: APIConstants.baseURL)!
+    }
     
     var path: String {
         switch self {
@@ -21,6 +25,8 @@ extension DietService: BaseTargetType {
             return "/diet/day/\(date)"
         case .getDietDetail(let postID):
             return "/diet/\(postID)"
+        case .createDietPost:
+            return "/diet"
         }
     }
     
@@ -28,6 +34,8 @@ extension DietService: BaseTargetType {
         switch self {
         case .getDietList, .getDietDetail:
             return .get
+        case .createDietPost:
+            return .post
         }
     }
     
@@ -35,6 +43,45 @@ extension DietService: BaseTargetType {
         switch self {
         case .getDietList, .getDietDetail:
             return .requestPlain
+        case .createDietPost(let image, let meal, let mealTime, let amount, let memo, let date):
+            var multiPartData: [Moya.MultipartFormData] = []
+            
+            let body: [String : Any] = [
+                "meal" : meal,
+                "mealTime" : mealTime,
+                "amount" : amount,
+                "memo" : memo,
+                "date" : date
+            ]
+            
+            let imageData = MultipartFormData(provider: .data(image.jpegData(compressionQuality: 1.0) ?? Data()), name: "image", fileName: "image.jpeg", mimeType: "image/jpeg")
+            multiPartData.append(imageData)
+            
+            
+            for (key, value) in body {
+                if key == "meal" {
+                    let arrData =  try! JSONSerialization.data(withJSONObject: value, options: [.prettyPrinted])
+                    let formData = MultipartFormData(provider: .data(arrData), name: "\(key)", mimeType: "text/plain")
+                    print("배열값", arrData)
+                    print("폼데이터", formData)
+                    multiPartData.append(formData)
+                } else {
+                    let formData = MultipartFormData(provider: .data("\(value)".data(using: .utf8) ?? Data()), name: "\(key)", mimeType: "text/plain")
+                    multiPartData.append(formData)
+                }
+            }
+            return .uploadMultipart(multiPartData)
+        }
+    }
+    
+    var headers: [String : String]? {
+        let accessToken = UserDefaults.standard.string(forKey: UserDefaults.Keys.AccessToken) ?? ""
+        
+        switch self {
+        case .getDietList, .getDietDetail:
+            return ["Content-Type": "application/json", "accessToken": accessToken]
+        case .createDietPost:
+            return ["Content-Type": "multipart/form-data", "accessToken": accessToken]
         }
     }
 }
