@@ -46,6 +46,22 @@ extension DietAPI {
             }
         }
     }
+    
+    /// [POST] 식단 게시글 작성
+    func createDietPostAPI(image: UIImage, meal: [Int], mealTime: Int, amount: Int, memo: String, date: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        provider.request(.createDietPost(image: image, meal: meal, mealTime: mealTime, amount: amount, memo: memo, date: date)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                completion(self.createDietPostJudgeData(status: statusCode, data: data))
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }
 
 // MARK: - judgeData
@@ -81,6 +97,25 @@ extension DietAPI {
             return .requestErr(decodedData.message)
         case 404:
             return .requestErr(404)
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
+        }
+    }
+    
+    private func createDietPostJudgeData(status: Int, data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        
+        guard let decodedData = try? decoder.decode(GenericResponse<WriteResModel>.self, from: data) else { return .pathErr }
+        
+        switch status {
+        case 200:
+            return .success(decodedData.data ?? "None-Data")
+        case 400:
+            return .requestErr(decodedData.message)
+        case 404:
+            return .requestErr(decodedData.message)
         case 500:
             return .serverErr
         default:
