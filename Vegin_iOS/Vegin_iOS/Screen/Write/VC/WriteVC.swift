@@ -314,7 +314,7 @@ extension WriteVC {
     /// 저장하기 버튼 상태 지정 메소드
     private func setUpSaveBtnStatus() {
         if isLevel1Selected || isLevel2Selected || isLevel3Selected || isLevel4Selected || isLevel5Selected || isLevel6Selected {
-            if indexOfMeal != nil && indexOfAmount != nil {
+            if indexOfMeal != nil && indexOfAmount != nil && imageUploadButton.tintColor == .clear {
                 self.saveBtn.isActivated = true
             } else {
                 self.saveBtn.isActivated = false
@@ -363,6 +363,7 @@ extension WriteVC: UIImagePickerControllerDelegate {
         
         foodImgView.image = image
         imageUploadButton.tintColor = .clear
+        setUpSaveBtnStatus()
         dismiss(animated: true, completion: nil)
     }
 }
