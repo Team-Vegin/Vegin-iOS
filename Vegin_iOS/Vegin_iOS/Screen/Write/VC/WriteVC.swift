@@ -10,7 +10,6 @@ import UIKit
 class WriteVC: BaseVC {
 
     var emojiArray: [Bool] = [false, false, false, false, false, false]
-    var selectedDate: String = ""
     
     var isLevel1Selected = false {
         didSet {
@@ -45,6 +44,11 @@ class WriteVC: BaseVC {
     
     var indexOfMeal: Int?
     var indexOfAmount: Int?
+    var mealArray: [Int] = []
+    var mealTime: Int = 0
+    var mealAmount: Int = 0
+    var selectedDate: String = ""
+    var writeDate: String = ""
     let foodImgPicker = UIImagePickerController()
     private let placeholder = "메모를 입력하세요."
     
@@ -72,7 +76,6 @@ class WriteVC: BaseVC {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        foodImgView.contentMode = .scaleAspectFill
         self.tabBarController?.tabBar.isHidden = true
         self.tabBarController?.tabBar.isTranslucent = true
         configureUI()
@@ -111,13 +114,9 @@ class WriteVC: BaseVC {
 
         calendarEmoji.updateValue(resultEmoji, forKey: selectedDate)
         UserDefaults.standard.set(calendarEmoji, forKey: "calendarEmoji")
-        print(UserDefaults.standard.dictionary(forKey: "calendarEmoji"))
+        //print(UserDefaults.standard.dictionary(forKey: "calendarEmoji"))
         
-        guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
-        alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
-        alert.confirmBtn.press {
-            self.navigationController?.popViewController(animated: true)
-        }
+        createDietPost(image: foodImgView.image ?? UIImage(), meal: mealArray, mealTime: mealTime, amount: mealAmount, memo: memoTextView.text ?? "", date: writeDate)
     }
     
     func setIconImage() {
@@ -153,7 +152,6 @@ class WriteVC: BaseVC {
         
         if isLevel6Selected {
             level6Button.setImage(UIImage.init(named: "level6_select"), for: .normal)
-            
         } else if !isLevel6Selected {
             level6Button.setImage(UIImage.init(named: "meat"), for: .normal)
         }
@@ -162,22 +160,64 @@ class WriteVC: BaseVC {
     
     @IBAction func touchUpLevel1Btn(_ sender: Any) {
         isLevel1Selected = !isLevel1Selected
+        if isLevel1Selected {
+            mealArray.append(1)
+            mealArray.sort()
+        } else {
+            mealArray = mealArray.filter { $0 != 1 }
+            mealArray.sort()
+        }
     }
     @IBAction func touchUpLevel2Btn(_ sender: Any) {
         isLevel2Selected = !isLevel2Selected
+        if isLevel2Selected {
+            mealArray.append(2)
+            mealArray.sort()
+        } else {
+            mealArray = mealArray.filter { $0 != 2 }
+            mealArray.sort()
+        }
     }
     
     @IBAction func touchUpLevel3Btn(_ sender: Any) {
         isLevel3Selected = !isLevel3Selected
+        if isLevel3Selected {
+            mealArray.append(3)
+            mealArray.sort()
+        } else {
+            mealArray = mealArray.filter { $0 != 3 }
+            mealArray.sort()
+        }
     }
     @IBAction func touchUpLevel4Btn(_ sender: Any) {
         isLevel4Selected = !isLevel4Selected
+        if isLevel4Selected {
+            mealArray.append(4)
+            mealArray.sort()
+        } else {
+            mealArray = mealArray.filter { $0 != 4 }
+            mealArray.sort()
+        }
     }
     @IBAction func touchUpLevel5Btn(_ sender: Any) {
         isLevel5Selected = !isLevel5Selected
+        if isLevel5Selected {
+            mealArray.append(5)
+            mealArray.sort()
+        } else {
+            mealArray = mealArray.filter { $0 != 5 }
+            mealArray.sort()
+        }
     }
     @IBAction func touchUpLevel6Btn(_ sender: Any) {
         isLevel6Selected = !isLevel6Selected
+        if isLevel6Selected {
+            mealArray.append(6)
+            mealArray.sort()
+        } else {
+            mealArray = mealArray.filter { $0 != 6 }
+            mealArray.sort()
+        }
     }
     
     @IBAction func touchUpMealButton(_ sender: UIButton) {
@@ -188,6 +228,7 @@ class WriteVC: BaseVC {
                 }
                 sender.isSelected = true
                 indexOfMeal = mealButtons.firstIndex(of: sender)
+                mealTime = (indexOfMeal ?? 0) + 1 // 변수에 선택된 버튼인덱스 + 1  삽입
             } else {
                 sender.isSelected = false
                 indexOfMeal = nil
@@ -195,6 +236,7 @@ class WriteVC: BaseVC {
         } else {
             sender.isSelected = true
             indexOfMeal = mealButtons.firstIndex(of: sender)
+            mealTime = (indexOfMeal ?? 0) + 1
         }
         setUpSaveBtnStatus()
     }
@@ -207,6 +249,7 @@ class WriteVC: BaseVC {
                 }
                 sender.isSelected = true
                 indexOfAmount = amountButtons.firstIndex(of: sender)
+                mealAmount = (indexOfAmount ?? 0) + 1
             } else {
                 sender.isSelected = false
                 indexOfAmount = nil
@@ -214,6 +257,7 @@ class WriteVC: BaseVC {
         } else {
             sender.isSelected = true
             indexOfAmount = amountButtons.firstIndex(of: sender)
+            mealAmount = (indexOfAmount ?? 0) + 1
         }
         setUpSaveBtnStatus()
     }
@@ -231,6 +275,7 @@ extension WriteVC {
     private func configureUI() {
         imageContentView.layer.cornerRadius = 25
         foodImgView.layer.cornerRadius = 25
+        foodImgView.contentMode = .scaleAspectFill
         saveBtn.makeRounded(cornerRadius: 0.5 * saveBtn.bounds.size.height)
         mealButtons[0].setImage(UIImage.init(named: "select"), for: .selected)
         mealButtons[0].setImage(UIImage.init(named: "breakfast"), for: .normal)
@@ -269,7 +314,7 @@ extension WriteVC {
     /// 저장하기 버튼 상태 지정 메소드
     private func setUpSaveBtnStatus() {
         if isLevel1Selected || isLevel2Selected || isLevel3Selected || isLevel4Selected || isLevel5Selected || isLevel6Selected {
-            if indexOfMeal != nil && indexOfAmount != nil {
+            if indexOfMeal != nil && indexOfAmount != nil && imageUploadButton.tintColor == .clear {
                 self.saveBtn.isActivated = true
             } else {
                 self.saveBtn.isActivated = false
@@ -318,6 +363,7 @@ extension WriteVC: UIImagePickerControllerDelegate {
         
         foodImgView.image = image
         imageUploadButton.tintColor = .clear
+        setUpSaveBtnStatus()
         dismiss(animated: true, completion: nil)
     }
 }
@@ -360,6 +406,34 @@ extension WriteVC {
         if ((notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             if self.view.frame.origin.y != 0 {
                 self.view.frame.origin.y = 0
+            }
+        }
+    }
+}
+
+// MARK: - Network
+extension WriteVC {
+    
+    /// 식단 작성  메서드
+    private func createDietPost(image: UIImage, meal: [Int], mealTime: Int, amount: Int, memo: String, date: String) {
+        self.activityIndicator.startAnimating()
+        DietAPI.shared.createDietPostAPI(image: image, meal: meal, mealTime: mealTime, amount: amount, memo: memo, date: date) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+                print("알럿띄우기")
+                guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+                alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
+                alert.confirmBtn.press {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             }
         }
     }

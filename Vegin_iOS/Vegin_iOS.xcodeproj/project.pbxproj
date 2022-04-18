@@ -63,6 +63,7 @@
 		77C03F71280A8CA200B0EE84 /* PostResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03F70280A8CA200B0EE84 /* PostResModel.swift */; };
 		77C03F75280AECFB00B0EE84 /* DietListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03F74280AECFB00B0EE84 /* DietListDataModel.swift */; };
 		77D0926C280B139300CB9F6A /* DietPostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0926B280B139300CB9F6A /* DietPostDataModel.swift */; };
+		77D0926E280BF1B100CB9F6A /* WriteResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0926D280BF1B100CB9F6A /* WriteResModel.swift */; };
 		77D9ED2028043DF5000EA76A /* FeedListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED1F28043DF5000EA76A /* FeedListDataModel.swift */; };
 		77D9ED2228043E99000EA76A /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED2128043E99000EA76A /* FeedService.swift */; };
 		77D9ED2428044024000EA76A /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9ED2328044024000EA76A /* FeedAPI.swift */; };
@@ -183,6 +184,7 @@
 		77C03F70280A8CA200B0EE84 /* PostResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResModel.swift; sourceTree = "<group>"; };
 		77C03F74280AECFB00B0EE84 /* DietListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietListDataModel.swift; sourceTree = "<group>"; };
 		77D0926B280B139300CB9F6A /* DietPostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietPostDataModel.swift; sourceTree = "<group>"; };
+		77D0926D280BF1B100CB9F6A /* WriteResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteResModel.swift; sourceTree = "<group>"; };
 		77D9ED1F28043DF5000EA76A /* FeedListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListDataModel.swift; sourceTree = "<group>"; };
 		77D9ED2128043E99000EA76A /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		77D9ED2328044024000EA76A /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				77C03F70280A8CA200B0EE84 /* PostResModel.swift */,
+				77D0926D280BF1B100CB9F6A /* WriteResModel.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -1053,6 +1056,7 @@
 				77DBB85127DF414000000623 /* DietDetailVC.swift in Sources */,
 				77DBB86527DF49A600000623 /* DietDetailMemoTVC.swift in Sources */,
 				77DBB86127DF47DF00000623 /* DietDetailInfoTVC.swift in Sources */,
+				77D0926E280BF1B100CB9F6A /* WriteResModel.swift in Sources */,
 				77D9ED332805D2C2000EA76A /* FeedDetailContentTVC.swift in Sources */,
 				77D9ED372805D4B5000EA76A /* FeedDetailEmojiTVC.swift in Sources */,
 				7756F9AD27FDFDB8006F6EF3 /* CharacterBookCVC.swift in Sources */,
