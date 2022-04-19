@@ -146,6 +146,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="dismiss_btn"/>
+                                <connections>
+                                    <action selector="tapDismissBtn:" destination="eMS-fM-zLc" eventType="touchUpInside" id="aeB-zi-wP5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ILD-IA-Zkw"/>
@@ -427,6 +430,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="dismiss_btn"/>
+                                <connections>
+                                    <action selector="tapDismissBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="txS-zb-VJ3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rs-29-bcU">
                                 <rect key="frame" x="16" y="60" width="32" height="32"/>
@@ -436,6 +442,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="backButton"/>
+                                <connections>
+                                    <action selector="tapBackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oRG-pp-lU9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>

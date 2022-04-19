@@ -183,6 +183,15 @@ class NickNameVC: BaseVC {
     @IBAction func tapStartBtn(_ sender: UIButton) {
         requestSignUp(email: self.email ?? "", pw: self.password ?? "", nickname: nickNameTextField.text ?? "", orientation: self.orientation ?? "")
     }
+    
+    @IBAction func tapBackBtn(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func tapDismissBtn(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 }
 
 // MARK: - UI
