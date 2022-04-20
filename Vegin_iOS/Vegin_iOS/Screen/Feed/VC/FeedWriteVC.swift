@@ -29,7 +29,7 @@ class FeedWriteVC: BaseVC {
     var category: Int?
     let imgPicker = UIImagePickerController()
     private let titlePlaceholder = "제목을 입력해주세요 (13자 이내)"
-    private let memoPlaceholder = "내용을 입력해주세요."
+    private let memoPlaceholder = "내용을 입력해주세요"
     
     //MARK: IBOutlet
     @IBOutlet weak var naviView: UIView!
