@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DietListTVC: BaseTVC {
 
@@ -31,10 +32,45 @@ class DietListTVC: BaseTVC {
 
 // MARK: - Custom Methods
 extension DietListTVC {
-    func setData(postData: DietPostData) {
-        titleLabel.text = postData.title
-        contentLabel.text = postData.content
-        thumbnailImgView.image = postData.makeThumbnailImg()
-        iconImgView.image = postData.makeIconImg()
+    func setData(postData: DietListDataModel) {
+        let url = URL(string: postData.imageURL)
+        let mealArray = postData.meal
+        
+        switch postData.mealTime {
+        case 1:
+            titleLabel.text = "아침"
+        case 2:
+            titleLabel.text = "아점"
+        case 3:
+            titleLabel.text = "점심"
+        case 4:
+            titleLabel.text = "점저"
+        case 5:
+            titleLabel.text = "저녁"
+        default:
+            break
+        }
+        contentLabel.text = postData.memo
+        thumbnailImgView.kf.setImage(with: url)
+        
+        switch mealArray.last {
+        case 1:
+            iconImgView.image = UIImage(named: "level1")
+        case 2:
+            iconImgView.image = UIImage(named: "level2")
+        case 3:
+            iconImgView.image = UIImage(named: "level3")
+        case 4:
+            iconImgView.image = UIImage(named: "level4")
+        case 5:
+            iconImgView.image = UIImage(named: "level5")
+        case 6:
+            iconImgView.image = UIImage(named: "level6")
+        case .none:
+            iconImgView.image = UIImage(named: "level1")
+        case .some(_):
+            iconImgView.image = UIImage(named: "level1")
+        }
+
     }
 }

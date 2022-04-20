@@ -15,7 +15,11 @@ enum SignService {
     case checkNickNameDuplicate(nickname: String)
 }
 
-extension SignService: BaseTargetType {
+extension SignService: TargetType {
+    var baseURL: URL {
+        return URL(string: APIConstants.baseURL)!
+    }
+    
     var path: String {
         switch self {
         case .requestSignIn:
@@ -71,5 +75,12 @@ extension SignService: BaseTargetType {
             ]
             return .requestParameters(parameters: body, encoding: JSONEncoding.default)
         }
+    }
+    
+    var headers: [String : String]? {
+        let header = [
+            "Content-Type": "application/json"
+        ]
+        return header
     }
 }

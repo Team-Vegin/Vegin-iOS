@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DietDetailImgTVC: BaseTVC {
 
@@ -27,5 +28,13 @@ class DietDetailImgTVC: BaseTVC {
 extension DietDetailImgTVC {
     private func configureUI() {
         foodImgView.makeRounded(cornerRadius: 20.adjusted)
+    }
+}
+
+// MARK: - Custom Methods
+extension DietDetailImgTVC {
+    func setData(dietData: DietPostDataModel) {
+        let url = URL(string: dietData.imageURL)
+        foodImgView.kf.setImage(with: url)
     }
 }

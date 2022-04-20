@@ -13,6 +13,12 @@ class FeedMainVC: BaseVC {
     @IBOutlet weak var feedTV: UITableView!
     
     var postList: [FeedListDataModel] = []
+    var selectedTagId: Int = 1
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getFeedPostList(tagID: selectedTagId)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +38,7 @@ extension FeedMainVC {
     
     private func setUpTV() {
         feedTV.contentInsetAdjustmentBehavior = .never
+        feedTV.separatorColor = .clear
         feedTV.dataSource = self
         feedTV.delegate = self
     }
@@ -42,16 +49,22 @@ extension FeedMainVC {
         switch data {
         case "전체":
             getFeedPostList(tagID: 1)
+            selectedTagId = 1
         case "생활":
             getFeedPostList(tagID: 2)
+            selectedTagId = 2
         case "맛집":
             getFeedPostList(tagID: 3)
+            selectedTagId = 3
         case "꿀팁":
             getFeedPostList(tagID: 4)
+            selectedTagId = 4
         case "레시피":
             getFeedPostList(tagID: 5)
+            selectedTagId = 5
         case "기타":
             getFeedPostList(tagID: 6)
+            selectedTagId = 6
         default:
             break
         }
@@ -118,6 +131,15 @@ extension FeedMainVC: UITableViewDataSource {
             return feedMainPostTVC
         } else {
             return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2 {
+            guard let feedDetailVC = UIStoryboard.init(name: Identifiers.FeedDetailSB, bundle: nil).instantiateViewController(withIdentifier: FeedDetailVC.className) as? FeedDetailVC else { return }
+            
+            feedDetailVC.postId = postList[indexPath.row].postID
+            self.navigationController?.pushViewController(feedDetailVC, animated: true)
         }
     }
 }

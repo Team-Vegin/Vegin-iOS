@@ -10,6 +10,9 @@ import Moya
 
 enum FeedService {
     case getFeedList(tagID: Int)
+    case getMyFeedList
+    case getFeedDetailPost(postID: Int)
+    case deleteFeedPost(postID: Int)
 }
 
 extension FeedService: BaseTargetType {
@@ -17,21 +20,25 @@ extension FeedService: BaseTargetType {
         switch self {
         case .getFeedList(let tagID):
             return "/post/list/\(tagID)"
+        case .getMyFeedList:
+            return "/post/myList"
+        case .getFeedDetailPost(let postID), .deleteFeedPost(let postID):
+            return "/post/\(postID)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getFeedList:
+        case .getFeedList, .getMyFeedList, .getFeedDetailPost:
             return .get
+        case .deleteFeedPost:
+            return .delete
         }
     }
     
     var task: Task {
         switch self {
-            
-        /// 피드 게시글 리스트 조회
-        case .getFeedList:
+        case .getFeedList, .getMyFeedList, .getFeedDetailPost, .deleteFeedPost:
             return .requestPlain
         }
     }

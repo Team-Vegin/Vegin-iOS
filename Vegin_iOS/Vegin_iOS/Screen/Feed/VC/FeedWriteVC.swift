@@ -97,7 +97,7 @@ class FeedWriteVC: BaseVC {
         }
         /// 작성 완료 창
         guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
-        alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인")
+        alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
         alert.confirmBtn.press {
             self.navigationController?.popViewController(animated: true)
         }

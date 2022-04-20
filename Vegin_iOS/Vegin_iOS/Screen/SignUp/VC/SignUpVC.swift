@@ -47,6 +47,7 @@ class SignUpVC: BaseVC {
         nextVC.password = pwCheckTextField.text
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
     @IBAction func tapCheckEmailBtn(_ sender: UIButton) {
         let emailText = emailTextField.text
         if (emailText?.contains("@"))! && (emailText?.contains("."))! {
@@ -56,6 +57,10 @@ class SignUpVC: BaseVC {
             emailInfoLabel.text = "이메일 형식을 확인해주세요"
             signUpBtn.isActivated = false
         }
+    }
+    
+    @IBAction func tapDismissBtn(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

@@ -8,7 +8,7 @@
 import UIKit
 import FSCalendar
 
-class DietListVC: UIViewController {
+class DietListVC: BaseVC {
 
     // MARK: IBOutlet
     @IBOutlet weak var listCalendar: FSCalendar!
@@ -17,26 +17,26 @@ class DietListVC: UIViewController {
     @IBOutlet weak var dietListTV: UITableView!
     
     // MARK: Properties
-    var postList: [DietPostData] = []
+    var postList: [DietListDataModel] = []
     private var currentPage: Date?
     private lazy var today: Date = {
         return Date()
     }()
     
     // MARK: Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addShadowToNaviBar()
         registerTVC()
         setUpTV()
-        initPostList()
         setUpCalendar()
         configureCalendarUI()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
+        getDayDietList(date: getSelectedDate(date: today))
     }
     
     // MARK: IBAction
@@ -76,14 +76,6 @@ extension DietListVC {
         dietListTV.dataSource = self
         dietListTV.delegate = self
     }
-    
-    private func initPostList() {
-        postList.append(contentsOf: [
-            DietPostData.init(title: "아침", content: "오늘은 샐러드를 먹었다. 맛있었다. 다음에는 좀 더 종류가 다양한 것이 들어가 있는 샐러드를 먹고 싶고 친구들에게 이 가게를 추천하 오늘은 샐러드를 먹었다. 맛있었다.", thumbnailImgName: "Rectangle 293", iconImgName: "level1"),
-            DietPostData.init(title: "점심", content: "오늘은 샐러드를 먹었다. 맛있었다. 다음에는 좀 더 종류가 다양한 것이 들어가 있는 샐러드를 먹고 싶고 친구들에게 이 가게를 추천하 오늘은 샐러드를 먹었다. 맛있었다.", thumbnailImgName: "Rectangle 293", iconImgName: "level2"),
-            DietPostData.init(title: "저녁", content: "오늘은 샐러드를 먹었다. 맛있었다. 다음에는 좀 더 종류가 다양한 것이 들어가 있는 샐러드를 먹고 싶고 친구들에게 이 가게를 추천하 오늘은 샐러드를 먹었다. 맛있었다.", thumbnailImgName: "Rectangle 293", iconImgName: "level1")
-        ])
-    }
 }
 
 // MARK: - UITableViewDelegate
@@ -113,6 +105,7 @@ extension DietListVC: UITableViewDataSource {
         guard let nextVC = UIStoryboard.init(name: Identifiers.DietDetailSB, bundle: nil).instantiateViewController(withIdentifier: DietDetailVC.className) as? DietDetailVC else { return }
         
         nextVC.selectedDate = getDayDate(date: listCalendar.selectedDate ?? today )
+        nextVC.postId = postList[indexPath.row].postID
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
@@ -164,4 +157,37 @@ extension DietListVC: FSCalendarDelegate, FSCalendarDataSource {
         }
     }
     
+    /// 날짜 선택 시 호출
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        self.getDayDietList(date: getSelectedDate(date: date))
+    }
+}
+
+// MARK: - Network
+extension DietListVC {
+    
+    /// 식단 리스트 조회 메서드
+    private func getDayDietList(date: String) {
+        self.activityIndicator.startAnimating()
+        DietAPI.shared.getDietListAPI(date: date) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+                if let data = res as? [DietListDataModel] {
+                    DispatchQueue.main.async {
+                        self.postList = data
+                        self.dietListTV.reloadData()
+                    }
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
 }

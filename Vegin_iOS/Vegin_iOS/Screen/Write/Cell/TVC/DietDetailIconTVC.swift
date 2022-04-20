@@ -13,14 +13,13 @@ class DietDetailIconTVC: BaseTVC {
     @IBOutlet weak var iconCV: UICollectionView!
     
     // MARK: Properties
-    var iconImgList: [IconImgData] = []
+    var iconImgList: [Int] = []
     
     // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         registerCV()
         setUpCV()
-        initIconList()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,15 +36,6 @@ extension DietDetailIconTVC {
     private func setUpCV() {
         iconCV.delegate = self
         iconCV.dataSource = self
-    }
-    
-    private func initIconList() {
-        iconImgList.append(contentsOf: [
-            IconImgData.init(iconImgName: "level1"),
-            IconImgData.init(iconImgName: "level2"),
-            IconImgData.init(iconImgName: "level3"),
-            IconImgData.init(iconImgName: "level4")
-        ])
     }
 }
 
