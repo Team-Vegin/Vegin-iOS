@@ -13,6 +13,7 @@ enum DietService {
     case getDietList(date: String)
     case getDietDetail(postID: Int)
     case createDietPost(image: UIImage, meal: [Int], mealTime: Int, amount: Int, memo: String, date: String)
+    case deleteDietPost(postID: Int)
 }
 
 extension DietService: TargetType {
@@ -24,7 +25,7 @@ extension DietService: TargetType {
         switch self {
         case .getDietList(let date):
             return "/diet/day/\(date)"
-        case .getDietDetail(let postID):
+        case .getDietDetail(let postID), .deleteDietPost(let postID):
             return "/diet/\(postID)"
         case .createDietPost:
             return "/diet"
@@ -37,12 +38,14 @@ extension DietService: TargetType {
             return .get
         case .createDietPost:
             return .post
+        case .deleteDietPost:
+            return .delete
         }
     }
     
     var task: Task {
         switch self {
-        case .getDietList, .getDietDetail:
+        case .getDietList, .getDietDetail, .deleteDietPost:
             return .requestPlain
         case .createDietPost(let image, let meal, let mealTime, let amount, let memo, let date):
             var multiPartData: [Moya.MultipartFormData] = []
@@ -77,7 +80,7 @@ extension DietService: TargetType {
         let accessToken = UserDefaults.standard.string(forKey: UserDefaults.Keys.AccessToken) ?? ""
         
         switch self {
-        case .getDietList, .getDietDetail:
+        case .getDietList, .getDietDetail, .deleteDietPost:
             return ["Content-Type": "application/json", "accessToken": accessToken]
         case .createDietPost:
             return ["Content-Type": "multipart/form-data", "accessToken": accessToken]

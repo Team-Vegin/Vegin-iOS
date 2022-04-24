@@ -43,7 +43,14 @@ class DietDetailVC: BaseVC {
         makeTwoAlertWithCancel(okTitle: "수정하기", secondOkTitle: "삭제하기", okAction: { _ in
             print("수정하기")
         }, secondOkAction: { _ in
-            print("삭제하기")
+            guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+            alert.showVeginAlert(vc: self, message: "식단을 삭제하시겠습니까?", confirmBtnTitle: "확인", cancelBtnTitle: "취소", iconImg: "delete", type: .withDoubleBtn)
+            alert.confirmBtn.press {
+                self.deleteDietPost(postID: self.postId ?? 0)
+            }
+            alert.cancelBtn.press {
+                alert.dismiss(animated: true, completion: nil)
+            }
         })
     }
 }
@@ -149,6 +156,28 @@ extension DietDetailVC {
                         self.detailDiet = data
                         self.dietPostTV.reloadData()
                     }
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 식단 삭제 메서드
+    private func deleteDietPost(postID: Int) {
+        self.activityIndicator.startAnimating()
+        DietAPI.shared.deleteDietPostAPI(postID: postID) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                self.activityIndicator.stopAnimating()
+                if let data = res as? PostResModel {
+                    print(data)
+                    self.navigationController?.popViewController(animated: true)
                 }
             case .requestErr(let res):
                 self.activityIndicator.stopAnimating()
