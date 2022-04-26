@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,13 +25,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BP-YE-CGt">
-                        <rect key="frame" x="114" y="10" width="37" height="17"/>
+                        <rect key="frame" x="114" y="11" width="37" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <color key="textColor" name="darkMain"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqG-Yc-R76">
-                        <rect key="frame" x="114" y="31" width="229" height="39"/>
+                        <rect key="frame" x="114" y="32" width="229" height="39"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="39" id="43R-Iw-9CH"/>
                         </constraints>
@@ -40,29 +40,30 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8X-hA-Ayb">
-                        <rect key="frame" x="325" y="80" width="27" height="12"/>
+                        <rect key="frame" x="325" y="79" width="27" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" name="darkGray"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuE-Mm-mJl">
-                        <rect key="frame" x="115" y="80" width="27" height="12"/>
+                        <rect key="frame" x="115" y="79" width="27" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" name="darkGray"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="nuE-Mm-mJl" firstAttribute="top" secondItem="CqG-Yc-R76" secondAttribute="bottom" constant="8" symbolic="YES" id="0Bd-k6-96f"/>
+                    <constraint firstItem="nuE-Mm-mJl" firstAttribute="bottom" secondItem="7ty-Bw-q4T" secondAttribute="bottom" id="F1J-rc-iAH"/>
                     <constraint firstItem="nuE-Mm-mJl" firstAttribute="leading" secondItem="7ty-Bw-q4T" secondAttribute="trailing" constant="13" id="HfP-In-6AD"/>
-                    <constraint firstAttribute="bottom" secondItem="nuE-Mm-mJl" secondAttribute="bottom" constant="10" id="K9m-xG-fU4"/>
                     <constraint firstItem="7ty-Bw-q4T" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="OG4-Sc-IuU"/>
                     <constraint firstAttribute="trailing" secondItem="CqG-Yc-R76" secondAttribute="trailing" constant="32" id="Om5-36-mlS"/>
                     <constraint firstItem="7ty-Bw-q4T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="SVC-wG-eRl"/>
-                    <constraint firstItem="1BP-YE-CGt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="fxh-91-wc0"/>
+                    <constraint firstItem="1BP-YE-CGt" firstAttribute="top" secondItem="7ty-Bw-q4T" secondAttribute="top" id="ZUO-t3-INk"/>
+                    <constraint firstItem="c8X-hA-Ayb" firstAttribute="bottom" secondItem="7ty-Bw-q4T" secondAttribute="bottom" id="j7f-5z-lQg"/>
                     <constraint firstItem="CqG-Yc-R76" firstAttribute="top" secondItem="1BP-YE-CGt" secondAttribute="bottom" constant="4" id="m6a-Hf-m7w"/>
                     <constraint firstItem="1BP-YE-CGt" firstAttribute="leading" secondItem="7ty-Bw-q4T" secondAttribute="trailing" constant="12" id="pI2-kO-ty4"/>
                     <constraint firstAttribute="trailing" secondItem="c8X-hA-Ayb" secondAttribute="trailing" constant="23" id="vSx-5w-RH1"/>
-                    <constraint firstAttribute="bottom" secondItem="c8X-hA-Ayb" secondAttribute="bottom" constant="10" id="wDh-wC-XZk"/>
                     <constraint firstItem="CqG-Yc-R76" firstAttribute="leading" secondItem="7ty-Bw-q4T" secondAttribute="trailing" constant="12" id="z9v-4b-DAV"/>
                 </constraints>
             </tableViewCellContentView>
