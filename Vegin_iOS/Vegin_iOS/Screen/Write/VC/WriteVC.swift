@@ -420,9 +420,8 @@ extension WriteVC {
         DietAPI.shared.createDietPostAPI(image: image, meal: meal, mealTime: mealTime, amount: amount, memo: memo, date: date) { networkResult in
             switch networkResult {
             case .success(let res):
-                self.activityIndicator.stopAnimating()
                 print(res)
-                print("알럿띄우기")
+                self.activityIndicator.stopAnimating()
                 guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
                 alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
                 alert.confirmBtn.press {
