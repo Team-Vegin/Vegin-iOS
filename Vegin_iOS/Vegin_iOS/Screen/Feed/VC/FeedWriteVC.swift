@@ -9,29 +9,7 @@ import UIKit
 
 class FeedWriteVC: BaseVC {
     
-    var categoryArray: [Bool] = [false, false, false, false, false]
-    var isCategory1Selected = false {
-        didSet { setIconImage() }
-    }
-    var isCategory2Selected = false {
-        didSet { setIconImage() }
-    }
-    var isCategory3Selected = false {
-        didSet { setIconImage() }
-    }
-    var isCategory4Selected = false {
-        didSet { setIconImage() }
-    }
-    var isCategory5Selected = false {
-        didSet { setIconImage() }
-    }
-    
-    var category: Int?
-    let imgPicker = UIImagePickerController()
-    private let titlePlaceholder = "제목을 입력해주세요 (13자 이내)"
-    private let memoPlaceholder = "내용을 입력해주세요"
-    
-    //MARK: IBOutlet
+    // MARK: IBOutlet
     @IBOutlet weak var naviView: UIView!
     @IBOutlet weak var feedImgView: UIImageView!
     @IBOutlet weak var imgContentView: UIView!
@@ -45,15 +23,20 @@ class FeedWriteVC: BaseVC {
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var saveBtn: VeginBtn! {
         didSet {
-            saveBtn.isActivated = false     /// 기본상태: 비활성화
+            saveBtn.isActivated = false
             saveBtn.setTitleWithStyle(title: "작성 완료", size: 16, weight: .semiBold)
         }
     }
     
-    //MARK: LifeCycle
+    // MARK: Properties
+    private let imgPicker = UIImagePickerController()
+    private let titlePlaceholder = "제목을 입력해주세요"
+    private let memoPlaceholder = "내용을 입력해주세요"
+    private var categoryID: Int = 0
+    
+    // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        feedImgView.contentMode = .scaleAspectFill
         self.titleTextView.delegate = self
         self.memoTextView.delegate = self
         self.tabBarController?.tabBar.isHidden = true
@@ -64,12 +47,11 @@ class FeedWriteVC: BaseVC {
         hideKeyboardWhenTappedAround()
     }
     
-    //MARK: IBAction
-    /// 뒤로가기
+    // MARK: IBAction
     @IBAction func tapNaviBackBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    /// 사진 업로드
+
     @IBAction func tapImgUploadBtn(_ sender: Any) {
         makeTwoAlertWithCancelAndTitle(title: "이미지 업로드", message: "사진을 업로드해주세요", okTitle: "사진앨범", secondOkTitle: "카메라", okAction: { _ in
             self.openLibrary()
@@ -77,87 +59,84 @@ class FeedWriteVC: BaseVC {
             self.openCamera()
         })
     }
-    /// 저장하기
-    @IBAction func tapSaveBtn(_ sender: Any) {
-        var imageCount = UserDefaults.standard.integer(forKey: "imageCount")
-        imageCount += 1
-        UserDefaults.standard.set(imageCount, forKey: "imageCount")
+    
+    @IBAction func tapSaveBtn(_ sender: UIButton) {
+    // API 호출
         
-        categoryArray[0] = isCategory1Selected
-        categoryArray[1] = isCategory2Selected
-        categoryArray[2] = isCategory3Selected
-        categoryArray[3] = isCategory4Selected
-        categoryArray[4] = isCategory5Selected
-        
-        for i in 0...4 {
-            if categoryArray[4-i] == true {
-                UserDefaults.standard.set(5-i, forKey: "resultEmoji")
-                break
-            }
-        }
-        /// 작성 완료 창
-        guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
-        alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
-        alert.confirmBtn.press {
-            self.navigationController?.popViewController(animated: true)
-        }
     }
     
-    /// 선택 시 버튼 상태 변경
-    func setIconImage() {
-        if isCategory1Selected {
-            categoryBtn1.setImage(UIImage.init(named: "life_selected"), for: .normal)
-        } else if !isCategory1Selected {
-            categoryBtn1.setImage(UIImage.init(named: "life"), for: .normal)
+    @IBAction func tapCategoryBtn1(_ sender: UIButton) {
+        categoryBtn1.isSelected.toggle()
+        [categoryBtn2, categoryBtn3, categoryBtn4, categoryBtn5].forEach {
+            btn in btn?.isSelected = false
         }
-        
-        if isCategory2Selected {
-            categoryBtn2.setImage(UIImage.init(named: "store_selected"), for: .normal)
-        } else if !isCategory2Selected {
-            categoryBtn2.setImage(UIImage.init(named: "store"), for: .normal)
+        [categoryBtn1, categoryBtn2, categoryBtn3, categoryBtn4, categoryBtn5].forEach {
+            configureBtnUI(btn: $0)
         }
-        
-        if isCategory3Selected {
-            categoryBtn3.setImage(UIImage.init(named: "tips_selected"), for: .normal)
-        } else if !isCategory3Selected {
-            categoryBtn3.setImage(UIImage.init(named: "tips"), for: .normal)
-        }
-        
-        if isCategory4Selected {
-            categoryBtn4.setImage(UIImage.init(named: "recipe_selected"), for: .normal)
-        } else if !isCategory4Selected {
-            categoryBtn4.setImage(UIImage.init(named: "recipe"), for: .normal)
-        }
-        
-        if isCategory5Selected {
-            categoryBtn5.setImage(UIImage.init(named: "etc_selected"), for: .normal)
-        } else if !isCategory5Selected {
-            categoryBtn5.setImage(UIImage.init(named: "etc"), for: .normal)
-        }
-        //setUpSaveBtnStatus()
+        setUpSaveBtnStatus()
     }
     
-    @IBAction func tapCategoryBtn1(_ sender: Any) {
-        isCategory1Selected = !isCategory1Selected
+    @IBAction func tabCategoryBtn2(_ sender: UIButton) {
+        categoryBtn2.isSelected.toggle()
+        [categoryBtn1, categoryBtn3, categoryBtn4, categoryBtn5].forEach {
+            btn in btn?.isSelected = false
+        }
+        [categoryBtn1, categoryBtn2, categoryBtn3, categoryBtn4, categoryBtn5].forEach {
+            configureBtnUI(btn: $0)
+        }
+        setUpSaveBtnStatus()
     }
-    @IBAction func tabCategoryBtn2(_ sender: Any) {
-        isCategory2Selected = !isCategory2Selected
+    
+    @IBAction func tabCategoryBtn3(_ sender: UIButton) {
+        categoryBtn3.isSelected.toggle()
+        [categoryBtn1, categoryBtn2, categoryBtn4, categoryBtn5].forEach {
+            btn in btn?.isSelected = false
+        }
+        [categoryBtn1, categoryBtn2, categoryBtn3, categoryBtn4, categoryBtn5].forEach {
+            configureBtnUI(btn: $0)
+        }
+        setUpSaveBtnStatus()
     }
-    @IBAction func tabCategoryBtn3(_ sender: Any) {
-        isCategory3Selected = !isCategory3Selected
+    
+    @IBAction func tabCategoryBtn4(_ sender: UIButton) {
+        categoryBtn4.isSelected.toggle()
+        [categoryBtn1, categoryBtn2, categoryBtn3, categoryBtn5].forEach {
+            btn in btn?.isSelected = false
+        }
+        [categoryBtn1, categoryBtn2, categoryBtn3, categoryBtn4, categoryBtn5].forEach {
+            configureBtnUI(btn: $0)
+        }
+        setUpSaveBtnStatus()
     }
-    @IBAction func tabCategoryBtn4(_ sender: Any) {
-        isCategory4Selected = !isCategory4Selected
-    }
-    @IBAction func tabCategoryBtn5(_ sender: Any) {
-        isCategory5Selected = !isCategory5Selected
+    
+    @IBAction func tabCategoryBtn5(_ sender: UIButton) {
+        categoryBtn5.isSelected.toggle()
+        [categoryBtn1, categoryBtn2, categoryBtn3, categoryBtn4].forEach {
+            btn in btn?.isSelected = false
+        }
+        [categoryBtn1, categoryBtn2, categoryBtn3, categoryBtn4, categoryBtn5].forEach {
+            configureBtnUI(btn: $0)
+        }
+        setUpSaveBtnStatus()
     }
     
     //MARK: - Custom Method
-    /// 저장하기 버튼 상태 지정 메소드
+    
+    /// 카테고리 버튼 UI 설정 메서드
+    private func configureBtnUI(btn: UIButton) {
+        if btn.isSelected {
+            btn.setTitleColor(.white, for: .normal)
+            btn.backgroundColor = .darkMain
+        } else {
+            btn.setTitleColor(.defaultTextGray, for: .normal)
+            btn.backgroundColor = .defaultGray
+        }
+    }
+    
+    /// 저장하기 버튼 상태 지정 메서드
     private func setUpSaveBtnStatus() {
-        if isCategory1Selected || isCategory2Selected || isCategory3Selected || isCategory4Selected || isCategory5Selected  {
-            if titleTextView.text.count != 0 && memoTextView.text.count != 0 {
+        if categoryBtn1.isSelected  || categoryBtn2.isSelected || categoryBtn3.isSelected || categoryBtn4.isSelected || categoryBtn5.isSelected  {
+            if titleTextView.hasText && titleTextView.text != titlePlaceholder && memoTextView.hasText && memoTextView.text != memoPlaceholder {
                 self.saveBtn.isActivated = true
             } else {
                 self.saveBtn.isActivated = false
@@ -176,7 +155,7 @@ class FeedWriteVC: BaseVC {
     
     /// 카메라 불러오는 메소드
     private func openCamera() {
-        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+        if (UIImagePickerController .isSourceTypeAvailable(.camera)) {
             imgPicker.sourceType = .camera
             imgPicker.allowsEditing = true
             present(imgPicker, animated: false, completion: nil)
@@ -189,8 +168,13 @@ class FeedWriteVC: BaseVC {
 // MARK: - UI
 extension FeedWriteVC {
     private func configureUI() {
+        [categoryBtn1, categoryBtn2, categoryBtn3, categoryBtn4, categoryBtn5].forEach { btn in
+            btn?.makeRounded(cornerRadius: 0.5 * (btn?.bounds.size.height ?? 30))
+            btn?.isSelected = false
+        }
         imgContentView.layer.cornerRadius = 25
         feedImgView.layer.cornerRadius = 25
+        feedImgView.contentMode = .scaleAspectFill
         saveBtn.makeRounded(cornerRadius: 0.5 * saveBtn.bounds.size.height)
     }
 }
@@ -222,33 +206,29 @@ extension FeedWriteVC: UIImagePickerControllerDelegate {
 // MARK: UITextViewDelegate
 extension FeedWriteVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == titlePlaceholder {
-            textView.text.removeAll()
-            textView.textColor = .darkMain
-        } else if textView.text == memoPlaceholder {
-            textView.text.removeAll()
-            textView.textColor = .black
+        if titleTextView.text == titlePlaceholder {
+            titleTextView.text.removeAll()
+            titleTextView.textColor = .darkMain
         }
+        
+        if memoTextView.text == memoPlaceholder {
+            memoTextView.text.removeAll()
+            memoTextView.textColor = .black
+        }
+        setUpSaveBtnStatus()
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if !textView.hasText || textView.text == titlePlaceholder {
-            textView.text = titlePlaceholder
-            textView.textColor = .gray
-        } else if !textView.hasText || textView.text == memoPlaceholder {
-            textView.text = memoPlaceholder
-            textView.textColor = .gray
+        if !titleTextView.hasText || titleTextView.text == titlePlaceholder {
+            titleTextView.text = titlePlaceholder
+            titleTextView.textColor = .gray
         }
-    }
-    
-    ///텍스트 값에 따른 저장버튼 활성화
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if range.location == 0 || range.length != 0 {
-            self.saveBtn.isActivated = false
-        } else {
-            self.saveBtn.isActivated = true
+        
+        if !memoTextView.hasText || memoTextView.text == memoPlaceholder {
+            memoTextView.text = memoPlaceholder
+            memoTextView.textColor = .gray
         }
-        return true
+        setUpSaveBtnStatus()
     }
 }
 
