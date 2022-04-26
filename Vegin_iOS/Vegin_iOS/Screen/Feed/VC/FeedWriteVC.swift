@@ -140,7 +140,7 @@ class FeedWriteVC: BaseVC {
     /// 저장하기 버튼 상태 지정 메서드
     private func setUpSaveBtnStatus() {
         if categoryBtn1.isSelected  || categoryBtn2.isSelected || categoryBtn3.isSelected || categoryBtn4.isSelected || categoryBtn5.isSelected  {
-            if titleTextView.hasText && titleTextView.text != titlePlaceholder && memoTextView.hasText && memoTextView.text != memoPlaceholder {
+            if titleTextView.hasText && titleTextView.text != titlePlaceholder && memoTextView.hasText && memoTextView.text != memoPlaceholder && imgUploadBtn.tintColor == .clear {
                 self.saveBtn.isActivated = true
             } else {
                 self.saveBtn.isActivated = false
