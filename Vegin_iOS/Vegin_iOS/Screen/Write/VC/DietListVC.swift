@@ -25,12 +25,6 @@ class DietListVC: BaseVC {
     }()
     
     // MARK: Life Cycle
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
-        getDayDietList(date: getSelectedDate(date: selectedDate ?? today))
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addShadowToNaviBar()
@@ -39,6 +33,12 @@ class DietListVC: BaseVC {
         setUpCalendar()
         configureCalendarUI()
         getDayDietList(date: getSelectedDate(date: today))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+        getDayDietList(date: getSelectedDate(date: selectedDate ?? today))
     }
     
     // MARK: IBAction

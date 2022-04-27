@@ -15,17 +15,18 @@ class FeedMainVC: BaseVC {
     var postList: [FeedListDataModel] = []
     var selectedTagId: Int = 1
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        getFeedPostList(tagID: selectedTagId)
-    }
-    
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTVC()
         setUpTV()
         getFeedPostList(tagID: 1)
         NotificationCenter.default.addObserver(self, selector: #selector(loadTagData), name: NSNotification.Name(rawValue: "sendTagData"), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getFeedPostList(tagID: selectedTagId)
     }
 }
 // MARK: - Custom Methods
