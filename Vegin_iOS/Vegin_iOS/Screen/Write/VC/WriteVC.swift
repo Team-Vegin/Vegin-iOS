@@ -8,8 +8,6 @@
 import UIKit
 
 class WriteVC: BaseVC {
-
-    var emojiArray: [Bool] = [false, false, false, false, false, false]
     
     var isLevel1Selected = false {
         didSet {
@@ -90,32 +88,6 @@ class WriteVC: BaseVC {
     }
     
     @IBAction func touchUpToSaveButton(_ sender: UIButton) {
-        var imageCount = UserDefaults.standard.integer(forKey: "imageCount")
-        imageCount += 1
-        UserDefaults.standard.set(imageCount, forKey: "imageCount")
-        
-        emojiArray[0] = isLevel1Selected
-        emojiArray[1] = isLevel2Selected
-        emojiArray[2] = isLevel3Selected
-        emojiArray[3] = isLevel4Selected
-        emojiArray[4] = isLevel5Selected
-        emojiArray[5] = isLevel6Selected
-        
-        for i in 0...5 {
-            if emojiArray[5-i] == true {
-                UserDefaults.standard.set(5-i, forKey: "resultEmoji")
-                break
-            }
-        }
-        
-        let resultEmoji = UserDefaults.standard.integer(forKey: "resultEmoji")
-
-        var calendarEmoji: [String:Any] = UserDefaults.standard.dictionary(forKey: "calendarEmoji") ?? [:]
-
-        calendarEmoji.updateValue(resultEmoji, forKey: selectedDate)
-        UserDefaults.standard.set(calendarEmoji, forKey: "calendarEmoji")
-        //print(UserDefaults.standard.dictionary(forKey: "calendarEmoji"))
-        
         createDietPost(image: foodImgView.image ?? UIImage(), meal: mealArray, mealTime: mealTime, amount: mealAmount, memo: memoTextView.text ?? "", date: writeDate)
     }
     

@@ -132,6 +132,20 @@ extension UIViewController {
         return df.string(from: date)
     }
     
+    /// MM만 Int타입으로 리턴하는 함수
+    func getMonth(date: Date) -> Int {
+        let df = DateFormatter()
+        df.dateFormat = "MM"
+        return Int(df.string(from: date)) ?? 0
+    }
+    
+    /// yyyy만 Int타입으로 리턴하는 함수
+    func getYear(date: Date) -> Int {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy"
+        return Int(df.string(from: date)) ?? 0
+    }
+    
     /**
      - Description:
      VC나 View 내에서 해당 함수를 호출하면, 햅틱이 발생하는 메서드입니다.

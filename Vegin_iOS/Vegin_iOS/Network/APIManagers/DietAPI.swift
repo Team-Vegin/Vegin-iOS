@@ -48,6 +48,22 @@ extension DietAPI {
         }
     }
     
+    /// [GET] 식단 캘린더 조회
+    func getDietCalendarDataAPI(year: Int, month: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        provider.request(.getDietCalendarData(year: year, month: month)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                completion(self.getDietCalendarDataJudgeData(status: statusCode, data: data))
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     /// [POST] 식단 게시글 작성
     func createDietPostAPI(image: UIImage, meal: [Int], mealTime: Int, amount: Int, memo: String, date: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         provider.request(.createDietPost(image: image, meal: meal, mealTime: mealTime, amount: amount, memo: memo, date: date)) { result in
@@ -106,6 +122,25 @@ extension DietAPI {
         let decoder = JSONDecoder()
         
         guard let decodedData = try? decoder.decode(GenericResponse<DietPostDataModel>.self, from: data) else { return .pathErr }
+        
+        switch status {
+        case 200:
+            return .success(decodedData.data ?? "None-Data")
+        case 400:
+            return .requestErr(decodedData.message)
+        case 404:
+            return .requestErr(404)
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
+        }
+    }
+    
+    private func getDietCalendarDataJudgeData(status: Int, data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        
+        guard let decodedData = try? decoder.decode(GenericResponse<[DietCalendarResModel]>.self, from: data) else { return .pathErr }
         
         switch status {
         case 200:
