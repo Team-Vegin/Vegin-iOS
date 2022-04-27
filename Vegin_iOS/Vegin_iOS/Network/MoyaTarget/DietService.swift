@@ -12,6 +12,7 @@ import CoreMedia
 enum DietService {
     case getDietList(date: String)
     case getDietDetail(postID: Int)
+    case getDietCalendarData(year: Int, month: Int)
     case createDietPost(image: UIImage, meal: [Int], mealTime: Int, amount: Int, memo: String, date: String)
     case deleteDietPost(postID: Int)
 }
@@ -27,6 +28,8 @@ extension DietService: TargetType {
             return "/diet/day/\(date)"
         case .getDietDetail(let postID), .deleteDietPost(let postID):
             return "/diet/\(postID)"
+        case .getDietCalendarData(let year, let month):
+            return "/diet/month/\(year)/\(month)"
         case .createDietPost:
             return "/diet"
         }
@@ -34,7 +37,7 @@ extension DietService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .getDietList, .getDietDetail:
+        case .getDietList, .getDietDetail, .getDietCalendarData:
             return .get
         case .createDietPost:
             return .post
@@ -45,7 +48,7 @@ extension DietService: TargetType {
     
     var task: Task {
         switch self {
-        case .getDietList, .getDietDetail, .deleteDietPost:
+        case .getDietList, .getDietDetail, .deleteDietPost, .getDietCalendarData:
             return .requestPlain
         case .createDietPost(let image, let meal, let mealTime, let amount, let memo, let date):
             var multiPartData: [Moya.MultipartFormData] = []
@@ -80,7 +83,7 @@ extension DietService: TargetType {
         let accessToken = UserDefaults.standard.string(forKey: UserDefaults.Keys.AccessToken) ?? ""
         
         switch self {
-        case .getDietList, .getDietDetail, .deleteDietPost:
+        case .getDietList, .getDietDetail, .deleteDietPost, .getDietCalendarData:
             return ["Content-Type": "application/json", "accessToken": accessToken]
         case .createDietPost:
             return ["Content-Type": "multipart/form-data", "accessToken": accessToken]
