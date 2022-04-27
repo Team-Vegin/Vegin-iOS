@@ -77,3 +77,13 @@ struct FeedMyPostListData {
     }
 }
 
+/// 온보딩 페이지 뷰 리스트 위한 모델
+struct OnboardingData {
+    let onboardingImgName: String
+    let boldText: String
+    let contentText: String
+    
+    func makeOnboardingImg() -> UIImage? {
+        return UIImage(named: onboardingImgName)
+    }
+}
