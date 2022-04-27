@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		5A751C8C27E4CE5C003DCD7C /* HomeNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A751C8B27E4CE5C003DCD7C /* HomeNC.swift */; };
 		5A95325927E1375E001E72A3 /* CharacterBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95325827E1375E001E72A3 /* CharacterBookVC.swift */; };
+		5ABF7F6D28180A57000D1B49 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF7F6C28180A57000D1B49 /* OnboardingVC.swift */; };
+		5ABF7F6F28180A70000D1B49 /* OnboardingSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF7F6E28180A70000D1B49 /* OnboardingSB.storyboard */; };
+		5ABF7F7B28180EC8000D1B49 /* OnboardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF7F7928180EC8000D1B49 /* OnboardingCVC.swift */; };
+		5ABF7F7C28180EC8000D1B49 /* OnboardingCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF7F7A28180EC8000D1B49 /* OnboardingCVC.xib */; };
 		772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C146E273B7DAB00BB0127 /* AppDelegate.swift */; };
 		772C1471273B7DAB00BB0127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1470273B7DAB00BB0127 /* SceneDelegate.swift */; };
 		772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1474273B7DAB00BB0127 /* Main.storyboard */; };
@@ -128,6 +132,10 @@
 		4633DCDA9E2208418F65B04D /* Pods-Vegin_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegin_iOS.release.xcconfig"; path = "Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5A751C8B27E4CE5C003DCD7C /* HomeNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNC.swift; sourceTree = "<group>"; };
 		5A95325827E1375E001E72A3 /* CharacterBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBookVC.swift; sourceTree = "<group>"; };
+		5ABF7F6C28180A57000D1B49 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		5ABF7F6E28180A70000D1B49 /* OnboardingSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingSB.storyboard; sourceTree = "<group>"; };
+		5ABF7F7928180EC8000D1B49 /* OnboardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCVC.swift; sourceTree = "<group>"; };
+		5ABF7F7A28180EC8000D1B49 /* OnboardingCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCVC.xib; sourceTree = "<group>"; };
 		772C146B273B7DAB00BB0127 /* Vegin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772C146E273B7DAB00BB0127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772C1470273B7DAB00BB0127 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -263,6 +271,41 @@
 				4633DCDA9E2208418F65B04D /* Pods-Vegin_iOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5ABF7F692816812C000D1B49 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5ABF7F7028180AA8000D1B49 /* Cell */,
+				5ABF7F6A28168143000D1B49 /* VC */,
+				5ABF7F6B28168153000D1B49 /* SB */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		5ABF7F6A28168143000D1B49 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				5ABF7F6C28180A57000D1B49 /* OnboardingVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		5ABF7F6B28168153000D1B49 /* SB */ = {
+			isa = PBXGroup;
+			children = (
+				5ABF7F6E28180A70000D1B49 /* OnboardingSB.storyboard */,
+			);
+			path = SB;
+			sourceTree = "<group>";
+		};
+		5ABF7F7028180AA8000D1B49 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5ABF7F7928180EC8000D1B49 /* OnboardingCVC.swift */,
+				5ABF7F7A28180EC8000D1B49 /* OnboardingCVC.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		772C1462273B7DAB00BB0127 = {
@@ -585,6 +628,7 @@
 		77ED045727B4255D00D077CA /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				5ABF7F692816812C000D1B49 /* Onboarding */,
 				7742884827F144BC001A7CFA /* SignUp */,
 				7742883F27EDEABE001A7CFA /* SignIn */,
 				77ED047027B42B1200D077CA /* TabBar */,
@@ -939,10 +983,12 @@
 				772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */,
 				77DBB85927DF449800000623 /* DietDetailIconTVC.xib in Resources */,
 				7742884C27F14512001A7CFA /* SignUpSB.storyboard in Resources */,
+				5ABF7F6F28180A70000D1B49 /* OnboardingSB.storyboard in Resources */,
 				7757288B27D0B0E400148C9A /* Pretendard-SemiBold.otf in Resources */,
 				772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */,
 				7757288127CE0F9500148C9A /* DietListTVC.xib in Resources */,
 				77DBB85527DF428300000623 /* DietDetailImgTVC.xib in Resources */,
+				5ABF7F7C28180EC8000D1B49 /* OnboardingCVC.xib in Resources */,
 				7742884327EDEB1E001A7CFA /* SignInSB.storyboard in Resources */,
 				77DBB87827E47ECE00000623 /* GoogleService-Info.plist in Resources */,
 				779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */,
@@ -1045,6 +1091,7 @@
 				77ED047D27B692E500D077CA /* TVRegisterable.swift in Sources */,
 				5A751C8C27E4CE5C003DCD7C /* HomeNC.swift in Sources */,
 				7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */,
+				5ABF7F7B28180EC8000D1B49 /* OnboardingCVC.swift in Sources */,
 				7742885B27F40CF9001A7CFA /* NetworkResult.swift in Sources */,
 				77DBB87327E1106600000623 /* FeedMyPostEmptyTVC.swift in Sources */,
 				7756F9B027FDFE08006F6EF3 /* FeedWriteVC.swift in Sources */,
@@ -1057,6 +1104,7 @@
 				77DBB86527DF49A600000623 /* DietDetailMemoTVC.swift in Sources */,
 				77DBB86127DF47DF00000623 /* DietDetailInfoTVC.swift in Sources */,
 				77D0926E280BF1B100CB9F6A /* WriteResModel.swift in Sources */,
+				5ABF7F6D28180A57000D1B49 /* OnboardingVC.swift in Sources */,
 				77D9ED332805D2C2000EA76A /* FeedDetailContentTVC.swift in Sources */,
 				77D9ED372805D4B5000EA76A /* FeedDetailEmojiTVC.swift in Sources */,
 				7756F9AD27FDFDB8006F6EF3 /* CharacterBookCVC.swift in Sources */,
