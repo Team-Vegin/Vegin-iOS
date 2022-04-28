@@ -15,8 +15,8 @@ class CharacterBookCVC: BaseCVC {
     @IBOutlet weak var thirdMissionLabel: UILabel!
     @IBOutlet weak var chooseBtn: VeginBtn! {
         didSet {
-            chooseBtn.isActivated = false
-            chooseBtn.setTitleWithStyle(title: "캐릭터 선택하기", size: 16, weight: .bold)
+            chooseBtn.isActivated = true
+            chooseBtn.setTitleWithStyle(title: " 도전하기", size: 16, weight: .bold)
         }
     }
     
