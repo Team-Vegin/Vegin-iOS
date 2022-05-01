@@ -16,6 +16,7 @@
 		772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */; };
 		772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1482273CF9D500BB0127 /* CalendarVC.swift */; };
 		7731374F281938B600E69459 /* DietCalendarResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7731374E281938B600E69459 /* DietCalendarResModel.swift */; };
+		77313752281EE2AC00E69459 /* MissionStartResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313751281EE2AC00E69459 /* MissionStartResModel.swift */; };
 		7742884327EDEB1E001A7CFA /* SignInSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742884227EDEB1E001A7CFA /* SignInSB.storyboard */; };
 		7742884727EE18CB001A7CFA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742884627EE18CB001A7CFA /* SignInVC.swift */; };
 		7742884C27F14512001A7CFA /* SignUpSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742884B27F14512001A7CFA /* SignUpSB.storyboard */; };
@@ -138,6 +139,7 @@
 		772C147C273B7DAE00BB0127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		772C1482273CF9D500BB0127 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		7731374E281938B600E69459 /* DietCalendarResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietCalendarResModel.swift; sourceTree = "<group>"; };
+		77313751281EE2AC00E69459 /* MissionStartResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionStartResModel.swift; sourceTree = "<group>"; };
 		7742884227EDEB1E001A7CFA /* SignInSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSB.storyboard; sourceTree = "<group>"; };
 		7742884627EE18CB001A7CFA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		7742884B27F14512001A7CFA /* SignUpSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSB.storyboard; sourceTree = "<group>"; };
@@ -294,6 +296,14 @@
 				7744C5762742BDD500325814 /* Support */,
 			);
 			path = Vegin_iOS;
+			sourceTree = "<group>";
+		};
+		77313750281EE1C100E69459 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				77313751281EE2AC00E69459 /* MissionStartResModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		7742883F27EDEABE001A7CFA /* SignIn */ = {
@@ -1083,6 +1093,7 @@
 				77D9ED2228043E99000EA76A /* FeedService.swift in Sources */,
 				7742889227FACE89001A7CFA /* SignUpDataModel.swift in Sources */,
 				77D9ED2F2805BC56000EA76A /* FeedDetailTitleTVC.swift in Sources */,
+				77313752281EE2AC00E69459 /* MissionStartResModel.swift in Sources */,
 				772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */,
 				77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */,
 				77DBB85427DF428300000623 /* DietDetailImgTVC.swift in Sources */,
