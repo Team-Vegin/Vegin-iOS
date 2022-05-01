@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CharacterBookVC: UIViewController {
+class CharacterBookVC: BaseVC {
     @IBOutlet weak var characterBookCV: UICollectionView!
     
     // MARK: Properties
@@ -55,27 +55,6 @@ extension CharacterBookVC {
             CharacterBookData(characterImgName: "Hidden_Hovi", characterName: "호비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
             
         ])
-    }
-}
-
-// MARK: - SendDataDelegate
-extension CharacterBookVC: SendDataDelegate {
-    func presentAlert() {
-        print("보이나")
-        guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
-        alert.showVeginAlert(vc: self, message: "미션을 중단하시겠습니까?", confirmBtnTitle: "확인", cancelBtnTitle: "취소", iconImg: "delete", type: .withDoubleBtn)
-        alert.confirmBtn.press {
-            self.selectedIndex = -1
-            self.characterBookCV.reloadData()
-        }
-        alert.cancelBtn.press {
-            alert.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    func sendData(data: Int) {
-        selectedIndex = data
-        self.characterBookCV.reloadData()
     }
 }
 
@@ -144,6 +123,7 @@ extension CharacterBookVC: UICollectionViewDataSource {
             if selectedIndex != indexPath.row {
                 cell.chooseBtn.isHidden = true
             } else {
+                cell.isClicked = true
                 cell.setSelectedBtnUI()
             }
         } else {
@@ -155,6 +135,57 @@ extension CharacterBookVC: UICollectionViewDataSource {
             cell.chooseBtn.isHidden = true
         }
         return cell
+    }
+}
+
+// MARK: - SendDataDelegate
+extension CharacterBookVC: SendDataDelegate {
+    func presentAlert() {
+        guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+        alert.showVeginAlert(vc: self, message: "미션을 중단하시겠습니까?", confirmBtnTitle: "확인", cancelBtnTitle: "취소", iconImg: "delete", type: .withDoubleBtn)
+        alert.confirmBtn.press {
+            self.requestStartAndStopMission(missionID: self.selectedIndex + 1)
+            self.selectedIndex = -1
+            self.characterBookCV.reloadData()
+        }
+        alert.cancelBtn.press {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func sendData(data: Int) {
+        guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+        alert.showVeginAlert(vc: self, message: "미션을 시작하시겠습니까?", confirmBtnTitle: "확인", cancelBtnTitle: "취소", iconImg: "cheerUp", type: .withDoubleBtn)
+        alert.confirmBtn.press {
+            self.requestStartAndStopMission(missionID: data + 1)
+            self.selectedIndex = data
+            self.characterBookCV.reloadData()
+        }
+        alert.cancelBtn.press {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+}
+
+// MARK: - Network
+extension CharacterBookVC {
+    
+    /// 캐릭터 미션 시작/중단 메서드
+    private func requestStartAndStopMission(missionID: Int) {
+        self.activityIndicator.startAnimating()
+        HomeAPI.shared.requestStartMissionAPI(missionID: missionID) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
     }
 }
 
