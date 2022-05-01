@@ -15,12 +15,7 @@ class CharacterBookCVC: BaseCVC {
     @IBOutlet weak var firstMissionLabel: UILabel!
     @IBOutlet weak var secondMissionLabel: UILabel!
     @IBOutlet weak var thirdMissionLabel: UILabel!
-    @IBOutlet weak var chooseBtn: VeginBtn! {
-        didSet {
-            chooseBtn.isActivated = true
-            chooseBtn.setTitleWithStyle(title: " 도전하기", size: 16, weight: .bold)
-        }
-    }
+    @IBOutlet weak var chooseBtn: VeginBtn!
     
     // Properties
     var cellTag: Int = -1
@@ -29,6 +24,7 @@ class CharacterBookCVC: BaseCVC {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setDefaultBtnUI()
     }
     
     /// CVC 재사용 문제 해결을 위한 reload
@@ -60,12 +56,14 @@ extension CharacterBookCVC {
     }
     
     func setDefaultBtnUI() {
+        chooseBtn.isActivated = true
         chooseBtn.setImage(UIImage(named: "cheerUp_light"), for: .normal)
         chooseBtn.backgroundColor = .darkMain
         chooseBtn.setTitleWithStyle(title: " 도전하기", size: 16, weight: .bold)
     }
     
     func setSelectedBtnUI() {
+        chooseBtn.isActivated = true
         chooseBtn.setImage(UIImage(named: "delete_light"), for: .normal)
         chooseBtn.backgroundColor = .gray0
         chooseBtn.setTitleWithStyle(title: " 미션 중단하기", size: 16, weight: .bold)
