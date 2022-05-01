@@ -18,6 +18,7 @@
 		7731374F281938B600E69459 /* DietCalendarResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7731374E281938B600E69459 /* DietCalendarResModel.swift */; };
 		77313752281EE2AC00E69459 /* MissionStartResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313751281EE2AC00E69459 /* MissionStartResModel.swift */; };
 		77313754281EE32800E69459 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313753281EE32800E69459 /* HomeService.swift */; };
+		77313756281EE4FB00E69459 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313755281EE4FB00E69459 /* HomeAPI.swift */; };
 		7742884327EDEB1E001A7CFA /* SignInSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742884227EDEB1E001A7CFA /* SignInSB.storyboard */; };
 		7742884727EE18CB001A7CFA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742884627EE18CB001A7CFA /* SignInVC.swift */; };
 		7742884C27F14512001A7CFA /* SignUpSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742884B27F14512001A7CFA /* SignUpSB.storyboard */; };
@@ -142,6 +143,7 @@
 		7731374E281938B600E69459 /* DietCalendarResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietCalendarResModel.swift; sourceTree = "<group>"; };
 		77313751281EE2AC00E69459 /* MissionStartResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionStartResModel.swift; sourceTree = "<group>"; };
 		77313753281EE32800E69459 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		77313755281EE4FB00E69459 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		7742884227EDEB1E001A7CFA /* SignInSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSB.storyboard; sourceTree = "<group>"; };
 		7742884627EE18CB001A7CFA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		7742884B27F14512001A7CFA /* SignUpSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSB.storyboard; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 		7742885527F40C6B001A7CFA /* APIManagers */ = {
 			isa = PBXGroup;
 			children = (
+				77313755281EE4FB00E69459 /* HomeAPI.swift */,
 				7742886427F40FCB001A7CFA /* DietAPI.swift */,
 				7742886927F6CA24001A7CFA /* SignAPI.swift */,
 				77D9ED2328044024000EA76A /* FeedAPI.swift */,
