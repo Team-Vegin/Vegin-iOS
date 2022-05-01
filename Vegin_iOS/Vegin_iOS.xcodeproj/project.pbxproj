@@ -16,6 +16,9 @@
 		772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */; };
 		772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1482273CF9D500BB0127 /* CalendarVC.swift */; };
 		7731374F281938B600E69459 /* DietCalendarResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7731374E281938B600E69459 /* DietCalendarResModel.swift */; };
+		77313752281EE2AC00E69459 /* MissionStartResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313751281EE2AC00E69459 /* MissionStartResModel.swift */; };
+		77313754281EE32800E69459 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313753281EE32800E69459 /* HomeService.swift */; };
+		77313756281EE4FB00E69459 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313755281EE4FB00E69459 /* HomeAPI.swift */; };
 		7742884327EDEB1E001A7CFA /* SignInSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742884227EDEB1E001A7CFA /* SignInSB.storyboard */; };
 		7742884727EE18CB001A7CFA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742884627EE18CB001A7CFA /* SignInVC.swift */; };
 		7742884C27F14512001A7CFA /* SignUpSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742884B27F14512001A7CFA /* SignUpSB.storyboard */; };
@@ -138,6 +141,9 @@
 		772C147C273B7DAE00BB0127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		772C1482273CF9D500BB0127 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		7731374E281938B600E69459 /* DietCalendarResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietCalendarResModel.swift; sourceTree = "<group>"; };
+		77313751281EE2AC00E69459 /* MissionStartResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionStartResModel.swift; sourceTree = "<group>"; };
+		77313753281EE32800E69459 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		77313755281EE4FB00E69459 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		7742884227EDEB1E001A7CFA /* SignInSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSB.storyboard; sourceTree = "<group>"; };
 		7742884627EE18CB001A7CFA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		7742884B27F14512001A7CFA /* SignUpSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSB.storyboard; sourceTree = "<group>"; };
@@ -296,6 +302,14 @@
 			path = Vegin_iOS;
 			sourceTree = "<group>";
 		};
+		77313750281EE1C100E69459 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				77313751281EE2AC00E69459 /* MissionStartResModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		7742883F27EDEABE001A7CFA /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +383,7 @@
 		7742885527F40C6B001A7CFA /* APIManagers */ = {
 			isa = PBXGroup;
 			children = (
+				77313755281EE4FB00E69459 /* HomeAPI.swift */,
 				7742886427F40FCB001A7CFA /* DietAPI.swift */,
 				7742886927F6CA24001A7CFA /* SignAPI.swift */,
 				77D9ED2328044024000EA76A /* FeedAPI.swift */,
@@ -383,6 +398,7 @@
 				7742886027F40F1D001A7CFA /* DietService.swift */,
 				7742886B27F6CA36001A7CFA /* SignService.swift */,
 				77D9ED2128043E99000EA76A /* FeedService.swift */,
+				77313753281EE32800E69459 /* HomeService.swift */,
 			);
 			path = MoyaTarget;
 			sourceTree = "<group>";
@@ -391,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				77C03F72280A8CA700B0EE84 /* Public */,
+				77313750281EE1C100E69459 /* Home */,
 				77C03F73280AECE100B0EE84 /* Diet */,
 				77D9ED1E28043DD2000EA76A /* Feed */,
 				7742886627F6C893001A7CFA /* Sign */,
@@ -1043,8 +1060,10 @@
 				77DBB86A27E0CF8C00000623 /* FeedNC.swift in Sources */,
 				7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */,
 				77ED048F27B6C46900D077CA /* UILabel+.swift in Sources */,
+				77313754281EE32800E69459 /* HomeService.swift in Sources */,
 				7742886C27F6CA36001A7CFA /* SignService.swift in Sources */,
 				77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */,
+				77313756281EE4FB00E69459 /* HomeAPI.swift in Sources */,
 				77ED047D27B692E500D077CA /* TVRegisterable.swift in Sources */,
 				5A751C8C27E4CE5C003DCD7C /* HomeNC.swift in Sources */,
 				7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */,
@@ -1083,6 +1102,7 @@
 				77D9ED2228043E99000EA76A /* FeedService.swift in Sources */,
 				7742889227FACE89001A7CFA /* SignUpDataModel.swift in Sources */,
 				77D9ED2F2805BC56000EA76A /* FeedDetailTitleTVC.swift in Sources */,
+				77313752281EE2AC00E69459 /* MissionStartResModel.swift in Sources */,
 				772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */,
 				77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */,
 				77DBB85427DF428300000623 /* DietDetailImgTVC.swift in Sources */,

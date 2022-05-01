@@ -7,11 +7,13 @@
 
 import UIKit
 
-class CharacterBookVC: UIViewController {
+class CharacterBookVC: BaseVC {
     @IBOutlet weak var characterBookCV: UICollectionView!
     
     // MARK: Properties
     var charcterBookData: [CharacterBookData] = []
+    var selectedIndex: Int = -1
+    var cellTagDelegate: SendDataDelegate?
     
     
     override func viewDidLoad() {
@@ -38,10 +40,10 @@ extension CharacterBookVC {
     private func registerCVC() {
         CharacterBookCVC.register(target: characterBookCV)
     }
-    
+
     private func initData() {
         charcterBookData.append(contentsOf: [
-            CharacterBookData(characterImgName: "Tomavi_1", characterName: "토마비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
+            CharacterBookData(characterImgName: "Tomavi_1", characterName: "토마비", firstMission: "비긴 설치하기", secondMission: "비긴 회원가입하기", thirdMission: "처음 접속하기"),
             CharacterBookData(characterImgName: "Hidden_Dangvi", characterName: "당비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
             CharacterBookData(characterImgName: "Hidden_Onion", characterName: "양비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
             CharacterBookData(characterImgName: "Hidden_Pavi", characterName: "파비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
@@ -112,11 +114,78 @@ extension CharacterBookVC: UICollectionViewDataSource {
         return 10
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterBookCVC.className, for: indexPath) as? CharacterBookCVC else {
-            return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterBookCVC.className, for: indexPath) as? CharacterBookCVC else { return UICollectionViewCell() }
+        
+        cell.setData(characterData: charcterBookData[indexPath.row], tagData: indexPath.row)
+        cell.delegate = self
+        
+        if selectedIndex != -1 {
+            if selectedIndex != indexPath.row {
+                cell.chooseBtn.isHidden = true
+            } else {
+                cell.isClicked = true
+                cell.setSelectedBtnUI()
+            }
+        } else {
+            cell.isClicked = false
+            cell.setDefaultBtnUI()
         }
-        cell.setData(characterData: charcterBookData[indexPath.row])
+        
+        if indexPath.row == 0 {
+            cell.chooseBtn.isHidden = true
+        }
         return cell
+    }
+}
+
+// MARK: - SendDataDelegate
+extension CharacterBookVC: SendDataDelegate {
+    func presentAlert() {
+        guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+        alert.showVeginAlert(vc: self, message: "미션을 중단하시겠습니까?", confirmBtnTitle: "확인", cancelBtnTitle: "취소", iconImg: "delete", type: .withDoubleBtn)
+        alert.confirmBtn.press {
+            self.requestStartAndStopMission(missionID: self.selectedIndex + 1)
+            self.selectedIndex = -1
+            self.characterBookCV.reloadData()
+        }
+        alert.cancelBtn.press {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func sendData(data: Int) {
+        guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+        alert.showVeginAlert(vc: self, message: "미션을 시작하시겠습니까?", confirmBtnTitle: "확인", cancelBtnTitle: "취소", iconImg: "cheerUp", type: .withDoubleBtn)
+        alert.confirmBtn.press {
+            self.requestStartAndStopMission(missionID: data + 1)
+            self.selectedIndex = data
+            self.characterBookCV.reloadData()
+        }
+        alert.cancelBtn.press {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+}
+
+// MARK: - Network
+extension CharacterBookVC {
+    
+    /// 캐릭터 미션 시작/중단 메서드
+    private func requestStartAndStopMission(missionID: Int) {
+        self.activityIndicator.startAnimating()
+        HomeAPI.shared.requestStartMissionAPI(missionID: missionID) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
     }
 }
 
