@@ -211,12 +211,10 @@ extension FeedWriteVC: UIImagePickerControllerDelegate {
 // MARK: UITextViewDelegate
 extension FeedWriteVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if titleTextView.text == titlePlaceholder {
+        if textView == titleTextView && titleTextView.text == titlePlaceholder {
             titleTextView.text.removeAll()
             titleTextView.textColor = .darkMain
-        }
-        
-        if memoTextView.text == memoPlaceholder {
+        } else if textView == memoTextView && memoTextView.text == memoPlaceholder {
             memoTextView.text.removeAll()
             memoTextView.textColor = .black
         }

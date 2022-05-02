@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Pretendard-Bold.otf">
+            <string>Pretendard-Bold</string>
+        </array>
         <array key="Pretendard-Medium.otf">
             <string>Pretendard-Medium</string>
         </array>
@@ -325,8 +328,8 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="게시글 작성" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4q-Ev-IxS">
-                                        <rect key="frame" x="142" y="58" width="91" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <rect key="frame" x="142" y="58" width="91.333333333333314" height="32"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -338,6 +341,7 @@
                                     <constraint firstItem="KiN-rz-XvD" firstAttribute="top" secondItem="PZK-Nw-Tnc" secondAttribute="top" constant="62" id="NJz-Wq-VId"/>
                                     <constraint firstAttribute="height" constant="104" id="eci-y8-eHQ"/>
                                     <constraint firstItem="M4q-Ev-IxS" firstAttribute="centerX" secondItem="PZK-Nw-Tnc" secondAttribute="centerX" id="jr2-T8-iuw"/>
+                                    <constraint firstItem="M4q-Ev-IxS" firstAttribute="centerY" secondItem="KiN-rz-XvD" secondAttribute="centerY" id="lVL-9W-h3f"/>
                                 </constraints>
                             </view>
                         </subviews>
