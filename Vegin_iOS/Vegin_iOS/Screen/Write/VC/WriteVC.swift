@@ -95,7 +95,11 @@ class WriteVC: BaseVC {
     }
     
     @IBAction func touchUpToSaveButton(_ sender: UIButton) {
-        createDietPost(image: foodImgView.image ?? UIImage(), meal: mealArray, mealTime: mealTime, amount: mealAmount, memo: memoTextView.text ?? "", date: writeDate)
+        if isWriting {
+            createDietPost(image: foodImgView.image ?? UIImage(), meal: mealArray, mealTime: mealTime, amount: mealAmount, memo: memoTextView.text ?? "", date: writeDate)
+        } else {
+            editDietPost(postID: postID, image: foodImgView.image ?? UIImage(), meal: mealArray, mealTime: mealTime, amount: mealAmount, memo: memoTextView.text ?? "")
+        }
     }
     
     func setIconImage() {
@@ -450,6 +454,29 @@ extension WriteVC {
                 self.activityIndicator.stopAnimating()
                 guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
                 alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
+                alert.confirmBtn.press {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 식단 수정 메서드
+    private func editDietPost(postID: Int, image: UIImage, meal: [Int], mealTime: Int, amount: Int, memo: String) {
+        self.activityIndicator.startAnimating()
+        DietAPI.shared.editDietPostAPI(postID: postID, image: image, meal: meal, mealTime: mealTime, amount: amount, memo: memo) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+                guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+                alert.showVeginAlert(vc: self, message: "성공적으로\n수정되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
                 alert.confirmBtn.press {
                     self.navigationController?.popViewController(animated: true)
                 }
