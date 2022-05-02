@@ -33,6 +33,11 @@ class FeedDetailVC: BaseVC {
         getFeedDetailPost(postID: postId ?? 0)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getFeedDetailPost(postID: postId ?? 0)
+    }
+    
     // MARK: IBAction
     @IBAction func tapBackBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
