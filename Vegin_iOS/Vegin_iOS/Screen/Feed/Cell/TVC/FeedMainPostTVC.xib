@@ -24,8 +24,8 @@
                             <constraint firstAttribute="height" constant="80" id="Ry1-Mc-xfb"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BP-YE-CGt">
-                        <rect key="frame" x="114" y="11" width="37" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BP-YE-CGt">
+                        <rect key="frame" x="114" y="11" width="238" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <color key="textColor" name="darkMain"/>
                         <nil key="highlightedColor"/>
@@ -54,6 +54,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="nuE-Mm-mJl" firstAttribute="top" secondItem="CqG-Yc-R76" secondAttribute="bottom" constant="8" symbolic="YES" id="0Bd-k6-96f"/>
+                    <constraint firstAttribute="trailing" secondItem="1BP-YE-CGt" secondAttribute="trailing" constant="23" id="DMI-Rf-EqS"/>
                     <constraint firstItem="nuE-Mm-mJl" firstAttribute="bottom" secondItem="7ty-Bw-q4T" secondAttribute="bottom" id="F1J-rc-iAH"/>
                     <constraint firstItem="nuE-Mm-mJl" firstAttribute="leading" secondItem="7ty-Bw-q4T" secondAttribute="trailing" constant="13" id="HfP-In-6AD"/>
                     <constraint firstItem="7ty-Bw-q4T" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="OG4-Sc-IuU"/>

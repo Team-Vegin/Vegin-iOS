@@ -19,6 +19,7 @@
 		77313752281EE2AC00E69459 /* MissionStartResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313751281EE2AC00E69459 /* MissionStartResModel.swift */; };
 		77313754281EE32800E69459 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313753281EE32800E69459 /* HomeService.swift */; };
 		77313756281EE4FB00E69459 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313755281EE4FB00E69459 /* HomeAPI.swift */; };
+		77313758281FC07300E69459 /* EditResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313757281FC07300E69459 /* EditResModel.swift */; };
 		7742884327EDEB1E001A7CFA /* SignInSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742884227EDEB1E001A7CFA /* SignInSB.storyboard */; };
 		7742884727EE18CB001A7CFA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742884627EE18CB001A7CFA /* SignInVC.swift */; };
 		7742884C27F14512001A7CFA /* SignUpSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742884B27F14512001A7CFA /* SignUpSB.storyboard */; };
@@ -144,6 +145,7 @@
 		77313751281EE2AC00E69459 /* MissionStartResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionStartResModel.swift; sourceTree = "<group>"; };
 		77313753281EE32800E69459 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		77313755281EE4FB00E69459 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
+		77313757281FC07300E69459 /* EditResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditResModel.swift; sourceTree = "<group>"; };
 		7742884227EDEB1E001A7CFA /* SignInSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSB.storyboard; sourceTree = "<group>"; };
 		7742884627EE18CB001A7CFA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		7742884B27F14512001A7CFA /* SignUpSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSB.storyboard; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 			children = (
 				77C03F70280A8CA200B0EE84 /* PostResModel.swift */,
 				77D0926D280BF1B100CB9F6A /* WriteResModel.swift */,
+				77313757281FC07300E69459 /* EditResModel.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -1082,6 +1085,7 @@
 				77D9ED332805D2C2000EA76A /* FeedDetailContentTVC.swift in Sources */,
 				77D9ED372805D4B5000EA76A /* FeedDetailEmojiTVC.swift in Sources */,
 				7756F9AD27FDFDB8006F6EF3 /* CharacterBookCVC.swift in Sources */,
+				77313758281FC07300E69459 /* EditResModel.swift in Sources */,
 				7731374F281938B600E69459 /* DietCalendarResModel.swift in Sources */,
 				7757286727C8CF0700148C9A /* FeedMainEmptyTVC.swift in Sources */,
 				77ED048327B693CB00D077CA /* Identifiers.swift in Sources */,

@@ -14,6 +14,7 @@ enum FeedService {
     case getFeedDetailPost(postID: Int)
     case deleteFeedPost(postID: Int)
     case createFeedPost(image: UIImage, title: String, content: String, tagID: Int)
+    case editFeedPost(postID: Int, image: UIImage, title: String, content: String, tagID: Int)
 }
 
 extension FeedService: TargetType {
@@ -27,7 +28,7 @@ extension FeedService: TargetType {
             return "/post/list/\(tagID)"
         case .getMyFeedList:
             return "/post/myList"
-        case .getFeedDetailPost(let postID), .deleteFeedPost(let postID):
+        case .getFeedDetailPost(let postID), .deleteFeedPost(let postID), .editFeedPost(let postID, _, _, _, _):
             return "/post/\(postID)"
         case .createFeedPost:
             return "/post"
@@ -42,6 +43,8 @@ extension FeedService: TargetType {
             return .delete
         case .createFeedPost:
             return .post
+        case .editFeedPost:
+            return .put
         }
     }
     
@@ -49,7 +52,7 @@ extension FeedService: TargetType {
         switch self {
         case .getFeedList, .getMyFeedList, .getFeedDetailPost, .deleteFeedPost:
             return .requestPlain
-        case .createFeedPost(let image, let title, let content, let tagID):
+        case .createFeedPost(let image, let title, let content, let tagID), .editFeedPost(_, let image, let title, let content, let tagID):
             var multiPartData: [Moya.MultipartFormData] = []
             
             let body: [String : Any] = [
@@ -76,7 +79,7 @@ extension FeedService: TargetType {
         switch self {
         case .getFeedList, .getMyFeedList, .getFeedDetailPost, .deleteFeedPost:
             return ["Content-Type": "application/json", "accessToken": accessToken]
-        case .createFeedPost:
+        case .createFeedPost, .editFeedPost:
             return ["Content-Type": "multipart/form-data", "accessToken": accessToken]
         }
     }

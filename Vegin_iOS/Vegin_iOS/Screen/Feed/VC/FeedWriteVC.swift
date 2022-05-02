@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FeedWriteVC: BaseVC {
     
     // MARK: IBOutlet
     @IBOutlet weak var naviView: UIView!
+    @IBOutlet weak var naviTitle: UILabel!
     @IBOutlet weak var feedImgView: UIImageView!
     @IBOutlet weak var imgContentView: UIView!
     @IBOutlet weak var titleTextView: UITextView!
@@ -34,7 +36,14 @@ class FeedWriteVC: BaseVC {
     private let memoPlaceholder = "내용을 입력해주세요"
     private var categoryID: Int = 0
     
-    // MARK: LifeCycle
+    /// 게시글 수정 기능 위한 변수
+    private var postID: Int = -1
+    private var isWriting = true // 작성, 수정 판별 위한 변수
+    private var titleData = ""
+    private var contentData = ""
+    private var imageURL: URL?
+    
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleTextView.delegate = self
@@ -43,6 +52,7 @@ class FeedWriteVC: BaseVC {
         self.tabBarController?.tabBar.isTranslucent = true
         configureUI()
         setUpDelegate()
+        setUpSaveBtnStatus()
         addKeyboardObserver()
         hideKeyboardWhenTappedAround()
     }
@@ -61,7 +71,11 @@ class FeedWriteVC: BaseVC {
     }
     
     @IBAction func tapSaveBtn(_ sender: UIButton) {
-        createFeedPost(image: feedImgView.image ?? UIImage(), title: titleTextView.text ?? "", content: memoTextView.text ?? "" , tagID: categoryID)
+        if isWriting {
+            createFeedPost(image: feedImgView.image ?? UIImage(), title: titleTextView.text ?? "", content: memoTextView.text ?? "" , tagID: categoryID)
+        } else {
+            editFeedPost(postID: postID, image: feedImgView.image ?? UIImage(), title: titleTextView.text ?? "", content: memoTextView.text ?? "", tagID: categoryID)
+        }
     }
     
     @IBAction func tapCategoryBtn1(_ sender: UIButton) {
@@ -168,6 +182,16 @@ class FeedWriteVC: BaseVC {
             print("Camera not available")
         }
     }
+    
+    /// FeedDetailVC에서 상태값 받아오기 위한 함수
+    func setReceivedData(status: Bool, postId: Int, categoryId: Int, imageUrl: String, titleText: String, contentText: String) {
+        isWriting = status
+        postID = postId
+        categoryID = categoryId
+        imageURL = URL(string: imageUrl)
+        titleData = titleText
+        contentData = contentText
+    }
 }
 // MARK: - UI
 extension FeedWriteVC {
@@ -180,6 +204,32 @@ extension FeedWriteVC {
         feedImgView.layer.cornerRadius = 25
         feedImgView.contentMode = .scaleAspectFill
         saveBtn.makeRounded(cornerRadius: 0.5 * saveBtn.bounds.size.height)
+        
+        /// 게시글 수정 시
+        if !isWriting {
+            naviTitle.text = "게시글 수정"
+            titleTextView.textColor = .darkMain
+            titleTextView.text = titleData
+            memoTextView.textColor = .darkText
+            memoTextView.text = contentData
+            feedImgView.kf.setImage(with: imageURL)
+            imgUploadBtn.tintColor = .clear
+            
+            if categoryID == 2 {
+                categoryBtn1.isSelected = true
+            } else if categoryID == 3 {
+                categoryBtn2.isSelected = true
+            } else if categoryID == 4 {
+                categoryBtn3.isSelected = true
+            } else if categoryID == 5 {
+                categoryBtn4.isSelected = true
+            } else if categoryID == 6 {
+                categoryBtn5.isSelected = true
+            }
+            [categoryBtn1, categoryBtn2, categoryBtn3, categoryBtn4, categoryBtn5].forEach {
+                configureBtnUI(btn: $0)
+            }
+        }
     }
 }
 
@@ -211,12 +261,10 @@ extension FeedWriteVC: UIImagePickerControllerDelegate {
 // MARK: UITextViewDelegate
 extension FeedWriteVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if titleTextView.text == titlePlaceholder {
+        if textView == titleTextView && titleTextView.text == titlePlaceholder {
             titleTextView.text.removeAll()
             titleTextView.textColor = .darkMain
-        }
-        
-        if memoTextView.text == memoPlaceholder {
+        } else if textView == memoTextView && memoTextView.text == memoPlaceholder {
             memoTextView.text.removeAll()
             memoTextView.textColor = .black
         }
@@ -266,7 +314,7 @@ extension FeedWriteVC {
 // MARK: - Network
 extension FeedWriteVC {
     
-    /// 게시글 작성  메서드
+    /// 게시글 작성 메서드
     private func createFeedPost(image: UIImage, title: String, content: String, tagID: Int) {
         self.activityIndicator.startAnimating()
         FeedAPI.shared.createFeedPostAPI(image: image, title: title, content: content, tagID: tagID) { networkResult in
@@ -276,6 +324,29 @@ extension FeedWriteVC {
                 print(res)
                 guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
                 alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
+                alert.confirmBtn.press {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 게시글 수정 메서드
+    private func editFeedPost(postID: Int, image: UIImage, title: String, content: String, tagID: Int) {
+        self.activityIndicator.startAnimating()
+        FeedAPI.shared.editFeedPostAPI(postID: postID, image: image, title: title, content: content, tagID: tagID) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+                guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+                alert.showVeginAlert(vc: self, message: "성공적으로\n수정되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
                 alert.confirmBtn.press {
                     self.navigationController?.popViewController(animated: true)
                 }
