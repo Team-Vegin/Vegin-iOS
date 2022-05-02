@@ -97,6 +97,22 @@ extension FeedAPI {
             }
         }
     }
+    
+    /// [PUT] 게시글 수정
+    func editFeedPostAPI(postID: Int, image: UIImage, title: String, content: String, tagID: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        provider.request(.editFeedPost(postID: postID, image: image, title: title, content: content, tagID: tagID)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                completion(self.editFeedPostJudgeData(status: statusCode, data: data))
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }
 
 // MARK: - judgeData
@@ -181,6 +197,25 @@ extension FeedAPI {
         let decoder = JSONDecoder()
         
         guard let decodedData = try? decoder.decode(GenericResponse<WriteResModel>.self, from: data) else { return .pathErr }
+        
+        switch status {
+        case 200:
+            return .success(decodedData.data ?? "None-Data")
+        case 400:
+            return .requestErr(decodedData.message)
+        case 404:
+            return .requestErr(404)
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
+        }
+    }
+    
+    private func editFeedPostJudgeData(status: Int, data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        
+        guard let decodedData = try? decoder.decode(GenericResponse<EditResModel>.self, from: data) else { return .pathErr }
         
         switch status {
         case 200:
