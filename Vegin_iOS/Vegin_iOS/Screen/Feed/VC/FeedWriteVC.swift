@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FeedWriteVC: BaseVC {
     
@@ -34,7 +35,14 @@ class FeedWriteVC: BaseVC {
     private let memoPlaceholder = "내용을 입력해주세요"
     private var categoryID: Int = 0
     
-    // MARK: LifeCycle
+    /// 게시글 수정 기능 위한 변수
+    private var postID: Int = -1
+    private var isWriting = true // 작성, 수정 판별 위한 변수
+    private var titleData = ""
+    private var contentData = ""
+    private var imageURL: URL?
+    
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleTextView.delegate = self
@@ -43,6 +51,7 @@ class FeedWriteVC: BaseVC {
         self.tabBarController?.tabBar.isTranslucent = true
         configureUI()
         setUpDelegate()
+        setUpSaveBtnStatus()
         addKeyboardObserver()
         hideKeyboardWhenTappedAround()
     }
@@ -168,6 +177,16 @@ class FeedWriteVC: BaseVC {
             print("Camera not available")
         }
     }
+    
+    /// FeedDetailVC에서 상태값 받아오기 위한 함수
+    func setReceivedData(status: Bool, postId: Int, categoryId: Int, imageUrl: String, titleText: String, contentText: String) {
+        isWriting = status
+        postID = postId
+        categoryID = categoryId
+        imageURL = URL(string: imageUrl)
+        titleData = titleText
+        contentData = contentText
+    }
 }
 // MARK: - UI
 extension FeedWriteVC {
@@ -180,6 +199,31 @@ extension FeedWriteVC {
         feedImgView.layer.cornerRadius = 25
         feedImgView.contentMode = .scaleAspectFill
         saveBtn.makeRounded(cornerRadius: 0.5 * saveBtn.bounds.size.height)
+        
+        /// 게시글 수정 시
+        if !isWriting {
+            titleTextView.textColor = .darkMain
+            titleTextView.text = titleData
+            memoTextView.textColor = .darkText
+            memoTextView.text = contentData
+            feedImgView.kf.setImage(with: imageURL)
+            imgUploadBtn.tintColor = .clear
+            
+            if categoryID == 2 {
+                categoryBtn1.isSelected = true
+            } else if categoryID == 3 {
+                categoryBtn2.isSelected = true
+            } else if categoryID == 4 {
+                categoryBtn3.isSelected = true
+            } else if categoryID == 5 {
+                categoryBtn4.isSelected = true
+            } else if categoryID == 6 {
+                categoryBtn5.isSelected = true
+            }
+            [categoryBtn1, categoryBtn2, categoryBtn3, categoryBtn4, categoryBtn5].forEach {
+                configureBtnUI(btn: $0)
+            }
+        }
     }
 }
 

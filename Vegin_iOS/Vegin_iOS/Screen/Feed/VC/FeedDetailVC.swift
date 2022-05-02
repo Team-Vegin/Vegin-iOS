@@ -40,7 +40,7 @@ class FeedDetailVC: BaseVC {
     
     @IBAction func tapRightNaviBtn(_ sender: UIButton) {
         makeTwoAlertWithCancel(okTitle: "수정하기", secondOkTitle: "삭제하기", okAction: { _ in
-            print("수정하기")
+            self.sendDetailPostData()
         }, secondOkAction: { _ in
             guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
             alert.showVeginAlert(vc: self, message: "글을 삭제하시겠습니까?", confirmBtnTitle: "확인", cancelBtnTitle: "취소", iconImg: "delete", type: .withDoubleBtn)
@@ -85,6 +85,28 @@ extension FeedDetailVC {
     private func setUpTV() {
         postTV.dataSource = self
         postTV.delegate = self
+    }
+    
+    /// 게시글 데이터 전달 위한 함수
+    private func sendDetailPostData() {
+        guard let feedWriteVC = UIStoryboard.init(name: Identifiers.FeedWriteSB, bundle: nil).instantiateViewController(withIdentifier: FeedWriteVC.className) as? FeedWriteVC else { return }
+        
+        var categoryID = 1
+        if detailPost.tag == "생활" {
+            categoryID = 2
+        } else if detailPost.tag == "맛집" {
+            categoryID = 3
+        } else if detailPost.tag == "꿀팁" {
+            categoryID = 4
+        } else if detailPost.tag == "레시피" {
+            categoryID = 5
+        } else if detailPost.tag == "기타" {
+            categoryID = 6
+        }
+        
+        feedWriteVC.setReceivedData(status: false, postId: detailPost.postID, categoryId: categoryID, imageUrl: detailPost.imageURL, titleText: detailPost.title, contentText: detailPost.content)
+
+        self.navigationController?.pushViewController(feedWriteVC, animated: true)
     }
 }
 
