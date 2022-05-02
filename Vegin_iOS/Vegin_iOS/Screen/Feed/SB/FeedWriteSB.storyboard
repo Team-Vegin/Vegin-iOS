@@ -370,6 +370,7 @@
                         <outlet property="imgContentView" destination="9ul-1n-1gN" id="zrl-uT-csc"/>
                         <outlet property="imgUploadBtn" destination="ptI-SS-6KD" id="jvC-Xj-kwb"/>
                         <outlet property="memoTextView" destination="N6j-5p-kEA" id="QYo-hY-bPj"/>
+                        <outlet property="naviTitle" destination="M4q-Ev-IxS" id="jpc-y6-HS1"/>
                         <outlet property="naviView" destination="PZK-Nw-Tnc" id="bDg-Wm-ZIQ"/>
                         <outlet property="saveBtn" destination="ABB-9N-Yl8" id="ZMz-7v-ToG"/>
                         <outlet property="titleTextView" destination="91e-mL-Qpp" id="0lg-71-fiY"/>

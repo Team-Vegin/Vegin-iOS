@@ -12,6 +12,7 @@ class FeedWriteVC: BaseVC {
     
     // MARK: IBOutlet
     @IBOutlet weak var naviView: UIView!
+    @IBOutlet weak var naviTitle: UILabel!
     @IBOutlet weak var feedImgView: UIImageView!
     @IBOutlet weak var imgContentView: UIView!
     @IBOutlet weak var titleTextView: UITextView!
@@ -206,6 +207,7 @@ extension FeedWriteVC {
         
         /// 게시글 수정 시
         if !isWriting {
+            naviTitle.text = "게시글 수정"
             titleTextView.textColor = .darkMain
             titleTextView.text = titleData
             memoTextView.textColor = .darkText
