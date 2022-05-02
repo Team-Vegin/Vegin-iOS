@@ -70,7 +70,11 @@ class FeedWriteVC: BaseVC {
     }
     
     @IBAction func tapSaveBtn(_ sender: UIButton) {
-        createFeedPost(image: feedImgView.image ?? UIImage(), title: titleTextView.text ?? "", content: memoTextView.text ?? "" , tagID: categoryID)
+        if isWriting {
+            createFeedPost(image: feedImgView.image ?? UIImage(), title: titleTextView.text ?? "", content: memoTextView.text ?? "" , tagID: categoryID)
+        } else {
+            editFeedPost(postID: postID, image: feedImgView.image ?? UIImage(), title: titleTextView.text ?? "", content: memoTextView.text ?? "", tagID: categoryID)
+        }
     }
     
     @IBAction func tapCategoryBtn1(_ sender: UIButton) {
@@ -308,7 +312,7 @@ extension FeedWriteVC {
 // MARK: - Network
 extension FeedWriteVC {
     
-    /// 게시글 작성  메서드
+    /// 게시글 작성 메서드
     private func createFeedPost(image: UIImage, title: String, content: String, tagID: Int) {
         self.activityIndicator.startAnimating()
         FeedAPI.shared.createFeedPostAPI(image: image, title: title, content: content, tagID: tagID) { networkResult in
@@ -318,6 +322,29 @@ extension FeedWriteVC {
                 print(res)
                 guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
                 alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
+                alert.confirmBtn.press {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 게시글 수정 메서드
+    private func editFeedPost(postID: Int, image: UIImage, title: String, content: String, tagID: Int) {
+        self.activityIndicator.startAnimating()
+        FeedAPI.shared.editFeedPostAPI(postID: postID, image: image, title: title, content: content, tagID: tagID) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+                guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+                alert.showVeginAlert(vc: self, message: "성공적으로\n수정되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
                 alert.confirmBtn.press {
                     self.navigationController?.popViewController(animated: true)
                 }
