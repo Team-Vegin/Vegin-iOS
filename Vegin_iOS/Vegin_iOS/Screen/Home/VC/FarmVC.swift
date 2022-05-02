@@ -8,7 +8,7 @@
 import UIKit
 
 
-class FarmVC: UIViewController {
+class FarmVC: BaseVC {
     
     // MARK: IBOutlet
     @IBOutlet weak var messageLabel: UILabel!
@@ -19,6 +19,11 @@ class FarmVC: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showTabbar()
     }
     
     // MARK: IBAction
