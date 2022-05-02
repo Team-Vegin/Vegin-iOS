@@ -16,6 +16,18 @@ class CalendarVC: BaseVC {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var calendar: FSCalendar!
     
+    @IBOutlet weak var writeBtn: VeginBtn! {
+        didSet {
+            writeBtn.isActivated = true
+            writeBtn.setTitleWithStyle(title: "기록하기", size: 14, weight: .bold)
+        }
+    }
+    @IBOutlet weak var checkBtn: VeginBtn! {
+        didSet {
+            checkBtn.isActivated = true
+            checkBtn.setTitleWithStyle(title: "확인하기", size: 14, weight: .bold)
+        }
+    }
     @IBOutlet weak var firstListView: UIView!
     @IBOutlet weak var secondListView: UIView!
     
