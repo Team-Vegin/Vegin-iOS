@@ -35,6 +35,11 @@ class DietDetailVC: BaseVC {
         getDietDetail(postID: self.postId ?? 0)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getDietDetail(postID: self.postId ?? 0)
+    }
+    
     @IBAction func tapBackNaviBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
