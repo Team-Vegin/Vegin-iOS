@@ -18,9 +18,10 @@ struct User: Codable {
     let userID: Int
     let email: String
     let character: Int
+    let orientation: String
 
     enum CodingKeys: String, CodingKey {
         case userID = "userId"
-        case email, character
+        case email, character, orientation
     }
 }
