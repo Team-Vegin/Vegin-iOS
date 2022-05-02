@@ -209,5 +209,3 @@ extension FeedDetailVC {
         }
     }
 }
-
-
