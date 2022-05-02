@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class WriteVC: BaseVC {
     
@@ -40,15 +41,21 @@ class WriteVC: BaseVC {
         }
     }
     
-    var indexOfMeal: Int?
-    var indexOfAmount: Int?
-    var mealArray: [Int] = []
-    var mealTime: Int = 0
-    var mealAmount: Int = 0
+    private var indexOfMeal: Int?
+    private var indexOfAmount: Int?
+    private var mealArray: [Int] = []
+    private var mealTime: Int = 0
+    private var mealAmount: Int = 0
+    private let foodImgPicker = UIImagePickerController()
+    private let placeholder = "메모를 입력하세요."
+    
     var selectedDate: String = ""
     var writeDate: String = ""
-    let foodImgPicker = UIImagePickerController()
-    private let placeholder = "메모를 입력하세요."
+    
+    private var isWriting: Bool = true
+    private var postID: Int = -1
+    private var memoData: String = ""
+    private var imageURL: URL?
     
     // MARK: IBOutlet
     @IBOutlet weak var naviView: UIView!
@@ -88,7 +95,11 @@ class WriteVC: BaseVC {
     }
     
     @IBAction func touchUpToSaveButton(_ sender: UIButton) {
-        createDietPost(image: foodImgView.image ?? UIImage(), meal: mealArray, mealTime: mealTime, amount: mealAmount, memo: memoTextView.text ?? "", date: writeDate)
+        if isWriting {
+            createDietPost(image: foodImgView.image ?? UIImage(), meal: mealArray, mealTime: mealTime, amount: mealAmount, memo: memoTextView.text ?? "", date: writeDate)
+        } else {
+            editDietPost(postID: postID, image: foodImgView.image ?? UIImage(), meal: mealArray, mealTime: mealTime, amount: mealAmount, memo: memoTextView.text ?? "")
+        }
     }
     
     func setIconImage() {
@@ -268,6 +279,42 @@ extension WriteVC {
         [mealButtons[0], mealButtons[1], mealButtons[2], mealButtons[3], mealButtons[4], amountButtons[0], amountButtons[1], amountButtons[2]].forEach {
             btn in btn?.tintColor = .white
         }
+        
+        /// 식단 수정 시
+        if !isWriting {
+            memoTextView.textColor = .darkText
+            memoTextView.text = memoData
+            foodImgView.kf.setImage(with: imageURL)
+            imageUploadButton.tintColor = .clear
+            
+            for i in 0...mealArray.count - 1 {
+                if mealArray[i] == 1 {
+                    isLevel1Selected = true
+                    setIconImage()
+                } else if mealArray[i] == 2 {
+                    isLevel2Selected = true
+                    setIconImage()
+                } else if mealArray[i] == 3 {
+                    isLevel3Selected = true
+                    setIconImage()
+                } else if mealArray[i] == 4 {
+                    isLevel4Selected = true
+                    setIconImage()
+                } else if mealArray[i] == 5 {
+                    isLevel5Selected = true
+                    setIconImage()
+                } else if mealArray[i] == 6 {
+                    isLevel6Selected = true
+                    setIconImage()
+                }
+            }
+            
+            mealButtons[self.mealTime - 1].isSelected = true
+            indexOfMeal = self.mealTime - 1
+            amountButtons[self.mealAmount - 1].isSelected = true
+            indexOfAmount = self.mealAmount - 1
+            setUpSaveBtnStatus()
+        }
     }
     
     /// NaviBar dropShadow 설정 함수
@@ -313,6 +360,17 @@ extension WriteVC {
         else{
             print("Camera not available")
         }
+    }
+    
+    /// DietDetailVC에서 상태값 받아오기 위한 함수
+    func setReceivedData(status: Bool, postId: Int, imageUrl: String, memoText: String, meal: [Int], time: Int, amount: Int) {
+        isWriting = status
+        postID = postId
+        imageURL = URL(string: imageUrl)
+        memoData = memoText
+        mealArray = meal
+        mealTime = time
+        mealAmount = amount
     }
 }
 
@@ -396,6 +454,29 @@ extension WriteVC {
                 self.activityIndicator.stopAnimating()
                 guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
                 alert.showVeginAlert(vc: self, message: "성공적으로\n작성되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
+                alert.confirmBtn.press {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 식단 수정 메서드
+    private func editDietPost(postID: Int, image: UIImage, meal: [Int], mealTime: Int, amount: Int, memo: String) {
+        self.activityIndicator.startAnimating()
+        DietAPI.shared.editDietPostAPI(postID: postID, image: image, meal: meal, mealTime: mealTime, amount: amount, memo: memo) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+                guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+                alert.showVeginAlert(vc: self, message: "성공적으로\n수정되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "cheerUp", type: .withSingleBtn)
                 alert.confirmBtn.press {
                     self.navigationController?.popViewController(animated: true)
                 }

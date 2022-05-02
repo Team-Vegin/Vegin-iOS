@@ -15,6 +15,7 @@ enum DietService {
     case getDietCalendarData(year: Int, month: Int)
     case createDietPost(image: UIImage, meal: [Int], mealTime: Int, amount: Int, memo: String, date: String)
     case deleteDietPost(postID: Int)
+    case editDietPost(postID:Int, image: UIImage, meal: [Int], mealTime: Int, amount: Int, memo: String)
 }
 
 extension DietService: TargetType {
@@ -32,6 +33,8 @@ extension DietService: TargetType {
             return "/diet/month/\(year)/\(month)"
         case .createDietPost:
             return "/diet"
+        case .editDietPost(let postID, _, _, _, _, _):
+            return "/diet/\(postID)"
         }
     }
     
@@ -43,6 +46,8 @@ extension DietService: TargetType {
             return .post
         case .deleteDietPost:
             return .delete
+        case .editDietPost:
+            return .put
         }
     }
     
@@ -76,6 +81,31 @@ extension DietService: TargetType {
                 }
             }
             return .uploadMultipart(multiPartData)
+        case .editDietPost(_, let image, let meal, let mealTime, let amount, let memo):
+            var multiPartData: [Moya.MultipartFormData] = []
+            
+            let body: [String : Any] = [
+                "meal" : meal,
+                "mealTime" : mealTime,
+                "amount" : amount,
+                "memo" : memo
+            ]
+            
+            let imageData = MultipartFormData(provider: .data(image.jpegData(compressionQuality: 1.0) ?? Data()), name: "image", fileName: "image.jpeg", mimeType: "image/jpeg")
+            multiPartData.append(imageData)
+            
+            
+            for (key, value) in body {
+                if key == "meal" {
+                    let jsonData = arrayToJson(arr: value)
+                    let formData = MultipartFormData(provider: .data("\(jsonData)".data(using: .utf8)!), name: key, mimeType: "text/plain")
+                    multiPartData.append(formData)
+                } else {
+                    let formData = MultipartFormData(provider: .data("\(value)".data(using: .utf8) ?? Data()), name: "\(key)", mimeType: "text/plain")
+                    multiPartData.append(formData)
+                }
+            }
+            return .uploadMultipart(multiPartData)
         }
     }
     
@@ -85,7 +115,7 @@ extension DietService: TargetType {
         switch self {
         case .getDietList, .getDietDetail, .deleteDietPost, .getDietCalendarData:
             return ["Content-Type": "application/json", "accessToken": accessToken]
-        case .createDietPost:
+        case .createDietPost, .editDietPost:
             return ["Content-Type": "multipart/form-data", "accessToken": accessToken]
         }
     }

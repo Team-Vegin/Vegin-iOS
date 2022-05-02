@@ -35,13 +35,18 @@ class DietDetailVC: BaseVC {
         getDietDetail(postID: self.postId ?? 0)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getDietDetail(postID: self.postId ?? 0)
+    }
+    
     @IBAction func tapBackNaviBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func tapRightNaviBtn(_ sender: UIButton) {
         makeTwoAlertWithCancel(okTitle: "수정하기", secondOkTitle: "삭제하기", okAction: { _ in
-            print("수정하기")
+            self.sendDetailDietData()
         }, secondOkAction: { _ in
             guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
             alert.showVeginAlert(vc: self, message: "식단을 삭제하시겠습니까?", confirmBtnTitle: "확인", cancelBtnTitle: "취소", iconImg: "delete", type: .withDoubleBtn)
@@ -83,6 +88,13 @@ extension DietDetailVC {
     private func setUpTV() {
         dietPostTV.dataSource = self
         dietPostTV.delegate = self
+    }
+    
+    private func sendDetailDietData() {
+        guard let dietWriteVC = UIStoryboard.init(name: Identifiers.WriteSB, bundle: nil).instantiateViewController(withIdentifier: WriteVC.className) as? WriteVC else { return }
+        
+        dietWriteVC.setReceivedData(status: false, postId: detailDiet.postID, imageUrl: detailDiet.imageURL, memoText: detailDiet.memo, meal: detailDiet.meal, time: detailDiet.mealTime, amount: detailDiet.amount)
+        self.navigationController?.pushViewController(dietWriteVC, animated: true)
     }
 }
 

@@ -21,6 +21,7 @@ class FeedMainEmptyTVC: BaseTVC {
         setUpCV()
         registerCVC()
         initDataList()
+        setUpDefaultSelectedCategory()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,6 +42,11 @@ class FeedMainEmptyTVC: BaseTVC {
         categoryList.append(contentsOf: [
             "전체", "생활", "맛집", "꿀팁", "레시피", "기타"
         ])
+    }
+    
+    /// 디폴트로 선택된 카테고리 설정 함수
+    private func setUpDefaultSelectedCategory() {
+        self.categoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
     }
 }
 

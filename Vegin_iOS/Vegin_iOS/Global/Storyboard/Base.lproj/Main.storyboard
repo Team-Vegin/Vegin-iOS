@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QEv-yv-i7M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QEv-yv-i7M">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.otf">
+            <string>Pretendard-Bold</string>
+        </array>
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--CalendarVC-->
         <scene sceneID="tne-QT-ifu">
@@ -60,34 +68,34 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avd-pK-5qZ">
-                                <rect key="frame" x="22" y="558" width="331" height="56"/>
+                                <rect key="frame" x="22" y="558" width="331" height="57"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="writeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="SIy-3z-wyL">
-                                        <rect key="frame" x="23" y="13" width="30" height="30"/>
+                                        <rect key="frame" x="20" y="13" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SIy-3z-wyL" secondAttribute="height" multiplier="1:1" id="PYI-JC-r9h"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 식단 기록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9W-Vf-BjA">
-                                        <rect key="frame" x="80" y="12" width="79.333333333333314" height="14.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="오늘의 식단 기록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9W-Vf-BjA">
+                                        <rect key="frame" x="71" y="11" width="91.333333333333314" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매일매일 자신의 식단을 기록해요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvd-eS-gQj">
-                                        <rect key="frame" x="79.999999999999986" y="30.333333333333371" width="129.66666666666663" height="12"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘은 무엇을 먹었나요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvd-eS-gQj">
+                                        <rect key="frame" x="71" y="33" width="115.66666666666669" height="15"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
                                         <color key="textColor" red="0.41176470588235292" green="0.41176470588235292" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIj-ra-Jwn">
-                                        <rect key="frame" x="234" y="14" width="77" height="28"/>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIj-ra-Jwn" customClass="VeginBtn" customModule="Vegin_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="237" y="14" width="77" height="29"/>
+                                        <color key="backgroundColor" name="darkMain"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="77" id="M9w-dp-AoF"/>
-                                            <constraint firstAttribute="height" constant="28" id="fL6-mt-As1"/>
                                         </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="writeButton"/>
                                         <connections>
                                             <action selector="tapWriteBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WKi-sI-yyU"/>
                                         </connections>
@@ -95,48 +103,49 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.93297594790000005" green="0.95416921379999997" blue="0.87450009579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="rvd-eS-gQj" firstAttribute="top" secondItem="N9W-Vf-BjA" secondAttribute="bottom" constant="4" id="0Sc-kk-FOq"/>
+                                    <constraint firstItem="rvd-eS-gQj" firstAttribute="top" secondItem="N9W-Vf-BjA" secondAttribute="bottom" constant="5" id="0Sc-kk-FOq"/>
                                     <constraint firstItem="rIj-ra-Jwn" firstAttribute="top" secondItem="Avd-pK-5qZ" secondAttribute="top" constant="14" id="15B-kh-brJ"/>
-                                    <constraint firstAttribute="height" constant="56" id="6Zf-Aq-BRw"/>
-                                    <constraint firstItem="N9W-Vf-BjA" firstAttribute="leading" secondItem="SIy-3z-wyL" secondAttribute="trailing" constant="27" id="Aut-oR-ynk"/>
+                                    <constraint firstAttribute="height" constant="57" id="6Zf-Aq-BRw"/>
+                                    <constraint firstItem="N9W-Vf-BjA" firstAttribute="leading" secondItem="SIy-3z-wyL" secondAttribute="trailing" constant="20" id="Aut-oR-ynk"/>
+                                    <constraint firstAttribute="bottom" secondItem="rvd-eS-gQj" secondAttribute="bottom" constant="9" id="IJw-YS-486"/>
                                     <constraint firstAttribute="bottom" secondItem="rIj-ra-Jwn" secondAttribute="bottom" constant="14" id="OIR-sr-1mu"/>
-                                    <constraint firstItem="SIy-3z-wyL" firstAttribute="leading" secondItem="Avd-pK-5qZ" secondAttribute="leading" constant="23" id="c8c-QA-rYT"/>
-                                    <constraint firstItem="N9W-Vf-BjA" firstAttribute="top" secondItem="Avd-pK-5qZ" secondAttribute="top" constant="12" id="epn-di-AI9"/>
-                                    <constraint firstAttribute="trailing" secondItem="rIj-ra-Jwn" secondAttribute="trailing" constant="20" id="lno-8c-ekc"/>
+                                    <constraint firstItem="rvd-eS-gQj" firstAttribute="leading" secondItem="N9W-Vf-BjA" secondAttribute="leading" id="WJu-XM-0Hw"/>
+                                    <constraint firstItem="SIy-3z-wyL" firstAttribute="leading" secondItem="Avd-pK-5qZ" secondAttribute="leading" constant="20" id="c8c-QA-rYT"/>
+                                    <constraint firstItem="N9W-Vf-BjA" firstAttribute="top" secondItem="Avd-pK-5qZ" secondAttribute="top" constant="11" id="epn-di-AI9"/>
+                                    <constraint firstAttribute="trailing" secondItem="rIj-ra-Jwn" secondAttribute="trailing" constant="17" id="lno-8c-ekc"/>
                                     <constraint firstAttribute="bottom" secondItem="SIy-3z-wyL" secondAttribute="bottom" constant="13" id="nUd-sp-X9y"/>
                                     <constraint firstItem="SIy-3z-wyL" firstAttribute="top" secondItem="Avd-pK-5qZ" secondAttribute="top" constant="13" id="qzk-Cu-ByI"/>
-                                    <constraint firstItem="rvd-eS-gQj" firstAttribute="leading" secondItem="SIy-3z-wyL" secondAttribute="trailing" constant="27" id="sTj-Cc-68d"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csn-ih-gM0">
-                                <rect key="frame" x="22" y="626" width="331" height="56"/>
+                                <rect key="frame" x="22" y="627" width="331" height="57"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xGV-nW-oVs">
-                                        <rect key="frame" x="23" y="13" width="30" height="30"/>
+                                        <rect key="frame" x="20" y="13" width="31" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xGV-nW-oVs" secondAttribute="height" multiplier="1:1" id="FDF-hI-RHy"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 식단 목록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pz-CQ-64J">
-                                        <rect key="frame" x="80" y="12" width="69" height="14.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="나의 식단 목록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pz-CQ-64J">
+                                        <rect key="frame" x="71" y="11" width="79.333333333333314" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여태까지 기록한 식단을 확인해요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwT-pq-8U9">
-                                        <rect key="frame" x="79.999999999999986" y="30.333333333333371" width="129.66666666666663" height="12"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이곳에 다 모아 두었어요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwT-pq-8U9">
+                                        <rect key="frame" x="71" y="33" width="112.66666666666669" height="15"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
                                         <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0id-PS-nRX">
-                                        <rect key="frame" x="232" y="14" width="77" height="28"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0id-PS-nRX" customClass="VeginBtn" customModule="Vegin_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="237" y="14" width="77" height="29"/>
+                                        <color key="backgroundColor" name="darkMain"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="Ap9-Qq-XWo"/>
                                             <constraint firstAttribute="width" constant="77" id="wlI-Ok-qdn"/>
                                         </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="checkButton"/>
                                         <connections>
                                             <action selector="tapDietListBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Gc-vX-z0x"/>
                                         </connections>
@@ -145,16 +154,17 @@
                                 <color key="backgroundColor" red="0.93297594790000005" green="0.95416921379999997" blue="0.87450009579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="0id-PS-nRX" firstAttribute="top" secondItem="csn-ih-gM0" secondAttribute="top" constant="14" id="4fi-nW-xRs"/>
+                                    <constraint firstAttribute="bottom" secondItem="iwT-pq-8U9" secondAttribute="bottom" constant="9" id="7Nu-eH-FVG"/>
                                     <constraint firstAttribute="bottom" secondItem="xGV-nW-oVs" secondAttribute="bottom" constant="13" id="EkX-I1-PAb"/>
-                                    <constraint firstItem="6pz-CQ-64J" firstAttribute="top" secondItem="csn-ih-gM0" secondAttribute="top" constant="12" id="Qu8-G5-rZb"/>
-                                    <constraint firstAttribute="trailing" secondItem="0id-PS-nRX" secondAttribute="trailing" constant="22" id="gzi-V8-23U"/>
-                                    <constraint firstItem="xGV-nW-oVs" firstAttribute="leading" secondItem="csn-ih-gM0" secondAttribute="leading" constant="23" id="hpQ-fh-PJg"/>
-                                    <constraint firstAttribute="height" constant="56" id="ivp-Y6-Rvs"/>
+                                    <constraint firstItem="6pz-CQ-64J" firstAttribute="top" secondItem="csn-ih-gM0" secondAttribute="top" constant="11" id="Qu8-G5-rZb"/>
+                                    <constraint firstItem="iwT-pq-8U9" firstAttribute="leading" secondItem="6pz-CQ-64J" secondAttribute="leading" id="UHI-MG-B9s"/>
+                                    <constraint firstAttribute="trailing" secondItem="0id-PS-nRX" secondAttribute="trailing" constant="17" id="gzi-V8-23U"/>
+                                    <constraint firstItem="xGV-nW-oVs" firstAttribute="leading" secondItem="csn-ih-gM0" secondAttribute="leading" constant="20" id="hpQ-fh-PJg"/>
+                                    <constraint firstAttribute="height" constant="57" id="ivp-Y6-Rvs"/>
                                     <constraint firstItem="xGV-nW-oVs" firstAttribute="top" secondItem="csn-ih-gM0" secondAttribute="top" constant="13" id="r8y-5H-gIv"/>
-                                    <constraint firstItem="iwT-pq-8U9" firstAttribute="leading" secondItem="xGV-nW-oVs" secondAttribute="trailing" constant="27" id="rVa-bH-Hw6"/>
                                     <constraint firstAttribute="bottom" secondItem="0id-PS-nRX" secondAttribute="bottom" constant="14" id="v11-bV-Kwd"/>
-                                    <constraint firstItem="6pz-CQ-64J" firstAttribute="leading" secondItem="xGV-nW-oVs" secondAttribute="trailing" constant="27" id="vou-xG-YBU"/>
-                                    <constraint firstItem="iwT-pq-8U9" firstAttribute="top" secondItem="6pz-CQ-64J" secondAttribute="bottom" constant="4" id="yC4-vT-qHM"/>
+                                    <constraint firstItem="6pz-CQ-64J" firstAttribute="leading" secondItem="xGV-nW-oVs" secondAttribute="trailing" constant="20" id="vou-xG-YBU"/>
+                                    <constraint firstItem="iwT-pq-8U9" firstAttribute="top" secondItem="6pz-CQ-64J" secondAttribute="bottom" constant="5" id="yC4-vT-qHM"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flexiterian" translatesAutoresizingMaskIntoConstraints="NO" id="uXV-3a-XbV">
@@ -182,9 +192,11 @@
                     <navigationItem key="navigationItem" id="w0C-Xb-EQn"/>
                     <connections>
                         <outlet property="calendar" destination="yrb-mK-ecZ" id="Cmb-XR-Ls9"/>
+                        <outlet property="checkBtn" destination="0id-PS-nRX" id="ihz-kU-0EM"/>
                         <outlet property="firstListView" destination="Avd-pK-5qZ" id="ov1-wz-qSq"/>
                         <outlet property="headerLabel" destination="uq4-oy-1ZP" id="i4c-mp-nY9"/>
                         <outlet property="secondListView" destination="csn-ih-gM0" id="sDX-OL-7Iw"/>
+                        <outlet property="writeBtn" destination="rIj-ra-Jwn" id="zSQ-39-iAV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -624,7 +636,6 @@
         <image name="backButton" width="24" height="24"/>
         <image name="book" width="24" height="24"/>
         <image name="calendar" width="32" height="32"/>
-        <image name="checkButton" width="77" height="28"/>
         <image name="day" width="24" height="24"/>
         <image name="farm_back" width="375" height="812"/>
         <image name="feed" width="24" height="24"/>
@@ -640,10 +651,12 @@
         <image name="progressBar" width="221" height="24"/>
         <image name="right" width="24" height="24"/>
         <image name="share" width="24" height="24"/>
-        <image name="writeButton" width="77" height="28"/>
         <image name="writeIcon" width="30" height="30"/>
         <namedColor name="background">
             <color red="0.92941176470588238" green="0.95686274509803926" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkMain">
+            <color red="0.32156862745098042" green="0.59999999999999998" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

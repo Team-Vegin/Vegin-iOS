@@ -38,9 +38,9 @@ class FeedWriteVC: BaseVC {
     
     /// 게시글 수정 기능 위한 변수
     private var postID: Int = -1
-    private var isWriting = true // 작성, 수정 판별 위한 변수
-    private var titleData = ""
-    private var contentData = ""
+    private var isWriting: Bool = true // 작성, 수정 판별 위한 변수
+    private var titleData: String = ""
+    private var contentData: String = ""
     private var imageURL: URL?
     
     // MARK: Life Cycle
