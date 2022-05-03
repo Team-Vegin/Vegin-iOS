@@ -8,6 +8,8 @@
 import UIKit
 
 class CharacterBookVC: BaseVC {
+    
+    // MARK: IBOutlet
     @IBOutlet weak var characterBookCV: UICollectionView!
     
     // MARK: Properties
@@ -20,6 +22,7 @@ class CharacterBookVC: BaseVC {
     let cellCount = 10
     var previousIndex = 0
     
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         hideTabbar()
@@ -28,6 +31,7 @@ class CharacterBookVC: BaseVC {
         initData()
     }
     
+    // MARK: IBAction
     @IBAction func tapBackBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -51,15 +55,15 @@ extension CharacterBookVC {
     private func initData() {
         charcterBookData.append(contentsOf: [
             CharacterBookData(characterImgName: "Tomavi_1", characterName: "토마비", firstMission: "비긴 설치하기", secondMission: "비긴 회원가입하기", thirdMission: "처음 접속하기"),
-            CharacterBookData(characterImgName: "Hidden_Dangvi", characterName: "당비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
-            CharacterBookData(characterImgName: "Hidden_Onion", characterName: "양비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
-            CharacterBookData(characterImgName: "Hidden_Pavi", characterName: "파비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
-            CharacterBookData(characterImgName: "Hidden_Cabbage", characterName: "양배비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
-            CharacterBookData(characterImgName: "Hidden_Suvi", characterName: "수비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
-            CharacterBookData(characterImgName: "Hidden_Oksuvi", characterName: "옥수비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
-            CharacterBookData(characterImgName: "Hidden_Bluevi", characterName: "블루비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
-            CharacterBookData(characterImgName: "Hidden_Ddalvi", characterName: "딸비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
-            CharacterBookData(characterImgName: "Hidden_Hovi", characterName: "호비", firstMission: "처음 기록하기", secondMission: "두번쨰 기록하기", thirdMission: "세번째 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Dangvi", characterName: "당비", firstMission: "식단 기록 1번 하기", secondMission: "레시피 피드 게시글에 느낌 1번 달기", thirdMission: "플렉시테리언 식단 2번 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Onion", characterName: "양비", firstMission: "식단 기록 2일 하기", secondMission: "플렉시테리언 식단 기록 3번 하기", thirdMission: "생활 피드에 게시글 작성하기"),
+            CharacterBookData(characterImgName: "Hidden_Pavi", characterName: "파비", firstMission: "피드에 글 1번 올리기", secondMission: "피드의 게시글에 느낌 달기", thirdMission: "하루에 2번 식단 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Cabbage", characterName: "양배비", firstMission: "피드에 글 2번 올리기", secondMission: "꿀팁 피드에 게시글 1번 작성하기", thirdMission: "세번째 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Suvi", characterName: "수비", firstMission: "폴로-오보 식단 1번 기록하기", secondMission: "폴로 식단 1번 기록하기", thirdMission: "완전 비건 식단 1번 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Oksuvi", characterName: "옥수비", firstMission: "완전 채식 하루 해보기", secondMission: "하루 2번 식단 기록하기", thirdMission: "페스코 식단 2번 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Bluevi", characterName: "블루비", firstMission: "하루 3번 식단 기록하기", secondMission: "수비 획득하기", thirdMission: "맛집 피드 게시글 작성하기"),
+            CharacterBookData(characterImgName: "Hidden_Ddalvi", characterName: "딸비", firstMission: "식단 기록 10번 이상하기", secondMission: "블루비 획득하기", thirdMission: "완전 채식 3일 이상 기록하기"),
+            CharacterBookData(characterImgName: "Hidden_Hovi", characterName: "호비", firstMission: "다른 캐릭터 모두 획득하기", secondMission: "식단 기록 30번 이상하기", thirdMission: "피드 모든 카테고리 게시글 작성하기"),
             
         ])
     }
