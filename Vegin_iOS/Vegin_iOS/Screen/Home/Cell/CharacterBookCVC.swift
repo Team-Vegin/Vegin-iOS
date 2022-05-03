@@ -15,6 +15,10 @@ class CharacterBookCVC: BaseCVC {
     @IBOutlet weak var firstMissionLabel: UILabel!
     @IBOutlet weak var secondMissionLabel: UILabel!
     @IBOutlet weak var thirdMissionLabel: UILabel!
+    @IBOutlet weak var characterExplainLabel: UILabel!
+    @IBOutlet weak var firstImgView: UIImageView!
+    @IBOutlet weak var secondImgView: UIImageView!
+    @IBOutlet weak var thirdImgView: UIImageView!
     @IBOutlet weak var chooseBtn: VeginBtn!
     
     // Properties
@@ -48,10 +52,14 @@ class CharacterBookCVC: BaseCVC {
 extension CharacterBookCVC {
     func setData(characterData: CharacterBookData, tagData: Int) {
         characterImgView.image = characterData.makeCharacterImg()
+        firstImgView.image = characterData.makeFirstCheckImg()
+        secondImgView.image = characterData.makeSecondCheckImg()
+        thirdImgView.image = characterData.makeThirdCheckImg()
         characterNameLabel.text = characterData.characterName
         firstMissionLabel.text = characterData.firstMission
         secondMissionLabel.text = characterData.secondMission
         thirdMissionLabel.text = characterData.thirdMission
+        characterExplainLabel.text = characterData.characterExplanation
         cellTag = tagData
     }
     
