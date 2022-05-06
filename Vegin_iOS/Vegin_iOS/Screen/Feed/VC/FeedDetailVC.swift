@@ -35,6 +35,7 @@ class FeedDetailVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
         getFeedDetailPost(postID: postId ?? 0)
     }
     
