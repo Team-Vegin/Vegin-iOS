@@ -9,6 +9,8 @@ import UIKit
 
 class FeedDetailEmojiTVC: BaseTVC {
 
+    var tapPlusBtnAction: (() -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +20,10 @@ class FeedDetailEmojiTVC: BaseTVC {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func tapPlusBtn(_ sender: UIButton) {
+        tapPlusBtnAction?()
     }
     
 }

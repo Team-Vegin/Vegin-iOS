@@ -156,6 +156,13 @@ extension FeedDetailVC: UITableViewDataSource {
             feedDetailContentTVC.setData(postData: detailPost)
             return feedDetailContentTVC
         } else if indexPath.section == 2 {
+            feedDetailEmojiTVC.tapPlusBtnAction = {
+                guard let emojiPopUp = Bundle.main.loadNibNamed(EmojiAlertVC.className, owner: self, options: nil)?.first as? EmojiAlertVC else { return }
+                
+                emojiPopUp.modalTransitionStyle = .crossDissolve
+                emojiPopUp.modalPresentationStyle = .overFullScreen
+                self.present(emojiPopUp, animated: true)
+            }
             return feedDetailEmojiTVC
         } else {
             return UITableViewCell()
