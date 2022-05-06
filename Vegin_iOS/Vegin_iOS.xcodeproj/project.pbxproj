@@ -62,6 +62,8 @@
 		7757288B27D0B0E400148C9A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7757288627D0B0E300148C9A /* Pretendard-SemiBold.otf */; };
 		7757288C27D0B0E400148C9A /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7757288727D0B0E400148C9A /* Pretendard-Light.otf */; };
 		7757288E27D0B3D500148C9A /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757288D27D0B3D500148C9A /* UIFont+.swift */; };
+		7779205A282547B40094A3DD /* EmojiAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77792058282547B40094A3DD /* EmojiAlertVC.swift */; };
+		7779205B282547B40094A3DD /* EmojiAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77792059282547B40094A3DD /* EmojiAlertVC.xib */; };
 		779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779015B82742E38300F83ACD /* WriteSB.storyboard */; };
 		779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BA2742E51A00F83ACD /* WriteVC.swift */; };
 		779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BC2743ACE800F83ACD /* CalendarNaviController.swift */; };
@@ -188,6 +190,8 @@
 		7757288627D0B0E300148C9A /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		7757288727D0B0E400148C9A /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		7757288D27D0B3D500148C9A /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		77792058282547B40094A3DD /* EmojiAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAlertVC.swift; sourceTree = "<group>"; };
+		77792059282547B40094A3DD /* EmojiAlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiAlertVC.xib; sourceTree = "<group>"; };
 		779015B82742E38300F83ACD /* WriteSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteSB.storyboard; sourceTree = "<group>"; };
 		779015BA2742E51A00F83ACD /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 		779015BC2743ACE800F83ACD /* CalendarNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarNaviController.swift; path = Vegin_iOS/Screen/Write/VC/CalendarNaviController.swift; sourceTree = SOURCE_ROOT; };
@@ -826,6 +830,7 @@
 			isa = PBXGroup;
 			children = (
 				77FE1734274B860C00F95F0D /* VeginAlertVC.xib */,
+				77792059282547B40094A3DD /* EmojiAlertVC.xib */,
 			);
 			name = Xib;
 			path = "../New Group/Xib";
@@ -835,6 +840,7 @@
 			isa = PBXGroup;
 			children = (
 				77FE1733274B860C00F95F0D /* VeginAlertVC.swift */,
+				77792058282547B40094A3DD /* EmojiAlertVC.swift */,
 				77DBB84527DB186100000623 /* VeginBtn.swift */,
 			);
 			path = Class;
@@ -978,6 +984,7 @@
 				7757288927D0B0E400148C9A /* Pretendard-Medium.otf in Resources */,
 				77D9ED302805BC56000EA76A /* FeedDetailTitleTVC.xib in Resources */,
 				77DBB86827E0CD4100000623 /* MyFeedPostSB.storyboard in Resources */,
+				7779205B282547B40094A3DD /* EmojiAlertVC.xib in Resources */,
 				7757286827C8CF0700148C9A /* FeedMainEmptyTVC.xib in Resources */,
 				7756F9B227FDFEBA006F6EF3 /* HomeSB.storyboard in Resources */,
 				77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */,
@@ -1101,6 +1108,7 @@
 				77ED047F27B6930000D077CA /* CVRegisterable.swift in Sources */,
 				77DBB85D27DF46FB00000623 /* IconImgCVC.swift in Sources */,
 				77FE1735274B860C00F95F0D /* VeginAlertVC.swift in Sources */,
+				7779205A282547B40094A3DD /* EmojiAlertVC.swift in Sources */,
 				7742886127F40F1D001A7CFA /* DietService.swift in Sources */,
 				77ED048727B6965D00D077CA /* UIView+.swift in Sources */,
 				77D9ED2228043E99000EA76A /* FeedService.swift in Sources */,
