@@ -64,6 +64,8 @@
 		7757288E27D0B3D500148C9A /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757288D27D0B3D500148C9A /* UIFont+.swift */; };
 		7779205A282547B40094A3DD /* EmojiAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77792058282547B40094A3DD /* EmojiAlertVC.swift */; };
 		7779205B282547B40094A3DD /* EmojiAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77792059282547B40094A3DD /* EmojiAlertVC.xib */; };
+		77792060282590AC0094A3DD /* EmojiCountCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779205E282590AC0094A3DD /* EmojiCountCVC.swift */; };
+		77792061282590AC0094A3DD /* EmojiCountCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7779205F282590AC0094A3DD /* EmojiCountCVC.xib */; };
 		779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779015B82742E38300F83ACD /* WriteSB.storyboard */; };
 		779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BA2742E51A00F83ACD /* WriteVC.swift */; };
 		779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BC2743ACE800F83ACD /* CalendarNaviController.swift */; };
@@ -192,6 +194,8 @@
 		7757288D27D0B3D500148C9A /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		77792058282547B40094A3DD /* EmojiAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAlertVC.swift; sourceTree = "<group>"; };
 		77792059282547B40094A3DD /* EmojiAlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiAlertVC.xib; sourceTree = "<group>"; };
+		7779205E282590AC0094A3DD /* EmojiCountCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCountCVC.swift; sourceTree = "<group>"; };
+		7779205F282590AC0094A3DD /* EmojiCountCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiCountCVC.xib; sourceTree = "<group>"; };
 		779015B82742E38300F83ACD /* WriteSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteSB.storyboard; sourceTree = "<group>"; };
 		779015BA2742E51A00F83ACD /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 		779015BC2743ACE800F83ACD /* CalendarNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarNaviController.swift; path = Vegin_iOS/Screen/Write/VC/CalendarNaviController.swift; sourceTree = SOURCE_ROOT; };
@@ -580,6 +584,8 @@
 			children = (
 				77DBB84827DEF29F00000623 /* CategoryCVC.swift */,
 				77DBB84927DEF29F00000623 /* CategoryCVC.xib */,
+				7779205E282590AC0094A3DD /* EmojiCountCVC.swift */,
+				7779205F282590AC0094A3DD /* EmojiCountCVC.xib */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -968,6 +974,7 @@
 				772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */,
 				77DBB85927DF449800000623 /* DietDetailIconTVC.xib in Resources */,
 				7742884C27F14512001A7CFA /* SignUpSB.storyboard in Resources */,
+				77792061282590AC0094A3DD /* EmojiCountCVC.xib in Resources */,
 				7757288B27D0B0E400148C9A /* Pretendard-SemiBold.otf in Resources */,
 				772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */,
 				7757288127CE0F9500148C9A /* DietListTVC.xib in Resources */,
@@ -1069,6 +1076,7 @@
 				77FE1738274D2EC800F95F0D /* VeginTBC.swift in Sources */,
 				77DBB86A27E0CF8C00000623 /* FeedNC.swift in Sources */,
 				7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */,
+				77792060282590AC0094A3DD /* EmojiCountCVC.swift in Sources */,
 				77ED048F27B6C46900D077CA /* UILabel+.swift in Sources */,
 				77313754281EE32800E69459 /* HomeService.swift in Sources */,
 				7742886C27F6CA36001A7CFA /* SignService.swift in Sources */,
