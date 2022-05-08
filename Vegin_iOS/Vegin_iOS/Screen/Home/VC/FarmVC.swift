@@ -108,7 +108,6 @@ extension FarmVC {
                 self.activityIndicator.stopAnimating()
                 if let data = res as? [MissionListResModel] {
                     print(data)
-                    // TODO: 통신결과로 할 작업 함수 호출
                     self.detailMissionData = data
                     self.setUpProgress()
                 }

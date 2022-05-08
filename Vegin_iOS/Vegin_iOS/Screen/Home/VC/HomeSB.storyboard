@@ -59,7 +59,7 @@
                                 </constraints>
                             </view>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="CharacterBookCV" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BD0-dE-61x" customClass="CharacterBookCV" customModule="Vegin_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="105.66666666666669" width="375" height="638.33333333333326"/>
+                                <rect key="frame" x="0.0" y="105.66666666666669" width="375" height="672.33333333333326"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2aG-vj-xQI">
                                     <size key="itemSize" width="267" height="616"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -68,7 +68,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CharacterBookCVC" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CharacterBooKCVC" id="4Q5-zr-lmx" customClass="CharacterBookCVC" customModule="Vegin_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="11" width="267" height="616"/>
+                                        <rect key="frame" x="0.0" y="28" width="267" height="616"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="267" height="616"/>
@@ -81,7 +81,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="tHr-7f-Ilc" secondAttribute="bottom" id="8lE-9R-raY"/>
-                            <constraint firstItem="BD0-dE-61x" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="-34" id="ASU-Gq-lQ0"/>
+                            <constraint firstItem="BD0-dE-61x" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ASU-Gq-lQ0"/>
                             <constraint firstAttribute="trailing" secondItem="BD0-dE-61x" secondAttribute="trailing" id="Naf-Gv-ZOg"/>
                             <constraint firstItem="7z6-dh-qJW" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="22" id="OqS-TC-Shf"/>
                             <constraint firstItem="tHr-7f-Ilc" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="baY-Qg-wfk"/>

@@ -20,6 +20,7 @@ class CharacterBookCVC: BaseCVC {
     @IBOutlet weak var secondImgView: UIImageView!
     @IBOutlet weak var thirdImgView: UIImageView!
     @IBOutlet weak var chooseBtn: VeginBtn!
+    @IBOutlet weak var warningLabel: UILabel!
     
     // Properties
     var cellTag: Int = -1
@@ -34,15 +35,15 @@ class CharacterBookCVC: BaseCVC {
     /// CVC 재사용 문제 해결을 위한 reload
     override func prepareForReuse() {
         chooseBtn.isHidden = false
+        warningLabel.isHidden = true
     }
     
     @IBAction func tapStartBtn(_ sender: UIButton) {
         if let delegate = delegate {
             if isClicked {
-                delegate.presentAlert()
+                delegate.presentAlert(data: cellTag)
             } else {
                 delegate.sendData(data: cellTag)
-                isClicked = true
             }
         }
     }
@@ -50,30 +51,51 @@ class CharacterBookCVC: BaseCVC {
 
 // MARK: - Custom Methods
 extension CharacterBookCVC {
-    func setData(characterData: CharacterBookData, tagData: Int) {
+    func setData(characterData: CharacterBookData, tagData: Int, missionData: MissionListResModel) {
         characterImgView.image = characterData.makeCharacterImg()
-        firstImgView.image = characterData.makeFirstCheckImg()
-        secondImgView.image = characterData.makeSecondCheckImg()
-        thirdImgView.image = characterData.makeThirdCheckImg()
         characterNameLabel.text = characterData.characterName
         firstMissionLabel.text = characterData.firstMission
         secondMissionLabel.text = characterData.secondMission
         thirdMissionLabel.text = characterData.thirdMission
         characterExplainLabel.text = characterData.characterExplanation
         cellTag = tagData
+        
+        // 체크, 잠금 이미지 세팅
+        if missionData.progress[0] == 0 {
+            firstImgView.image = UIImage(named: "lock")
+        } else {
+            firstImgView.image = UIImage(named: "check_img")
+        }
+        
+        if missionData.progress[1] == 0 {
+            secondImgView.image = UIImage(named: "lock")
+        } else {
+            secondImgView.image = UIImage(named: "check_img")
+        }
+        
+        if missionData.progress[2] == 0 {
+            thirdImgView.image = UIImage(named: "lock")
+        } else {
+            thirdImgView.image = UIImage(named: "check_img")
+        }
+           
     }
     
+    /// 미션 중이지 않은 버튼 UI 설정 메서드
     func setDefaultBtnUI() {
         chooseBtn.isActivated = true
         chooseBtn.setImage(UIImage(named: "cheerUp_light"), for: .normal)
         chooseBtn.backgroundColor = .darkMain
         chooseBtn.setTitleWithStyle(title: " 도전하기", size: 16, weight: .bold)
+        warningLabel.isHidden = true
     }
     
+    /// 미션 중인 버튼 UI 설정 메서드
     func setSelectedBtnUI() {
         chooseBtn.isActivated = true
         chooseBtn.setImage(UIImage(named: "delete_light"), for: .normal)
         chooseBtn.backgroundColor = .gray0
         chooseBtn.setTitleWithStyle(title: " 미션 중단하기", size: 16, weight: .bold)
+        warningLabel.isHidden = false
     }
 }

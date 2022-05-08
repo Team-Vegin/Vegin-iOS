@@ -9,5 +9,5 @@ import Foundation
 
 protocol SendDataDelegate {
     func sendData(data: Int)
-    func presentAlert()
+    func presentAlert(data: Int)
 }
