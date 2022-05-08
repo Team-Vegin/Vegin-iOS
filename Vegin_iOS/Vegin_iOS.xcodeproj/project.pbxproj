@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A751C8C27E4CE5C003DCD7C /* HomeNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A751C8B27E4CE5C003DCD7C /* HomeNC.swift */; };
 		5A95325927E1375E001E72A3 /* CharacterBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95325827E1375E001E72A3 /* CharacterBookVC.swift */; };
+		77163F77282798C40093FC9D /* MissionListResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77163F76282798C40093FC9D /* MissionListResModel.swift */; };
 		772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C146E273B7DAB00BB0127 /* AppDelegate.swift */; };
 		772C1471273B7DAB00BB0127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1470273B7DAB00BB0127 /* SceneDelegate.swift */; };
 		772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1474273B7DAB00BB0127 /* Main.storyboard */; };
@@ -137,6 +138,7 @@
 		4633DCDA9E2208418F65B04D /* Pods-Vegin_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegin_iOS.release.xcconfig"; path = "Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5A751C8B27E4CE5C003DCD7C /* HomeNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNC.swift; sourceTree = "<group>"; };
 		5A95325827E1375E001E72A3 /* CharacterBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBookVC.swift; sourceTree = "<group>"; };
+		77163F76282798C40093FC9D /* MissionListResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListResModel.swift; sourceTree = "<group>"; };
 		772C146B273B7DAB00BB0127 /* Vegin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772C146E273B7DAB00BB0127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772C1470273B7DAB00BB0127 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				77313751281EE2AC00E69459 /* MissionStartResModel.swift */,
+				77163F76282798C40093FC9D /* MissionListResModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1132,6 +1135,7 @@
 				77C03F75280AECFB00B0EE84 /* DietListDataModel.swift in Sources */,
 				7742885027F154DB001A7CFA /* SignUpVC.swift in Sources */,
 				7742884E27F15462001A7CFA /* NickNameVC.swift in Sources */,
+				77163F77282798C40093FC9D /* MissionListResModel.swift in Sources */,
 				77ED048127B6932D00D077CA /* BaseCVC.swift in Sources */,
 				77D9ED28280470AF000EA76A /* SendDataDelegate.swift in Sources */,
 				77ED048B27B6994900D077CA /* UIButton+.swift in Sources */,

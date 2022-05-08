@@ -35,4 +35,3 @@ class BaseVC: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
 }
-

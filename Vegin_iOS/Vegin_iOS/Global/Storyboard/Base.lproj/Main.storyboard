@@ -273,6 +273,12 @@
                                             <constraint firstAttribute="height" constant="34" id="wW6-Oa-NJV"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="진행 중인 미션이 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8h-21-aK4">
+                                        <rect key="frame" x="126" y="620" width="123" height="15"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -285,6 +291,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Xya-dQ-FYS" secondAttribute="trailing" constant="23" id="BTL-Pd-SRq"/>
                                     <constraint firstItem="5tu-GG-OWr" firstAttribute="top" secondItem="V8M-fk-eHq" secondAttribute="bottom" constant="10" id="CyT-YI-j4S"/>
                                     <constraint firstAttribute="trailing" secondItem="Dlj-KN-lM3" secondAttribute="trailing" constant="22" id="EUX-E4-eJU"/>
+                                    <constraint firstItem="5tu-GG-OWr" firstAttribute="top" secondItem="V8h-21-aK4" secondAttribute="bottom" constant="3" id="F1P-zt-ed4"/>
                                     <constraint firstItem="Dlj-KN-lM3" firstAttribute="leading" secondItem="qFi-59-6GT" secondAttribute="trailing" constant="22" id="HXe-Fs-i7k"/>
                                     <constraint firstItem="5tu-GG-OWr" firstAttribute="leading" secondItem="VaN-GO-kLI" secondAttribute="leading" constant="73" id="MoQ-9w-Bhm"/>
                                     <constraint firstItem="hnS-1U-vq9" firstAttribute="leading" secondItem="VaN-GO-kLI" secondAttribute="leading" constant="40" id="NO2-Yj-n3i"/>
@@ -298,6 +305,7 @@
                                     <constraint firstAttribute="bottom" secondItem="LJ3-RE-TRY" secondAttribute="bottom" constant="252" id="eRz-F5-dFY"/>
                                     <constraint firstItem="qFi-59-6GT" firstAttribute="top" secondItem="VaN-GO-kLI" secondAttribute="top" constant="78" id="er3-sV-vJw"/>
                                     <constraint firstItem="Nfo-CP-uTy" firstAttribute="leading" secondItem="VaN-GO-kLI" secondAttribute="leading" id="hWG-gg-QdM"/>
+                                    <constraint firstItem="V8h-21-aK4" firstAttribute="centerX" secondItem="5tu-GG-OWr" secondAttribute="centerX" id="tsx-Ts-a5v"/>
                                     <constraint firstAttribute="bottom" secondItem="5tu-GG-OWr" secondAttribute="bottom" constant="150" id="uRr-Lu-Wcq"/>
                                     <constraint firstItem="V8M-fk-eHq" firstAttribute="top" secondItem="Xya-dQ-FYS" secondAttribute="bottom" constant="13" id="v1H-gq-d8l"/>
                                     <constraint firstItem="LJ3-RE-TRY" firstAttribute="leading" secondItem="VaN-GO-kLI" secondAttribute="leading" constant="69" id="yIO-nK-MsG"/>
@@ -318,6 +326,9 @@
                         <outlet property="characterBookBtn" destination="Dlj-KN-lM3" id="6RE-zw-pdF"/>
                         <outlet property="messageLabel" destination="hnS-1U-vq9" id="qEe-Mw-t88"/>
                         <outlet property="missionInfoView" destination="V8M-fk-eHq" id="iX3-dk-Vm7"/>
+                        <outlet property="missionStatusLabel" destination="CRv-hB-3ky" id="5VR-n9-OWc"/>
+                        <outlet property="noMissionLabel" destination="V8h-21-aK4" id="xsg-xM-4fe"/>
+                        <outlet property="progressBarImgView" destination="5tu-GG-OWr" id="aPG-Hn-rm6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XD7-BR-39W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

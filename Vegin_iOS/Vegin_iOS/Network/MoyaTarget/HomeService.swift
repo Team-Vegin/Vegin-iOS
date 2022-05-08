@@ -10,6 +10,7 @@ import Moya
 
 enum HomeService {
     case requestStartMission(missionID: Int)
+    case getMissionListStatus
 }
 
 extension HomeService: TargetType {
@@ -19,7 +20,7 @@ extension HomeService: TargetType {
     
     var path: String {
         switch self {
-        case .requestStartMission:
+        case .requestStartMission, .getMissionListStatus:
             return "/mission"
         }
     }
@@ -28,6 +29,8 @@ extension HomeService: TargetType {
         switch self {
         case .requestStartMission:
             return .post
+        case .getMissionListStatus:
+            return .get
         }
     }
     
@@ -40,6 +43,10 @@ extension HomeService: TargetType {
                 "missionId" : missionID
             ]
             return .requestParameters(parameters: body, encoding: JSONEncoding.default)
+            
+        /// 미션 리스트 현황 조회
+        case .getMissionListStatus:
+            return .requestPlain
         }
     }
     
