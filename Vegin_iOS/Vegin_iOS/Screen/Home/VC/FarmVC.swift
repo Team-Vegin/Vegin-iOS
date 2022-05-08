@@ -42,3 +42,33 @@ extension FarmVC {
         missionInfoView.makeRounded(cornerRadius: 0.5 * missionInfoView.bounds.height)
     }
 }
+
+// MARK: - Network
+extension FarmVC {
+    
+    /// 미션 리스트 현황 조회 메서드
+    private func getMissionListStatus() {
+        self.activityIndicator.startAnimating()
+        HomeAPI.shared.getMissionListStatusAPI() { networkResult in
+            switch networkResult {
+            case .success(let res):
+                print(res)
+                self.activityIndicator.stopAnimating()
+                if let data = res as? [MissionListResModel] {
+                    print(data)
+                    // TODO: 통신결과로 할 작업 함수 호출
+                    self.detailMissionData = data
+                    self.setUpProgress()
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+}
+
