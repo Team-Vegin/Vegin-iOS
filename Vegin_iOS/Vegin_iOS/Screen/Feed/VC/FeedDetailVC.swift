@@ -35,6 +35,7 @@ class FeedDetailVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
         getFeedDetailPost(postID: postId ?? 0)
     }
     
@@ -129,7 +130,7 @@ extension FeedDetailVC: UITableViewDelegate {
         } else if indexPath.section == 1 {
             return UITableView.automaticDimension
         } else if indexPath.section == 2 {
-            return 78
+            return 142
         } else {
              return 0
         }
