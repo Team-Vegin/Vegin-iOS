@@ -43,25 +43,10 @@ struct CharacterBookData {
     let firstMission: String
     let secondMission: String
     let thirdMission: String
-    let firstCheckImgName: String
-    let secondCheckImgName: String
-    let thirdCheckImgName: String
     let characterExplanation: String
     
     func makeCharacterImg() -> UIImage? {
         return UIImage(named: characterImgName)
-    }
-    
-    func makeFirstCheckImg() -> UIImage? {
-        return UIImage(named: firstCheckImgName)
-    }
-    
-    func makeSecondCheckImg() -> UIImage? {
-        return UIImage(named: secondCheckImgName)
-    }
-    
-    func makeThirdCheckImg() -> UIImage? {
-        return UIImage(named: thirdCheckImgName)
     }
 }
 
