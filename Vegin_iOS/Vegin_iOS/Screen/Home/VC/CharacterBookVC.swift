@@ -18,7 +18,7 @@ class CharacterBookVC: BaseVC {
     var isDoingMission: Bool = false
     var cellTagDelegate: SendDataDelegate?
     
-    let cellSize = CGSize(width: UIScreen.main.bounds.width * (276/375), height: UIScreen.main.bounds.width * (276/375) * (616/276))
+    let cellSize = CGSize(width: UIScreen.main.bounds.width * (276/375), height: UIScreen.main.bounds.width * (276/375) * (640/276))
     var minItemSpacing: CGFloat = 20
     let cellCount = 10
     var previousIndex = 0

@@ -20,6 +20,7 @@ class CharacterBookCVC: BaseCVC {
     @IBOutlet weak var secondImgView: UIImageView!
     @IBOutlet weak var thirdImgView: UIImageView!
     @IBOutlet weak var chooseBtn: VeginBtn!
+    @IBOutlet weak var warningLabel: UILabel!
     
     // Properties
     var cellTag: Int = -1
@@ -34,6 +35,7 @@ class CharacterBookCVC: BaseCVC {
     /// CVC 재사용 문제 해결을 위한 reload
     override func prepareForReuse() {
         chooseBtn.isHidden = false
+        warningLabel.isHidden = true
     }
     
     @IBAction func tapStartBtn(_ sender: UIButton) {
@@ -85,6 +87,7 @@ extension CharacterBookCVC {
         chooseBtn.setImage(UIImage(named: "cheerUp_light"), for: .normal)
         chooseBtn.backgroundColor = .darkMain
         chooseBtn.setTitleWithStyle(title: " 도전하기", size: 16, weight: .bold)
+        warningLabel.isHidden = true
     }
     
     /// 미션 중인 버튼 UI 설정 메서드
@@ -93,5 +96,6 @@ extension CharacterBookCVC {
         chooseBtn.setImage(UIImage(named: "delete_light"), for: .normal)
         chooseBtn.backgroundColor = .gray0
         chooseBtn.setTitleWithStyle(title: " 미션 중단하기", size: 16, weight: .bold)
+        warningLabel.isHidden = false
     }
 }
