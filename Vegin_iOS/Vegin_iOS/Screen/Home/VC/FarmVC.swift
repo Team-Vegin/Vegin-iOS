@@ -13,12 +13,12 @@ class FarmVC: BaseVC {
     // MARK: IBOutlet
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var characterBookBtn: UIButton!
-    @IBOutlet weak var mainCharacterBtn: UIButton!
-    @IBOutlet weak var tapProgressBarBtn: UIButton!
+    @IBOutlet weak var missionInfoView: UIView!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,9 +32,11 @@ class FarmVC: BaseVC {
         
         self.navigationController?.pushViewController(CharacterBookVC, animated: true)
     }
- 
-    @IBAction func tapCharaterBtn(_ sender: Any) {  //메인 캐릭터를 누르면 새로운 메세지로 변경 (서버 연결 전)
-    }
-    @IBAction func tapProgressBarBtn(_ sender: Any) {   //progressBar 누르면 진행중인 미션 노출 (서버 연결 전)
+}
+
+extension FarmVC {
+    private func configureUI() {
+        messageLabel.setLineSpacing(lineSpacing: 2)
+        missionInfoView.makeRounded(cornerRadius: 0.5 * missionInfoView.bounds.height)
     }
 }
