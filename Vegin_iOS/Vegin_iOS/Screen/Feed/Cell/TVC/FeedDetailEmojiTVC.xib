@@ -50,6 +50,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="emojiCV" destination="i8V-ar-ahU" id="It2-nE-2th"/>
+            </connections>
             <point key="canvasLocation" x="138.40579710144928" y="103.45982142857143"/>
         </tableViewCell>
     </objects>

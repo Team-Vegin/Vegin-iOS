@@ -130,7 +130,7 @@ extension FeedDetailVC: UITableViewDelegate {
         } else if indexPath.section == 1 {
             return UITableView.automaticDimension
         } else if indexPath.section == 2 {
-            return 78
+            return 142
         } else {
              return 0
         }
