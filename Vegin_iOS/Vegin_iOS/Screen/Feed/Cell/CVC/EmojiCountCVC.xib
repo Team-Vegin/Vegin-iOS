@@ -38,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="main"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="qD4-rN-2hS" firstAttribute="leading" secondItem="9OZ-7G-SFf" secondAttribute="trailing" constant="5" id="H2e-qX-lF6"/>
                             <constraint firstAttribute="trailing" secondItem="qD4-rN-2hS" secondAttribute="trailing" constant="9" id="M6f-XQ-HOO"/>
@@ -61,17 +61,19 @@
             <size key="customSize" width="110" height="50"/>
             <connections>
                 <outlet property="bgView" destination="jfM-go-RHF" id="Vdr-bA-U68"/>
+                <outlet property="emojiCountLabel" destination="qD4-rN-2hS" id="sla-nr-NhT"/>
+                <outlet property="emojiImgView" destination="9OZ-7G-SFf" id="gU0-ok-tlF"/>
             </connections>
             <point key="canvasLocation" x="181.15942028985509" y="91.741071428571431"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="_fire" width="40" height="40.5"/>
+        <namedColor name="background">
+            <color red="0.92941176470588238" green="0.95686274509803926" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="darkMain">
             <color red="0.32156862745098042" green="0.59999999999999998" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="main">
-            <color red="0.76078431372549016" green="0.87450980392156863" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
