@@ -136,6 +136,7 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         let monthData = getMonthDate(date: calendar.currentPage)
         self.headerLabel.text = monthData
+        getEmojiList(year: getYear(date: calendar.currentPage), month: getMonth(date: calendar.currentPage))
     }
     
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
