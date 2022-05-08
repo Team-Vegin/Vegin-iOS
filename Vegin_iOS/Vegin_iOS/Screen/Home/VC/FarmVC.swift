@@ -19,6 +19,7 @@ class FarmVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        getMissionListStatus()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +35,7 @@ class FarmVC: BaseVC {
     }
 }
 
+// MARK: - UI
 extension FarmVC {
     private func configureUI() {
         messageLabel.setLineSpacing(lineSpacing: 2)
