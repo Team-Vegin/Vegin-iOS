@@ -10,6 +10,7 @@
 		5A751C8C27E4CE5C003DCD7C /* HomeNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A751C8B27E4CE5C003DCD7C /* HomeNC.swift */; };
 		5A95325927E1375E001E72A3 /* CharacterBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A95325827E1375E001E72A3 /* CharacterBookVC.swift */; };
 		77163F77282798C40093FC9D /* MissionListResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77163F76282798C40093FC9D /* MissionListResModel.swift */; };
+		77163F79282841730093FC9D /* CharacterSelectResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77163F78282841730093FC9D /* CharacterSelectResModel.swift */; };
 		772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C146E273B7DAB00BB0127 /* AppDelegate.swift */; };
 		772C1471273B7DAB00BB0127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1470273B7DAB00BB0127 /* SceneDelegate.swift */; };
 		772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1474273B7DAB00BB0127 /* Main.storyboard */; };
@@ -139,6 +140,7 @@
 		5A751C8B27E4CE5C003DCD7C /* HomeNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNC.swift; sourceTree = "<group>"; };
 		5A95325827E1375E001E72A3 /* CharacterBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBookVC.swift; sourceTree = "<group>"; };
 		77163F76282798C40093FC9D /* MissionListResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListResModel.swift; sourceTree = "<group>"; };
+		77163F78282841730093FC9D /* CharacterSelectResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectResModel.swift; sourceTree = "<group>"; };
 		772C146B273B7DAB00BB0127 /* Vegin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772C146E273B7DAB00BB0127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772C1470273B7DAB00BB0127 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			children = (
 				77313751281EE2AC00E69459 /* MissionStartResModel.swift */,
 				77163F76282798C40093FC9D /* MissionListResModel.swift */,
+				77163F78282841730093FC9D /* CharacterSelectResModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1078,6 +1081,7 @@
 				77ED048527B6944300D077CA /* NaviType.swift in Sources */,
 				77FE1738274D2EC800F95F0D /* VeginTBC.swift in Sources */,
 				77DBB86A27E0CF8C00000623 /* FeedNC.swift in Sources */,
+				77163F79282841730093FC9D /* CharacterSelectResModel.swift in Sources */,
 				7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */,
 				77792060282590AC0094A3DD /* EmojiCountCVC.swift in Sources */,
 				77ED048F27B6C46900D077CA /* UILabel+.swift in Sources */,
