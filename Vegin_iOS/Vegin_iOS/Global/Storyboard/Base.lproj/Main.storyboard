@@ -221,9 +221,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlj-KN-lM3">
-                                        <rect key="frame" x="305" y="78" width="48" height="24"/>
+                                        <rect key="frame" x="329" y="78" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="5Xk-q3-6iJ"/>
+                                            <constraint firstAttribute="width" secondItem="Dlj-KN-lM3" secondAttribute="height" multiplier="1:1" id="eOF-9p-2ir"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="book" title=""/>
@@ -240,9 +241,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFi-59-6GT">
-                                        <rect key="frame" x="235" y="78" width="48" height="24"/>
+                                        <rect key="frame" x="283" y="78" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="iv6-uF-LXJ"/>
+                                            <constraint firstAttribute="width" secondItem="qFi-59-6GT" secondAttribute="height" multiplier="1:1" id="rgN-Ls-Dau"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="share" title=""/>
@@ -288,7 +290,9 @@
                                     <constraint firstAttribute="trailing" secondItem="Nfo-CP-uTy" secondAttribute="trailing" id="96G-gh-4wF"/>
                                     <constraint firstAttribute="trailing" secondItem="5tu-GG-OWr" secondAttribute="trailing" constant="73" id="9P0-2j-slJ"/>
                                     <constraint firstItem="Xya-dQ-FYS" firstAttribute="leading" secondItem="VaN-GO-kLI" secondAttribute="leading" constant="23" id="9fJ-ih-bFn"/>
+                                    <constraint firstItem="qFi-59-6GT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VaN-GO-kLI" secondAttribute="leading" constant="20" symbolic="YES" id="BIK-0l-VEU"/>
                                     <constraint firstAttribute="trailing" secondItem="Xya-dQ-FYS" secondAttribute="trailing" constant="23" id="BTL-Pd-SRq"/>
+                                    <constraint firstItem="qFi-59-6GT" firstAttribute="top" secondItem="Dlj-KN-lM3" secondAttribute="top" id="CqS-DM-1gZ"/>
                                     <constraint firstItem="5tu-GG-OWr" firstAttribute="top" secondItem="V8M-fk-eHq" secondAttribute="bottom" constant="10" id="CyT-YI-j4S"/>
                                     <constraint firstAttribute="trailing" secondItem="Dlj-KN-lM3" secondAttribute="trailing" constant="22" id="EUX-E4-eJU"/>
                                     <constraint firstItem="5tu-GG-OWr" firstAttribute="top" secondItem="V8h-21-aK4" secondAttribute="bottom" constant="3" id="F1P-zt-ed4"/>
@@ -298,12 +302,10 @@
                                     <constraint firstItem="Nfo-CP-uTy" firstAttribute="top" secondItem="VaN-GO-kLI" secondAttribute="top" id="Qih-jL-gCI"/>
                                     <constraint firstAttribute="trailing" secondItem="LJ3-RE-TRY" secondAttribute="trailing" constant="69" id="Rxq-6s-eJG"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hnS-1U-vq9" secondAttribute="trailing" constant="20" symbolic="YES" id="S4J-LA-cN7"/>
-                                    <constraint firstItem="qFi-59-6GT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VaN-GO-kLI" secondAttribute="leading" constant="20" symbolic="YES" id="Wrs-9D-d3i"/>
                                     <constraint firstItem="Dlj-KN-lM3" firstAttribute="top" secondItem="VaN-GO-kLI" secondAttribute="top" constant="78" id="YrR-vb-WrR"/>
                                     <constraint firstItem="V8M-fk-eHq" firstAttribute="leading" secondItem="VaN-GO-kLI" secondAttribute="leading" constant="102.5" id="ax1-RJ-68B"/>
                                     <constraint firstItem="hnS-1U-vq9" firstAttribute="top" secondItem="VaN-GO-kLI" secondAttribute="top" constant="104" id="cg0-9h-TMd"/>
                                     <constraint firstAttribute="bottom" secondItem="LJ3-RE-TRY" secondAttribute="bottom" constant="252" id="eRz-F5-dFY"/>
-                                    <constraint firstItem="qFi-59-6GT" firstAttribute="top" secondItem="VaN-GO-kLI" secondAttribute="top" constant="78" id="er3-sV-vJw"/>
                                     <constraint firstItem="Nfo-CP-uTy" firstAttribute="leading" secondItem="VaN-GO-kLI" secondAttribute="leading" id="hWG-gg-QdM"/>
                                     <constraint firstItem="V8h-21-aK4" firstAttribute="centerX" secondItem="5tu-GG-OWr" secondAttribute="centerX" id="tsx-Ts-a5v"/>
                                     <constraint firstAttribute="bottom" secondItem="5tu-GG-OWr" secondAttribute="bottom" constant="150" id="uRr-Lu-Wcq"/>
@@ -324,6 +326,8 @@
                     <navigationItem key="navigationItem" id="5ci-Q0-wHH"/>
                     <connections>
                         <outlet property="characterBookBtn" destination="Dlj-KN-lM3" id="6RE-zw-pdF"/>
+                        <outlet property="characterImgView" destination="LJ3-RE-TRY" id="r1X-ei-Ust"/>
+                        <outlet property="itemImgView" destination="Xya-dQ-FYS" id="6QX-Bg-NME"/>
                         <outlet property="messageLabel" destination="hnS-1U-vq9" id="qEe-Mw-t88"/>
                         <outlet property="missionInfoView" destination="V8M-fk-eHq" id="iX3-dk-Vm7"/>
                         <outlet property="missionStatusLabel" destination="CRv-hB-3ky" id="5VR-n9-OWc"/>

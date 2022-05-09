@@ -25,6 +25,8 @@ class CharacterBookCVC: BaseCVC {
     // Properties
     var cellTag: Int = -1
     var isClicked: Bool = false
+    var isChosen: Bool = false // 캐릭터 선택
+    var isFinished: Bool = false // 미션 달성
     var delegate: SendDataDelegate?
     
     override func awakeFromNib() {
@@ -32,7 +34,7 @@ class CharacterBookCVC: BaseCVC {
         setDefaultBtnUI()
     }
     
-    /// CVC 재사용 문제 해결을 위한 reload
+    /// CVC 재사용 문제 해결을 위한 초기화
     override func prepareForReuse() {
         chooseBtn.isHidden = false
         warningLabel.isHidden = true
@@ -42,8 +44,10 @@ class CharacterBookCVC: BaseCVC {
         if let delegate = delegate {
             if isClicked {
                 delegate.presentAlert(data: cellTag)
-            } else {
+            } else if !isClicked && !isFinished {
                 delegate.sendData(data: cellTag)
+            } else if isFinished {
+                delegate.changeCharacter(data: cellTag)
             }
         }
     }
@@ -52,13 +56,18 @@ class CharacterBookCVC: BaseCVC {
 // MARK: - Custom Methods
 extension CharacterBookCVC {
     func setData(characterData: CharacterBookData, tagData: Int, missionData: MissionListResModel) {
-        characterImgView.image = characterData.makeCharacterImg()
         characterNameLabel.text = characterData.characterName
         firstMissionLabel.text = characterData.firstMission
         secondMissionLabel.text = characterData.secondMission
         thirdMissionLabel.text = characterData.thirdMission
         characterExplainLabel.text = characterData.characterExplanation
         cellTag = tagData
+        
+        if missionData.progress == [1, 1, 1] && !missionData.inProgress {
+            characterImgView.image = characterData.makeMyCharacterImg()
+        } else {
+            characterImgView.image = characterData.makeHiddenCharacterImg()
+        }
         
         // 체크, 잠금 이미지 세팅
         if missionData.progress[0] == 0 {
@@ -78,7 +87,6 @@ extension CharacterBookCVC {
         } else {
             thirdImgView.image = UIImage(named: "check_img")
         }
-           
     }
     
     /// 미션 중이지 않은 버튼 UI 설정 메서드
@@ -91,11 +99,27 @@ extension CharacterBookCVC {
     }
     
     /// 미션 중인 버튼 UI 설정 메서드
-    func setSelectedBtnUI() {
+    func setDoingMissionBtnUI() {
         chooseBtn.isActivated = true
         chooseBtn.setImage(UIImage(named: "delete_light"), for: .normal)
         chooseBtn.backgroundColor = .gray0
         chooseBtn.setTitleWithStyle(title: " 미션 중단하기", size: 16, weight: .bold)
         warningLabel.isHidden = false
+    }
+    
+    /// 캐릭터 선택하기 버튼 UI 설정 메서드
+    func setSelectCharacterBtnUI() {
+        chooseBtn.isActivated = true
+        chooseBtn.backgroundColor = .main
+        chooseBtn.setTitleColor(.darkMain, for: .normal)
+        chooseBtn.setImage(nil, for: .normal)
+        chooseBtn.setTitleWithStyle(title: " 캐릭터 선택하기", size: 16, weight: .bold)
+    }
+    
+    /// 선택된 캐릭터 버튼 UI 설정 메서드
+    func setSelectedCharacterBtnUI() {
+        chooseBtn.isActivated = false
+        chooseBtn.setImage(nil, for: .normal)
+        chooseBtn.setTitleWithStyle(title: "캐릭터 선택하기", size: 16, weight: .bold)
     }
 }

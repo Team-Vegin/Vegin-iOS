@@ -11,6 +11,7 @@ import Moya
 enum HomeService {
     case requestStartMission(missionID: Int)
     case getMissionListStatus
+    case selectCharacter(characterID: Int)
 }
 
 extension HomeService: TargetType {
@@ -22,12 +23,14 @@ extension HomeService: TargetType {
         switch self {
         case .requestStartMission, .getMissionListStatus:
             return "/mission"
+        case .selectCharacter:
+            return "/mission/character/select"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .requestStartMission:
+        case .requestStartMission, .selectCharacter:
             return .post
         case .getMissionListStatus:
             return .get
@@ -37,14 +40,21 @@ extension HomeService: TargetType {
     var task: Task {
         switch self {
             
-        /// 미션 시작/중단하기
+            /// 미션 시작/중단하기
         case .requestStartMission(let missionID):
             let body: [String : Any] = [
                 "missionId" : missionID
             ]
             return .requestParameters(parameters: body, encoding: JSONEncoding.default)
             
-        /// 미션 리스트 현황 조회
+            /// 캐릭터 선택하기
+        case .selectCharacter(let characterID):
+            let body: [String : Any] = [
+                "characterId" : characterID
+            ]
+            return .requestParameters(parameters: body, encoding: JSONEncoding.default)
+            
+            /// 미션 리스트 현황 조회
         case .getMissionListStatus:
             return .requestPlain
         }

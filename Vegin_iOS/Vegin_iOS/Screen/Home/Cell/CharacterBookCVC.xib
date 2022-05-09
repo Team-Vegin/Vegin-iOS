@@ -122,7 +122,7 @@
                             <constraint firstAttribute="height" constant="40" id="5oD-cH-kdl"/>
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="도전하기" image="cheerUp_light">
+                        <state key="normal" title="도전하기">
                             <color key="titleColor" red="0.32156862749999998" green="0.59999999999999998" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>
@@ -180,7 +180,6 @@
     </objects>
     <resources>
         <image name="Tomavi_1" width="237" height="349"/>
-        <image name="cheerUp_light" width="20" height="20"/>
         <image name="lock" width="20" height="20"/>
         <namedColor name="darkMain">
             <color red="0.32156862745098042" green="0.59999999999999998" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

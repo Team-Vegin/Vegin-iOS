@@ -32,6 +32,22 @@ extension HomeAPI {
         }
     }
     
+    /// [POST] 캐릭터 선택하기
+    func selectCharacterAPI(characterID: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        provider.request(.selectCharacter(characterID: characterID)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                completion(self.selectCharacterJudgeData(status: statusCode, data: data))
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     /// [GET] 미션 리스트 현황 조회
     func getMissionListStatusAPI(completion: @escaping (NetworkResult<Any>) -> (Void)) {
         provider.request(.getMissionListStatus) { result in
@@ -55,6 +71,25 @@ extension HomeAPI {
         let decoder = JSONDecoder()
         
         guard let decodedData = try? decoder.decode(GenericResponse<MissionStartResModel>.self, from: data) else { return .pathErr }
+        
+        switch status {
+        case 200:
+            return .success(decodedData.data ?? "None-Data")
+        case 400:
+            return .requestErr(decodedData.message)
+        case 404:
+            return .requestErr(decodedData.message)
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
+        }
+    }
+    
+    private func selectCharacterJudgeData(status: Int, data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        
+        guard let decodedData = try? decoder.decode(GenericResponse<CharacterSelectResModel>.self, from: data) else { return .pathErr }
         
         switch status {
         case 200:
