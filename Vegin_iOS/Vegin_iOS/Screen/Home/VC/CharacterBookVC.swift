@@ -16,6 +16,7 @@ class CharacterBookVC: BaseVC {
     var charcterBookData: [CharacterBookData] = []
     var missionListData: [MissionListResModel] = []
     var isDoingMission: Bool = false
+    var isFirst: Bool = true // 성공한 미션 하나도 없으면 true 아니면 false
     var cellTagDelegate: SendDataDelegate?
     
     let cellSize = CGSize(width: UIScreen.main.bounds.width * (276/375), height: UIScreen.main.bounds.width * (276/375) * (640/276))
@@ -94,7 +95,6 @@ extension CharacterBookVC: UICollectionViewDelegate {
     }
 }
 
-
 // MARK: - UICollectionViewDataSource
 extension CharacterBookVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -110,36 +110,70 @@ extension CharacterBookVC: UICollectionViewDataSource {
             for i in 0...missionListData.count - 1 {
                 if !missionListData[i].inProgress {
                     isDoingMission = false
+                    if missionListData[i].progress == [1, 1, 1] {
+                        if i != 0 {
+                            isFirst = false // 완료한 미션이 하나라도 있음
+                        } else {
+                            isFirst = true
+                        }
+                    }
                 } else {
                     isDoingMission = true
                     break
                 }
             }
             
+            /// 획득 완료한 캐릭터
+            if !missionListData[indexPath.row].inProgress && missionListData[indexPath.row].progress == [1, 1, 1] {
+                cell.setSelectCharacterBtnUI()
+                cell.isFinished = true
+            }
+            
             // 미션 중일때
             if isDoingMission {
-                if missionListData[indexPath.row].inProgress {
+                if missionListData[indexPath.row].inProgress { // [1,1,1] 아니면 미션 중단하기 버튼 떠있어야함
                     cell.chooseBtn.isHidden = false
-                    cell.isClicked = true
-                    cell.setSelectedBtnUI()
-                } else {
-                    cell.chooseBtn.isHidden = true
+                    if missionListData[indexPath.row].progress == [1, 1, 1] { // 캐릭터 선택하기 버튼
+                        cell.setSelectCharacterBtnUI()
+                        cell.isFinished = true
+                    } else {
+                        cell.isClicked = true
+                        cell.setDoingMissionBtnUI() // 미션 중단하기 버튼
+                    }
+                } else { // 미션 중이지 않은 셀들의 버튼 처리
+                    if missionListData[indexPath.row].progress != [1, 1, 1] {
+                        cell.chooseBtn.isHidden = true
+                    }
                 }
             // 미션 중이지 않을때
             } else {
-                if missionListData[indexPath.row].inProgress {
-                    cell.chooseBtn.isHidden = false
-                    cell.setSelectedBtnUI()
-                } else {
-                    cell.setDefaultBtnUI()
-                    cell.isClicked = false
+                if !missionListData[indexPath.row].inProgress { // false인 애들
+                    if missionListData[indexPath.row].progress == [1, 1, 1] { //이미 미션 달성한애들
+                        cell.chooseBtn.isHidden = false
+                        cell.setSelectCharacterBtnUI()
+                        cell.isFinished = true
+                    } else { // 아직 달성 못한 애들
+                        cell.isFinished = false
+                        cell.setDefaultBtnUI()
+                        cell.isClicked = false
+                    }
                 }
             }
         }
         cell.delegate = self
 
+        /// 디폴트 캐릭터 (토마비)
         if indexPath.row == 0 {
-            cell.chooseBtn.isHidden = true
+            cell.chooseBtn.isHidden = isFirst ? true : false
+            cell.setSelectCharacterBtnUI()
+            cell.isFinished = true
+            cell.isClicked = false
+        }
+        
+        /// 선택된 캐릭터
+        if indexPath.row + 1 == UserDefaults.standard.integer(forKey: UserDefaults.Keys.CharacterID) {
+            cell.setSelectedCharacterBtnUI()
+            cell.isFinished = true
         }
         
         return cell
@@ -148,6 +182,27 @@ extension CharacterBookVC: UICollectionViewDataSource {
 
 // MARK: - SendDataDelegate
 extension CharacterBookVC: SendDataDelegate {
+    
+    /// 캐릭터 선택하기
+    func changeCharacter(data: Int) {
+        guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC,
+              let confirmAlert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
+        
+        alert.showVeginAlert(vc: self, message: "캐릭터를 적용하시겠습니까?", confirmBtnTitle: "확인", cancelBtnTitle: "취소", iconImg: "_smile", type: .withDoubleBtn)
+        alert.confirmBtn.press {
+            self.selectCharacter(characterID: data + 1)
+            confirmAlert.showVeginAlert(vc: self, message: "캐릭터가 적용되었습니다!", confirmBtnTitle: "확인", cancelBtnTitle: "", iconImg: "_smile", type: .withSingleBtn)
+            confirmAlert.confirmBtn.press {
+                self.getMissionListStatus()
+                confirmAlert.dismiss(animated: true)
+            }
+        }
+        alert.cancelBtn.press {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    /// 미션 중단하기
     func presentAlert(data: Int) {
         guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC,
               let confirmAlert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
@@ -166,6 +221,7 @@ extension CharacterBookVC: SendDataDelegate {
         }
     }
     
+    /// 미션 시작하기
     func sendData(data: Int) {
         guard let alert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC,
               let confirmAlert = Bundle.main.loadNibNamed(VeginAlertVC.className, owner: self, options: nil)?.first as? VeginAlertVC else { return }
@@ -195,6 +251,9 @@ extension CharacterBookVC {
             case .success(let res):
                 print(res)
                 self.activityIndicator.stopAnimating()
+                DispatchQueue.main.async {
+                    self.characterBookCV.reloadData()
+                }
             case .requestErr(let res):
                 self.activityIndicator.stopAnimating()
                 print(res)
@@ -226,6 +285,30 @@ extension CharacterBookVC {
                 self.activityIndicator.stopAnimating()
                 print(res)
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 캐릭터 선택하기 메서드
+    private func selectCharacter(characterID: Int) {
+        self.activityIndicator.startAnimating()
+        HomeAPI.shared.selectCharacterAPI(characterID: characterID) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                self.activityIndicator.stopAnimating()
+                if let data = res as? CharacterSelectResModel {
+                    print(data)
+                    UserDefaults.standard.set(data.character, forKey: UserDefaults.Keys.CharacterID)
+                    DispatchQueue.main.async {
+                        self.characterBookCV.reloadData()
+                    }
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
             default:
                 self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
