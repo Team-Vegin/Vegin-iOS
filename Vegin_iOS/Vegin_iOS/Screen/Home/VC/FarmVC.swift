@@ -17,6 +17,8 @@ class FarmVC: BaseVC {
     @IBOutlet weak var progressBarImgView: UIImageView!
     @IBOutlet weak var missionStatusLabel: UILabel!
     @IBOutlet weak var noMissionLabel: UILabel!
+    @IBOutlet weak var characterImgView: UIImageView!
+    @IBOutlet weak var itemImgView: UIImageView!
     
     // MARK: Properties
     var detailMissionData: [MissionListResModel] = []
@@ -26,12 +28,14 @@ class FarmVC: BaseVC {
         super.viewDidLoad()
         configureUI()
         getMissionListStatus()
+        setCharacterImg()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         showTabbar()
         getMissionListStatus()
+        setCharacterImg()
     }
     
     // MARK: IBAction
@@ -48,6 +52,44 @@ extension FarmVC {
         messageLabel.setLineSpacing(lineSpacing: 2)
         missionInfoView.makeRounded(cornerRadius: 0.5 * missionInfoView.bounds.height)
         noMissionLabel.isHidden = true
+    }
+    
+    private func setCharacterImg() {
+        switch UserDefaults.standard.integer(forKey: UserDefaults.Keys.CharacterID) {
+        case 1:
+            characterImgView.image = UIImage(named: "tomato")
+            itemImgView.image = UIImage(named: "tomato_bg")
+        case 2:
+            characterImgView.image = UIImage(named: "carrot")
+            itemImgView.image = UIImage(named: "carrot_bg")
+        case 3:
+            characterImgView.image = UIImage(named: "onion")
+            itemImgView.image = UIImage(named: "onion_bg")
+        case 4:
+            characterImgView.image = UIImage(named: "springOnion")
+            itemImgView.image = UIImage(named: "springOnion_bg")
+        case 5:
+            characterImgView.image = UIImage(named: "cabbage")
+            itemImgView.image = UIImage(named: "cabbage_bg")
+        case 6:
+            characterImgView.image = UIImage(named: "waterMelon")
+            itemImgView.image = UIImage(named: "watermelon_bg")
+        case 7:
+            characterImgView.image = UIImage(named: "corn")
+            itemImgView.image = UIImage(named: "corn_bg")
+        case 8:
+            characterImgView.image = UIImage(named: "blueberry")
+            itemImgView.image = UIImage(named: "blueberry_bg")
+        case 9:
+            characterImgView.image = UIImage(named: "strawberry")
+            itemImgView.image = UIImage(named: "strawberry_bg")
+        case 10:
+            characterImgView.image = UIImage(named: "pumpkin")
+            itemImgView.image = UIImage(named: "pumpkin_bg")
+        default:
+            characterImgView.image = UIImage(named: "tomato")
+            itemImgView.image = UIImage(named: "tomato_bg")
+        }
     }
 }
 
