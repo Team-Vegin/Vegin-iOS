@@ -56,16 +56,16 @@ extension CharacterBookVC {
 
     private func initData() {
         charcterBookData.append(contentsOf: [
-            CharacterBookData(characterImgName: "Tomavi_1", characterName: "토마비", firstMission: "비긴 설치하기", secondMission: "비긴 회원가입하기", thirdMission: "처음 접속하기", characterExplanation: "성실한 토마토.\n 베푸는 것을 좋아하며 착하다."),
-            CharacterBookData(characterImgName: "Hidden_Dangvi", characterName: "당비", firstMission: "식단 기록 1번 하기", secondMission: "레시피 피드 게시글에 느낌 1번 달기", thirdMission: "플렉시테리언 식단 2번 기록하기", characterExplanation: "귀찮은 당근.\n시크하게 열심히 충고해주는 편."),
-            CharacterBookData(characterImgName: "Hidden_Onion", characterName: "양비", firstMission: "식단 기록 2일 하기", secondMission: "플렉시테리언 식단 기록 3번 하기", thirdMission: "생활 피드에 게시글 작성하기", characterExplanation: "소심한 양파.\n걱정이 많아서 꼼꼼하게 코칭해준다."),
-            CharacterBookData(characterImgName: "Hidden_Pavi", characterName: "파비", firstMission: "피드에 글 1번 올리기", secondMission: "피드 게시글에 느낌 달기", thirdMission: "하루에 2번 식단 기록하기", characterExplanation: "엄격한 대파.\n본심은 따뜻한 노력’파’."),
-            CharacterBookData(characterImgName: "Hidden_Cabbage", characterName: "양배비", firstMission: "피드에 글 2번 올리기", secondMission: "꿀팁 피드 게시글 작성하기", thirdMission: "당비 획득하기", characterExplanation: "상냥한 양배추.\n당비를 짝사랑하는 친절한 메이트."),
-            CharacterBookData(characterImgName: "Hidden_Suvi", characterName: "수비", firstMission: "폴로-오보 식단 1번 기록하기", secondMission: "폴로 식단 1번 기록하기", thirdMission: "완전 비건 식단 1번 기록하기", characterExplanation: "까칠한 수박.\n틱틱거리지만 챙겨주는 것을 좋아한다."),
-            CharacterBookData(characterImgName: "Hidden_Oksuvi", characterName: "옥수비", firstMission: "완전 채식 하루 해보기", secondMission: "하루 2번 식단 기록하기", thirdMission: "페스코 식단 2번 기록하기", characterExplanation: "느긋한 옥수수.\n뺀질거리지만 유머감각이 좋다."),
-            CharacterBookData(characterImgName: "Hidden_Bluevi", characterName: "블루비", firstMission: "하루 3번 식단 기록하기", secondMission: "수비 획득하기", thirdMission: "맛집 피드 게시글 작성하기", characterExplanation: "영악한 블루베리.\n얄밉지만 미워할 수 없는 천재."),
-            CharacterBookData(characterImgName: "Hidden_Ddalvi", characterName: "딸비", firstMission: "식단 기록 10번 이상하기", secondMission: "블루비 획득하기", thirdMission: "완전 채식 3일 이상 기록하기", characterExplanation: "무뚝뚝한 딸기.\n관심없어 보이지만 수줍어서 그런 것이다."),
-            CharacterBookData(characterImgName: "Hidden_Hovi", characterName: "호비", firstMission: "다른 캐릭터 모두 획득하기", secondMission: "식단 기록 30번 이상하기", thirdMission: "피드 모든 카테고리 게시글 작성하기", characterExplanation: "호기심 많은 단호박.\n아직 애기라 발음이 잘 안된다.")  
+            CharacterBookData(hiddenCharacterImgName: "Tomavi_1", myCharacterImgName: "Tomavi_1", characterName: "토마비", firstMission: "비긴 설치하기", secondMission: "비긴 회원가입하기", thirdMission: "처음 접속하기", characterExplanation: "성실한 토마토.\n 베푸는 것을 좋아하며 착하다."),
+            CharacterBookData(hiddenCharacterImgName: "Hidden_Dangvi", myCharacterImgName: "carrot", characterName: "당비", firstMission: "식단 기록 1번 하기", secondMission: "레시피 피드 게시글에 느낌 1번 달기", thirdMission: "플렉시테리언 식단 2번 기록하기", characterExplanation: "귀찮은 당근.\n시크하게 열심히 충고해주는 편."),
+            CharacterBookData(hiddenCharacterImgName: "Hidden_Onion", myCharacterImgName: "onion", characterName: "양비", firstMission: "식단 기록 2일 하기", secondMission: "플렉시테리언 식단 기록 3번 하기", thirdMission: "생활 피드에 게시글 작성하기", characterExplanation: "소심한 양파.\n걱정이 많아서 꼼꼼하게 코칭해준다."),
+            CharacterBookData(hiddenCharacterImgName: "Hidden_Pavi", myCharacterImgName: "springOnion", characterName: "파비", firstMission: "피드에 글 1번 올리기", secondMission: "피드 게시글에 느낌 달기", thirdMission: "하루에 2번 식단 기록하기", characterExplanation: "엄격한 대파.\n본심은 따뜻한 노력’파’."),
+            CharacterBookData(hiddenCharacterImgName: "Hidden_Cabbage", myCharacterImgName: "cabbage", characterName: "양배비", firstMission: "피드에 글 2번 올리기", secondMission: "꿀팁 피드 게시글 작성하기", thirdMission: "당비 획득하기", characterExplanation: "상냥한 양배추.\n당비를 짝사랑하는 친절한 메이트."),
+            CharacterBookData(hiddenCharacterImgName: "Hidden_Suvi", myCharacterImgName: "waterMelon", characterName: "수비", firstMission: "폴로-오보 식단 1번 기록하기", secondMission: "폴로 식단 1번 기록하기", thirdMission: "완전 비건 식단 1번 기록하기", characterExplanation: "까칠한 수박.\n틱틱거리지만 챙겨주는 것을 좋아한다."),
+            CharacterBookData(hiddenCharacterImgName: "Hidden_Oksuvi", myCharacterImgName: "corn", characterName: "옥수비", firstMission: "완전 채식 하루 해보기", secondMission: "하루 2번 식단 기록하기", thirdMission: "페스코 식단 2번 기록하기", characterExplanation: "느긋한 옥수수.\n뺀질거리지만 유머감각이 좋다."),
+            CharacterBookData(hiddenCharacterImgName: "Hidden_Bluevi", myCharacterImgName: "blueberry", characterName: "블루비", firstMission: "하루 3번 식단 기록하기", secondMission: "수비 획득하기", thirdMission: "맛집 피드 게시글 작성하기", characterExplanation: "영악한 블루베리.\n얄밉지만 미워할 수 없는 천재."),
+            CharacterBookData(hiddenCharacterImgName: "Hidden_Ddalvi", myCharacterImgName: "strawberry", characterName: "딸비", firstMission: "식단 기록 10번 이상하기", secondMission: "블루비 획득하기", thirdMission: "완전 채식 3일 이상 기록하기", characterExplanation: "무뚝뚝한 딸기.\n관심없어 보이지만 수줍어서 그런 것이다."),
+            CharacterBookData(hiddenCharacterImgName: "Hidden_Hovi", myCharacterImgName: "pumpkin", characterName: "호비", firstMission: "다른 캐릭터 모두 획득하기", secondMission: "식단 기록 30번 이상하기", thirdMission: "피드 모든 카테고리 게시글 작성하기", characterExplanation: "호기심 많은 단호박.\n아직 애기라 발음이 잘 안된다.")
         ])
     }
 }
