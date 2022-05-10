@@ -10,7 +10,7 @@ import UIKit
 class OnboardingVC: BaseVC {
     @IBOutlet weak var OnboardingCV: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var startBtn: VeginBtn!
+    @IBOutlet weak var startBtn: VeginBtn! { didSet { startBtn.isActivated = false  } }
     @IBOutlet weak var skipBtn: UIButton!
     
     // MARK: - Properties
@@ -19,19 +19,24 @@ class OnboardingVC: BaseVC {
         didSet {
             pageControl.currentPage = currentPage
             if currentPage == onboardingData.count - 1 {
-                startBtn.setTitle("다음", for: .normal)
-            } else {
                 startBtn.setTitle("시작하기", for: .normal)
+                startBtn.isActivated = true
+            } else {
+                startBtn.setTitle("다음", for: .normal)
+                
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startBtn.isActivated = false
         
+        setUpCV()
+        registerCVC()
+        initData()
         /// 첫 실행 확인 함수
         isitFirst()
+        
         
         /// PageControl 설정
         pageControl.numberOfPages = 4
@@ -41,18 +46,27 @@ class OnboardingVC: BaseVC {
     }
     
     @IBAction func pageChanged(_ sender: UIPageControl) {
+        if currentPage == onboardingData.count - 1 {
+            print("go to main")
+        } else {
+            currentPage += 1
+            let indexPath = IndexPath(item: currentPage, section: 0)
+            OnboardingCV.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
     }
     
-    @IBAction func tapStartBtn(_ sender: Any) {
-        guard let SignUpVC = UIStoryboard.init(name: "SignUpSB", bundle: nil).instantiateViewController(withIdentifier: SignUpVC.className) as? SignUpVC else { return }
-        
-        self.navigationController?.pushViewController(SignUpVC, animated: true)
+    @IBAction func tapStartBtn(_ sender: UIButton) {
+        let nextVC = self.storyboard?.instantiateViewController(identifier: "SignUpVC")
+        nextVC?.modalTransitionStyle = .coverVertical
+        nextVC?.modalPresentationStyle = .automatic
+        self.present(nextVC!, animated: true, completion: nil)
     }
     
-    @IBAction func tapSkipBtn(_ sender: Any) {
-        guard let SignUpVC = UIStoryboard.init(name: "SignUpSB", bundle: nil).instantiateViewController(withIdentifier: SignUpVC.className) as? SignUpVC else { return }
-        
-        self.navigationController?.pushViewController(SignUpVC, animated: true)
+    @IBAction func tapSkipBtn(_ sender: UIButton) {
+        let nextVC = self.storyboard?.instantiateViewController(identifier: "SignUpVC")
+        nextVC?.modalTransitionStyle = .coverVertical
+        nextVC?.modalPresentationStyle = .automatic
+        self.present(nextVC!, animated: true, completion: nil)
     }
     
 }
@@ -144,10 +158,10 @@ extension OnboardingVC: UICollectionViewDelegateFlowLayout, UIScrollViewDelegate
     }
 }
 
-// MARK: - UICollectionViewDataSource
-extension OnboardingVC: UICollectionViewDataSource {
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+extension OnboardingVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return onboardingData.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCVC.className, for: indexPath) as? OnboardingCVC else {
@@ -155,5 +169,9 @@ extension OnboardingVC: UICollectionViewDataSource {
         }
         cell.setData(OnboardingData: onboardingData[indexPath.row])
         return cell
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        currentPage = Int(scrollView.contentOffset.x / width)
     }
 }

@@ -6,7 +6,6 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL8-ib-eHS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL8-ib-eHS" customClass="VeginBtn" customModule="Vegin_iOS" customModuleProvider="target">
                                 <rect key="frame" x="37" y="651" width="300" height="40"/>
                                 <color key="backgroundColor" name="darkMain"/>
                                 <constraints>
@@ -26,23 +25,29 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="다음"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="tapStartBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hLd-7J-Jas"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="sgq-wr-QJV">
-                                <rect key="frame" x="131" y="603" width="113" height="25"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" defersCurrentPageDisplay="YES" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="sgq-wr-QJV">
+                                <rect key="frame" x="122.66666666666667" y="603" width="129.66666666666663" height="25"/>
                                 <color key="pageIndicatorTintColor" name="background"/>
                                 <color key="currentPageIndicatorTintColor" red="0.32156862749999998" green="0.59999999999999998" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="pageChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="04I-dB-oFo"/>
                                 </connections>
                             </pageControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="OnboardingCV" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D1U-rM-Efm" customClass="OnboardingCV" customModule="Vegin_iOS" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="OnboardingCV" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D1U-rM-Efm" customClass="OnboardingCV" customModule="Vegin_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="47" width="375" height="535"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Cn-XC-3da">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Cn-XC-3da">
                                     <size key="itemSize" width="375" height="550"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -50,12 +55,12 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="OnboardingCVC" id="gXS-6N-hhI" customClass="OnboardingCVC" customModule="Vegin_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="550"/>
+                                        <rect key="frame" x="0.0" y="-7.666666666666667" width="375" height="550"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ruN-5i-xW2">
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="550"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
+                                        </view>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -73,8 +78,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cL8-ib-eHS" firstAttribute="top" secondItem="sgq-wr-QJV" secondAttribute="bottom" constant="23" id="0Lr-2R-AQV"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sgq-wr-QJV" secondAttribute="trailing" constant="131" id="109-WL-5Si"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="wZQ-ko-aHh" secondAttribute="bottom" constant="39" id="2QJ-Bg-OaL"/>
+                            <constraint firstItem="sgq-wr-QJV" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="85i-8m-70u"/>
                             <constraint firstItem="wZQ-ko-aHh" firstAttribute="centerX" secondItem="cL8-ib-eHS" secondAttribute="centerX" id="9s0-Ji-DA9"/>
                             <constraint firstItem="sgq-wr-QJV" firstAttribute="top" secondItem="D1U-rM-Efm" secondAttribute="bottom" constant="21" id="Asv-V0-Lhr"/>
                             <constraint firstItem="sgq-wr-QJV" firstAttribute="top" secondItem="D1U-rM-Efm" secondAttribute="bottom" constant="21" id="EjA-xZ-EgH"/>
@@ -83,7 +88,6 @@
                             <constraint firstItem="D1U-rM-Efm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XDW-lm-h3M"/>
                             <constraint firstItem="D1U-rM-Efm" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="47" id="mE3-gn-qlq"/>
                             <constraint firstItem="D1U-rM-Efm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="oHY-a7-7tM"/>
-                            <constraint firstItem="sgq-wr-QJV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="131" id="vjz-V9-JE9"/>
                             <constraint firstItem="wZQ-ko-aHh" firstAttribute="top" secondItem="cL8-ib-eHS" secondAttribute="bottom" constant="17" id="zKV-Kt-lyS"/>
                         </constraints>
                     </view>
