@@ -55,20 +55,23 @@ class OnboardingVC: BaseVC {
         }
     }
     
-    @IBAction func tapStartBtn(_ sender: UIButton) {
-        let nextVC = self.storyboard?.instantiateViewController(identifier: "SignUpVC")
-        nextVC?.modalTransitionStyle = .coverVertical
-        nextVC?.modalPresentationStyle = .automatic
-        self.present(nextVC!, animated: true, completion: nil)
+    @IBAction func tapStartBtn(_ sender: Any) {
+        /// storyboard를 통해 두번쨰 화면의 storyboard ID를 참조하여 뷰 컨트롤러 호출
+        guard let nextVC = UIStoryboard.init(name: "SignInSB", bundle: nil).instantiateViewController(withIdentifier: SignInVC.className) as? SignInVC else { return }
+        /// 화면 전환 애니메이션 설정
+        nextVC.modalTransitionStyle = .coverVertical
+        /// 전환된 화면이 보여지는 방법 설정
+        nextVC.modalPresentationStyle = .fullScreen
+        /// 인자값으로 다음 뷰 컨트롤러를 넣고 present 메소드를 호출
+        self.present(nextVC, animated: true, completion: nil)
     }
     
-    @IBAction func tapSkipBtn(_ sender: UIButton) {
-        let nextVC = self.storyboard?.instantiateViewController(identifier: "SignUpVC")
-        nextVC?.modalTransitionStyle = .coverVertical
-        nextVC?.modalPresentationStyle = .automatic
-        self.present(nextVC!, animated: true, completion: nil)
+    @IBAction func tapSkipBtn(_ sender: Any) {
+        guard let nextVC = UIStoryboard.init(name: "SignInSB", bundle: nil).instantiateViewController(withIdentifier: SignInVC.className) as? SignInVC else { return }
+        nextVC.modalTransitionStyle = .coverVertical
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
     }
-    
 }
 
 // MARK: - Custom Methods
