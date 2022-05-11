@@ -13,7 +13,6 @@
 		5ABF7F6F28180A70000D1B49 /* OnboardingSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF7F6E28180A70000D1B49 /* OnboardingSB.storyboard */; };
 		5ABF7F7B28180EC8000D1B49 /* OnboardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF7F7928180EC8000D1B49 /* OnboardingCVC.swift */; };
 		5ABF7F7C28180EC8000D1B49 /* OnboardingCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF7F7A28180EC8000D1B49 /* OnboardingCVC.xib */; };
-		5ABF7F7E281FF3BF000D1B49 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF7F7D281FF3BF000D1B49 /* splash.png */; };
 		77163F77282798C40093FC9D /* MissionListResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77163F76282798C40093FC9D /* MissionListResModel.swift */; };
 		77163F79282841730093FC9D /* CharacterSelectResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77163F78282841730093FC9D /* CharacterSelectResModel.swift */; };
 		772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C146E273B7DAB00BB0127 /* AppDelegate.swift */; };
@@ -145,13 +144,12 @@
 		4633DCDA9E2208418F65B04D /* Pods-Vegin_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegin_iOS.release.xcconfig"; path = "Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5A751C8B27E4CE5C003DCD7C /* HomeNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNC.swift; sourceTree = "<group>"; };
 		5A95325827E1375E001E72A3 /* CharacterBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBookVC.swift; sourceTree = "<group>"; };
-		77163F76282798C40093FC9D /* MissionListResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListResModel.swift; sourceTree = "<group>"; };
-		77163F78282841730093FC9D /* CharacterSelectResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectResModel.swift; sourceTree = "<group>"; };
 		5ABF7F6C28180A57000D1B49 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		5ABF7F6E28180A70000D1B49 /* OnboardingSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingSB.storyboard; sourceTree = "<group>"; };
 		5ABF7F7928180EC8000D1B49 /* OnboardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCVC.swift; sourceTree = "<group>"; };
 		5ABF7F7A28180EC8000D1B49 /* OnboardingCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCVC.xib; sourceTree = "<group>"; };
-		5ABF7F7D281FF3BF000D1B49 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		77163F76282798C40093FC9D /* MissionListResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListResModel.swift; sourceTree = "<group>"; };
+		77163F78282841730093FC9D /* CharacterSelectResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectResModel.swift; sourceTree = "<group>"; };
 		772C146B273B7DAB00BB0127 /* Vegin_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegin_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772C146E273B7DAB00BB0127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772C1470273B7DAB00BB0127 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -518,7 +516,6 @@
 		7744C5762742BDD500325814 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				5ABF7F7D281FF3BF000D1B49 /* splash.png */,
 				772C146E273B7DAB00BB0127 /* AppDelegate.swift */,
 				772C1470273B7DAB00BB0127 /* SceneDelegate.swift */,
 				772C1477273B7DAE00BB0127 /* Assets.xcassets */,
@@ -1058,7 +1055,6 @@
 				7757286027C8C7C300148C9A /* FeedMainPostTVC.xib in Resources */,
 				7757285C27C8C31400148C9A /* FeedMainTitleTVC.xib in Resources */,
 				77ED049727B6CF9F00D077CA /* ColorSets.xcassets in Resources */,
-				5ABF7F7E281FF3BF000D1B49 /* splash.png in Resources */,
 				77D9ED382805D4B5000EA76A /* FeedDetailEmojiTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

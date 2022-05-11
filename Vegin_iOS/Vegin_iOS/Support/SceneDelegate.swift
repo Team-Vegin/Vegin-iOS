@@ -20,7 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
-            window.rootViewController = UIStoryboard.init(name: "OnboardingSB", bundle: nil).instantiateViewController(withIdentifier: OnboardingVC.className) as? OnboardingVC
+            if !UserDefaults.standard.bool(forKey: UserDefaults.Keys.IsOnboarding) {
+                window.rootViewController = UIStoryboard.init(name: "OnboardingSB", bundle: nil).instantiateViewController(withIdentifier: OnboardingVC.className) as? OnboardingVC
+            } else {
+                window.rootViewController = UIStoryboard.init(name: "SignInSB", bundle: nil).instantiateViewController(withIdentifier: SignInVC.className) as? SignInVC
+            }
+
             self.window = window
             window.makeKeyAndVisible()
         }
