@@ -14,12 +14,19 @@
 		5ABF7F7B28180EC8000D1B49 /* OnboardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF7F7928180EC8000D1B49 /* OnboardingCVC.swift */; };
 		5ABF7F7C28180EC8000D1B49 /* OnboardingCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF7F7A28180EC8000D1B49 /* OnboardingCVC.xib */; };
 		5ABF7F7E281FF3BF000D1B49 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF7F7D281FF3BF000D1B49 /* splash.png */; };
+		77163F77282798C40093FC9D /* MissionListResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77163F76282798C40093FC9D /* MissionListResModel.swift */; };
+		77163F79282841730093FC9D /* CharacterSelectResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77163F78282841730093FC9D /* CharacterSelectResModel.swift */; };
 		772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C146E273B7DAB00BB0127 /* AppDelegate.swift */; };
 		772C1471273B7DAB00BB0127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1470273B7DAB00BB0127 /* SceneDelegate.swift */; };
 		772C1476273B7DAB00BB0127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1474273B7DAB00BB0127 /* Main.storyboard */; };
 		772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772C1477273B7DAE00BB0127 /* Assets.xcassets */; };
 		772C147B273B7DAE00BB0127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772C1479273B7DAE00BB0127 /* LaunchScreen.storyboard */; };
 		772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1482273CF9D500BB0127 /* CalendarVC.swift */; };
+		7731374F281938B600E69459 /* DietCalendarResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7731374E281938B600E69459 /* DietCalendarResModel.swift */; };
+		77313752281EE2AC00E69459 /* MissionStartResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313751281EE2AC00E69459 /* MissionStartResModel.swift */; };
+		77313754281EE32800E69459 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313753281EE32800E69459 /* HomeService.swift */; };
+		77313756281EE4FB00E69459 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313755281EE4FB00E69459 /* HomeAPI.swift */; };
+		77313758281FC07300E69459 /* EditResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77313757281FC07300E69459 /* EditResModel.swift */; };
 		7742884327EDEB1E001A7CFA /* SignInSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742884227EDEB1E001A7CFA /* SignInSB.storyboard */; };
 		7742884727EE18CB001A7CFA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742884627EE18CB001A7CFA /* SignInVC.swift */; };
 		7742884C27F14512001A7CFA /* SignUpSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742884B27F14512001A7CFA /* SignUpSB.storyboard */; };
@@ -62,6 +69,10 @@
 		7757288B27D0B0E400148C9A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7757288627D0B0E300148C9A /* Pretendard-SemiBold.otf */; };
 		7757288C27D0B0E400148C9A /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7757288727D0B0E400148C9A /* Pretendard-Light.otf */; };
 		7757288E27D0B3D500148C9A /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757288D27D0B3D500148C9A /* UIFont+.swift */; };
+		7779205A282547B40094A3DD /* EmojiAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77792058282547B40094A3DD /* EmojiAlertVC.swift */; };
+		7779205B282547B40094A3DD /* EmojiAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77792059282547B40094A3DD /* EmojiAlertVC.xib */; };
+		77792060282590AC0094A3DD /* EmojiCountCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779205E282590AC0094A3DD /* EmojiCountCVC.swift */; };
+		77792061282590AC0094A3DD /* EmojiCountCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7779205F282590AC0094A3DD /* EmojiCountCVC.xib */; };
 		779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779015B82742E38300F83ACD /* WriteSB.storyboard */; };
 		779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BA2742E51A00F83ACD /* WriteVC.swift */; };
 		779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BC2743ACE800F83ACD /* CalendarNaviController.swift */; };
@@ -133,6 +144,8 @@
 		4633DCDA9E2208418F65B04D /* Pods-Vegin_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegin_iOS.release.xcconfig"; path = "Target Support Files/Pods-Vegin_iOS/Pods-Vegin_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5A751C8B27E4CE5C003DCD7C /* HomeNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNC.swift; sourceTree = "<group>"; };
 		5A95325827E1375E001E72A3 /* CharacterBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBookVC.swift; sourceTree = "<group>"; };
+		77163F76282798C40093FC9D /* MissionListResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListResModel.swift; sourceTree = "<group>"; };
+		77163F78282841730093FC9D /* CharacterSelectResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectResModel.swift; sourceTree = "<group>"; };
 		5ABF7F6C28180A57000D1B49 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		5ABF7F6E28180A70000D1B49 /* OnboardingSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingSB.storyboard; sourceTree = "<group>"; };
 		5ABF7F7928180EC8000D1B49 /* OnboardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCVC.swift; sourceTree = "<group>"; };
@@ -146,6 +159,11 @@
 		772C147A273B7DAE00BB0127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		772C147C273B7DAE00BB0127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		772C1482273CF9D500BB0127 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		7731374E281938B600E69459 /* DietCalendarResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietCalendarResModel.swift; sourceTree = "<group>"; };
+		77313751281EE2AC00E69459 /* MissionStartResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionStartResModel.swift; sourceTree = "<group>"; };
+		77313753281EE32800E69459 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		77313755281EE4FB00E69459 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
+		77313757281FC07300E69459 /* EditResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditResModel.swift; sourceTree = "<group>"; };
 		7742884227EDEB1E001A7CFA /* SignInSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSB.storyboard; sourceTree = "<group>"; };
 		7742884627EE18CB001A7CFA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		7742884B27F14512001A7CFA /* SignUpSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSB.storyboard; sourceTree = "<group>"; };
@@ -188,6 +206,10 @@
 		7757288627D0B0E300148C9A /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		7757288727D0B0E400148C9A /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		7757288D27D0B3D500148C9A /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		77792058282547B40094A3DD /* EmojiAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAlertVC.swift; sourceTree = "<group>"; };
+		77792059282547B40094A3DD /* EmojiAlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiAlertVC.xib; sourceTree = "<group>"; };
+		7779205E282590AC0094A3DD /* EmojiCountCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCountCVC.swift; sourceTree = "<group>"; };
+		7779205F282590AC0094A3DD /* EmojiCountCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiCountCVC.xib; sourceTree = "<group>"; };
 		779015B82742E38300F83ACD /* WriteSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteSB.storyboard; sourceTree = "<group>"; };
 		779015BA2742E51A00F83ACD /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 		779015BC2743ACE800F83ACD /* CalendarNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarNaviController.swift; path = Vegin_iOS/Screen/Write/VC/CalendarNaviController.swift; sourceTree = SOURCE_ROOT; };
@@ -339,6 +361,16 @@
 			path = Vegin_iOS;
 			sourceTree = "<group>";
 		};
+		77313750281EE1C100E69459 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				77313751281EE2AC00E69459 /* MissionStartResModel.swift */,
+				77163F76282798C40093FC9D /* MissionListResModel.swift */,
+				77163F78282841730093FC9D /* CharacterSelectResModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		7742883F27EDEABE001A7CFA /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +444,7 @@
 		7742885527F40C6B001A7CFA /* APIManagers */ = {
 			isa = PBXGroup;
 			children = (
+				77313755281EE4FB00E69459 /* HomeAPI.swift */,
 				7742886427F40FCB001A7CFA /* DietAPI.swift */,
 				7742886927F6CA24001A7CFA /* SignAPI.swift */,
 				77D9ED2328044024000EA76A /* FeedAPI.swift */,
@@ -426,6 +459,7 @@
 				7742886027F40F1D001A7CFA /* DietService.swift */,
 				7742886B27F6CA36001A7CFA /* SignService.swift */,
 				77D9ED2128043E99000EA76A /* FeedService.swift */,
+				77313753281EE32800E69459 /* HomeService.swift */,
 			);
 			path = MoyaTarget;
 			sourceTree = "<group>";
@@ -434,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				77C03F72280A8CA700B0EE84 /* Public */,
+				77313750281EE1C100E69459 /* Home */,
 				77C03F73280AECE100B0EE84 /* Diet */,
 				77D9ED1E28043DD2000EA76A /* Feed */,
 				7742886627F6C893001A7CFA /* Sign */,
@@ -572,6 +607,7 @@
 			children = (
 				77C03F70280A8CA200B0EE84 /* PostResModel.swift */,
 				77D0926D280BF1B100CB9F6A /* WriteResModel.swift */,
+				77313757281FC07300E69459 /* EditResModel.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -581,6 +617,7 @@
 			children = (
 				77C03F74280AECFB00B0EE84 /* DietListDataModel.swift */,
 				77D0926B280B139300CB9F6A /* DietPostDataModel.swift */,
+				7731374E281938B600E69459 /* DietCalendarResModel.swift */,
 			);
 			path = Diet;
 			sourceTree = "<group>";
@@ -599,6 +636,8 @@
 			children = (
 				77DBB84827DEF29F00000623 /* CategoryCVC.swift */,
 				77DBB84927DEF29F00000623 /* CategoryCVC.xib */,
+				7779205E282590AC0094A3DD /* EmojiCountCVC.swift */,
+				7779205F282590AC0094A3DD /* EmojiCountCVC.xib */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -850,6 +889,7 @@
 			isa = PBXGroup;
 			children = (
 				77FE1734274B860C00F95F0D /* VeginAlertVC.xib */,
+				77792059282547B40094A3DD /* EmojiAlertVC.xib */,
 			);
 			name = Xib;
 			path = "../New Group/Xib";
@@ -859,6 +899,7 @@
 			isa = PBXGroup;
 			children = (
 				77FE1733274B860C00F95F0D /* VeginAlertVC.swift */,
+				77792058282547B40094A3DD /* EmojiAlertVC.swift */,
 				77DBB84527DB186100000623 /* VeginBtn.swift */,
 			);
 			path = Class;
@@ -987,6 +1028,7 @@
 				77DBB85927DF449800000623 /* DietDetailIconTVC.xib in Resources */,
 				7742884C27F14512001A7CFA /* SignUpSB.storyboard in Resources */,
 				5ABF7F6F28180A70000D1B49 /* OnboardingSB.storyboard in Resources */,
+				77792061282590AC0094A3DD /* EmojiCountCVC.xib in Resources */,
 				7757288B27D0B0E400148C9A /* Pretendard-SemiBold.otf in Resources */,
 				772C1478273B7DAE00BB0127 /* Assets.xcassets in Resources */,
 				7757288127CE0F9500148C9A /* DietListTVC.xib in Resources */,
@@ -1004,6 +1046,7 @@
 				7757288927D0B0E400148C9A /* Pretendard-Medium.otf in Resources */,
 				77D9ED302805BC56000EA76A /* FeedDetailTitleTVC.xib in Resources */,
 				77DBB86827E0CD4100000623 /* MyFeedPostSB.storyboard in Resources */,
+				7779205B282547B40094A3DD /* EmojiAlertVC.xib in Resources */,
 				7757286827C8CF0700148C9A /* FeedMainEmptyTVC.xib in Resources */,
 				7756F9B227FDFEBA006F6EF3 /* HomeSB.storyboard in Resources */,
 				77DBB84B27DEF29F00000623 /* CategoryCVC.xib in Resources */,
@@ -1088,10 +1131,14 @@
 				77ED048527B6944300D077CA /* NaviType.swift in Sources */,
 				77FE1738274D2EC800F95F0D /* VeginTBC.swift in Sources */,
 				77DBB86A27E0CF8C00000623 /* FeedNC.swift in Sources */,
+				77163F79282841730093FC9D /* CharacterSelectResModel.swift in Sources */,
 				7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */,
+				77792060282590AC0094A3DD /* EmojiCountCVC.swift in Sources */,
 				77ED048F27B6C46900D077CA /* UILabel+.swift in Sources */,
+				77313754281EE32800E69459 /* HomeService.swift in Sources */,
 				7742886C27F6CA36001A7CFA /* SignService.swift in Sources */,
 				77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */,
+				77313756281EE4FB00E69459 /* HomeAPI.swift in Sources */,
 				77ED047D27B692E500D077CA /* TVRegisterable.swift in Sources */,
 				5A751C8C27E4CE5C003DCD7C /* HomeNC.swift in Sources */,
 				7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */,
@@ -1112,6 +1159,8 @@
 				77D9ED332805D2C2000EA76A /* FeedDetailContentTVC.swift in Sources */,
 				77D9ED372805D4B5000EA76A /* FeedDetailEmojiTVC.swift in Sources */,
 				7756F9AD27FDFDB8006F6EF3 /* CharacterBookCVC.swift in Sources */,
+				77313758281FC07300E69459 /* EditResModel.swift in Sources */,
+				7731374F281938B600E69459 /* DietCalendarResModel.swift in Sources */,
 				7757286727C8CF0700148C9A /* FeedMainEmptyTVC.swift in Sources */,
 				77ED048327B693CB00D077CA /* Identifiers.swift in Sources */,
 				77D9ED2628046414000EA76A /* String+.swift in Sources */,
@@ -1126,11 +1175,13 @@
 				77ED047F27B6930000D077CA /* CVRegisterable.swift in Sources */,
 				77DBB85D27DF46FB00000623 /* IconImgCVC.swift in Sources */,
 				77FE1735274B860C00F95F0D /* VeginAlertVC.swift in Sources */,
+				7779205A282547B40094A3DD /* EmojiAlertVC.swift in Sources */,
 				7742886127F40F1D001A7CFA /* DietService.swift in Sources */,
 				77ED048727B6965D00D077CA /* UIView+.swift in Sources */,
 				77D9ED2228043E99000EA76A /* FeedService.swift in Sources */,
 				7742889227FACE89001A7CFA /* SignUpDataModel.swift in Sources */,
 				77D9ED2F2805BC56000EA76A /* FeedDetailTitleTVC.swift in Sources */,
+				77313752281EE2AC00E69459 /* MissionStartResModel.swift in Sources */,
 				772C1483273CF9D500BB0127 /* CalendarVC.swift in Sources */,
 				77ED047B27B692B500D077CA /* BaseTVC.swift in Sources */,
 				77DBB85427DF428300000623 /* DietDetailImgTVC.swift in Sources */,
@@ -1140,6 +1191,7 @@
 				77C03F75280AECFB00B0EE84 /* DietListDataModel.swift in Sources */,
 				7742885027F154DB001A7CFA /* SignUpVC.swift in Sources */,
 				7742884E27F15462001A7CFA /* NickNameVC.swift in Sources */,
+				77163F77282798C40093FC9D /* MissionListResModel.swift in Sources */,
 				77ED048127B6932D00D077CA /* BaseCVC.swift in Sources */,
 				77D9ED28280470AF000EA76A /* SendDataDelegate.swift in Sources */,
 				77ED048B27B6994900D077CA /* UIButton+.swift in Sources */,

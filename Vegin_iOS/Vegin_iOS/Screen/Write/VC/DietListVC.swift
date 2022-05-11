@@ -19,16 +19,12 @@ class DietListVC: BaseVC {
     // MARK: Properties
     var postList: [DietListDataModel] = []
     private var currentPage: Date?
+    private var selectedDate: Date?
     private lazy var today: Date = {
         return Date()
     }()
     
     // MARK: Life Cycle
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addShadowToNaviBar()
@@ -37,6 +33,12 @@ class DietListVC: BaseVC {
         setUpCalendar()
         configureCalendarUI()
         getDayDietList(date: getSelectedDate(date: today))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+        getDayDietList(date: getSelectedDate(date: selectedDate ?? today))
     }
     
     // MARK: IBAction
@@ -160,6 +162,7 @@ extension DietListVC: FSCalendarDelegate, FSCalendarDataSource {
     /// 날짜 선택 시 호출
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.getDayDietList(date: getSelectedDate(date: date))
+        self.selectedDate = date
     }
 }
 

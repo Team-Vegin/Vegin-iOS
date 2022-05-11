@@ -8,5 +8,7 @@
 import Foundation
 
 protocol SendDataDelegate {
-    func sendData(data: Any)
+    func sendData(data: Int)
+    func presentAlert(data: Int)
+    func changeCharacter(data: Int)
 }

@@ -9,35 +9,49 @@ import UIKit
 
 import FSCalendar
 
-class CalendarVC: UIViewController {
+class CalendarVC: BaseVC {
 
     // MARK: - UI Component Part
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var calendar: FSCalendar!
     
+    @IBOutlet weak var writeBtn: VeginBtn! {
+        didSet {
+            writeBtn.isActivated = true
+            writeBtn.setTitleWithStyle(title: "기록하기", size: 14, weight: .bold)
+        }
+    }
+    @IBOutlet weak var checkBtn: VeginBtn! {
+        didSet {
+            checkBtn.isActivated = true
+            checkBtn.setTitleWithStyle(title: "확인하기", size: 14, weight: .bold)
+        }
+    }
     @IBOutlet weak var firstListView: UIView!
     @IBOutlet weak var secondListView: UIView!
     
     // MARK: - Vars & Lets Part
-    
     private var currentPage: Date?
     private lazy var today: Date = {
         return Date()
     }()
+    var calendarDataArray: [DietCalendarResModel] = []
 
-    // MARK: - Life Cycle Part
+    // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getEmojiList(year: getYear(date: self.today), month: getMonth(date: self.today))
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        getEmojiList(year: getYear(date: currentPage ?? today), month: getMonth(date: currentPage ?? today))
         calendar.reloadData()
         setUI()
         setCalendarUI()
         setCalendarDelegate()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
     
     // MARK: - IBAction Part
@@ -86,14 +100,15 @@ class CalendarVC: UIViewController {
         let cal = Calendar.current
         var dateComponents = DateComponents()
         dateComponents.month = isPrev ? -1 : 1
-        
+
         self.currentPage = cal.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
+    
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
+        getEmojiList(year: getYear(date: self.currentPage ?? self.today), month: getMonth(date: self.currentPage ?? self.today))
     }
 }
 
-// MARK: - Extension Part
-
+// MARK: - Extension
 extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     func setCalendarDelegate() {
         calendar.delegate = self
@@ -121,42 +136,65 @@ extension CalendarVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelega
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         let monthData = getMonthDate(date: calendar.currentPage)
         self.headerLabel.text = monthData
+        getEmojiList(year: getYear(date: calendar.currentPage), month: getMonth(date: calendar.currentPage))
     }
     
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-        let eventDate = getDayDate(date: date)
-
-        let dict = UserDefaults.standard.dictionary(forKey: "calendarEmoji")
-        if dict == nil {
-            UserDefaults.standard.set(["":0], forKey: "calendarEmoji")
-        }
-        let keys = Array(dict!.keys)
-        print(keys)
-        for key in 0...(keys.count-1) {
-            print(key)
-            if eventDate == keys[key] {
-                if dict?["\(keys[key])"] as! Int == 0 {
-                    return UIImage(named: "level1")
-                } else if dict?["\(keys[key])"] as! Int == 1 {
-                    return UIImage(named: "level2")
-                } else if dict?["\(keys[key])"] as! Int == 2 {
-                    return UIImage(named: "level3")
-                } else if dict?["\(keys[key])"] as! Int == 3 {
-                    return UIImage(named: "level4")
-                } else if dict?["\(keys[key])"] as! Int == 4 {
-                    return UIImage(named: "level5")
-                } else if dict?["\(keys[key])"] as! Int == 5 {
-                    return UIImage(named: "level6")
+        if calendarDataArray.count != 0 {
+            for i in 0...calendarDataArray.count - 1 {
+                let targetDate = getSelectedDate(date: date)
+            
+                if targetDate == calendarDataArray[i].date.prefix(10) {
+                    switch calendarDataArray[i].meal {
+                    case 1:
+                        return UIImage(named: "level1")
+                    case 2:
+                        return UIImage(named: "level2")
+                    case 3:
+                        return UIImage(named: "level3")
+                    case 4:
+                        return UIImage(named: "level4")
+                    case 5:
+                        return UIImage(named: "level5")
+                    case 6:
+                        return UIImage(named: "level6")
+                    default:
+                        break
+                    }
                 }
             }
         }
-        
-        if eventDate == "2021년 11월 15일" {
-            return UIImage(named: "level6")
-        } else if eventDate == "2021년 11월 21일" {
-            return UIImage(named: "level1")
-        } else if eventDate == "2021년 12월 03일" {
-            return UIImage(named: "level2")
-        } else { return nil }
+        return UIImage()
+    }
+}
+
+// MARK: - Network
+extension CalendarVC {
+
+    /// 캘린더 조회 메서드
+    private func getEmojiList(year: Int, month: Int) {
+        self.activityIndicator.startAnimating()
+        DietAPI.shared.getDietCalendarDataAPI(year: year, month: month) { networkResult in
+            switch networkResult {
+            case .success(let res):
+                self.activityIndicator.stopAnimating()
+                self.calendarDataArray.removeAll()
+                if let data = res as? [DietCalendarResModel], data.count != 0 {
+                    print(data)
+                    for i in 0...data.count - 1 {
+                        self.calendarDataArray.append(DietCalendarResModel(date: data[i].date, meal: data[i].meal))
+                    }
+                    DispatchQueue.main.async {
+                        self.calendar.reloadData()
+                    }
+                }
+            case .requestErr(let res):
+                self.activityIndicator.stopAnimating()
+                print(res)
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
     }
 }

@@ -38,14 +38,20 @@ struct DietPostData {
 }
 /// 홈 탭 도감 뷰 리스트 위한 모델
 struct CharacterBookData {
-    let characterImgName: String
+    let hiddenCharacterImgName: String
+    let myCharacterImgName: String
     let characterName: String
     let firstMission: String
     let secondMission: String
     let thirdMission: String
+    let characterExplanation: String
     
-    func makeCharacterImg() -> UIImage? {
-        return UIImage(named: characterImgName)
+    func makeHiddenCharacterImg() -> UIImage? {
+        return UIImage(named: hiddenCharacterImgName)
+    }
+    
+    func makeMyCharacterImg() -> UIImage? {
+        return UIImage(named: myCharacterImgName)
     }
 }
 

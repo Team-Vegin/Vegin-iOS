@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FeedDetailEmojiTVC" customModule="Vegin_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kld-Yl-3kS">
@@ -24,18 +25,41 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="Group 380"/>
+                        <connections>
+                            <action selector="tapPlusBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="YYM-fv-mz5"/>
+                        </connections>
                     </button>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="i8V-ar-ahU">
+                        <rect key="frame" x="58" y="18" width="276" height="84"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hci-lX-g05">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="i8V-ar-ahU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="9hR-Hj-kDf"/>
                     <constraint firstItem="kld-Yl-3kS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="IQq-dE-bVO"/>
+                    <constraint firstAttribute="bottom" secondItem="i8V-ar-ahU" secondAttribute="bottom" constant="40" id="SPz-W1-zYf"/>
                     <constraint firstItem="kld-Yl-3kS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="adh-bo-Tao"/>
+                    <constraint firstItem="i8V-ar-ahU" firstAttribute="leading" secondItem="kld-Yl-3kS" secondAttribute="trailing" constant="8" id="kYf-Hx-p0W"/>
+                    <constraint firstAttribute="trailing" secondItem="i8V-ar-ahU" secondAttribute="trailing" constant="41" id="mVM-az-CSO"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="139" y="104"/>
+            <connections>
+                <outlet property="emojiCV" destination="i8V-ar-ahU" id="It2-nE-2th"/>
+            </connections>
+            <point key="canvasLocation" x="138.40579710144928" y="103.45982142857143"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Group 380" width="30" height="30"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
