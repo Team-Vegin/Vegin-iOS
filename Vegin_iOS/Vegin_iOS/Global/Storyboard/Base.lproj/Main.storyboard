@@ -381,7 +381,7 @@
         <!--마이페이지-->
         <scene sceneID="yVt-05-Hc8">
             <objects>
-                <viewController id="jHg-18-f0J" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MypageVC" id="jHg-18-f0J" customClass="MypageVC" customModule="Vegin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jkf-do-dFr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -522,6 +522,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="마이페이지" image="my" selectedImage="my" id="moV-tj-bVP"/>
+                    <connections>
+                        <outlet property="characterImgView" destination="zAw-ru-Cdd" id="cCf-sc-moS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhE-4c-EeD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
