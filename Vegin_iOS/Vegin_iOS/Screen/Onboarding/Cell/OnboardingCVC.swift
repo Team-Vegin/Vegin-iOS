@@ -10,10 +10,18 @@ import UIKit
 class OnboardingCVC: BaseCVC {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var boldTextLabel: UILabel!
-    @IBOutlet weak var contentText: UITextView!
+    @IBOutlet weak var contentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureUI()
+    }
+    
+    private func configureUI() {
+        contentLabel.numberOfLines = 0
+        contentLabel.sizeToFit()
+        contentLabel.setLineSpacing(lineSpacing: 3)
+        contentLabel.textAlignment = .center
     }
 }
 
@@ -22,6 +30,6 @@ extension OnboardingCVC {
     func setData(OnboardingData: OnboardingData) {
         imgView.image = OnboardingData.makeOnboardingImg()
         boldTextLabel.text = OnboardingData.boldText
-        contentText.text = OnboardingData.contentText
+        contentLabel.text = OnboardingData.contentText
     }
 }
