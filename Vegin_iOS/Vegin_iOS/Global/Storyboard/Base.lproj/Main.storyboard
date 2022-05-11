@@ -389,22 +389,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnY-CC-37n" userLabel="greenView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-1" translatesAutoresizingMaskIntoConstraints="NO" id="7eC-Nq-GJJ">
-                                        <rect key="frame" x="48" y="169" width="75" height="76"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="76" id="FAI-h3-uXq"/>
-                                            <constraint firstAttribute="width" constant="75" id="PV2-Id-MQn"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="85l-5m-9lh">
-                                        <rect key="frame" x="129" y="72.333333333333314" width="117" height="173"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame" translatesAutoresizingMaskIntoConstraints="NO" id="n4e-Fr-Wdf">
-                                        <rect key="frame" x="256" y="169" width="75" height="76"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="DDH-kt-iTF"/>
-                                            <constraint firstAttribute="height" constant="76" id="tVX-Ta-Xvs"/>
-                                        </constraints>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="mytomato" translatesAutoresizingMaskIntoConstraints="NO" id="zAw-ru-Cdd">
+                                        <rect key="frame" x="39" y="28" width="297" height="244"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 74" translatesAutoresizingMaskIntoConstraints="NO" id="Apt-11-fTZ">
                                         <rect key="frame" x="0.0" y="209" width="375" height="603"/>
@@ -501,27 +487,25 @@
                                     <constraint firstAttribute="trailing" secondItem="fno-0z-EMW" secondAttribute="trailing" constant="22" id="7rF-Lt-6n0"/>
                                     <constraint firstItem="PN4-he-9du" firstAttribute="top" secondItem="XGr-ms-uwl" secondAttribute="bottom" constant="4" id="BWn-HY-Zta"/>
                                     <constraint firstItem="Xxz-d5-ZA9" firstAttribute="leading" secondItem="dnY-CC-37n" secondAttribute="leading" constant="38" id="CFm-CZ-STc"/>
+                                    <constraint firstItem="Apt-11-fTZ" firstAttribute="top" secondItem="zAw-ru-Cdd" secondAttribute="bottom" constant="-63" id="CNF-dq-tnV"/>
                                     <constraint firstItem="r5x-vT-ggg" firstAttribute="centerX" secondItem="dnY-CC-37n" secondAttribute="centerX" id="IGf-aE-Ps1"/>
                                     <constraint firstItem="oYg-xk-DDp" firstAttribute="top" secondItem="Xxz-d5-ZA9" secondAttribute="bottom" constant="20" id="Jhz-YY-cff"/>
-                                    <constraint firstItem="85l-5m-9lh" firstAttribute="centerX" secondItem="dnY-CC-37n" secondAttribute="centerX" id="Lce-fW-NmC"/>
                                     <constraint firstItem="OdQ-Zx-nHw" firstAttribute="leading" secondItem="Xxz-d5-ZA9" secondAttribute="trailing" constant="10" id="MBT-wl-WLF"/>
                                     <constraint firstItem="eXw-ZF-Q2c" firstAttribute="centerX" secondItem="Apt-11-fTZ" secondAttribute="centerX" id="Ouu-v6-R57"/>
                                     <constraint firstItem="eQy-4g-JX7" firstAttribute="centerY" secondItem="eXw-ZF-Q2c" secondAttribute="centerY" id="PSj-eK-MpC"/>
                                     <constraint firstItem="fno-0z-EMW" firstAttribute="top" secondItem="dnY-CC-37n" secondAttribute="top" constant="51" id="Qlg-ak-Zu3"/>
-                                    <constraint firstItem="oYg-xk-DDp" firstAttribute="top" secondItem="7eC-Nq-GJJ" secondAttribute="bottom" constant="175" id="QwS-F8-iiw"/>
                                     <constraint firstItem="XGr-ms-uwl" firstAttribute="top" secondItem="r5x-vT-ggg" secondAttribute="bottom" constant="12" id="Swk-vF-zbg"/>
+                                    <constraint firstAttribute="trailing" secondItem="zAw-ru-Cdd" secondAttribute="trailing" constant="39" id="XD5-C2-MiG"/>
+                                    <constraint firstItem="zAw-ru-Cdd" firstAttribute="leading" secondItem="dnY-CC-37n" secondAttribute="leading" constant="39" id="Yle-uy-SjN"/>
                                     <constraint firstItem="MLa-lc-QzF" firstAttribute="centerY" secondItem="eXw-ZF-Q2c" secondAttribute="centerY" id="Z2g-dZ-Rdx"/>
                                     <constraint firstItem="eXw-ZF-Q2c" firstAttribute="top" secondItem="oYg-xk-DDp" secondAttribute="bottom" constant="23" id="ZzR-Rg-S1d"/>
                                     <constraint firstAttribute="trailing" secondItem="Apt-11-fTZ" secondAttribute="trailing" id="dFn-L8-6W0"/>
                                     <constraint firstItem="XGr-ms-uwl" firstAttribute="centerX" secondItem="r5x-vT-ggg" secondAttribute="centerX" id="eVl-C2-LZp"/>
                                     <constraint firstItem="MLa-lc-QzF" firstAttribute="leading" secondItem="eXw-ZF-Q2c" secondAttribute="trailing" constant="28" id="iOH-X1-EZ3"/>
-                                    <constraint firstItem="7eC-Nq-GJJ" firstAttribute="leading" secondItem="dnY-CC-37n" secondAttribute="leading" constant="48" id="jhg-7K-zcH"/>
                                     <constraint firstItem="OdQ-Zx-nHw" firstAttribute="bottom" secondItem="Xxz-d5-ZA9" secondAttribute="bottom" id="kYS-bP-Clj"/>
                                     <constraint firstItem="eXw-ZF-Q2c" firstAttribute="leading" secondItem="eQy-4g-JX7" secondAttribute="trailing" constant="28" id="mGM-P3-lRW"/>
-                                    <constraint firstItem="r5x-vT-ggg" firstAttribute="top" secondItem="85l-5m-9lh" secondAttribute="bottom" constant="3" id="oSn-es-iIb"/>
-                                    <constraint firstAttribute="trailing" secondItem="n4e-Fr-Wdf" secondAttribute="trailing" constant="44" id="qc4-qn-oO3"/>
+                                    <constraint firstItem="zAw-ru-Cdd" firstAttribute="top" secondItem="dnY-CC-37n" secondAttribute="top" constant="28" id="q4P-ar-ZpI"/>
                                     <constraint firstAttribute="bottom" secondItem="eXw-ZF-Q2c" secondAttribute="bottom" constant="152" id="tJ6-ew-GAl"/>
-                                    <constraint firstItem="oYg-xk-DDp" firstAttribute="top" secondItem="n4e-Fr-Wdf" secondAttribute="bottom" constant="175" id="y8Y-zf-N9K"/>
                                     <constraint firstItem="PN4-he-9du" firstAttribute="centerX" secondItem="XGr-ms-uwl" secondAttribute="centerX" id="yCC-pc-8ha"/>
                                 </constraints>
                             </view>
@@ -622,10 +606,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Frame" width="89" height="90"/>
         <image name="Frame 74" width="375" height="603"/>
-        <image name="Frame-1" width="98" height="98.666664123535156"/>
-        <image name="Group" width="117.33333587646484" height="173.33332824707031"/>
         <image name="backButton" width="24" height="24"/>
         <image name="book" width="24" height="24"/>
         <image name="calendar" width="32" height="32"/>
@@ -639,6 +620,7 @@
         <image name="left" width="24" height="24"/>
         <image name="menuIcon" width="30" height="30"/>
         <image name="my" width="32" height="32"/>
+        <image name="mytomato" width="297" height="245"/>
         <image name="nextButton" width="24" height="24"/>
         <image name="progressBar_last" width="221" height="24"/>
         <image name="right" width="24" height="24"/>
