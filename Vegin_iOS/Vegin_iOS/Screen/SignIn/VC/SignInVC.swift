@@ -72,7 +72,7 @@ extension SignInVC {
     
     /// UserDefault에 값 세팅하는 함수
     private func setUpUserdefaultValuesForSignIn(data: SignInDataModel) {
-        UserDefaults.standard.set(true, forKey: UserDefaults.Keys.IsOnboardingShown)
+        UserDefaults.standard.set(true, forKey: UserDefaults.Keys.IsOnboarding)
         UserDefaults.standard.set(emailTextField.text, forKey: UserDefaults.Keys.Email)
         UserDefaults.standard.set(pwTextField.text, forKey: UserDefaults.Keys.PW)
         UserDefaults.standard.set(data.user.userID, forKey: UserDefaults.Keys.UserID)

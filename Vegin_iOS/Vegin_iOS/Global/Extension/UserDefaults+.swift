@@ -28,6 +28,6 @@ extension UserDefaults {
         static var PW = "PW"
         
         /// Bool
-        static var IsOnboardingShown = "IsOnboardingShown"
+        static var IsOnboarding = "IsOnboarding"
     }
 }
