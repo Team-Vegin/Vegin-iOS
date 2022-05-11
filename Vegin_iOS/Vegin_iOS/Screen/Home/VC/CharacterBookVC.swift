@@ -19,7 +19,7 @@ class CharacterBookVC: BaseVC {
     var isFirst: Bool = true // 성공한 미션 하나도 없으면 true 아니면 false
     var cellTagDelegate: SendDataDelegate?
     
-    let cellSize = CGSize(width: UIScreen.main.bounds.width * (276/375), height: UIScreen.main.bounds.width * (276/375) * (640/276))
+    let cellSize = CGSize(width: 276.adjusted, height: 640.adjustedH)
     var minItemSpacing: CGFloat = 20
     let cellCount = 10
     var previousIndex = 0
