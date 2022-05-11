@@ -29,6 +29,7 @@ class FarmVC: BaseVC {
         configureUI()
         getMissionListStatus()
         setCharacterImg()
+        setUpMessage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +37,7 @@ class FarmVC: BaseVC {
         showTabbar()
         getMissionListStatus()
         setCharacterImg()
+        setUpMessage()
     }
     
     // MARK: IBAction
@@ -133,6 +135,33 @@ extension FarmVC {
                     break
                 }
             }
+        }
+    }
+    
+    private func setUpMessage() {
+        switch UserDefaults.standard.integer(forKey: UserDefaults.Keys.CharacterID) {
+        case 1:
+            messageLabel.text = CharacterLines.tomato.randomElement()
+        case 2:
+            messageLabel.text = CharacterLines.carrot.randomElement()
+        case 3:
+            messageLabel.text = CharacterLines.onion.randomElement()
+        case 4:
+            messageLabel.text = CharacterLines.springOnion.randomElement()
+        case 5:
+            messageLabel.text = CharacterLines.cabbage.randomElement()
+        case 6:
+            messageLabel.text = CharacterLines.waterMelon.randomElement()
+        case 7:
+            messageLabel.text = CharacterLines.corn.randomElement()
+        case 8:
+            messageLabel.text = CharacterLines.blueberry.randomElement()
+        case 9:
+            messageLabel.text = CharacterLines.strawberry.randomElement()
+        case 10:
+            messageLabel.text = CharacterLines.pumpkin.randomElement()
+        default:
+            messageLabel.text = CharacterLines.tomato.randomElement()
         }
     }
 }

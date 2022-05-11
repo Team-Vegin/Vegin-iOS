@@ -76,6 +76,7 @@
 		779015B92742E38300F83ACD /* WriteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779015B82742E38300F83ACD /* WriteSB.storyboard */; };
 		779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BA2742E51A00F83ACD /* WriteVC.swift */; };
 		779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BC2743ACE800F83ACD /* CalendarNaviController.swift */; };
+		77AB9C85282A0B95002D9438 /* CharacterLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB9C84282A0B95002D9438 /* CharacterLines.swift */; };
 		77C03F71280A8CA200B0EE84 /* PostResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03F70280A8CA200B0EE84 /* PostResModel.swift */; };
 		77C03F75280AECFB00B0EE84 /* DietListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03F74280AECFB00B0EE84 /* DietListDataModel.swift */; };
 		77D0926C280B139300CB9F6A /* DietPostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0926B280B139300CB9F6A /* DietPostDataModel.swift */; };
@@ -213,6 +214,7 @@
 		779015B82742E38300F83ACD /* WriteSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteSB.storyboard; sourceTree = "<group>"; };
 		779015BA2742E51A00F83ACD /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 		779015BC2743ACE800F83ACD /* CalendarNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarNaviController.swift; path = Vegin_iOS/Screen/Write/VC/CalendarNaviController.swift; sourceTree = SOURCE_ROOT; };
+		77AB9C84282A0B95002D9438 /* CharacterLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterLines.swift; sourceTree = "<group>"; };
 		77C03F70280A8CA200B0EE84 /* PostResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResModel.swift; sourceTree = "<group>"; };
 		77C03F74280AECFB00B0EE84 /* DietListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietListDataModel.swift; sourceTree = "<group>"; };
 		77D0926B280B139300CB9F6A /* DietPostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietPostDataModel.swift; sourceTree = "<group>"; };
@@ -937,6 +939,7 @@
 			children = (
 				77ED048227B693CB00D077CA /* Identifiers.swift */,
 				77ED048427B6944300D077CA /* NaviType.swift */,
+				77AB9C84282A0B95002D9438 /* CharacterLines.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -1149,6 +1152,7 @@
 				77D9ED2028043DF5000EA76A /* FeedListDataModel.swift in Sources */,
 				77DBB85827DF449800000623 /* DietDetailIconTVC.swift in Sources */,
 				7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */,
+				77AB9C85282A0B95002D9438 /* CharacterLines.swift in Sources */,
 				7757288E27D0B3D500148C9A /* UIFont+.swift in Sources */,
 				77ED048927B697C900D077CA /* UITextField+.swift in Sources */,
 				77DBB85127DF414000000623 /* DietDetailVC.swift in Sources */,
