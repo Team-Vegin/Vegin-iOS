@@ -34,7 +34,6 @@ class OnboardingVC: BaseVC {
         registerCVC()
         initData()
         
-        
         /// PageControl 설정
         pageControl.numberOfPages = 4
         pageControl.currentPage = 0
