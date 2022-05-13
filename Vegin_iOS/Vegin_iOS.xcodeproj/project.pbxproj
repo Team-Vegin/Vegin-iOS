@@ -76,6 +76,7 @@
 		779015BB2742E51A00F83ACD /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BA2742E51A00F83ACD /* WriteVC.swift */; };
 		779015BD2743ACE800F83ACD /* CalendarNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015BC2743ACE800F83ACD /* CalendarNaviController.swift */; };
 		77AB9C85282A0B95002D9438 /* CharacterLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB9C84282A0B95002D9438 /* CharacterLines.swift */; };
+		77AB9C89282B9503002D9438 /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB9C88282B9503002D9438 /* MypageVC.swift */; };
 		77C03F71280A8CA200B0EE84 /* PostResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03F70280A8CA200B0EE84 /* PostResModel.swift */; };
 		77C03F75280AECFB00B0EE84 /* DietListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03F74280AECFB00B0EE84 /* DietListDataModel.swift */; };
 		77D0926C280B139300CB9F6A /* DietPostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0926B280B139300CB9F6A /* DietPostDataModel.swift */; };
@@ -213,6 +214,7 @@
 		779015BA2742E51A00F83ACD /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 		779015BC2743ACE800F83ACD /* CalendarNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarNaviController.swift; path = Vegin_iOS/Screen/Write/VC/CalendarNaviController.swift; sourceTree = SOURCE_ROOT; };
 		77AB9C84282A0B95002D9438 /* CharacterLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterLines.swift; sourceTree = "<group>"; };
+		77AB9C88282B9503002D9438 /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
 		77C03F70280A8CA200B0EE84 /* PostResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResModel.swift; sourceTree = "<group>"; };
 		77C03F74280AECFB00B0EE84 /* DietListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietListDataModel.swift; sourceTree = "<group>"; };
 		77D0926B280B139300CB9F6A /* DietPostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietPostDataModel.swift; sourceTree = "<group>"; };
@@ -864,6 +866,7 @@
 		77ED046B27B4274400D077CA /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				77AB9C88282B9503002D9438 /* MypageVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1138,6 +1141,7 @@
 				7742886C27F6CA36001A7CFA /* SignService.swift in Sources */,
 				77DBB84A27DEF29F00000623 /* CategoryCVC.swift in Sources */,
 				77313756281EE4FB00E69459 /* HomeAPI.swift in Sources */,
+				77AB9C89282B9503002D9438 /* MypageVC.swift in Sources */,
 				77ED047D27B692E500D077CA /* TVRegisterable.swift in Sources */,
 				5A751C8C27E4CE5C003DCD7C /* HomeNC.swift in Sources */,
 				7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */,

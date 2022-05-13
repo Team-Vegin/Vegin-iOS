@@ -30,13 +30,9 @@ class OnboardingVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpCV()
         registerCVC()
         initData()
-        /// 첫 실행 확인 함수
-        isitFirst()
-        
         
         /// PageControl 설정
         pageControl.numberOfPages = 4
@@ -82,21 +78,16 @@ extension OnboardingVC {
         OnboardingCV.isPagingEnabled = true
     }
     
-    // 첫 실행 확인
-    private func isitFirst() {
-        
-    }
-    
     private func registerCVC() {
         OnboardingCVC.register(target: OnboardingCV)
     }
     
     private func initData() {
         onboardingData.append(contentsOf: [
-            OnboardingData(onboardingImgName: "Onboarding1", boldText: "지구와 나를 위한 기분 좋은 변화!", contentText: "오늘 나의 고기 반찬이 아마존 산림을 파괴할 수도 있다고? 환경도 보호하고 식이조절로 건강도 챙기려고 했지만 어째 늘 막막했던 비건 식단, 이제는 손쉽게 비긴에서 유지해요"),
-            OnboardingData(onboardingImgName: "Onboarding2", boldText: "언제나!", contentText: "클릭 한 번으로 입력되는 나의 식단! 한 달 내내 먹은 걸로 나에게 맞는 비건 지향성을 파악해요 클릭하는 버튼만 바뀌어도 내 식단을 항상 기억해 줘요"),
-            OnboardingData(onboardingImgName: "Onboarding3", boldText: "어디에서나!", contentText: "어려웠던 비건 식단을 나만의 채식 메이트가 관리해 주니까 오늘은 이 캐릭터를 가지고 싶어! 야채를 조금만 더 먹어 볼까? 맛있는 식사를 하니 귀여운 메이트가 바로 내 옆에"),
-            OnboardingData(onboardingImgName: "Onboarding4", boldText: "지속할 수 있으니까!", contentText: "나만 하는 게 아닌, 우리가 함께하니까! 피드를 통해 비건의 꿀팁을 찾아보고 생활을 공유해요 하나씩 쌓다 보면 오늘부터 나도 프로 비긴러")
+            OnboardingData(onboardingImgName: "Onboarding1", boldText: "지구와 나를 위한 기분 좋은 변화!", contentText: "오늘 나의 고기 반찬이 아마존 산림을 파괴할 수도 있다고?\n 환경도 보호하고 식이조절로 건강도 챙기려고 했지만 어째\n늘 막막했던 비건 식단, 이제는 손쉽게 비긴에서 유지해요"),
+            OnboardingData(onboardingImgName: "Onboarding2", boldText: "언제나!", contentText: "클릭 한 번으로 입력되는 나의 식단!\n한 달 내내 먹은 걸로 나에게 맞는 비건 지향성을 파악해요\n클릭하는 버튼만 바뀌어도 내 식단을 항상 기억해 줘요"),
+            OnboardingData(onboardingImgName: "Onboarding3", boldText: "어디에서나!", contentText: "어려웠던 비건 식단을 나만의 채식 메이트가 관리해 주니까\n오늘은 이 캐릭터를 가지고 싶어! 야채를 조금만 더 먹어 볼까?\n맛있는 식사를 하니 귀여운 메이트가 바로 내 옆에"),
+            OnboardingData(onboardingImgName: "Onboarding4", boldText: "지속할 수 있으니까!", contentText: "나만 하는 게 아닌, 우리가 함께하니까!\n피드를 통해 비건의 꿀팁을 찾아보고 생활을 공유해요\n하나씩 쌓다 보면 오늘부터 나도 프로 비긴러")
         ])
     }
     

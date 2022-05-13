@@ -34,29 +34,27 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Jp2-dj-SFW">
-                        <rect key="frame" x="31" y="478.33333333333331" width="312" height="43.666666666666686"/>
-                        <color key="textColor" name="darkGray"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxc-qq-Wp1">
+                        <rect key="frame" x="173" y="478.33333333333331" width="29.333333333333343" height="14.666666666666686"/>
                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
+                        <color key="textColor" name="gray0"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="UBo-fB-v5A" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="1IK-KN-bNw"/>
-                <constraint firstAttribute="bottom" secondItem="Jp2-dj-SFW" secondAttribute="bottom" constant="28" id="3sd-Wy-BN6"/>
                 <constraint firstAttribute="trailing" secondItem="fcf-1O-xZc" secondAttribute="trailing" constant="38" id="HZf-eZ-RPf"/>
                 <constraint firstItem="fcf-1O-xZc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="70" id="Oqt-gA-hBC"/>
-                <constraint firstAttribute="trailing" secondItem="Jp2-dj-SFW" secondAttribute="trailing" constant="32" id="QHA-BY-gwU"/>
                 <constraint firstItem="UBo-fB-v5A" firstAttribute="top" secondItem="fcf-1O-xZc" secondAttribute="bottom" constant="51" id="TEd-7d-I1v"/>
-                <constraint firstItem="Jp2-dj-SFW" firstAttribute="top" secondItem="UBo-fB-v5A" secondAttribute="bottom" constant="19" id="dGH-Zd-xzJ"/>
+                <constraint firstItem="bxc-qq-Wp1" firstAttribute="centerX" secondItem="UBo-fB-v5A" secondAttribute="centerX" id="bE7-DS-lge"/>
                 <constraint firstItem="fcf-1O-xZc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="37" id="gMW-J9-vjS"/>
-                <constraint firstItem="Jp2-dj-SFW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="31" id="yzF-aU-qyW"/>
+                <constraint firstItem="bxc-qq-Wp1" firstAttribute="top" secondItem="UBo-fB-v5A" secondAttribute="bottom" constant="19" id="pEs-KC-u8p"/>
             </constraints>
             <connections>
                 <outlet property="boldTextLabel" destination="UBo-fB-v5A" id="sdL-Nk-cIV"/>
-                <outlet property="contentText" destination="Jp2-dj-SFW" id="LfF-oq-LKa"/>
+                <outlet property="contentLabel" destination="bxc-qq-Wp1" id="eML-vb-Wgl"/>
                 <outlet property="imgView" destination="fcf-1O-xZc" id="Wya-bw-rVB"/>
             </connections>
             <point key="canvasLocation" x="181.59999999999999" y="-2.2167487684729066"/>
@@ -64,8 +62,8 @@
     </objects>
     <resources>
         <image name="Onboarding1" width="301" height="314"/>
-        <namedColor name="darkGray">
-            <color red="0.41176470588235292" green="0.41176470588235292" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="gray0">
+            <color red="0.61176470588235299" green="0.61176470588235299" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
