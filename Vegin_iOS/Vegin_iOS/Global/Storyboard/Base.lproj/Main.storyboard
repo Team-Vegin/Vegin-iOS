@@ -15,6 +15,9 @@
         <array key="Pretendard-Medium.otf">
             <string>Pretendard-Medium</string>
         </array>
+        <array key="Pretendard-Regular.otf">
+            <string>Pretendard-Regular</string>
+        </array>
         <array key="Pretendard-SemiBold.otf">
             <string>Pretendard-SemiBold</string>
         </array>
@@ -405,8 +408,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 비건 통계" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxz-d5-ZA9">
-                                        <rect key="frame" x="38" y="380.33333333333331" width="103" height="21.666666666666686"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <rect key="frame" x="38" y="380.33333333333331" width="102" height="21.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -418,36 +421,9 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="fix"/>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PN4-he-9du">
-                                        <rect key="frame" x="147.66666666666666" y="317.33333333333331" width="80" height="24"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100일째" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z91-Wt-S9S">
-                                                <rect key="frame" x="30" y="4.6666666666666856" width="49" height="15"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" red="0.32156862749999998" green="0.59999999999999998" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="day" translatesAutoresizingMaskIntoConstraints="NO" id="cBA-pK-xrF">
-                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="24" id="0lp-3c-69w"/>
-                                                    <constraint firstAttribute="width" constant="24" id="JIW-My-Csm"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="z91-Wt-S9S" secondAttribute="trailing" constant="1" id="beX-vq-uJI"/>
-                                            <constraint firstItem="z91-Wt-S9S" firstAttribute="leading" secondItem="cBA-pK-xrF" secondAttribute="trailing" constant="6" id="gEk-ve-qfH"/>
-                                            <constraint firstItem="z91-Wt-S9S" firstAttribute="centerY" secondItem="cBA-pK-xrF" secondAttribute="centerY" id="pA9-h9-e5w"/>
-                                            <constraint firstAttribute="width" constant="80" id="sAK-dt-ecw"/>
-                                            <constraint firstItem="cBA-pK-xrF" firstAttribute="leading" secondItem="PN4-he-9du" secondAttribute="leading" id="vlc-0L-Amg"/>
-                                            <constraint firstItem="cBA-pK-xrF" firstAttribute="top" secondItem="PN4-he-9du" secondAttribute="top" id="xex-LV-drS"/>
-                                            <constraint firstAttribute="height" constant="24" id="z3e-mN-i0u"/>
-                                        </constraints>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="단위 : 회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdQ-Zx-nHw">
-                                        <rect key="frame" x="151" y="390" width="35" height="12"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <rect key="frame" x="150" y="389.66666666666669" width="33.666666666666657" height="12.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="10"/>
                                         <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -455,7 +431,7 @@
                                         <rect key="frame" x="139" y="248" width="97" height="27"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flexiterian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvS-Hn-1vx">
-                                                <rect key="frame" x="14.666666666666657" y="5" width="68" height="17"/>
+                                                <rect key="frame" x="14.666666666666657" y="5" width="67.666666666666671" height="17"/>
                                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
                                                 <color key="textColor" name="darkMain"/>
                                                 <nil key="highlightedColor"/>
@@ -469,14 +445,28 @@
                                             <constraint firstItem="LvS-Hn-1vx" firstAttribute="centerY" secondItem="4Ys-OI-emM" secondAttribute="centerY" id="cHo-Lr-z1E"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="g6Z-eU-1le">
+                                        <rect key="frame" x="148.66666666666666" y="319.33333333333331" width="77.666666666666657" height="24"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="day" translatesAutoresizingMaskIntoConstraints="NO" id="cBA-pK-xrF">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000일째" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z91-Wt-S9S">
+                                                <rect key="frame" x="29.999999999999996" y="0.0" width="47.666666666666657" height="24"/>
+                                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
+                                                <color key="textColor" red="0.32156862749999998" green="0.59999999999999998" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.76078431372549016" green="0.87450980392156863" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="Xxz-d5-ZA9" firstAttribute="top" secondItem="PN4-he-9du" secondAttribute="bottom" constant="39" id="2zP-0G-Utc"/>
+                                    <constraint firstItem="g6Z-eU-1le" firstAttribute="centerX" secondItem="4Ys-OI-emM" secondAttribute="centerX" id="0nP-Aj-vVr"/>
+                                    <constraint firstItem="g6Z-eU-1le" firstAttribute="top" secondItem="XGr-ms-uwl" secondAttribute="bottom" constant="6" id="4yg-5a-0Ba"/>
                                     <constraint firstItem="fno-0z-EMW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dnY-CC-37n" secondAttribute="leading" constant="20" symbolic="YES" id="5Hf-J7-9VK"/>
                                     <constraint firstAttribute="trailing" secondItem="fno-0z-EMW" secondAttribute="trailing" constant="22" id="7rF-Lt-6n0"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OdQ-Zx-nHw" secondAttribute="trailing" constant="20" symbolic="YES" id="96f-Gc-JIb"/>
-                                    <constraint firstItem="PN4-he-9du" firstAttribute="top" secondItem="XGr-ms-uwl" secondAttribute="bottom" constant="4" id="BWn-HY-Zta"/>
                                     <constraint firstItem="Apt-11-fTZ" firstAttribute="top" secondItem="4Ys-OI-emM" secondAttribute="bottom" constant="-66" id="Buw-ya-LKc"/>
                                     <constraint firstItem="Xxz-d5-ZA9" firstAttribute="leading" secondItem="dnY-CC-37n" secondAttribute="leading" constant="38" id="CFm-CZ-STc"/>
                                     <constraint firstItem="Apt-11-fTZ" firstAttribute="top" secondItem="zAw-ru-Cdd" secondAttribute="bottom" constant="-63" id="CNF-dq-tnV"/>
@@ -489,8 +479,8 @@
                                     <constraint firstAttribute="trailing" secondItem="Apt-11-fTZ" secondAttribute="trailing" id="dFn-L8-6W0"/>
                                     <constraint firstItem="OdQ-Zx-nHw" firstAttribute="bottom" secondItem="Xxz-d5-ZA9" secondAttribute="bottom" id="kYS-bP-Clj"/>
                                     <constraint firstItem="4Ys-OI-emM" firstAttribute="centerX" secondItem="Apt-11-fTZ" secondAttribute="centerX" id="m21-2a-R5d"/>
+                                    <constraint firstItem="Xxz-d5-ZA9" firstAttribute="top" secondItem="g6Z-eU-1le" secondAttribute="bottom" constant="36.999999999999943" id="nVO-Y2-47v"/>
                                     <constraint firstItem="zAw-ru-Cdd" firstAttribute="top" secondItem="dnY-CC-37n" secondAttribute="top" constant="28" id="q4P-ar-ZpI"/>
-                                    <constraint firstItem="PN4-he-9du" firstAttribute="centerX" secondItem="XGr-ms-uwl" secondAttribute="centerX" id="yCC-pc-8ha"/>
                                 </constraints>
                             </view>
                         </subviews>
