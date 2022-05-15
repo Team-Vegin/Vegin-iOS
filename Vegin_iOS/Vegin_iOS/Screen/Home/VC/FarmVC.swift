@@ -48,7 +48,7 @@ class FarmVC: BaseVC {
     }
     
     @IBAction func tapInstagramShareBtn(_ sender: UIButton) {
-        let renderer = UIGraphicsImageRenderer(size:  sharingView.bounds.size)
+        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
         let renderImage = renderer.image { _ in
             view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         }
