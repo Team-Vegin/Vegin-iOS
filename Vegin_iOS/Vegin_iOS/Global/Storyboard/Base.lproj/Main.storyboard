@@ -248,6 +248,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="share" title=""/>
+                                        <connections>
+                                            <action selector="tapInstagramShareBtn:" destination="t7Z-hn-7uu" eventType="touchUpInside" id="Lc6-VW-tiO"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="tomato" translatesAutoresizingMaskIntoConstraints="NO" id="LJ3-RE-TRY">
                                         <rect key="frame" x="69" y="195.66666666666666" width="237" height="364.33333333333337"/>

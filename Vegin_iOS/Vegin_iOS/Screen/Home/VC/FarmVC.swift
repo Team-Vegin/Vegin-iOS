@@ -46,6 +46,31 @@ class FarmVC: BaseVC {
         
         self.navigationController?.pushViewController(CharacterBookVC, animated: true)
     }
+    
+    @IBAction func tapInstagramShareBtn(_ sender: UIButton) {
+        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
+        let renderImage = renderer.image { _ in
+            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        }
+        
+        if let storyShareURL = URL(string: "instagram-stories://share") {
+            if UIApplication.shared.canOpenURL(storyShareURL) {
+                guard let imageData = renderImage.pngData() else {return}
+
+                let pasteboardItems: [String: Any] = [
+                    "com.instagram.sharedSticker.stickerImage": imageData,
+                    "com.instagram.sharedSticker.backgroundTopColor": "#8D8D88",
+                    "com.instagram.sharedSticker.backgroundBottomColor": "#8D8D88"]
+
+                let pasteboardOptions = [UIPasteboard.OptionsKey.expirationDate: Date().addingTimeInterval(300)]
+
+                UIPasteboard.general.setItems([pasteboardItems], options: pasteboardOptions)
+                UIApplication.shared.open(storyShareURL, options: [:], completionHandler: nil)
+            } else {
+                print("인스타 앱이 깔려있지 않습니다.")
+            }
+        }
+    }
 }
 
 // MARK: - UI
