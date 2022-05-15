@@ -68,6 +68,9 @@
 		7757288B27D0B0E400148C9A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7757288627D0B0E300148C9A /* Pretendard-SemiBold.otf */; };
 		7757288C27D0B0E400148C9A /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7757288727D0B0E400148C9A /* Pretendard-Light.otf */; };
 		7757288E27D0B3D500148C9A /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757288D27D0B3D500148C9A /* UIFont+.swift */; };
+		777816D92830DDAF0078E89A /* MyPageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777816D82830DDAF0078E89A /* MyPageDataModel.swift */; };
+		777816DB2830DF600078E89A /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777816DA2830DF600078E89A /* MyPageService.swift */; };
+		777816DD2830E0090078E89A /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777816DC2830E0090078E89A /* MyPageAPI.swift */; };
 		7779205A282547B40094A3DD /* EmojiAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77792058282547B40094A3DD /* EmojiAlertVC.swift */; };
 		7779205B282547B40094A3DD /* EmojiAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77792059282547B40094A3DD /* EmojiAlertVC.xib */; };
 		77792060282590AC0094A3DD /* EmojiCountCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779205E282590AC0094A3DD /* EmojiCountCVC.swift */; };
@@ -206,6 +209,9 @@
 		7757288627D0B0E300148C9A /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		7757288727D0B0E400148C9A /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		7757288D27D0B3D500148C9A /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		777816D82830DDAF0078E89A /* MyPageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDataModel.swift; sourceTree = "<group>"; };
+		777816DA2830DF600078E89A /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
+		777816DC2830E0090078E89A /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
 		77792058282547B40094A3DD /* EmojiAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAlertVC.swift; sourceTree = "<group>"; };
 		77792059282547B40094A3DD /* EmojiAlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiAlertVC.xib; sourceTree = "<group>"; };
 		7779205E282590AC0094A3DD /* EmojiCountCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCountCVC.swift; sourceTree = "<group>"; };
@@ -450,6 +456,7 @@
 				7742886427F40FCB001A7CFA /* DietAPI.swift */,
 				7742886927F6CA24001A7CFA /* SignAPI.swift */,
 				77D9ED2328044024000EA76A /* FeedAPI.swift */,
+				777816DC2830E0090078E89A /* MyPageAPI.swift */,
 			);
 			path = APIManagers;
 			sourceTree = "<group>";
@@ -462,6 +469,7 @@
 				7742886B27F6CA36001A7CFA /* SignService.swift */,
 				77D9ED2128043E99000EA76A /* FeedService.swift */,
 				77313753281EE32800E69459 /* HomeService.swift */,
+				777816DA2830DF600078E89A /* MyPageService.swift */,
 			);
 			path = MoyaTarget;
 			sourceTree = "<group>";
@@ -474,6 +482,7 @@
 				77C03F73280AECE100B0EE84 /* Diet */,
 				77D9ED1E28043DD2000EA76A /* Feed */,
 				7742886627F6C893001A7CFA /* Sign */,
+				777816D72830DD880078E89A /* MyPage */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -601,6 +610,14 @@
 				7757288627D0B0E300148C9A /* Pretendard-SemiBold.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		777816D72830DD880078E89A /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				777816D82830DDAF0078E89A /* MyPageDataModel.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 		77C03F72280A8CA700B0EE84 /* Public */ = {
@@ -1149,9 +1166,11 @@
 				7742885B27F40CF9001A7CFA /* NetworkResult.swift in Sources */,
 				77DBB87327E1106600000623 /* FeedMyPostEmptyTVC.swift in Sources */,
 				7756F9B027FDFE08006F6EF3 /* FeedWriteVC.swift in Sources */,
+				777816D92830DDAF0078E89A /* MyPageDataModel.swift in Sources */,
 				77D9ED2028043DF5000EA76A /* FeedListDataModel.swift in Sources */,
 				77DBB85827DF449800000623 /* DietDetailIconTVC.swift in Sources */,
 				7757285B27C8C31400148C9A /* FeedMainTitleTVC.swift in Sources */,
+				777816DB2830DF600078E89A /* MyPageService.swift in Sources */,
 				77AB9C85282A0B95002D9438 /* CharacterLines.swift in Sources */,
 				7757288E27D0B3D500148C9A /* UIFont+.swift in Sources */,
 				77ED048927B697C900D077CA /* UITextField+.swift in Sources */,
@@ -1172,6 +1191,7 @@
 				77ED049327B6C87200D077CA /* UITextView+.swift in Sources */,
 				7742884727EE18CB001A7CFA /* SignInVC.swift in Sources */,
 				77FE173C274D8F7400F95F0D /* FarmVC.swift in Sources */,
+				777816DD2830E0090078E89A /* MyPageAPI.swift in Sources */,
 				7742885227F159E3001A7CFA /* SignUpNVC.swift in Sources */,
 				77C03F71280A8CA200B0EE84 /* PostResModel.swift in Sources */,
 				77D0926C280B139300CB9F6A /* DietPostDataModel.swift in Sources */,
