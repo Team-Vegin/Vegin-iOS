@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -463,6 +464,29 @@
                                         <rect key="frame" x="34" y="425" width="307" height="242"/>
                                         <color key="backgroundColor" name="main"/>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0Yt-Gr-TRp">
+                                        <rect key="frame" x="73" y="671" width="241" height="16"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="level1" translatesAutoresizingMaskIntoConstraints="NO" id="mEz-Bv-FKl">
+                                                <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="level2" translatesAutoresizingMaskIntoConstraints="NO" id="51W-2x-mLE">
+                                                <rect key="frame" x="45" y="0.0" width="16" height="16"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="level3" translatesAutoresizingMaskIntoConstraints="NO" id="n11-1z-5FG">
+                                                <rect key="frame" x="90" y="0.0" width="16" height="16"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="level4" translatesAutoresizingMaskIntoConstraints="NO" id="SCa-TK-7fp">
+                                                <rect key="frame" x="135" y="0.0" width="16" height="16"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="level5" translatesAutoresizingMaskIntoConstraints="NO" id="QO3-JX-W6n">
+                                                <rect key="frame" x="180" y="0.0" width="16" height="16"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="level6" translatesAutoresizingMaskIntoConstraints="NO" id="6E3-wj-xMl">
+                                                <rect key="frame" x="225" y="0.0" width="16" height="16"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.76078431372549016" green="0.87450980392156863" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -475,12 +499,15 @@
                                     <constraint firstItem="Xxz-d5-ZA9" firstAttribute="leading" secondItem="dnY-CC-37n" secondAttribute="leading" constant="38" id="CFm-CZ-STc"/>
                                     <constraint firstItem="Apt-11-fTZ" firstAttribute="top" secondItem="zAw-ru-Cdd" secondAttribute="bottom" constant="-63" id="CNF-dq-tnV"/>
                                     <constraint firstItem="53n-xY-jkf" firstAttribute="top" secondItem="Xxz-d5-ZA9" secondAttribute="bottom" constant="23" id="E7c-zN-3dV"/>
+                                    <constraint firstItem="0Yt-Gr-TRp" firstAttribute="leading" secondItem="53n-xY-jkf" secondAttribute="leading" constant="39" id="El8-I5-cdX"/>
                                     <constraint firstItem="53n-xY-jkf" firstAttribute="leading" secondItem="dnY-CC-37n" secondAttribute="leading" constant="34" id="FgA-GP-qAD"/>
+                                    <constraint firstItem="0Yt-Gr-TRp" firstAttribute="trailing" secondItem="53n-xY-jkf" secondAttribute="trailing" constant="-27" id="G1l-5Z-qf7"/>
                                     <constraint firstItem="OdQ-Zx-nHw" firstAttribute="leading" secondItem="Xxz-d5-ZA9" secondAttribute="trailing" constant="10" id="MBT-wl-WLF"/>
                                     <constraint firstItem="XGr-ms-uwl" firstAttribute="centerX" secondItem="4Ys-OI-emM" secondAttribute="centerX" id="N0i-oc-8TJ"/>
                                     <constraint firstAttribute="trailing" secondItem="53n-xY-jkf" secondAttribute="trailing" constant="34" id="N11-EU-hhU"/>
                                     <constraint firstItem="XGr-ms-uwl" firstAttribute="top" secondItem="4Ys-OI-emM" secondAttribute="bottom" constant="14" id="PFP-gW-FBq"/>
                                     <constraint firstItem="fno-0z-EMW" firstAttribute="top" secondItem="dnY-CC-37n" secondAttribute="top" constant="51" id="Qlg-ak-Zu3"/>
+                                    <constraint firstItem="0Yt-Gr-TRp" firstAttribute="top" secondItem="53n-xY-jkf" secondAttribute="bottom" constant="4" id="Wu3-wu-Gmd"/>
                                     <constraint firstAttribute="trailing" secondItem="zAw-ru-Cdd" secondAttribute="trailing" constant="39" id="XD5-C2-MiG"/>
                                     <constraint firstItem="zAw-ru-Cdd" firstAttribute="leading" secondItem="dnY-CC-37n" secondAttribute="leading" constant="39" id="Yle-uy-SjN"/>
                                     <constraint firstAttribute="trailing" secondItem="Apt-11-fTZ" secondAttribute="trailing" id="dFn-L8-6W0"/>
@@ -606,6 +633,12 @@
         <image name="fix" width="24" height="24"/>
         <image name="flexiterian" width="97" height="27"/>
         <image name="home" width="24" height="24"/>
+        <image name="level1" width="16" height="16"/>
+        <image name="level2" width="16" height="16"/>
+        <image name="level3" width="16" height="16"/>
+        <image name="level4" width="16" height="16"/>
+        <image name="level5" width="16" height="16"/>
+        <image name="level6" width="16" height="16"/>
         <image name="menuIcon" width="30" height="30"/>
         <image name="my" width="32" height="32"/>
         <image name="mytomato" width="297" height="245"/>

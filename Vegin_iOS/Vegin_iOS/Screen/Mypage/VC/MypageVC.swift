@@ -19,7 +19,6 @@ class MypageVC: BaseVC {
     @IBOutlet weak var barGraphView: BarChartView!
     
     // MARK: Properties
-    var dataPoints: [Int] = [1, 2, 3, 4, 5, 6]
     var dataEntries : [BarChartDataEntry] = [] {
         didSet {
             barGraphView.notifyDataSetChanged()
@@ -96,20 +95,33 @@ extension MypageVC {
         let valFormatter = NumberFormatter()
         valFormatter.numberStyle = .currency
         valFormatter.maximumFractionDigits = 2
-        valFormatter.currencySymbol = "$"
                 
         let format = NumberFormatter()
         format.numberStyle = .none
         let formatter = DefaultValueFormatter(formatter: format)
         
-        let chartDataSet = BarChartDataSet(entries:dataEntries, label: "그래프 값 명칭")
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "")
+        chartDataSet.colors = [.main] // 그래프 컬러 설정
+        chartDataSet.highlightEnabled = false // 그래프 선택 되지 않도록
+        barGraphView.doubleTapToZoomEnabled = false // 줌 되지 않도록
+        
+        barGraphView.getAxis(.left).axisLineColor = UIColor.clear
+        barGraphView.xAxis.granularityEnabled = false
+        barGraphView.xAxis.granularity = 1
+        barGraphView.xAxis.drawAxisLineEnabled = false
+        barGraphView.xAxis.drawGridLinesEnabled = false
+        barGraphView.rightAxis.drawAxisLineEnabled = false
+        barGraphView.rightAxis.drawGridLinesEnabled = false
+        barGraphView.rightAxis.drawLabelsEnabled = false
+        
         let chartData = BarChartData(dataSet: chartDataSet)
         chartData.setValueFormatter(formatter)
+        chartData.barWidth = Double(0.60)
         barGraphView.leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: valFormatter)
+        barGraphView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0) // 애니메이션 효과
+        barGraphView.noDataText = "기록 데이터가 없습니다."
                 
         barGraphView.data = chartData
-        chartData.notifyDataChanged()
-        barGraphView.notifyDataSetChanged()
     }
 }
 
