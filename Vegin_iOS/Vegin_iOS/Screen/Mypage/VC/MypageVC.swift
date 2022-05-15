@@ -11,10 +11,16 @@ class MypageVC: UIViewController {
 
     // MARK: IBOutlet
     @IBOutlet weak var characterImgView: UIImageView!
+    @IBOutlet weak var orientationContainerView: UIView!
+    @IBOutlet weak var orientationLabel: UILabel!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var dayCountLabel: UILabel!
+    
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         setCharacterImg()
     }
     
@@ -25,6 +31,11 @@ class MypageVC: UIViewController {
 }
 
 extension MypageVC {
+    
+    private func configureUI() {
+        orientationContainerView.makeRounded(cornerRadius: 10.adjusted)
+    
+    }
     
     /// 홈화면 적용 캐릭터에 따른 배경 캐릭터 이미지 적용 메서드
     private func setCharacterImg() {
