@@ -113,6 +113,9 @@ extension MypageVC {
         barGraphView.rightAxis.drawAxisLineEnabled = false
         barGraphView.rightAxis.drawGridLinesEnabled = false
         barGraphView.rightAxis.drawLabelsEnabled = false
+        barGraphView.leftAxis.drawAxisLineEnabled = false
+        barGraphView.leftAxis.drawGridLinesEnabled = false
+        barGraphView.leftAxis.drawLabelsEnabled = false
         
         let chartData = BarChartData(dataSet: chartDataSet)
         chartData.setValueFormatter(formatter)
