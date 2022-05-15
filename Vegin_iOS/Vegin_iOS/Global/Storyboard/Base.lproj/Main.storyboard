@@ -382,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Da4-8L-Esn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2604" y="881.5270935960591"/>
+            <point key="canvasLocation" x="1182" y="882"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="yVt-05-Hc8">
@@ -459,7 +459,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53n-xY-jkf">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53n-xY-jkf" customClass="BarChartView" customModule="Charts">
                                         <rect key="frame" x="34" y="425" width="307" height="242"/>
                                         <color key="backgroundColor" name="main"/>
                                     </view>
@@ -505,6 +505,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="마이페이지" image="my" selectedImage="my" id="moV-tj-bVP"/>
                     <connections>
+                        <outlet property="barGraphView" destination="53n-xY-jkf" id="QnW-Hx-nbb"/>
                         <outlet property="characterImgView" destination="zAw-ru-Cdd" id="cCf-sc-moS"/>
                         <outlet property="dayCountLabel" destination="z91-Wt-S9S" id="0MP-7f-iEO"/>
                         <outlet property="nicknameLabel" destination="XGr-ms-uwl" id="4bP-Fz-trk"/>
@@ -573,7 +574,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2z-Wh-9Sj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871.2" y="881.5270935960591"/>
+            <point key="canvasLocation" x="505" y="882"/>
         </scene>
         <!--홈-->
         <scene sceneID="dgJ-Va-Nke">

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Charts
 
 class MypageVC: BaseVC {
 
@@ -15,11 +16,22 @@ class MypageVC: BaseVC {
     @IBOutlet weak var orientationLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var dayCountLabel: UILabel!
+    @IBOutlet weak var barGraphView: BarChartView!
+    
+    // MARK: Properties
+    var dataPoints: [Int] = [1, 2, 3, 4, 5, 6]
+    var dataEntries : [BarChartDataEntry] = [] {
+        didSet {
+            barGraphView.notifyDataSetChanged()
+        }
+    }// 실질적인 데이터
+    var dataArray: [Int] = [10, 1, 5, 1, 7, 1]  // y축의 데이터가 될 data 배열
     
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.setNeedsLayout()
         configureUI()
         setCharacterImg()
         getMypageInfo()
@@ -69,6 +81,38 @@ extension MypageVC {
     }
 }
 
+// MARK: - Custom Methods
+extension MypageVC {
+    
+    /// 그래프 그리는 메서드
+    private func setUpBarGraph(data: MyPageDataModel) {
+        for i in 0...5 {
+            dataArray[i] = data.dietCountList[i].count
+        
+            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(dataArray[i]))
+            dataEntries.append(dataEntry)
+        }
+        
+        let valFormatter = NumberFormatter()
+        valFormatter.numberStyle = .currency
+        valFormatter.maximumFractionDigits = 2
+        valFormatter.currencySymbol = "$"
+                
+        let format = NumberFormatter()
+        format.numberStyle = .none
+        let formatter = DefaultValueFormatter(formatter: format)
+        
+        let chartDataSet = BarChartDataSet(entries:dataEntries, label: "그래프 값 명칭")
+        let chartData = BarChartData(dataSet: chartDataSet)
+        chartData.setValueFormatter(formatter)
+        barGraphView.leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: valFormatter)
+                
+        barGraphView.data = chartData
+        chartData.notifyDataChanged()
+        barGraphView.notifyDataSetChanged()
+    }
+}
+
 // MARK: - Network
 extension MypageVC {
     /// 미션 리스트 현황 조회 메서드
@@ -84,6 +128,7 @@ extension MypageVC {
                     self.orientationLabel.text = data.orientation
                     self.nicknameLabel.text = data.nickname
                     self.dayCountLabel.text = "\(data.dayCount)일 째"
+                    self.setUpBarGraph(data: data)
                 }
             case .requestErr(let res):
                 self.activityIndicator.stopAnimating()
