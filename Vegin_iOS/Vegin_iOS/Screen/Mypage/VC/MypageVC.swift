@@ -17,6 +17,7 @@ class MypageVC: BaseVC {
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var dayCountLabel: UILabel!
     @IBOutlet weak var barGraphView: BarChartView!
+    @IBOutlet weak var whiteViewHeight: NSLayoutConstraint!
     
     // MARK: Properties
     var dataEntries : [BarChartDataEntry] = [] {
@@ -48,6 +49,7 @@ extension MypageVC {
     private func configureUI() {
         orientationContainerView.makeRounded(cornerRadius: 10.adjusted)
         orientationLabel.sizeToFit()
+        whiteViewHeight.constant = 603.adjustedH
     }
     
     /// 홈화면 적용 캐릭터에 따른 배경 캐릭터 이미지 적용 메서드

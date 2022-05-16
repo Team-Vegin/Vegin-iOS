@@ -401,6 +401,9 @@
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 74" translatesAutoresizingMaskIntoConstraints="NO" id="Apt-11-fTZ">
                                         <rect key="frame" x="0.0" y="209" width="375" height="603"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="603" id="xli-vP-3mt"/>
+                                        </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veginer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGr-ms-uwl">
                                         <rect key="frame" x="151.66666666666666" y="289" width="71.666666666666657" height="24.333333333333314"/>
@@ -538,6 +541,7 @@
                         <outlet property="nicknameLabel" destination="XGr-ms-uwl" id="4bP-Fz-trk"/>
                         <outlet property="orientationContainerView" destination="4Ys-OI-emM" id="3Os-4K-EUs"/>
                         <outlet property="orientationLabel" destination="LvS-Hn-1vx" id="8Cg-Cq-dmW"/>
+                        <outlet property="whiteViewHeight" destination="xli-vP-3mt" id="5Ub-FE-xVP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhE-4c-EeD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
