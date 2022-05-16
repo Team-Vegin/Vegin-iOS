@@ -11,6 +11,7 @@ class FeedDetailEmojiTVC: BaseTVC {
 
     // MARK: Properties
     var tapPlusBtnAction: (() -> ())?
+    var emojiData: [EmojiList] = []
     
     // MARK: IBOutlet
     @IBOutlet weak var emojiCV: UICollectionView!
@@ -47,10 +48,8 @@ extension FeedDetailEmojiTVC {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension FeedDetailEmojiTVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = UIScreen.main.bounds.width
-        
-        let cellWidth = width * (58/375)
-        let cellHeight = cellWidth * (30/58)
+        let cellWidth = 58.adjusted
+        let cellHeight = 30.adjustedH
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
@@ -71,11 +70,13 @@ extension FeedDetailEmojiTVC: UICollectionViewDelegateFlowLayout {
 // MARK: - UICollectionViewDataSource
 extension FeedDetailEmojiTVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return emojiData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmojiCountCVC.className, for: indexPath) as? EmojiCountCVC else { return UICollectionViewCell() }
+        
+        cell.setData(data: emojiData[indexPath.row])
         return cell
     }
 }
