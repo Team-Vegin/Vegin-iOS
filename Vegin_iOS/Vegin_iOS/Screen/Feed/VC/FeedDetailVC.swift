@@ -23,6 +23,7 @@ class FeedDetailVC: BaseVC {
     // MARK: Properties
     var postId: Int?
     var detailPost: FeedPostDataModel = FeedPostDataModel(postID: 0, title: "", content: "", tag: "", imageURL: "", createdAt: "", writer: Writer(userID: 0, nickname: "", profileImageID: 0), emojiList: [EmojiList(emojiID: 0, count: 0, isDeleted: false)])
+    var emojiList: [EmojiList] = []
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class FeedDetailVC: BaseVC {
         addShadowToNaviBar()
         registerTVC()
         setUpTV()
+        addObserver()
         getFeedDetailPost(postID: postId ?? 0)
     }
     
@@ -113,6 +115,14 @@ extension FeedDetailVC {
         feedWriteVC.setReceivedData(status: false, postId: detailPost.postID, categoryId: categoryID, imageUrl: detailPost.imageURL, titleText: detailPost.title, contentText: detailPost.content)
 
         self.navigationController?.pushViewController(feedWriteVC, animated: true)
+    }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCV), name: NSNotification.Name("emojiBtnDidTap"), object: nil)
+    }
+    
+    @objc func reloadCV() {
+        getFeedDetailPost(postID: postId ?? 0)
     }
 }
 
