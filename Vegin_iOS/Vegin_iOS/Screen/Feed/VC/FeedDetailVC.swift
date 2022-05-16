@@ -22,7 +22,7 @@ class FeedDetailVC: BaseVC {
     
     // MARK: Properties
     var postId: Int?
-    var detailPost: FeedPostDataModel = FeedPostDataModel(postID: 0, title: "", content: "", tag: "", imageURL: "", createdAt: "", writer: Writer(userID: 0, nickname: "", profileImageID: 0))
+    var detailPost: FeedPostDataModel = FeedPostDataModel(postID: 0, title: "", content: "", tag: "", imageURL: "", createdAt: "", writer: Writer(userID: 0, nickname: "", profileImageID: 0), emojiList: [EmojiList(emojiID: 0, count: 0, isDeleted: false)])
     
     // MARK: Life Cycle
     override func viewDidLoad() {

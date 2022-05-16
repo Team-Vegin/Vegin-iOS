@@ -16,10 +16,11 @@ struct FeedPostDataModel: Codable {
     let imageURL: String
     let createdAt: String
     let writer: Writer
+    let emojiList: [EmojiList]
 
     enum CodingKeys: String, CodingKey {
         case postID = "postId"
-        case title, content, tag, imageURL, createdAt, writer
+        case title, content, tag, imageURL, createdAt, writer, emojiList
     }
 }
 
@@ -33,5 +34,17 @@ struct Writer: Codable {
         case userID = "userId"
         case nickname
         case profileImageID = "profileImageId"
+    }
+}
+
+// MARK: - EmojiList
+struct EmojiList: Codable {
+    let emojiID: Int
+    let count: Int
+    let isDeleted: Bool
+
+    enum CodingKeys: String, CodingKey {
+        case emojiID = "emojiId"
+        case count, isDeleted
     }
 }
