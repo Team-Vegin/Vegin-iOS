@@ -24,13 +24,12 @@ class MypageVC: BaseVC {
             barGraphView.notifyDataSetChanged()
         }
     }// 실질적인 데이터
-    var dataArray: [Int] = [10, 1, 5, 1, 7, 1]  // y축의 데이터가 될 data 배열
+    var dataArray: [Int] = [1, 1, 1, 1, 1, 1]  // y축의 데이터가 될 data 배열
     
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.setNeedsLayout()
         configureUI()
         setCharacterImg()
         getMypageInfo()
@@ -92,12 +91,9 @@ extension MypageVC {
             dataEntries.append(dataEntry)
         }
         
-        let valFormatter = NumberFormatter()
-        valFormatter.numberStyle = .currency
-        valFormatter.maximumFractionDigits = 2
-                
         let format = NumberFormatter()
         format.numberStyle = .none
+                
         let formatter = DefaultValueFormatter(formatter: format)
         
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "")
@@ -105,9 +101,13 @@ extension MypageVC {
         chartDataSet.highlightEnabled = false // 그래프 선택 되지 않도록
         barGraphView.doubleTapToZoomEnabled = false // 줌 되지 않도록
         
-        barGraphView.getAxis(.left).axisLineColor = UIColor.clear
-        barGraphView.xAxis.granularityEnabled = false
-        barGraphView.xAxis.granularity = 1
+        let chartData = BarChartData(dataSet: chartDataSet)
+        chartData.barWidth = Double(0.60)
+        
+        barGraphView.data = chartData
+        
+        barGraphView.getAxis(.left).axisLineColor = .clear
+        barGraphView.xAxis.labelTextColor = .clear
         barGraphView.xAxis.drawAxisLineEnabled = false
         barGraphView.xAxis.drawGridLinesEnabled = false
         barGraphView.rightAxis.drawAxisLineEnabled = false
@@ -116,15 +116,13 @@ extension MypageVC {
         barGraphView.leftAxis.drawAxisLineEnabled = false
         barGraphView.leftAxis.drawGridLinesEnabled = false
         barGraphView.leftAxis.drawLabelsEnabled = false
-        
-        let chartData = BarChartData(dataSet: chartDataSet)
-        chartData.setValueFormatter(formatter)
-        chartData.barWidth = Double(0.60)
-        barGraphView.leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: valFormatter)
+        barGraphView.legend.enabled = false
+        barGraphView.barData?.setValueFormatter(formatter)
+
         barGraphView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0) // 애니메이션 효과
         barGraphView.noDataText = "기록 데이터가 없습니다."
-                
-        barGraphView.data = chartData
+        barGraphView.noDataFont = .PretendardR(size: 12.adjusted)
+        barGraphView.noDataTextColor = .defaultGray
     }
 }
 
