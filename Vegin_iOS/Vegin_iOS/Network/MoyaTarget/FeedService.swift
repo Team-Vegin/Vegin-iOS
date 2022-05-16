@@ -15,6 +15,7 @@ enum FeedService {
     case deleteFeedPost(postID: Int)
     case createFeedPost(image: UIImage, title: String, content: String, tagID: Int)
     case editFeedPost(postID: Int, image: UIImage, title: String, content: String, tagID: Int)
+    case postEmoji(postID: Int, emojiID: Int)
 }
 
 extension FeedService: TargetType {
@@ -32,6 +33,8 @@ extension FeedService: TargetType {
             return "/post/\(postID)"
         case .createFeedPost:
             return "/post"
+        case .postEmoji:
+            return "/post/emoji"
         }
     }
     
@@ -41,7 +44,7 @@ extension FeedService: TargetType {
             return .get
         case .deleteFeedPost:
             return .delete
-        case .createFeedPost:
+        case .createFeedPost, .postEmoji:
             return .post
         case .editFeedPost:
             return .put
@@ -52,6 +55,13 @@ extension FeedService: TargetType {
         switch self {
         case .getFeedList, .getMyFeedList, .getFeedDetailPost, .deleteFeedPost:
             return .requestPlain
+        case .postEmoji(let postID, let emojiID):
+            let body: [String : Any] = [
+                "postId" : postID,
+                "emojiId" : emojiID
+            ]
+            return .requestParameters(parameters: body, encoding: JSONEncoding.default)
+            
         case .createFeedPost(let image, let title, let content, let tagID), .editFeedPost(_, let image, let title, let content, let tagID):
             var multiPartData: [Moya.MultipartFormData] = []
             
@@ -77,7 +87,7 @@ extension FeedService: TargetType {
         let accessToken = UserDefaults.standard.string(forKey: UserDefaults.Keys.AccessToken) ?? ""
         
         switch self {
-        case .getFeedList, .getMyFeedList, .getFeedDetailPost, .deleteFeedPost:
+        case .getFeedList, .getMyFeedList, .getFeedDetailPost, .deleteFeedPost, .postEmoji:
             return ["Content-Type": "application/json", "accessToken": accessToken]
         case .createFeedPost, .editFeedPost:
             return ["Content-Type": "multipart/form-data", "accessToken": accessToken]
