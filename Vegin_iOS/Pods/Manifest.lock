@@ -1,5 +1,9 @@
 PODS:
   - Alamofire (5.5.0)
+  - Charts (4.0.2):
+    - Charts/Core (= 4.0.2)
+  - Charts/Core (4.0.2):
+    - SwiftAlgorithms (~> 1.0)
   - Firebase/Auth (8.10.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 8.10.0)
@@ -58,9 +62,11 @@ PODS:
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
   - SnapKit (5.0.1)
+  - SwiftAlgorithms (1.0.0)
   - Then (2.7.0)
 
 DEPENDENCIES:
+  - Charts
   - Firebase/Auth
   - Firebase/Storage
   - FSCalendar
@@ -72,6 +78,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Charts
     - Firebase
     - FirebaseAuth
     - FirebaseCore
@@ -86,10 +93,12 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SnapKit
+    - SwiftAlgorithms
     - Then
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Charts: cfa4e911e6dc289582c2fe011a0e87c03d96727f
   Firebase: 44213362f1dcc52555b935dc925ed35ac55f1b20
   FirebaseAuth: 59a2d2b933b5b79e18fb1e6ad230c6abdaa73d26
   FirebaseCore: 04186597c095da37d90ff9fd3e53bc61a1ff2440
@@ -104,8 +113,9 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 711cb034cda867e1658090246708d6584a684a44
+PODFILE CHECKSUM: 189f45835ea383ca3c88c51ded034f255edb8de1
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
