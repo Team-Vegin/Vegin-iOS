@@ -136,11 +136,12 @@ extension FeedDetailVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 479
-        } else if indexPath.section == 1 {
             return UITableView.automaticDimension
+        } else if indexPath.section == 1 {
+            let minimumHeight = 90.adjustedH
+            return (UITableView.automaticDimension > minimumHeight) ? UITableView.automaticDimension : minimumHeight
         } else if indexPath.section == 2 {
-            return 142
+            return 142.adjustedH
         } else {
              return 0
         }

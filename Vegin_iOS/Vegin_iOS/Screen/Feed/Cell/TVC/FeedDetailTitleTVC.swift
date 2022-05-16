@@ -18,6 +18,7 @@ class FeedDetailTitleTVC: BaseTVC {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imgHeight: NSLayoutConstraint!
     
     // MARK: Life Cycle
     override func awakeFromNib() {
@@ -32,6 +33,7 @@ class FeedDetailTitleTVC: BaseTVC {
     private func configureUI() {
         contentImgView.makeRounded(cornerRadius: 20.adjusted)
         categoryVIew.makeRounded(cornerRadius: 0.5 * categoryVIew.bounds.size.height)
+        imgHeight.constant = 331.adjustedH
     }
     
     func setData(postData: FeedPostDataModel) {

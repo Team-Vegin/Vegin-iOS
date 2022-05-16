@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -21,7 +21,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FeedDetailTitleTVC" customModule="Vegin_iOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="479"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="479"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -45,16 +45,16 @@
                         </constraints>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="1x5-Hr-c2P">
-                        <rect key="frame" x="22" y="79" width="331" height="303"/>
+                        <rect key="frame" x="22" y="79" width="331" height="331"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="303" id="4yx-SB-7Py"/>
+                            <constraint firstAttribute="height" constant="331" id="Syo-pT-uTs"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fS6-Aw-CPq">
-                        <rect key="frame" x="23" y="402" width="55" height="30"/>
+                        <rect key="frame" x="23" y="430" width="55" height="30"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맛집" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7B-Tm-x0O">
-                                <rect key="frame" x="15" y="6.5" width="25" height="17"/>
+                                <rect key="frame" x="15" y="6.6666666666666856" width="25" height="17"/>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -69,7 +69,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOi-aB-Cdb">
-                        <rect key="frame" x="24" y="446" width="51" height="24"/>
+                        <rect key="frame" x="24" y="474" width="51" height="24"/>
                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
                         <color key="textColor" name="darkMain"/>
                         <nil key="highlightedColor"/>
@@ -98,6 +98,7 @@
                 <outlet property="categoryVIew" destination="fS6-Aw-CPq" id="0Xq-hv-LjP"/>
                 <outlet property="contentImgView" destination="1x5-Hr-c2P" id="ULG-2l-QJW"/>
                 <outlet property="dateLabel" destination="87Q-vJ-Is0" id="g5z-Nw-a8x"/>
+                <outlet property="imgHeight" destination="Syo-pT-uTs" id="oXA-xR-CqI"/>
                 <outlet property="nickNameLabel" destination="6Je-ns-LwX" id="YmL-Lb-kYv"/>
                 <outlet property="profileImgView" destination="Le1-aw-i8K" id="9jQ-sU-Tn4"/>
                 <outlet property="titleLabel" destination="vOi-aB-Cdb" id="HYN-xA-Gft"/>
