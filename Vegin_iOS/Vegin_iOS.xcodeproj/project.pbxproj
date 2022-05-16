@@ -732,7 +732,6 @@
 				77ED046827B4272B00D077CA /* SB */,
 				77ED046727B4272700D077CA /* VC */,
 				77ED046627B4272100D077CA /* Cell */,
-				77ED046527B4271B00D077CA /* Xib */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -829,13 +828,6 @@
 				7757287527CD301E00148C9A /* DietListSB.storyboard */,
 			);
 			path = SB;
-			sourceTree = "<group>";
-		};
-		77ED046527B4271B00D077CA /* Xib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Xib;
 			sourceTree = "<group>";
 		};
 		77ED046627B4272100D077CA /* Cell */ = {
