@@ -44,6 +44,7 @@
 		7742886C27F6CA36001A7CFA /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742886B27F6CA36001A7CFA /* SignService.swift */; };
 		7742889227FACE89001A7CFA /* SignUpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742889127FACE89001A7CFA /* SignUpDataModel.swift */; };
 		7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57B2742C0F000325814 /* UIViewController+.swift */; };
+		774BF6F02832BDDC00AA71F1 /* FeedEmojiResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774BF6EF2832BDDC00AA71F1 /* FeedEmojiResModel.swift */; };
 		7756F9AD27FDFDB8006F6EF3 /* CharacterBookCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7756F9AB27FDFDB8006F6EF3 /* CharacterBookCVC.swift */; };
 		7756F9AE27FDFDB8006F6EF3 /* CharacterBookCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7756F9AC27FDFDB8006F6EF3 /* CharacterBookCVC.xib */; };
 		7756F9B027FDFE08006F6EF3 /* FeedWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7756F9AF27FDFE08006F6EF3 /* FeedWriteVC.swift */; };
@@ -185,6 +186,7 @@
 		7742886B27F6CA36001A7CFA /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
 		7742889127FACE89001A7CFA /* SignUpDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataModel.swift; sourceTree = "<group>"; };
 		7744C57B2742C0F000325814 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		774BF6EF2832BDDC00AA71F1 /* FeedEmojiResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEmojiResModel.swift; sourceTree = "<group>"; };
 		7756F9AB27FDFDB8006F6EF3 /* CharacterBookCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterBookCVC.swift; sourceTree = "<group>"; };
 		7756F9AC27FDFDB8006F6EF3 /* CharacterBookCVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterBookCVC.xib; sourceTree = "<group>"; };
 		7756F9AF27FDFE08006F6EF3 /* FeedWriteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedWriteVC.swift; sourceTree = "<group>"; };
@@ -645,6 +647,7 @@
 			children = (
 				77D9ED1F28043DF5000EA76A /* FeedListDataModel.swift */,
 				77D9ED392805ECE4000EA76A /* FeedPostDataModel.swift */,
+				774BF6EF2832BDDC00AA71F1 /* FeedEmojiResModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -729,7 +732,6 @@
 				77ED046827B4272B00D077CA /* SB */,
 				77ED046727B4272700D077CA /* VC */,
 				77ED046627B4272100D077CA /* Cell */,
-				77ED046527B4271B00D077CA /* Xib */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -826,13 +828,6 @@
 				7757287527CD301E00148C9A /* DietListSB.storyboard */,
 			);
 			path = SB;
-			sourceTree = "<group>";
-		};
-		77ED046527B4271B00D077CA /* Xib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Xib;
 			sourceTree = "<group>";
 		};
 		77ED046627B4272100D077CA /* Cell */ = {
@@ -1130,6 +1125,7 @@
 			files = (
 				772C146F273B7DAB00BB0127 /* AppDelegate.swift in Sources */,
 				7742886827F6C8E0001A7CFA /* SignInDataModel.swift in Sources */,
+				774BF6F02832BDDC00AA71F1 /* FeedEmojiResModel.swift in Sources */,
 				77D9ED2428044024000EA76A /* FeedAPI.swift in Sources */,
 				7757285727C8C11E00148C9A /* FeedMainVC.swift in Sources */,
 				7742885927F40CCD001A7CFA /* APIConstants.swift in Sources */,

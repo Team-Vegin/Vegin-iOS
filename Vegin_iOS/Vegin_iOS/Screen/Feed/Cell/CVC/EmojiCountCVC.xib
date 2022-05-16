@@ -25,7 +25,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfM-go-RHF">
                         <rect key="frame" x="0.0" y="0.0" width="58" height="30"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_fire" translatesAutoresizingMaskIntoConstraints="NO" id="9OZ-7G-SFf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="party" translatesAutoresizingMaskIntoConstraints="NO" id="9OZ-7G-SFf">
                                 <rect key="frame" x="9" y="9" width="12" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9OZ-7G-SFf" secondAttribute="height" multiplier="1:1" id="eL4-Bn-GWY"/>
@@ -68,7 +68,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="_fire" width="40" height="40.5"/>
+        <image name="party" width="40" height="40.5"/>
         <namedColor name="background">
             <color red="0.92941176470588238" green="0.95686274509803926" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -22,7 +22,8 @@ class FeedDetailVC: BaseVC {
     
     // MARK: Properties
     var postId: Int?
-    var detailPost: FeedPostDataModel = FeedPostDataModel(postID: 0, title: "", content: "", tag: "", imageURL: "", createdAt: "", writer: Writer(userID: 0, nickname: "", profileImageID: 0))
+    var detailPost: FeedPostDataModel = FeedPostDataModel(postID: 0, title: "", content: "", tag: "", imageURL: "", createdAt: "", writer: Writer(userID: 0, nickname: "", profileImageID: 0), emojiList: [EmojiList(emojiID: 0, count: 0, isDeleted: false)])
+    var emojiList: [EmojiList] = []
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class FeedDetailVC: BaseVC {
         addShadowToNaviBar()
         registerTVC()
         setUpTV()
+        addObserver()
         getFeedDetailPost(postID: postId ?? 0)
     }
     
@@ -114,6 +116,14 @@ extension FeedDetailVC {
 
         self.navigationController?.pushViewController(feedWriteVC, animated: true)
     }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCV), name: NSNotification.Name("emojiBtnDidTap"), object: nil)
+    }
+    
+    @objc func reloadCV() {
+        getFeedDetailPost(postID: postId ?? 0)
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -126,11 +136,12 @@ extension FeedDetailVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 479
-        } else if indexPath.section == 1 {
             return UITableView.automaticDimension
+        } else if indexPath.section == 1 {
+            let minimumHeight = 90.adjustedH
+            return (UITableView.automaticDimension > minimumHeight) ? UITableView.automaticDimension : minimumHeight
         } else if indexPath.section == 2 {
-            return 142
+            return 142.adjustedH
         } else {
              return 0
         }
@@ -160,10 +171,12 @@ extension FeedDetailVC: UITableViewDataSource {
             feedDetailEmojiTVC.tapPlusBtnAction = {
                 guard let emojiPopUp = Bundle.main.loadNibNamed(EmojiAlertVC.className, owner: self, options: nil)?.first as? EmojiAlertVC else { return }
                 
+                emojiPopUp.postId = self.detailPost.postID
                 emojiPopUp.modalTransitionStyle = .crossDissolve
                 emojiPopUp.modalPresentationStyle = .overFullScreen
                 self.present(emojiPopUp, animated: true)
             }
+            feedDetailEmojiTVC.emojiData = detailPost.emojiList
             return feedDetailEmojiTVC
         } else {
             return UITableViewCell()
