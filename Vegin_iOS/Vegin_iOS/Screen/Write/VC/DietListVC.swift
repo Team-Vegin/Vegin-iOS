@@ -118,11 +118,13 @@ extension DietListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let nextVC = UIStoryboard.init(name: Identifiers.DietDetailSB, bundle: nil).instantiateViewController(withIdentifier: DietDetailVC.className) as? DietDetailVC else { return }
-        
-        nextVC.selectedDate = getDayDate(date: listCalendar.selectedDate ?? today )
-        nextVC.postId = postList[indexPath.row].postID
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        if !postList.isEmpty {
+            guard let nextVC = UIStoryboard.init(name: Identifiers.DietDetailSB, bundle: nil).instantiateViewController(withIdentifier: DietDetailVC.className) as? DietDetailVC else { return }
+            
+            nextVC.selectedDate = getDayDate(date: listCalendar.selectedDate ?? today )
+            nextVC.postId = postList[indexPath.row].postID
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
     }
 }
 
