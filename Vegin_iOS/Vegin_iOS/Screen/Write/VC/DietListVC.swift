@@ -72,6 +72,7 @@ extension DietListVC {
 extension DietListVC {
     private func registerTVC() {
         DietListTVC.register(target: dietListTV)
+        EmptyViewTVC.register(target: dietListTV)
     }
     
     private func setUpTV() {
@@ -85,22 +86,35 @@ extension DietListVC: UITableViewDelegate {
     
     /// cell 높이 설정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        if postList.isEmpty {
+            return 400.adjustedH
+        } else {
+            return 140.adjustedH
+        }
     }
 }
 
 // MARK: - UITableViewDataSource
 extension DietListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postList.count
+        if postList.isEmpty {
+            return 1
+        } else {
+            return postList.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: DietListTVC.className) as? DietListTVC else { return UITableViewCell() }
-        
-        cell.setData(postData: postList[indexPath.row])
-        cell.selectionStyle = .none
-        return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DietListTVC.className) as? DietListTVC,
+              let emptycell = tableView.dequeueReusableCell(withIdentifier: EmptyViewTVC.className) as? EmptyViewTVC else { return UITableViewCell() }
+        if postList.isEmpty {
+            return emptycell
+        } else {
+            cell.setData(postData: postList[indexPath.row])
+            cell.selectionStyle = .none
+            
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
