@@ -16,6 +16,7 @@ class FeedDetailContentTVC: BaseTVC {
     override func awakeFromNib() {
         super.awakeFromNib()
         contentLabel.sizeToFit()
+        contentLabel.setLineSpacing(lineSpacing: 3.adjustedH)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

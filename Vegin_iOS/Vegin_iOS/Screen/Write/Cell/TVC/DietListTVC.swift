@@ -10,11 +10,13 @@ import Kingfisher
 
 class DietListTVC: BaseTVC {
 
+    // MARK: IBOutlet
     @IBOutlet weak var thumbnailImgView: UIImageView!
     @IBOutlet weak var iconImgView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
+    // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()

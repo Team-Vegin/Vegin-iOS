@@ -45,6 +45,8 @@
 		7742889227FACE89001A7CFA /* SignUpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742889127FACE89001A7CFA /* SignUpDataModel.swift */; };
 		7744C57C2742C0F000325814 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C57B2742C0F000325814 /* UIViewController+.swift */; };
 		774BF6F02832BDDC00AA71F1 /* FeedEmojiResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774BF6EF2832BDDC00AA71F1 /* FeedEmojiResModel.swift */; };
+		774BF6F32833D2CE00AA71F1 /* EmptyViewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774BF6F12833D2CE00AA71F1 /* EmptyViewTVC.swift */; };
+		774BF6F42833D2CE00AA71F1 /* EmptyViewTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 774BF6F22833D2CE00AA71F1 /* EmptyViewTVC.xib */; };
 		7756F9AD27FDFDB8006F6EF3 /* CharacterBookCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7756F9AB27FDFDB8006F6EF3 /* CharacterBookCVC.swift */; };
 		7756F9AE27FDFDB8006F6EF3 /* CharacterBookCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7756F9AC27FDFDB8006F6EF3 /* CharacterBookCVC.xib */; };
 		7756F9B027FDFE08006F6EF3 /* FeedWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7756F9AF27FDFE08006F6EF3 /* FeedWriteVC.swift */; };
@@ -187,6 +189,8 @@
 		7742889127FACE89001A7CFA /* SignUpDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataModel.swift; sourceTree = "<group>"; };
 		7744C57B2742C0F000325814 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		774BF6EF2832BDDC00AA71F1 /* FeedEmojiResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEmojiResModel.swift; sourceTree = "<group>"; };
+		774BF6F12833D2CE00AA71F1 /* EmptyViewTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewTVC.swift; sourceTree = "<group>"; };
+		774BF6F22833D2CE00AA71F1 /* EmptyViewTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyViewTVC.xib; sourceTree = "<group>"; };
 		7756F9AB27FDFDB8006F6EF3 /* CharacterBookCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterBookCVC.swift; sourceTree = "<group>"; };
 		7756F9AC27FDFDB8006F6EF3 /* CharacterBookCVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterBookCVC.xib; sourceTree = "<group>"; };
 		7756F9AF27FDFE08006F6EF3 /* FeedWriteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedWriteVC.swift; sourceTree = "<group>"; };
@@ -598,6 +602,8 @@
 				77DBB86027DF47DF00000623 /* DietDetailInfoTVC.xib */,
 				77DBB86327DF49A600000623 /* DietDetailMemoTVC.swift */,
 				77DBB86427DF49A600000623 /* DietDetailMemoTVC.xib */,
+				774BF6F12833D2CE00AA71F1 /* EmptyViewTVC.swift */,
+				774BF6F22833D2CE00AA71F1 /* EmptyViewTVC.xib */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -742,7 +748,6 @@
 				77ED046427B426E900D077CA /* SB */,
 				77ED046327B426E300D077CA /* VC */,
 				77ED046227B426D800D077CA /* Cell */,
-				77ED046127B426C700D077CA /* Xib */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -786,13 +791,6 @@
 			sourceTree = "<group>";
 		};
 		77ED046027B426A900D077CA /* Xib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Xib;
-			sourceTree = "<group>";
-		};
-		77ED046127B426C700D077CA /* Xib */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -1056,6 +1054,7 @@
 				7756F9AE27FDFDB8006F6EF3 /* CharacterBookCVC.xib in Resources */,
 				7757287627CD301E00148C9A /* DietListSB.storyboard in Resources */,
 				7757288A27D0B0E400148C9A /* Pretendard-Regular.otf in Resources */,
+				774BF6F42833D2CE00AA71F1 /* EmptyViewTVC.xib in Resources */,
 				77DBB85E27DF46FB00000623 /* IconImgCVC.xib in Resources */,
 				77DBB86227DF47DF00000623 /* DietDetailInfoTVC.xib in Resources */,
 				7757288927D0B0E400148C9A /* Pretendard-Medium.otf in Resources */,
@@ -1159,6 +1158,7 @@
 				5A751C8C27E4CE5C003DCD7C /* HomeNC.swift in Sources */,
 				7757286C27C8DAF600148C9A /* AppContentDataModel.swift in Sources */,
 				5ABF7F7B28180EC8000D1B49 /* OnboardingCVC.swift in Sources */,
+				774BF6F32833D2CE00AA71F1 /* EmptyViewTVC.swift in Sources */,
 				7742885B27F40CF9001A7CFA /* NetworkResult.swift in Sources */,
 				77DBB87327E1106600000623 /* FeedMyPostEmptyTVC.swift in Sources */,
 				7756F9B027FDFE08006F6EF3 /* FeedWriteVC.swift in Sources */,
