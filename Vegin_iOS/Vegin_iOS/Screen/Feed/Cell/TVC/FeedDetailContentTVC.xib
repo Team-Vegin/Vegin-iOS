@@ -22,17 +22,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyV-Ig-ZYf">
-                        <rect key="frame" x="24" y="8" width="327" height="50.5"/>
-                        <string key="text">최근 성북구에 갔다가 엄청 맛있는 비건 식당을 발견했어요!
-가까우신 분들은 방문해서 다같이 맛있고 건강한 비건생활 하시면 좋겠어요!!</string>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyV-Ig-ZYf">
+                        <rect key="frame" x="24" y="8" width="327" height="17"/>
                         <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
                         <color key="textColor" name="darkGray"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jyV-Ig-ZYf" secondAttribute="bottom" constant="9" id="16O-fL-oMu"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jyV-Ig-ZYf" secondAttribute="bottom" constant="30" id="16O-fL-oMu"/>
                     <constraint firstItem="jyV-Ig-ZYf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="AXo-zi-h8M"/>
                     <constraint firstAttribute="trailing" secondItem="jyV-Ig-ZYf" secondAttribute="trailing" constant="24" id="UYR-Hj-z04"/>
                     <constraint firstItem="jyV-Ig-ZYf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="WVJ-v2-XWe"/>
