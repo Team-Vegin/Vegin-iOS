@@ -47,8 +47,7 @@ class CalendarVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
-        getEmojiList(year: getYear(date: currentPage ?? today), month: getMonth(date: currentPage ?? today))
-        calendar.reloadData()
+        getEmojiList(year: getYear(date: calendar.currentPage), month: getMonth(date: calendar.currentPage))
         setUI()
         setCalendarUI()
         setCalendarDelegate()
