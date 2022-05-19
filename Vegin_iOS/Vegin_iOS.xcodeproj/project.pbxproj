@@ -1370,6 +1370,8 @@
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vegin_iOS/Support/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1380,7 +1382,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eunju.Vegin-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eunju.Vegin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1399,6 +1401,8 @@
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vegin_iOS/Support/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1409,7 +1413,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eunju.Vegin-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eunju.Vegin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
