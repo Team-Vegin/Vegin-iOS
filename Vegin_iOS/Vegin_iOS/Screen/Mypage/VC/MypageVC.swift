@@ -20,12 +20,8 @@ class MypageVC: BaseVC {
     @IBOutlet weak var whiteViewHeight: NSLayoutConstraint!
     
     // MARK: Properties
-    var dataEntries : [BarChartDataEntry] = [] {
-        didSet {
-            barGraphView.notifyDataSetChanged()
-        }
-    }// 실질적인 데이터
-    var dataArray: [Int] = [1, 1, 1, 1, 1, 1]  // y축의 데이터가 될 data 배열
+    var dataEntries : [BarChartDataEntry] = []
+    var dataArray: [Int] = []  // y축의 데이터가 될 data 배열
     
     
     // MARK: Life Cycle
@@ -86,8 +82,11 @@ extension MypageVC {
     
     /// 그래프 그리는 메서드
     private func setUpBarGraph(data: MyPageDataModel) {
+        dataArray.removeAll()
+        dataEntries.removeAll()
+
         for i in 0...5 {
-            dataArray[i] = data.dietCountList[i].count
+            dataArray.append(data.dietCountList[i].count)
         
             let dataEntry = BarChartDataEntry(x: Double(i), y: Double(dataArray[i]))
             dataEntries.append(dataEntry)
@@ -125,6 +124,8 @@ extension MypageVC {
         barGraphView.noDataText = "기록 데이터가 없습니다."
         barGraphView.noDataFont = .PretendardR(size: 12.adjusted)
         barGraphView.noDataTextColor = .defaultGray
+        
+        barGraphView.notifyDataSetChanged()
     }
 }
 
@@ -136,10 +137,8 @@ extension MypageVC {
         MyPageAPI.shared.getMypageInfoAPI() { networkResult in
             switch networkResult {
             case .success(let res):
-                print(res)
                 self.activityIndicator.stopAnimating()
                 if let data = res as? MyPageDataModel {
-                    print(data)
                     self.orientationLabel.text = data.orientation
                     self.nicknameLabel.text = data.nickname
                     self.dayCountLabel.text = "\(data.dayCount)일 째"
@@ -147,7 +146,6 @@ extension MypageVC {
                 }
             case .requestErr(let res):
                 self.activityIndicator.stopAnimating()
-                print(res)
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
                 self.activityIndicator.stopAnimating()

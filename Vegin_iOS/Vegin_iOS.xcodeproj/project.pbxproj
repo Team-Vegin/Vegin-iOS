@@ -724,7 +724,6 @@
 		77ED045927B425CC00D077CA /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				77ED046C27B4274900D077CA /* SB */,
 				77ED046B27B4274400D077CA /* VC */,
 				77ED046A27B4273F00D077CA /* Cell */,
 				77ED046927B4273A00D077CA /* Xib */,
@@ -879,13 +878,6 @@
 				77AB9C88282B9503002D9438 /* MypageVC.swift */,
 			);
 			path = VC;
-			sourceTree = "<group>";
-		};
-		77ED046C27B4274900D077CA /* SB */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SB;
 			sourceTree = "<group>";
 		};
 		77ED046D27B42A6200D077CA /* UIComponent */ = {
