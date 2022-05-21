@@ -37,6 +37,12 @@ class SignUpVC: BaseVC {
         super.viewDidLoad()
         configureUI()
         setUpDelegate()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeKeyboardObserver()
     }
     
     // MARK: IBAction
@@ -146,6 +152,46 @@ extension SignUpVC: UITextFieldDelegate {
         }
         setBtnStatus()
         checkPwIsValid()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        addKeyboardObserver()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        removeKeyboardObserver()
+    }
+}
+
+// MARK: - Keyboard
+extension SignUpVC {
+    private func addKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == pwCheckTextField {
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+                if self.view.frame.origin.y == 0 {
+                    self.view.frame.origin.y -= 100
+                }
+            })
+        }
+        return true
+    }
+    
+    @objc
+    private func keyboardWillHide(_ notification: Notification) {
+        if ((notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y = 0
+            }
+        }
+    }
+    
+    /// Keyboard Observer remove 메서드
+    private func removeKeyboardObserver() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 
