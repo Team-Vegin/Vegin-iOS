@@ -21,6 +21,8 @@ class SignInVC: BaseVC {
         super.viewDidLoad()
         configureUI()
         setUpDelegate()
+        addKeyboardObserver()
+        hideKeyboardWhenTappedAround()
     }
     
     // MARK: IBAction
@@ -106,6 +108,32 @@ extension SignInVC: UITextFieldDelegate {
         emailErrorLabel.text = ""
         pwErrorLabel.text = ""
         checkEmailPwIsValid()
+    }
+}
+
+// MARK: - Keyboard
+extension SignInVC {
+    private func addKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc
+    private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= (keyboardSize.height - 220)
+            }
+        }
+    }
+    
+    @objc
+    private func keyboardWillHide(_ notification: Notification) {
+        if ((notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y = 0
+            }
+        }
     }
 }
 
