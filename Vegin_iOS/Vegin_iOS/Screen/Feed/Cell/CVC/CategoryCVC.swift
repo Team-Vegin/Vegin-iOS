@@ -19,7 +19,6 @@ class CategoryCVC: BaseCVC {
                 categoryLabel.backgroundColor = .darkMain
                 categoryLabel.textColor = .white
                 categoryLabel.font = .PretendardSB(size: 14)
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "sendTagData"), object: categoryLabel.text)
             } else {
                 categoryLabel.backgroundColor = .defaultGray
                 categoryLabel.textColor = .defaultTextGray
