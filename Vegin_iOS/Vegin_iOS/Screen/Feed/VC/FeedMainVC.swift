@@ -9,19 +9,38 @@ import UIKit
 
 class FeedMainVC: BaseVC {
 
-    // MARK: IBOutlet
-    @IBOutlet weak var feedTV: UITableView!
-    
+    // MARK: Properties
     var postList: [FeedListDataModel] = []
+    var categoryList = [String]()
     var selectedTagId: Int = 1
+    
+    let maxHeight: CGFloat = 215.0
+    let minHeight: CGFloat = 55.0
+    
+    // MARK: IBOutlet
+    @IBOutlet weak var feedTV: UITableView! {
+        didSet {
+            feedTV.contentInset = UIEdgeInsets(top: maxHeight, left: 0, bottom: 0, right: 0)
+        }
+    }
+    @IBOutlet weak var categoryCV: UICollectionView!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var upperHeaderView: UIView!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint! {
+        didSet {
+            heightConstraint.constant = maxHeight
+        }
+    }
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerTVC()
+        registerCell()
         setUpTV()
+        setUpCV()
+        initDataList()
+        setUpDefaultSelectedCategory()
         getFeedPostList(tagID: 1)
-        NotificationCenter.default.addObserver(self, selector: #selector(loadTagData), name: NSNotification.Name(rawValue: "sendTagData"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,13 +48,25 @@ class FeedMainVC: BaseVC {
         self.tabBarController?.tabBar.isHidden = false
         getFeedPostList(tagID: selectedTagId)
     }
+    
+    @IBAction func tapMyFeedBtn(_ sender: UIButton) {
+        guard let myPostListVC = UIStoryboard.init(name: Identifiers.MyFeedPostSB, bundle: nil).instantiateViewController(withIdentifier: MyFeedPostVC.className) as? MyFeedPostVC else { return }
+        
+        self.navigationController?.pushViewController(myPostListVC, animated: true)
+    }
+    
+    @IBAction func tapWriteBtn(_ sender: UIButton) {
+        guard let feedWriteVC = UIStoryboard.init(name: Identifiers.FeedWriteSB, bundle: nil).instantiateViewController(withIdentifier: FeedWriteVC.className) as? FeedWriteVC else { return }
+        
+        self.navigationController?.pushViewController(feedWriteVC, animated: true)
+    }
+    
 }
 // MARK: - Custom Methods
 extension FeedMainVC {
-    private func registerTVC() {
-        FeedMainTitleTVC.register(target: feedTV)
-        FeedMainEmptyTVC.register(target: feedTV)
+    private func registerCell() {
         FeedMainPostTVC.register(target: feedTV)
+        CategoryCVC.register(target: categoryCV)
     }
     
     private func setUpTV() {
@@ -45,52 +76,39 @@ extension FeedMainVC {
         feedTV.delegate = self
     }
     
-    @objc func loadTagData (_ notification : NSNotification)
-    {
-        let data = notification.object as? String ?? ""
-        switch data {
-        case "전체":
-            getFeedPostList(tagID: 1)
-            selectedTagId = 1
-        case "생활":
-            getFeedPostList(tagID: 2)
-            selectedTagId = 2
-        case "맛집":
-            getFeedPostList(tagID: 3)
-            selectedTagId = 3
-        case "꿀팁":
-            getFeedPostList(tagID: 4)
-            selectedTagId = 4
-        case "레시피":
-            getFeedPostList(tagID: 5)
-            selectedTagId = 5
-        case "기타":
-            getFeedPostList(tagID: 6)
-            selectedTagId = 6
-        default:
-            break
-        }
+    private func setUpCV() {
+        categoryCV.dataSource = self
+        categoryCV.delegate = self
     }
+    
+    private func initDataList() {
+        categoryList.append(contentsOf: [
+            "전체", "생활", "맛집", "꿀팁", "레시피", "기타"
+        ])
+    }
+    
+    /// 디폴트로 선택된 카테고리 설정 함수
+    private func setUpDefaultSelectedCategory() {
+        self.categoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
+    }
+
 }
 
 // MARK: - UITableViewDelegate
 extension FeedMainVC: UITableViewDelegate {
     
-    /// section 2개로 나눔
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
-    }
-    
     /// cell 높이 설정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 197.adjustedH
-        } else if indexPath.section == 1 {
-            return 55.adjustedH
-        } else if indexPath.section == 2 {
-            return 102.adjustedH
+        return 102.adjustedH
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 0.0  {
+            heightConstraint.constant = max(abs(scrollView.contentOffset.y), minHeight)
+        } else if scrollView.contentOffset.y == 0.0 {
+            heightConstraint.constant = maxHeight
         } else {
-            return 0
+            heightConstraint.constant = minHeight
         }
     }
 }
@@ -98,51 +116,61 @@ extension FeedMainVC: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension FeedMainVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else if section == 1 {
-            return 1
-        } else if section == 2 {
-            return postList.count
-        } else {
-            return 0
-        }
+        return postList.count
     }
     
     /// row에 들어갈 cell 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let feedMainTitleTVC = tableView.dequeueReusableCell(withIdentifier: FeedMainTitleTVC.className) as? FeedMainTitleTVC,
-              let feedMainEmptyTVC = tableView.dequeueReusableCell(withIdentifier: FeedMainEmptyTVC.className) as? FeedMainEmptyTVC,
-              let feedMainPostTVC = tableView.dequeueReusableCell(withIdentifier: FeedMainPostTVC.className) as? FeedMainPostTVC else { return UITableViewCell() }
-        if indexPath.section == 0 {
-            feedMainTitleTVC.tapListBtnAction = {
-                guard let myPostListVC = UIStoryboard.init(name: Identifiers.MyFeedPostSB, bundle: nil).instantiateViewController(withIdentifier: MyFeedPostVC.className) as? MyFeedPostVC else { return }
-                
-                self.navigationController?.pushViewController(myPostListVC, animated: true)
-            }
-            feedMainTitleTVC.tapWriteBtnAction = {
-                guard let feedWriteVC = UIStoryboard.init(name: Identifiers.FeedWriteSB, bundle: nil).instantiateViewController(withIdentifier: FeedWriteVC.className) as? FeedWriteVC else { return }
-                
-                self.navigationController?.pushViewController(feedWriteVC, animated: true)
-            }
-            return feedMainTitleTVC
-        } else if indexPath.section == 1 {
-            return feedMainEmptyTVC
-        } else if indexPath.section == 2 {
-            feedMainPostTVC.setData(postData: postList[indexPath.row])
-            return feedMainPostTVC
-        } else {
-            return UITableViewCell()
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FeedMainPostTVC.className) as? FeedMainPostTVC else { return UITableViewCell() }
+        
+        cell.setData(postData: postList[indexPath.row])
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 2 {
-            guard let feedDetailVC = UIStoryboard.init(name: Identifiers.FeedDetailSB, bundle: nil).instantiateViewController(withIdentifier: FeedDetailVC.className) as? FeedDetailVC else { return }
-            
-            feedDetailVC.postId = postList[indexPath.row].postID
-            self.navigationController?.pushViewController(feedDetailVC, animated: true)
-        }
+        guard let feedDetailVC = UIStoryboard.init(name: Identifiers.FeedDetailSB, bundle: nil).instantiateViewController(withIdentifier: FeedDetailVC.className) as? FeedDetailVC else { return }
+        
+        feedDetailVC.postId = postList[indexPath.row].postID
+        self.navigationController?.pushViewController(feedDetailVC, animated: true)
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension FeedMainVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: categoryList[indexPath.item].size(withAttributes: [NSAttributedString.Key.font: UIFont.PretendardSB(size: 14)!]).width + 31, height: 30)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.init(top: 8, left: 21, bottom: 8, right: 21)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+       return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension FeedMainVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categoryList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCVC.className, for: indexPath) as? CategoryCVC else { return UICollectionViewCell() }
+        
+        cell.setCategoryData(categoryData: categoryList[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedTagId = indexPath.row + 1
+        getFeedPostList(tagID: indexPath.row + 1)
     }
 }
 
@@ -160,7 +188,7 @@ extension FeedMainVC {
                 if let data = res as? [FeedListDataModel] {
                     DispatchQueue.main.async {
                         self.postList = data
-                        self.feedTV.reloadSections([2], with: .none)
+                        self.feedTV.reloadData()
                     }
                 }
             case .requestErr(let res):
