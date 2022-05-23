@@ -260,6 +260,15 @@ extension FeedWriteVC: UIImagePickerControllerDelegate {
 
 // MARK: UITextViewDelegate
 extension FeedWriteVC: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+           if textView == titleTextView && text == "\n" {
+               titleTextView.resignFirstResponder()
+               return false
+           }
+           return true
+       }
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView == titleTextView && titleTextView.text == titlePlaceholder {
             titleTextView.text.removeAll()
