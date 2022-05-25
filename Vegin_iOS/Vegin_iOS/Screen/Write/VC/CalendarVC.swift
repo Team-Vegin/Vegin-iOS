@@ -16,6 +16,9 @@ class CalendarVC: BaseVC {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var calendar: FSCalendar!
     
+    @IBOutlet weak var calendarHeight: NSLayoutConstraint!
+    @IBOutlet weak var orientationView: UIView!
+    @IBOutlet weak var orientationLabel: UILabel!
     @IBOutlet weak var writeBtn: VeginBtn! {
         didSet {
             writeBtn.isActivated = true
@@ -93,6 +96,10 @@ class CalendarVC: BaseVC {
     private func setUI() {
         firstListView.layer.cornerRadius = 19
         secondListView.layer.cornerRadius = 19
+        orientationView.layer.cornerRadius = 10.adjusted
+        orientationLabel.text = UserDefaults.standard.string(forKey: UserDefaults.Keys.Orientation
+        )
+        calendarHeight.constant = 400.adjustedH
     }
     
     private func scrollCurrentPage(isPrev: Bool) {

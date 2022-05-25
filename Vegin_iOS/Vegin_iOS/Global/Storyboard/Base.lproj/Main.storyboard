@@ -175,14 +175,29 @@
                                     <constraint firstItem="iwT-pq-8U9" firstAttribute="top" secondItem="6pz-CQ-64J" secondAttribute="bottom" constant="5" id="yC4-vT-qHM"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flexiterian" translatesAutoresizingMaskIntoConstraints="NO" id="uXV-3a-XbV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBp-jx-dCM">
                                 <rect key="frame" x="250" y="79.666666666666671" width="97" height="27"/>
-                            </imageView>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flexiterian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crh-Pr-32x">
+                                        <rect key="frame" x="14.666666666666686" y="5" width="67.666666666666671" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                        <color key="textColor" name="darkMain"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="main"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="BPK-4B-0O4"/>
+                                    <constraint firstAttribute="height" constant="27" id="FkO-bR-LgK"/>
+                                    <constraint firstItem="Crh-Pr-32x" firstAttribute="centerX" secondItem="oBp-jx-dCM" secondAttribute="centerX" id="Lia-iI-gUj"/>
+                                    <constraint firstItem="Crh-Pr-32x" firstAttribute="centerY" secondItem="oBp-jx-dCM" secondAttribute="centerY" id="phm-Bk-OhU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uXV-3a-XbV" secondAttribute="trailing" constant="28" id="8bv-SD-UDg"/>
+                            <constraint firstItem="oBp-jx-dCM" firstAttribute="centerY" secondItem="uq4-oy-1ZP" secondAttribute="centerY" id="8Im-iM-gx6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yrb-mK-ecZ" secondAttribute="trailing" constant="23" id="A2j-sV-dNP"/>
                             <constraint firstItem="yrb-mK-ecZ" firstAttribute="top" secondItem="FWI-N8-GdA" secondAttribute="bottom" constant="16" id="JPd-h9-fya"/>
                             <constraint firstItem="csn-ih-gM0" firstAttribute="top" secondItem="Avd-pK-5qZ" secondAttribute="bottom" constant="12" id="ZWD-Qp-0gn"/>
@@ -190,19 +205,22 @@
                             <constraint firstItem="FWI-N8-GdA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="kaR-k8-PIa"/>
                             <constraint firstItem="FWI-N8-GdA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="lZs-p5-ma2"/>
                             <constraint firstItem="csn-ih-gM0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="mH0-Rg-xnb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oBp-jx-dCM" secondAttribute="trailing" constant="28" id="nCG-O8-sdy"/>
                             <constraint firstItem="Avd-pK-5qZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="qBh-nH-RI2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="csn-ih-gM0" secondAttribute="trailing" constant="22" id="tCR-zF-hyx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Avd-pK-5qZ" secondAttribute="trailing" constant="22" id="vuY-1Q-0Yf"/>
                             <constraint firstItem="Avd-pK-5qZ" firstAttribute="top" secondItem="yrb-mK-ecZ" secondAttribute="bottom" constant="30" id="wFr-85-uLH"/>
-                            <constraint firstItem="uXV-3a-XbV" firstAttribute="centerY" secondItem="Ic1-d9-hUM" secondAttribute="centerY" id="wn2-wo-02P"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w0C-Xb-EQn"/>
                     <connections>
                         <outlet property="calendar" destination="yrb-mK-ecZ" id="Cmb-XR-Ls9"/>
+                        <outlet property="calendarHeight" destination="v2X-pt-ifX" id="i3w-z1-PPY"/>
                         <outlet property="checkBtn" destination="0id-PS-nRX" id="ihz-kU-0EM"/>
                         <outlet property="firstListView" destination="Avd-pK-5qZ" id="ov1-wz-qSq"/>
                         <outlet property="headerLabel" destination="uq4-oy-1ZP" id="i4c-mp-nY9"/>
+                        <outlet property="orientationLabel" destination="Crh-Pr-32x" id="Qhq-Vu-QJO"/>
+                        <outlet property="orientationView" destination="oBp-jx-dCM" id="2nm-ZA-6JF"/>
                         <outlet property="secondListView" destination="csn-ih-gM0" id="sDX-OL-7Iw"/>
                         <outlet property="writeBtn" destination="rIj-ra-Jwn" id="zSQ-39-iAV"/>
                     </connections>
@@ -750,7 +768,6 @@
         <image name="feedMenuBtn" width="24" height="24"/>
         <image name="feedWriteBtn" width="24" height="24"/>
         <image name="fix" width="24" height="24"/>
-        <image name="flexiterian" width="97" height="27"/>
         <image name="home" width="24" height="24"/>
         <image name="level1" width="16" height="16"/>
         <image name="level2" width="16" height="16"/>

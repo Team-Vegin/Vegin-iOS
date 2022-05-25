@@ -80,6 +80,7 @@ extension SignInVC {
         UserDefaults.standard.set(data.user.userID, forKey: UserDefaults.Keys.UserID)
         UserDefaults.standard.set(data.accesstoken, forKey: UserDefaults.Keys.AccessToken)
         UserDefaults.standard.set(data.user.character, forKey: UserDefaults.Keys.CharacterID)
+        UserDefaults.standard.set(data.user.orientation, forKey: UserDefaults.Keys.Orientation)
     }
     
     private func doForIsEmailVerified(data: SignInDataModel) {

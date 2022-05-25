@@ -27,6 +27,9 @@ extension UserDefaults {
         /// String
         static var PW = "PW"
         
+        /// String
+        static var Orientation = "Orientation"
+        
         /// Bool
         static var IsOnboarding = "IsOnboarding"
     }
